@@ -1,7 +1,7 @@
 #include "1darboHeaderis.h"
 
 
-double generuotiGal( vector<float>&nd, int egz)
+double generuotiGalvid( vector<float>&nd, int egz)
 {
     double suma=0;
     for (int i =0; i<nd.size(); i++) 
@@ -13,9 +13,48 @@ double generuotiGal( vector<float>&nd, int egz)
     return Gal;
 }
 
+double generuotiGalmed(vector<float>nd)
+{
+    sort(nd.begin(), nd.end()); //rikiuoja maz tvarka
+
+    int kiek= nd.size();
+    if(kiek%2==1)
+    {
+        return nd[kiek/2]; //jei nelyginis, tada vidurine reiksme
+    }
+    else 
+    {
+        return( nd[kiek/2-1] + nd[kiek/2])/2.0; //jei lyginis, dvieju viduriniu vidurkis
+    }
+}
+
+double pasirinktasGal(vector<float>&nd, int egz, char kaip)
+{
+    double Gal=0;
+
+    if( kaip=='v')
+    {
+        Gal=generuotiGalvid(nd,egz);
+    }
+    if( kaip=='m')
+    {
+        Gal= 0.4 * generuotiGalmed(nd) + 0.6 * egz;
+    }
+    return Gal;
+}
+
 int main() {
 studentas laik;
 vector<studentas> grupe;
+char pasirinkimas;
+
+cout<<"Koki metoda renkates gal. balui skaiciuoti?\n";
+cout<<"Jei VIDURKI, rasykite [v], jei MEDIANA, rasykite [m]\n";
+cin>>pasirinkimas;
+while (pasirinkimas != 'v' && pasirinkimas != 'm') {
+        cout << "Neteisingas pasirinkimas! Įveskite v arba m: ";
+        cin >> pasirinkimas;
+}
 for(int i=0; i<2; i++)
 {
     cout<<"Studento vardas: ";
@@ -31,12 +70,19 @@ for(int i=0; i<2; i++)
     cout<<"Studento egzaminas : ";
     cin>>laik.egz; 
 
-    laik.Gal= generuotiGal(laik.nd, laik.egz);
+    laik.Gal= pasirinktasGal(laik.nd, laik.egz, pasirinkimas);
     grupe.push_back(laik);
 }
-
- cout<<setw(15)<<"Vardas"<<setw(15)<<"Pavarde"<<setw(10)<< "Galutinis"<<endl;
- cout<<"--------------------------------------------"<<endl;
+if (pasirinkimas=='v')
+{
+    cout<<setw(15)<<"Vardas"<<setw(15)<<"Pavarde"<<setw(10)<< "Galutinis (Vid.)"<<endl;
+    cout<<"--------------------------------------------"<<endl;
+}
+else 
+{
+    cout<<setw(15)<<"Vardas"<<setw(15)<<"Pavarde"<<setw(10)<< "Galutinis (Med.)"<<endl;
+    cout<<"--------------------------------------------"<<endl;
+}
  for (auto a : grupe) 
  {
     cout<<setw(15)<<a.Vard<<setw(15)<<a.Pav<<setw(20)<<fixed<<setprecision(2)<<a.Gal<<endl;

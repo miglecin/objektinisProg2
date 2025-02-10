@@ -21,7 +21,7 @@ using namespace std;
 struct studentas {
     string Vard;
     string Pav;
-    vector<float> nd=vector<float>(5);
+    vector<float> nd;
     int egz;
     double Gal;
 };

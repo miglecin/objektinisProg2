@@ -59,36 +59,49 @@ while (true)
     studentas laik;
     cout<<"Studento vardas: ";
     cin>>laik.Vard;
-    cin.ignore();  // Išvalo buferį, jei po vardo liko \n
+    
     cout<<"Studento pavarde: ";
     cin>>laik.Pav;
-    cin.ignore();  // Išvalo buferį, jei po vardo liko \n
-    cout<<"Namu darbu pazymiai ";
-    float* laik_nd=new float[100]; //daug vietos
-    int nd_kiekis=0;
-    float paz;
+    
+    int nd_kiekis; 
+    cout<<"Kiek nd pazymiu vesite?: ";
+    while (true)
+    {
+        cin>>nd_kiekis;
+        if(cin.fail() || nd_kiekis<=0)
+        {
+            cout<<"Pazymiu kiekis turi buti teig. skaicius";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+        else {break;};
+    }
+    
+    laik.nd=new float[nd_kiekis]; //tikslus masyvas
+    
+    cout<<"Iveskite"<<nd_kiekis<<" nd pazymius: " ;
+    for (int i=0; i<nd_kiekis; i++)
+    {
         while(true)
         {
-            if (cin.peek()=='\n') break; //jei enter, ciklas stabdomas
-            cin>>paz;
-            if(cin.fail()) break; //jei neteisingas inputas, stabdyti
-            laik_nd[nd_kiekis++]=paz;
-        }  
+            cin>>laik.nd[i];
+            if(cin.fail()) //jei ivedamas ne skaicius
+                {
+                    cout<<"Reikia ivesti skaiciu: ";
+                    cin.clear(); //isvaloma klaidos busena
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+                }
+                else {break;}; //jei ivestis teisinga iseinama is ciklo
+        }
+    }  
     cout<<"Studento egzaminas : ";
     cin>>laik.egz; 
 
     //Perkelti pažymius į tikslų dydį atitinkantį masyvą
-    laik.nd = new float[nd_kiekis];
-    for(int i=0; i<nd_kiekis; i++)
-    {
-        laik.nd[i]=laik_nd[i];
-    }
-    delete[] laik_nd; //atlaisvintas laikinas masyvas
     laik.nd_kiekis=nd_kiekis;
-
     laik.Gal= pasirinktasGal(laik.nd, laik.nd_kiekis, laik.egz, pasirinkimas);
     
-    //pridedame nauja studenta i masyva
+    //pridedame nauja studenta i masyva dinamiskai
     studentas* temp = new studentas[studentu_kiekis+1];
         for (int i= 0; i<studentu_kiekis; i++) 
         {
@@ -120,7 +133,7 @@ if(studentu_kiekis>0)
  for (int i=0; i<studentu_kiekis; i++) 
  {
     cout<<grupe[i].Vard<<setw(15)<<grupe[i].Pav<<setw(20)<<fixed<<setprecision(2)<<grupe[i].Gal<<endl;
-    delete[] grupe[i].nd; //atlaisviname dinamini masyva
+    delete[] grupe[i].nd; //atlaisviname pazymiu dinamini masyva
  }
  delete[] grupe; //atlaisviname studentu masyva
 

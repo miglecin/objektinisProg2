@@ -59,11 +59,12 @@ for(int i=0; i<2; i++)
 {
     cout<<"Studento vardas: ";
     cin>>laik.Vard;
-    cin.ignore();  // Išvalo buferį, jei po vardo liko \n
+    
     cout<<"Studento pavarde: ";
     cin>>laik.Pav;
-    cin.ignore();  // Išvalo buferį, jei po vardo liko \n
+    
     cout<<"5 namu darbu pazymiai: ";
+    laik.nd.resize(5); //vektorius turi penkias vietas, nebereikia strukturoje aprasyti
         for (int j=0; j<5; j++) {
             cin>>laik.nd[j];
         }

@@ -67,8 +67,8 @@ do
     float paz;
         while(true)
         {
-            if (cin.peek()=='\n') break; //jei enter, ciklas stabdomas
             cin>>paz;
+            if (cin.peek()=='\n') break; //jei enter, ciklas stabdomas
             if(cin.fail()) break; //jei neteisingas inputas, stabdyti
             laik.nd.push_back(paz);
         }
@@ -103,5 +103,6 @@ else
     cout<<a.Vard<<"  "<<a.Pav<<endl;
 }*/
 
-
+//g++ -o v0.1vector "v0.1vector.cpp"
+//./v0.1vector
 }

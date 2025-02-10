@@ -3,14 +3,15 @@
 
 double generuotiGalvid( vector<float>&nd, int egz)
 {
+    if (nd.empty()) return 0.6 * egz; //jei nera pazymiu 
+
     double suma=0;
     for (int i =0; i<nd.size(); i++) 
     {
         suma=suma+nd[i];
     }
     double vidurkis=suma/nd.size();
-    double Gal= 0.4 * vidurkis + 0.6 * egz;
-    return Gal;
+    return 0.4 * vidurkis + 0.6 * egz;
 }
 
 double generuotiGalmed(vector<float>nd)

@@ -67,11 +67,30 @@ for(int i=0; i<2; i++)
     cout<<"5 namu darbu pazymiai: ";
     laik.nd.resize(5); //vektorius turi penkias veitas, nebereikia strukturoje aprasyti
         for (int j=0; j<5; j++) {
-            cin>>laik.nd[j];
+            while(true)
+            {
+                cin>>laik.nd[j];
+                if(cin.fail()) //jei ivedamas ne skaicius
+                {
+                    cout<<"Reikia ivesti skaiciu: ";
+                    cin.clear(); //isvaloma klaidos busena
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+                }
+                else break; //jei ivestis teisinga iseinama is ciklo
+            }
         }
     cout<<"Studento egzaminas : ";
-    cin>>laik.egz; 
-
+    while (true)
+    {
+        cin>>laik.egz; 
+        if(cin.fail()) //jei ivedamas ne skaicius
+        {
+            cout<<"Reikia ivesti skaiciu: ";
+            cin.clear(); //isvaloma klaidos busena
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+        }
+        else break; //jei ivestis teisinga iseinama is ciklo
+    }
     laik.Gal= pasirinktasGal(laik.nd, laik.egz, pasirinkimas);
     grupe.push_back(laik);
 }

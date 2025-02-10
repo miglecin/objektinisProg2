@@ -56,6 +56,8 @@ while (pasirinkimas != 'v' && pasirinkimas != 'm') {
         cout << "Neteisingas pasirinkimas! Įveskite v arba m: ";
         cin >> pasirinkimas;
 }
+cin.ignore(numeric_limits<streamsize>::max(), '\n'); //reikia isvalyti buferi
+
 for(int i=0; i<2; i++)
 {
     cout<<"Studento vardas: ";
@@ -76,7 +78,7 @@ for(int i=0; i<2; i++)
                     cin.clear(); //isvaloma klaidos busena
                     cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
                 }
-                else break; //jei ivestis teisinga iseinama is ciklo
+                else {break;}; //jei ivestis teisinga iseinama is ciklo
             }
         }
     cout<<"Studento egzaminas : ";
@@ -89,8 +91,9 @@ for(int i=0; i<2; i++)
             cin.clear(); //isvaloma klaidos busena
             cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
         }
-        else break; //jei ivestis teisinga iseinama is ciklo
+        else {break;}; //jei ivestis teisinga iseinama is ciklo
     }
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     laik.Gal= pasirinktasGal(laik.nd, laik.egz, pasirinkimas);
     grupe.push_back(laik);
 }

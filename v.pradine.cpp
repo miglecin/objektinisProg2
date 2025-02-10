@@ -64,7 +64,7 @@ for(int i=0; i<2; i++)
     cin>>laik.Pav;
     
     cout<<"5 namu darbu pazymiai: ";
-    laik.nd.resize(5); //vektorius turi penkias vietas, nebereikia strukturoje aprasyti
+    laik.nd.resize(5); //vektorius turi penkias veitas, nebereikia strukturoje aprasyti
         for (int j=0; j<5; j++) {
             cin>>laik.nd[j];
         }
@@ -76,17 +76,17 @@ for(int i=0; i<2; i++)
 }
 if (pasirinkimas=='v')
 {
-    cout<<setw(15)<<"Vardas"<<setw(15)<<"Pavarde"<<setw(10)<< "Galutinis (Vid.)"<<endl;
+    cout<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<< "Galutinis (Vid.)"<<endl;
     cout<<"--------------------------------------------"<<endl;
 }
 else 
 {
-    cout<<setw(15)<<"Vardas"<<setw(15)<<"Pavarde"<<setw(10)<< "Galutinis (Med.)"<<endl;
+    cout<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<< "Galutinis (Med.)"<<endl;
     cout<<"--------------------------------------------"<<endl;
 }
  for (auto a : grupe) 
  {
-    cout<<setw(15)<<a.Vard<<setw(15)<<a.Pav<<setw(20)<<fixed<<setprecision(2)<<a.Gal<<endl;
+    cout<<a.Vard<<setw(15)<<a.Pav<<setw(15)<<fixed<<setprecision(2)<<a.Gal<<endl;
  }
 /*for(auto a : grupe)
 {

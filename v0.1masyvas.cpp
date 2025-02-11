@@ -43,8 +43,7 @@ double pasirinktasGal(float* nd, int kiek, int egz, char kaip)
 }
 
 int main() {
-studentas* grupe=nullptr;
-int studentu_kiekis=0;
+vector<studentas> grupe; //studentai su vektorium
 char pasirinkimas;
 
 cout<<"Koki metoda renkates gal. balui skaiciuoti?\n";
@@ -77,9 +76,9 @@ while (true)
         else {break;};
     }
     
-    laik.nd=new float[nd_kiekis]; //tikslus masyvas
+    laik.nd=new float[nd_kiekis]; //tikslus dinaminis c masyvas
     
-    cout<<"Iveskite"<<nd_kiekis<<" nd pazymius: " ;
+    cout<<"Iveskite "<<nd_kiekis<<" nd pazymius: " ;
     for (int i=0; i<nd_kiekis; i++)
     {
         while(true)
@@ -94,24 +93,14 @@ while (true)
                 else {break;}; //jei ivestis teisinga iseinama is ciklo
         }
     }  
-    cout<<"Studento egzaminas : ";
+    cout<<"Studento egzaminas: ";
     cin>>laik.egz; 
 
-    //Perkelti pažymius į tikslų dydį atitinkantį masyvą
+    //Perkelti pazymius i tikslu dydi atitinkanti masyva
     laik.nd_kiekis=nd_kiekis;
     laik.Gal= pasirinktasGal(laik.nd, laik.nd_kiekis, laik.egz, pasirinkimas);
     
-    //pridedame nauja studenta i masyva dinamiskai
-    studentas* temp = new studentas[studentu_kiekis+1];
-        for (int i= 0; i<studentu_kiekis; i++) 
-        {
-            temp[i]=grupe[i];  //Nukopijuojame senus duomenis
-        }
-        temp[studentu_kiekis]=laik;  //Pridedame nauja studenta
-
-        delete[] grupe;  //atlaisviname sena masyva
-        grupe=temp;  //pakeiciame rodykle i nauja masyva
-        studentu_kiekis++;
+    grupe.push_back(laik); //prideda studenta i vektoriu
 
     cout<<"Ar dar vesite kita studenta? (t/n): ";
     char ats;
@@ -119,23 +108,24 @@ while (true)
     if(ats=='n') break;
 
 }
-if(studentu_kiekis>0)
+if(!grupe.empty()){
     if (pasirinkimas=='v')
     {
-    cout<<"Vardas"<<setw(15)<<"Pavarde"<<setw(15)<< "Galutinis (Vid.)"<<setw(15)<<endl;
+    cout<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<< "Galutinis (Vid.)"<<setw(15)<<endl;
     cout<<"--------------------------------------------"<<endl;
     }
     else 
     {
-    cout<<"Vardas"<<setw(15)<<"Pavarde"<<setw(15)<< "Galutinis (Med.)"<<setw(15)<<endl;
+    cout<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<< "Galutinis (Med.)"<<setw(15)<<endl;
     cout<<"--------------------------------------------"<<endl;
     }
- for (int i=0; i<studentu_kiekis; i++) 
+  for (auto a : grupe) 
  {
-    cout<<grupe[i].Vard<<setw(15)<<grupe[i].Pav<<setw(20)<<fixed<<setprecision(2)<<grupe[i].Gal<<endl;
-    delete[] grupe[i].nd; //atlaisviname pazymiu dinamini masyva
+    cout<<a.Vard<<setw(15)<<a.Pav<<setw(20)<<fixed<<setprecision(2)<<a.Gal<<endl;
+    delete[] a.nd; //atlaisvinami kiekvieno studento dinaminiai pazymiai
  }
- delete[] grupe; //atlaisviname studentu masyva
+}
+else {cout<<"Nera studentu"<<endl;};
 
 
 }

@@ -87,6 +87,12 @@ do
         cin>>kiek_nd;
 
         randomPaz(laik.nd, laik.egz, kiek_nd);
+        cout<<"Random pazymiai: ";
+        for(float paz : laik.nd)
+        {
+            cout<<paz<<" ";
+        }
+        cout<<"\nRandom egzamino balas: "<<laik.egz<<endl;
     }
     else 
     {

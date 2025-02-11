@@ -45,7 +45,7 @@ double pasirinktasGal(vector<float>&nd, int egz, char kaip)
 
 void randomPaz(vector<float>& nd, int& egz, int kiek_nd)
 {
-    nd.clear();
+    nd.clear(); //pasalina senus vektorius
     for(int i=0; i<kiek_nd; i++)
     {
         nd.push_back(rand()%10+1); //paz nuo 1 iki 10
@@ -66,7 +66,7 @@ while (pasirinkimas != 'v' && pasirinkimas != 'm') {
         cout << "Neteisingas pasirinkimas! Įveskite v arba m: ";
         cin >> pasirinkimas;
 }
-do 
+while (true) 
 {
     studentas laik;
     char ar_generuoti;
@@ -112,6 +112,7 @@ do
     if(paz<1 || paz>10)
     {
         cout<<"Iveskite pazymi nuo 1 iki 10: ";
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         continue; //tesiam cikla
     }
 
@@ -132,7 +133,7 @@ do
     cin>>ats;
     if(ats=='n') break;
 
-} while (true);
+} 
 if (pasirinkimas=='v')
 {
     cout<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<< "Galutinis (Vid.)"<<endl;

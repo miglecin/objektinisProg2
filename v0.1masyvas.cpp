@@ -53,7 +53,7 @@ while (pasirinkimas != 'v' && pasirinkimas != 'm') {
         cout << "Neteisingas pasirinkimas! Įveskite v arba m: ";
         cin >> pasirinkimas;
 }
-while (true) 
+while(true) 
 {
     studentas laik;
     cout<<"Studento vardas: ";
@@ -67,7 +67,7 @@ while (true)
     while (true)
     {
         cin>>nd_kiekis;
-        if(cin.fail() || nd_kiekis<=0)
+        if(cin.fail() || nd_kiekis<=0 )
         {
             cout<<"Pazymiu kiekis turi buti teig. skaicius";
             cin.clear();
@@ -84,19 +84,28 @@ while (true)
         while(true)
         {
             cin>>laik.nd[i];
-            if(cin.fail()) //jei ivedamas ne skaicius
+            if(cin.fail() || laik.nd[i]<1 || laik.nd[i]>10) //jei ivedamas ne skaicius
                 {
-                    cout<<"Reikia ivesti skaiciu: ";
+                    cout<<"Reikia ivesti pazymi nuo 1 iki 10: ";
                     cin.clear(); //isvaloma klaidos busena
-                    cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n'); //pasaliname netinkama ivesti
                 }
                 else {break;}; //jei ivestis teisinga iseinama is ciklo
         }
     }  
-    cout<<"Studento egzaminas: ";
-    cin>>laik.egz; 
+    cout<<"Studento egzaminas (1-10): ";
+    while (true)
+    {
+        cin>>laik.egz; 
+        if(cin.fail() || laik.egz<1 || laik.egz>10 ) //jei ivedamas ne skaicius
+        {
+            cout<<"Reikia ivesti pazymi nuo 1 iki 10: ";
+            cin.clear(); //isvaloma klaidos busena
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+        }
+        else {break;}; //jei ivestis teisinga iseinama is ciklo
+    }
 
-    //Perkelti pazymius i tikslu dydi atitinkanti masyva
     laik.nd_kiekis=nd_kiekis;
     laik.Gal= pasirinktasGal(laik.nd, laik.nd_kiekis, laik.egz, pasirinkimas);
     
@@ -119,7 +128,7 @@ if(!grupe.empty()){
     cout<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<< "Galutinis (Med.)"<<setw(15)<<endl;
     cout<<"--------------------------------------------"<<endl;
     }
-  for (auto a : grupe) 
+  for (auto& a : grupe) 
  {
     cout<<a.Vard<<setw(15)<<a.Pav<<setw(20)<<fixed<<setprecision(2)<<a.Gal<<endl;
     delete[] a.nd; //atlaisvinami kiekvieno studento dinaminiai pazymiai
@@ -127,5 +136,6 @@ if(!grupe.empty()){
 }
 else {cout<<"Nera studentu"<<endl;};
 
+return 0;
 
 }

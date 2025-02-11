@@ -121,18 +121,25 @@ while (true)
     if (cin.peek() == '\n') break; //kai enter, baigiama ivestis
     }
         
-    cout<<"Studento egzaminas : ";
-    cin>>laik.egz; 
-      
+    cout<<"Studento egzaminas: ";
+    cin>>laik.egz;
     }
+
     laik.Gal= pasirinktasGal(laik.nd, laik.egz, pasirinkimas);
     grupe.push_back(laik);
 
     cout<<"Ar dar vesite kita studenta? (t/n): ";
     char ats;
-    cin>>ats;
-    if(ats=='n') break;
-
+    while (true)
+    {
+        cin>>ats;
+        if(ats=='t' || ats=='n') break;
+        
+        cout<<"Iveskite t arba n: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); //isvaloma bloga ivestis
+    }
+    if (ats=='n') break; //jei n tai programa nebepriima nauju studentu
 } 
 if (pasirinkimas=='v')
 {

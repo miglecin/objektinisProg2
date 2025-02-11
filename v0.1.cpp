@@ -9,8 +9,8 @@ double generuotiGalvid( vector<float>&nd, int egz)
         suma=suma+nd[i];
     }
     double vidurkis=suma/nd.size();
-    double Gal= 0.4 * vidurkis + 0.6 * egz;
-    return Gal;
+    return 0.4 * vidurkis + 0.6 * egz;
+    
 }
 
 double generuotiGalmed(vector<float>nd)
@@ -92,13 +92,27 @@ do
     {
     cout<<"Namu darbu pazymiai ";
     float paz;
-        while(true)
-        {
-            cin>>paz;
-            if (cin.peek()=='\n') break; //jei enter, ciklas stabdomas
-            if(cin.fail()) break; //jei neteisingas inputas, stabdyti
-            laik.nd.push_back(paz);
-        }
+    while (true) 
+    {
+    cin >> paz;
+
+    if (cin.fail())  //Netinkamas input
+    {   
+        cout<< "Iveskite pazymi nuo 1 iki 10: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); //isvaloma bloga ivestis
+        continue; //tesiam cikla
+    }
+    if(paz<1 || paz>10)
+    {
+        cout<<"Iveskite pazymi nuo 1 iki 10: ";
+        continue; //tesiam cikla
+    }
+
+    laik.nd.push_back(paz); //idedame i vektoriu
+
+    if (cin.peek() == '\n') break; //kai enter, baigiama ivestis
+    }
         
     cout<<"Studento egzaminas : ";
     cin>>laik.egz; 

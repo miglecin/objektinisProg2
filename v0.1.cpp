@@ -129,15 +129,15 @@ do
 } while (true);
 if (pasirinkimas=='v')
 {
-    cout<<"Vardas"<<setw(15)<<"Pavarde"<<setw(15)<< "Galutinis (Vid.)"<<setw(15)<<endl;
+    cout<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<< "Galutinis (Vid.)"<<endl;
     cout<<"--------------------------------------------"<<endl;
 }
 else 
 {
-    cout<<"Vardas"<<setw(15)<<"Pavarde"<<setw(15)<< "Galutinis (Med.)"<<endl;
+    cout<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<< "Galutinis (Med.)"<<endl;
     cout<<"--------------------------------------------"<<endl;
 }
- for (auto a : grupe) 
+ for (auto& a : grupe) 
  {
     cout<<a.Vard<<setw(15)<<a.Pav<<setw(20)<<fixed<<setprecision(2)<<a.Gal<<endl;
  }

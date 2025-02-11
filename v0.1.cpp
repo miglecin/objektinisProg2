@@ -157,7 +157,7 @@ else
  }
 /*for(auto a : grupe)
 {
-    cout<<a.Vard<<"  "<<a.Pav<<endl;
+    cout<<a.Vard<<"  "<<a.Pav<<endl; 
 }*/
 // g++ -o v0.1 "v0.1.cpp"
 //./v0.1

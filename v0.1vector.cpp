@@ -59,19 +59,34 @@ do
 {
     cout<<"Studento vardas: ";
     cin>>laik.Vard;
-    cin.ignore();  // Išvalo buferį, jei po vardo liko \n
+    
     cout<<"Studento pavarde: ";
     cin>>laik.Pav;
-    cin.ignore();  // Išvalo buferį, jei po vardo liko \n
+   
     cout<<"Namu darbu pazymiai ";
     float paz;
-        while(true)
-        {
-            cin>>paz;
-            if (cin.peek()=='\n') break; //jei enter, ciklas stabdomas
-            if(cin.fail()) break; //jei neteisingas inputas, stabdyti
-            laik.nd.push_back(paz);
-        }
+    while (true) 
+    {
+    cin >> paz;
+
+    if (cin.fail())  //Netinkamas input
+    {   
+        cout<< "Iveskite pazymi nuo 1 iki 10: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); //isvaloma bloga ivestis
+        continue; //tesiam cikla
+    }
+    if(paz<1 || paz>10)
+    {
+        cout<<"Iveskite pazymi nuo 1 iki 10: ";
+        continue; //tesiam cikla
+    }
+
+    laik.nd.push_back(paz); //idedame i vektoriu
+
+    if (cin.peek() == '\n') break; //kai enter, baigiama ivestis
+    }
+    
     cout<<"Studento egzaminas : ";
     cin>>laik.egz; 
 
@@ -86,18 +101,20 @@ do
 } while (true);
 if (pasirinkimas=='v')
 {
-    cout<<"Vardas"<<setw(15)<<"Pavarde"<<setw(15)<< "Galutinis (Vid.)"<<setw(15)<<endl;
+    cout<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<< "Galutinis (Vid.)"<<setw(15)<<endl;
     cout<<"--------------------------------------------"<<endl;
 }
 else 
 {
-    cout<<"Vardas"<<setw(15)<<"Pavarde"<<setw(15)<< "Galutinis (Med.)"<<setw(15)<<endl;
+    cout<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<< "Galutinis (Med.)"<<setw(15)<<endl;
     cout<<"--------------------------------------------"<<endl;
 }
- for (auto a : grupe) 
+ for (auto& a : grupe) 
  {
     cout<<a.Vard<<setw(15)<<a.Pav<<setw(20)<<fixed<<setprecision(2)<<a.Gal<<endl;
  }
+
+ return 0;
 /*for(auto a : grupe)
 {
     cout<<a.Vard<<"  "<<a.Pav<<endl;

@@ -15,7 +15,7 @@ double generuotiGalvid( vector<float>&nd, int egz)
 
 double generuotiGalmed(vector<float>nd)
 {
-    sort(nd.begin(), nd.end()); //rikiuoja maz tvarka
+    sort(nd.begin(), nd.end()); //rikiuoja did tvarka
 
     int kiek= nd.size();
     if(kiek%2==1)
@@ -53,54 +53,68 @@ void randomPaz(vector<float>& nd, int& egz, int kiek_nd)
     egz=rand()%10+1; //egzo balas
 }
 
+void generuotiVardPav(string& vardas, string& pavarde) 
+{
+    static const char* vardai[]= {"Jonas", "Petras", "Mantas", "Dovydas", "Rokas"};
+    static const char* pavardes[]= {"Kazlauskas", "Petraitis", "Jankauskas", "Masiulis", "Paulauskas"};
+
+    int varduKiekis=sizeof(vardai) / sizeof(vardai[0]);
+    int pavardziuKiekis=sizeof(pavardes) / sizeof(pavardes[0]);
+
+    vardas=vardai[rand()%varduKiekis];
+    pavarde=pavardes[rand()%pavardziuKiekis];
+}
+
 int main() {
 srand(time(0)); //pradinis seed nustatymas
 
 vector<studentas> grupe;
 char pasirinkimas;
+int meniu;
 
-cout<<"Koki metoda renkates gal. balui skaiciuoti?\n";
-cout<<"Jei VIDURKI, rasykite [v], jei MEDIANA, rasykite [m]\n";
-cin>>pasirinkimas;
-while (pasirinkimas != 'v' && pasirinkimas != 'm') {
-        cout << "Neteisingas pasirinkimas! Įveskite v arba m: ";
-        cin >> pasirinkimas;
-}
-while (true) 
+do
 {
     studentas laik;
-    char ar_generuoti;
+    int kiek_nd;
 
-    cout<<"Studento vardas: ";
-    cin>>laik.Vard;
-    
-    cout<<"Studento pavarde: ";
-    cin>>laik.Pav;
-    
-    cout<<"Ar generuoti pazymius atsitiktinai? (t/n) ";
-    cin>>ar_generuoti;
+cout<<"Pasirinkite meniu veiksma: \n";
+cout<<"1 - Ivesti ranka\n2 - Generuoti pazymius\n3 - Generuoti vardus, pavardes ir pazymius\n4 - Baigti\n ";
+cin>>meniu;
 
-    if(ar_generuoti=='t')
+if (cin.fail() || meniu < 1 || meniu > 4) {
+        cout << "Klaida! Pasirinkite skaičių nuo 1 iki 4.\n";
+        cin.clear();  // Išvalome klaidos būseną
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Pašaliname blogą įvestį
+        continue;  // Praleidžiame likusią ciklo iteraciją ir grįžtame prie meniu
+    }
+
+    if (meniu==4) break;
+
+    if (meniu==1 || meniu==3 || meniu==2)
     {
-        int kiek_nd;
+        if(meniu==3) generuotiVardPav(laik.Vard, laik.Pav);
+        else if(meniu==2 || meniu==1)
+        {
+            cout<<"Studento vardas: ";
+            cin>>laik.Vard;
+    
+            cout<<"Studento pavarde: ";
+            cin>>laik.Pav;
+        }
+    }
+    if(meniu==2 || meniu==3)
+    {
         cout<<"Kiek nd pazymiu generuoti? ";
         cin>>kiek_nd;
-
         randomPaz(laik.nd, laik.egz, kiek_nd);
-        cout<<"Random pazymiai: ";
-        for(float paz : laik.nd)
-        {
-            cout<<paz<<" ";
-        }
-        cout<<"\nRandom egzamino balas: "<<laik.egz<<endl;
     }
     else 
     {
-    cout<<"Namu darbu pazymiai ";
-    float paz;
+        cout<<"Namu darbu pazymiai ";
+        float paz;
     while (true) 
     {
-    cin >> paz;
+        cin >> paz;
 
     if (cin.fail())  //Netinkamas input
     {   
@@ -117,47 +131,56 @@ while (true)
     }
 
     laik.nd.push_back(paz); //idedame i vektoriu
-
     if (cin.peek() == '\n') break; //kai enter, baigiama ivestis
     }
         
     cout<<"Studento egzaminas: ";
-    cin>>laik.egz;
-    }
-
-    laik.Gal= pasirinktasGal(laik.nd, laik.egz, pasirinkimas);
-    grupe.push_back(laik);
-
-    cout<<"Ar dar vesite kita studenta? (t/n): ";
-    char ats;
     while (true)
     {
-        cin>>ats;
-        if(ats=='t' || ats=='n') break;
-        
-        cout<<"Iveskite t arba n: ";
+        cin>>laik.egz;
+        if(cin.fail() || laik.egz < 1 || laik.egz > 10) {
+        cout << "Egzamino pazymys turi būti nuo 1 iki 10: ";
         cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n'); //isvaloma bloga ivestis
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        continue;
+        }
+    break;
     }
-    if (ats=='n') break; //jei n tai programa nebepriima nauju studentu
-} 
+}
+grupe.push_back(laik);
+
+} while(true);
+
+cout<<"Koki metoda renkates gal. balui skaiciuoti?\n";
+cout<<"Jei VIDURKI, rasykite [v], jei MEDIANA, rasykite [m]\n";
+cin>>pasirinkimas;
+while (pasirinkimas != 'v' && pasirinkimas != 'm') {
+        cout << "Neteisingas pasirinkimas! Įveskite v arba m: ";
+        cin >> pasirinkimas;
+}
+
+for (auto& laik : grupe) {
+    laik.Gal = pasirinktasGal(laik.nd, laik.egz, pasirinkimas);
+}
+
 if (pasirinkimas=='v')
 {
-    cout<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<< "Galutinis (Vid.)"<<endl;
+    cout<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<< "Galutinis (Vid.)"<<setw(15)<<endl;
     cout<<"--------------------------------------------"<<endl;
 }
 else 
 {
-    cout<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<< "Galutinis (Med.)"<<endl;
+    cout<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<< "Galutinis (Med.)"<<setw(15)<<endl;
     cout<<"--------------------------------------------"<<endl;
 }
  for (auto& a : grupe) 
  {
     cout<<a.Vard<<setw(15)<<a.Pav<<setw(20)<<fixed<<setprecision(2)<<a.Gal<<endl;
  }
+
 /*for(auto a : grupe)
 {
-    cout<<a.Vard<<"  "<<a.Pav<<endl; 
+    cout<<a.Vard<<"  "<<a.Pav<<endl;
 }*/
 // g++ -o v0.1 "v0.1.cpp"
 //./v0.1

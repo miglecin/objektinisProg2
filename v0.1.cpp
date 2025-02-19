@@ -103,8 +103,38 @@ void nuskaitymasFile(vector<studentas>&grupe, const string& filename)
     failas.close();
 }
 
-void spausdintiRez(const vector<studentas>& grupe, bool iFaila, char pasirinkimas)
+bool pagalVarda(const studentas& a, const studentas& b) { return a.Vard<b.Vard; }
+bool pagalPavarde(const studentas& a, const studentas& b) { return a.Pav<b.Pav; }
+bool pagalGal(const studentas& a, const studentas& b) { return a.Gal>b.Gal;}
+
+void rusiuotiStud(vector<studentas>& grupe, char rusiavimoPas)
 {
+    if(rusiavimoPas=='v')
+    {
+        sort(grupe.begin(), grupe.end(), pagalVarda);
+    }
+    else if (rusiavimoPas=='p')
+    {
+        sort(grupe.begin(), grupe.end(), pagalPavarde);
+    }
+    else if (rusiavimoPas=='g')
+    {
+        sort(grupe.begin(), grupe.end(), pagalGal);
+    }
+}
+
+void spausdintiRez( vector<studentas>& grupe, bool iFaila, char pasirinkimas, char rusiavimoPas)
+{
+    //pirma- apskaiciuoti galutinius balus
+    for (auto& stud : grupe) 
+    {
+        stud.Gal = pasirinktasGal(stud.nd, stud.egz, pasirinkimas);
+    }
+
+    //antra- sursiuoti studentus
+    rusiuotiStud(grupe, rusiavimoPas);
+    
+    //pasiruosimas isvesti rez
     ofstream failoIsvedimas;
     if(iFaila)
     {
@@ -134,6 +164,8 @@ srand(time(0)); //pradinis seed nustatymas
 
 vector<studentas> grupe;
 char pasirinkimas;
+char rusiavimoPas;
+char isvedimoPasirinkimas;
 int meniu;
 
 do
@@ -222,23 +254,22 @@ grupe.push_back(laik);
 } while(true);
 
 cout<<"Koki metoda renkates gal. balui skaiciuoti?\n";
-cout<<"Jei VIDURKI, rasykite [v], jei MEDIANA, rasykite [m]\n";
+cout<<" [v] - vidurki\n [m] - mediana\n";
 cin>>pasirinkimas;
 while (pasirinkimas != 'v' && pasirinkimas != 'm') {
         cout << "Neteisingas pasirinkimas! Įveskite v arba m: ";
         cin >> pasirinkimas;
 }
 
-for (auto& laik : grupe) {
-    laik.Gal = pasirinktasGal(laik.nd, laik.egz, pasirinkimas);
-}
+cout<<"Pagal ka rusiuoti studentus?:\n [v] - varda\n [p] - pavarde\n [g] - galutini bala\n";
+cin>>rusiavimoPas;
 
- char isvedimoPasirinkimas;
  cout<<"Kur vesti rezultatus?\n [e] - ekrane\n [f] - i faila\n ";
  cin>>isvedimoPasirinkimas;
 
  bool iFaila=(isvedimoPasirinkimas=='f');
- spausdintiRez(grupe, iFaila, pasirinkimas);
+ spausdintiRez(grupe, iFaila, pasirinkimas, rusiavimoPas);
+ 
  return 0;
 
 /*for(auto a : grupe)

@@ -64,6 +64,36 @@ void generuotiVardPav(string& vardas, string& pavarde)
     vardas=vardai[rand()%varduKiekis];
     pavarde=pavardes[rand()%pavardziuKiekis];
 }
+void nuskaitymasFile(vector<studentas>&grupe, const string& filename)
+{
+    ifstream failas(filename);
+    if (!failas) 
+    {
+        cerr<<"nepavyko atidaryti failo!"<<filename<<endl;
+        return;
+    }
+
+    string eilute;
+    getline(failas, eilute); //praleidziam pirma eilute
+
+    while (getline(failas, eilute))
+    {
+        stringstream ss(eilute);
+        studentas laik;
+        ss>>laik.Vard>>laik.Pav;
+
+        int paz;
+        for(int i=0; i<5; i++) //skaito 5 pazymius
+        {
+            ss>>paz;
+            laik.nd.push_back(paz);
+        }
+        ss>>laik.egz; //skaito egzamina
+
+        grupe.push_back(laik);
+    }
+    failas.close();
+}
 
 int main() {
 srand(time(0)); //pradinis seed nustatymas
@@ -78,17 +108,23 @@ do
     int kiek_nd;
 
 cout<<"Pasirinkite meniu veiksma: \n";
-cout<<"1 - Ivesti ranka\n2 - Generuoti pazymius\n3 - Generuoti vardus, pavardes ir pazymius\n4 - Baigti\n ";
+cout<<"1 - Ivesti ranka\n2 - Generuoti pazymius\n3 - Generuoti vardus, pavardes ir pazymius\n4 - Nuskaityti is failo\n5 - Baigti\n ";
 cin>>meniu;
 
-if (cin.fail() || meniu < 1 || meniu > 4) {
-        cout << "Klaida! Pasirinkite skaičių nuo 1 iki 4.\n";
+if (cin.fail() || meniu < 1 || meniu > 5) {
+        cout << "Klaida! Pasirinkite skaičių nuo 1 iki 5.\n";
         cin.clear();  // Išvalome klaidos būseną
         cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Pašaliname blogą įvestį
         continue;  // Praleidžiame likusią ciklo iteraciją ir grįžtame prie meniu
     }
 
-    if (meniu==4) break;
+    if (meniu==5) break;
+
+    if(meniu==4) 
+    {
+        nuskaitymasFile(grupe, "kursiokai.txt");
+        continue;
+    }
 
     if (meniu==1 || meniu==3 || meniu==2)
     {
@@ -182,7 +218,7 @@ else
 {
     cout<<a.Vard<<"  "<<a.Pav<<endl;
 }*/
-// g++ -o v0.1 "v0.1.cpp"
-//./v0.1
+// g++ -o v0.2 "v0.2.cpp"
+//./v0.2
 
 }

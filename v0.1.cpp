@@ -84,13 +84,20 @@ void nuskaitymasFile(vector<studentas>&grupe, const string& filename)
         ss>>laik.Vard>>laik.Pav;
 
         int paz;
-        for(int i=0; i<5; i++) //skaito 5 pazymius
-        {
-            ss>>paz;
+        laik.nd.clear();
+
+         while (ss>>paz) {
             laik.nd.push_back(paz);
         }
-        ss>>laik.egz; //skaito egzamina
 
+        //Paskutinis nuskaitytas sk. yra egzamino pazymys
+        if (!laik.nd.empty()) {
+            laik.egz = laik.nd.back();
+            laik.nd.pop_back();  //Pasaliname egzamina is ND saraso
+        } else {
+            cerr << "nera egamino pazymio eiluteje: " << eilute << endl;
+            continue;
+        }
         grupe.push_back(laik);
     }
     failas.close();

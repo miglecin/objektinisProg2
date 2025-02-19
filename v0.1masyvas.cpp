@@ -76,7 +76,7 @@ while(true)
         else {break;};
     }
     
-    laik.nd=new float[nd_kiekis]; //tikslus dinaminis c masyvas
+    laik.nd=new float[nd_kiekis]; //tikslus c masyvas
     
     cout<<"Iveskite "<<nd_kiekis<<" nd pazymius: " ;
     for (int i=0; i<nd_kiekis; i++)

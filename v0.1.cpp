@@ -64,6 +64,7 @@ void generuotiVardPav(string& vardas, string& pavarde)
     vardas=vardai[rand()%varduKiekis];
     pavarde=pavardes[rand()%pavardziuKiekis];
 }
+
 void nuskaitymasFile(vector<studentas>&grupe, const string& filename)
 {
     ifstream failas(filename);
@@ -95,6 +96,32 @@ void nuskaitymasFile(vector<studentas>&grupe, const string& filename)
     failas.close();
 }
 
+void spausdintiRez(const vector<studentas>& grupe, bool iFaila, char pasirinkimas)
+{
+    ofstream failoIsvedimas;
+    if(iFaila)
+    {
+        failoIsvedimas.open("rezultatai.txt");
+        if (!failoIsvedimas)
+        {
+            cerr<<"nepavyko sukurti failo rezultatams"<<endl;
+            return;
+        }
+    }
+    ostream& out= iFaila ? failoIsvedimas : cout;
+
+    out<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<<((pasirinkimas =='v') ? "Galutinis (Vid.)" : "Galutinis (Med.)")<<endl;
+    out <<"--------------------------------------------------------------"<< endl;
+     
+    for (const auto& stud : grupe) {
+        out<<stud.Vard<<setw(15)<<stud.Pav<<setw(17)<<fixed<<setprecision(2)<<stud.Gal<< endl;
+    }
+    if (iFaila) 
+    {
+        cout<<"Rezultatai issaugoti faile `rezultatai.txt`.\n";
+        failoIsvedimas.close();
+    }
+}
 int main() {
 srand(time(0)); //pradinis seed nustatymas
 
@@ -199,20 +226,13 @@ for (auto& laik : grupe) {
     laik.Gal = pasirinktasGal(laik.nd, laik.egz, pasirinkimas);
 }
 
-if (pasirinkimas=='v')
-{
-    cout<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<< "Galutinis (Vid.)"<<setw(15)<<endl;
-    cout<<"--------------------------------------------"<<endl;
-}
-else 
-{
-    cout<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<< "Galutinis (Med.)"<<setw(15)<<endl;
-    cout<<"--------------------------------------------"<<endl;
-}
- for (auto& a : grupe) 
- {
-    cout<<a.Vard<<setw(15)<<a.Pav<<setw(20)<<fixed<<setprecision(2)<<a.Gal<<endl;
- }
+ char isvedimoPasirinkimas;
+ cout<<"Kur vesti rezultatus?\n [e] - ekrane\n [f] - i faila\n ";
+ cin>>isvedimoPasirinkimas;
+
+ bool iFaila=(isvedimoPasirinkimas=='f');
+ spausdintiRez(grupe, iFaila, pasirinkimas);
+ return 0;
 
 /*for(auto a : grupe)
 {

@@ -77,27 +77,28 @@ void nuskaitymasFile(vector<studentas>&grupe, const string& filename)
     string eilute;
     getline(failas, eilute); //praleidziam pirma eilute
 
-    while (getline(failas, eilute))
+    studentas laik;
+    while(getline(failas, eilute)) //skaito kiekviena eil atskirai
+    
     {
-        stringstream ss(eilute);
-        studentas laik;
+        istringstream ss(eilute); //naudojame string stream tik viena karta eilutei
         ss>>laik.Vard>>laik.Pav;
 
         int paz;
         laik.nd.clear();
 
-         while (ss>>paz) {
-            laik.nd.push_back(paz);
+        vector<float> laikiniPaz; //laikinas vekt pazymiam saugoti
+         while (ss>>paz) 
+        {
+            laikiniPaz.push_back(paz);
         }
 
         //Paskutinis nuskaitytas sk. yra egzamino pazymys
-        if (!laik.nd.empty()) {
-            laik.egz = laik.nd.back();
-            laik.nd.pop_back();  //Pasaliname egzamina is ND saraso
-        } else {
-            cerr << "nera egamino pazymio eiluteje: " << eilute << endl;
-            continue;
-        }
+        if (!laikiniPaz.empty()) {
+            laik.egz = laikiniPaz.back();
+            laikiniPaz.pop_back();  //Pasaliname egzamina is ND saraso
+        } 
+        laik.nd=move(laikiniPaz); //perkeliamia visus pazymius i stud struktura
         grupe.push_back(laik);
     }
     failas.close();

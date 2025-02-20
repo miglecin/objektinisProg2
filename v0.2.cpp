@@ -134,6 +134,30 @@ void spausdintiRez( vector<studentas>& grupe, bool iFaila, char pasirinkimas, ch
     //antra- sursiuoti studentus
     rusiuotiStud(grupe, rusiavimoPas);
     
+    /*stringstream buffer;
+    buffer<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<<((pasirinkimas =='v') ? "Galutinis (Vid.)" : "Galutinis (Med.)")<<endl;
+    buffer<<"--------------------------------------------------------------"<< endl;
+
+    for (const auto& stud : grupe) {
+        buffer<<stud.Vard<<setw(15)<<stud.Pav<<setw(17)<<fixed<<setprecision(2)<<stud.Gal<< endl;
+    }
+    if (iFaila)
+    {
+        ofstream failoIsvedimas("rezultatai.txt");
+        if(!failoIsvedimas)
+        {
+            cerr<<"nepavyko sukurti failo rezultatams";
+            return;
+        }
+        failoIsvedimas<<buffer.str(); //visas sukauptas stringstream i faila
+        failoIsvedimas.close();
+        cout<<"Rezultatai issaugoti faile `rezultatai.txt`.\n";
+    }
+    else
+    {
+        cout<<buffer.str(); //viskas i ekrana
+    }*/
+    
     //pasiruosimas isvesti rez
     ofstream failoIsvedimas;
     if(iFaila)

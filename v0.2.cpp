@@ -134,54 +134,46 @@ void spausdintiRez( vector<studentas>& grupe, bool iFaila, char pasirinkimas, ch
     //antra- sursiuoti studentus
     rusiuotiStud(grupe, rusiavimoPas);
     
-    /*stringstream buffer;
-    buffer<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<<((pasirinkimas =='v') ? "Galutinis (Vid.)" : "Galutinis (Med.)")<<endl;
-    buffer<<"--------------------------------------------------------------"<< endl;
+if (iFaila) //jei i faila
+{
+    vector<string> eilutes; //vektorius ilutems kaupti
+    eilutes.reserve(grupe.size()); //rezervuojam vieta is anksto visiems studentams
 
-    for (const auto& stud : grupe) {
-        buffer<<stud.Vard<<setw(15)<<stud.Pav<<setw(17)<<fixed<<setprecision(2)<<stud.Gal<< endl;
-    }
-    if (iFaila)
+    for(const auto& stud : grupe) //sukaupiam visus rezultatus i vektoriu (kad veliau vienu metu atspausdint)
     {
-        ofstream failoIsvedimas("rezultatai.txt");
-        if(!failoIsvedimas)
+        ostringstream ss; //naudjam ostringstream kad surinktumevisus stud duom i eil
+        ss<<stud.Vard<<setw(20)<<stud.Pav<<setw(17)<<fixed<<setprecision(2)<<stud.Gal<< endl;
+        eilutes.push_back(ss.str()); //irasom suformuota eil i vekt
+    }
+        
+    ofstream failas("rezultatai.txt" );
+     if(!failas)
         {
             cerr<<"nepavyko sukurti failo rezultatams";
             return;
         }
-        failoIsvedimas<<buffer.str(); //visas sukauptas stringstream i faila
-        failoIsvedimas.close();
-        cout<<"Rezultatai issaugoti faile `rezultatai.txt`.\n";
-    }
-    else
-    {
-        cout<<buffer.str(); //viskas i ekrana
-    }*/
-    
-    //pasiruosimas isvesti rez
-    ofstream failoIsvedimas;
-    if(iFaila)
-    {
-        failoIsvedimas.open("rezultatai.txt");
-        if (!failoIsvedimas)
-        {
-            cerr<<"nepavyko sukurti failo rezultatams"<<endl;
-            return;
-        }
-    }
-    ostream& out= iFaila ? failoIsvedimas : cout;
 
-    out<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<<((pasirinkimas =='v') ? "Galutinis (Vid.)" : "Galutinis (Med.)")<<endl;
-    out <<"--------------------------------------------------------------"<< endl;
-     
-    for (const auto& stud : grupe) {
-        out<<stud.Vard<<setw(15)<<stud.Pav<<setw(17)<<fixed<<setprecision(2)<<stud.Gal<< endl;
-    }
-    if (iFaila) 
+    for (const auto& eil : eilutes) //Rašome visas eilutes į failą vienu kartu (taip išvengiame lėto spausdinimo per `<<`)
     {
-        cout<<"Rezultatai issaugoti faile `rezultatai.txt`.\n";
-        failoIsvedimas.close();
+        failas.write(eil.c_str(), eil.size()); //Rašoma tiesiogiai iš `c_str()` į failą
     }
+    failas.close();
+    cout<<"Rezultatai issaugoti faile `rezultatai.txt`.\n";
+}
+else //jei i ekrana
+{
+    //optimizuotas isvedimas i ekrana
+    ostringstream buffer;
+
+    buffer<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<<((pasirinkimas =='v') ? "Galutinis (Vid.)" : "Galutinis (Med.)")<<endl;
+    buffer<<"--------------------------------------------------------------"<< endl;
+
+    for (const auto& stud : grupe) //visi duom i bufferi, kad isvengt leto cout
+    {
+        buffer<<stud.Vard<<setw(15)<<stud.Pav<<setw(17)<<fixed<<setprecision(2)<<stud.Gal<< endl;
+    }
+    std::cout.write(buffer.str().c_str(), buffer.str().size()); //Galutinis `cout.write()`, kuris leidžia išvesti viską iš karto ir pagreitina procesą
+}
 }
 
 int main() {

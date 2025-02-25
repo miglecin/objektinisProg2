@@ -68,27 +68,27 @@ void generuotiVardPav(string& vardas, string& pavarde)
 void nuskaitymasFile(vector<studentas>&grupe, const string& filename)
 {
     ifstream failas(filename);
-    if (!failas) 
+    if (!failas) //patikrinam ar atsidare failas
     {
         cerr<<"nepavyko atidaryti failo!"<<filename<<endl;
         return;
     }
 
     string eilute;
-    getline(failas, eilute); //praleidziam pirma eilute
+    getline(failas, eilute); //praleidziam pirma eilute (antrastes eilute)
 
     studentas laik;
     while(getline(failas, eilute)) //skaito kiekviena eil atskirai
     
     {
-        istringstream ss(eilute); //naudojame string stream tik viena karta eilutei
+        istringstream ss(eilute); //naudojame string stream duom skaitymui is eilutes
         ss>>laik.Vard>>laik.Pav;
 
         int paz;
-        laik.nd.clear();
+        laik.nd.clear(); //isvalom ankstesnius duom is vekt jei ju buvo
 
         vector<float> laikiniPaz; //laikinas vekt pazymiam saugoti
-         while (ss>>paz) 
+         while (ss>>paz) //nuskaitom visus sk is eilutes ir dedam i laikiniPaz
         {
             laikiniPaz.push_back(paz);
         }
@@ -99,7 +99,7 @@ void nuskaitymasFile(vector<studentas>&grupe, const string& filename)
             laikiniPaz.pop_back();  //Pasaliname egzamina is ND saraso
         } 
         laik.nd=move(laikiniPaz); //perkeliamia visus pazymius i stud struktura
-        grupe.push_back(laik);
+        grupe.push_back(laik); //pridedam studenta i studentu sarasa
     }
     failas.close();
 }
@@ -137,7 +137,7 @@ void spausdintiRez( vector<studentas>& grupe, bool iFaila, char pasirinkimas, ch
     
 if (iFaila) //jei i faila
 {
-    vector<string> eilutes; //vektorius ilutems kaupti
+    vector<string> eilutes; //vektorius eilutems kaupti
     eilutes.reserve(grupe.size()); //rezervuojam vieta is anksto visiems studentams
 
     for(const auto& stud : grupe) //sukaupiam visus rezultatus i vektoriu (kad veliau vienu metu atspausdint)
@@ -291,7 +291,7 @@ cin>>rusiavimoPas;
  cout<<"Kur vesti rezultatus?\n [e] - ekrane\n [f] - i faila\n ";
  cin>>isvedimoPasirinkimas;
 
- bool iFaila=(isvedimoPasirinkimas=='f');
+ bool iFaila=(isvedimoPasirinkimas=='f'); //jei f -true, jei e-false
 
  LaikoMatavimas rezultatuIsvedimas("Rezultatu isvedimas");
 rezultatuIsvedimas.pradeti();

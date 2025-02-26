@@ -37,7 +37,16 @@ if (cin.fail() || meniu < 1 || meniu > 5) {
     {
         LaikoMatavimas failoNuskaitymas("Failo nuskaitymas");
         failoNuskaitymas.pradeti();
+    try
+    {
         nuskaitymasFile(grupe, "Studentai100000.txt");
+    } 
+    catch (const std::exception& e)
+    {
+        cerr << "Klaida nuskaitant failą: " << e.what() <<endl;
+        continue;
+    }
+
         failoNuskaitymas.baigti();
         continue;
     }
@@ -119,22 +128,24 @@ cin>>rusiavimoPas;
 
  bool iFaila=(isvedimoPasirinkimas=='f'); //jei f -true, jei e-false
 
- LaikoMatavimas rezultatuIsvedimas("Rezultatu isvedimas");
-rezultatuIsvedimas.pradeti();
- spausdintiRez(grupe, iFaila, pasirinkimas, rusiavimoPas);
-rezultatuIsvedimas.baigti();
+try
+{
+    LaikoMatavimas rezultatuIsvedimas("Rezultatu isvedimas");
+    rezultatuIsvedimas.pradeti();
+    spausdintiRez(grupe, iFaila, pasirinkimas, rusiavimoPas);
+    rezultatuIsvedimas.baigti();
+}
+catch(const std::exception& e)
+{
+    cerr << "Klaida išvedant rezultatus: " << e.what() <<endl;
+}
    
  programa.baigti(); 
 
  return 0;
 
-/*for(auto a : grupe)
-{
-    cout<<a.Vard<<"  "<<a.Pav<<endl;
-}*/
-// g++ -o v0.2 "v0.2.cpp"
-//./v0.2
-//g++ -o v0.2 v0.2.cpp LaikoMatavimas.cpp
-
+//make clean
+//make
+//make run
 
 }

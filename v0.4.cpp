@@ -46,7 +46,13 @@ int main() {
             return 1;
     }
 
+
+    // Laiko matavimas failo kūrimui
+    LaikoMatavimas laikoMatavimasGeneravimas("Failo kūrimas");
+    laikoMatavimasGeneravimas.pradeti();
     generuotiFaila(skaicius, aplankas); //Sugeneruoti faila su studentu duom
+    laikoMatavimasGeneravimas.baigti();
+
     vector<studentas> grupe;
     nuskaitymasFile(grupe, aplankas + "/studentai_" + std::to_string(skaicius) + ".txt"); //nuskaityti studentus is sugeneruoto failo
     

@@ -5,8 +5,15 @@
 #include "generuoti_failus.h"
 
 int main() {
-    string aplankas = "test_files"; // Nurodykite norimą aplanką, kurioje bus saugomi failai
-    
+    string aplankas="test_files"; //aplankas, kur saugomi sugeneruoti failai
+    string rezultataiAplankas = "rezultatai"; //Aplankas kur saugomi rezultatai
+
+      //sukuriame aplanka 'rezultatai', jei jis neegzistuoja
+      if (!std::filesystem::exists(rezultataiAplankas)) 
+      {
+        std::filesystem::create_directory(rezultataiAplankas);
+      }
+
     int skaicius;
     int pasirinktasDydis;
     cout << "Pasirinkite failo dydį:\n";
@@ -35,15 +42,15 @@ int main() {
             skaicius = 10000000;
             break;
         default:
-            std::cout << "Neteisingas pasirinkimas. Baigiamas darbas." << std::endl;
+           cout<< "Neteisingas pasirinkimas"<<endl;
             return 1;
     }
 
-    generuotiFaila(skaicius, aplankas); // Sugeneruoti failą su studentų duomenimis
+    generuotiFaila(skaicius, aplankas); //Sugeneruoti faila su studentu duom
     vector<studentas> grupe;
-    nuskaitymasFile(grupe, aplankas + "/studentai_" + to_string(skaicius) + ".txt"); // Nuskaityti studentus iš sugeneruoto failo
+    nuskaitymasFile(grupe, aplankas + "/studentai_" + std::to_string(skaicius) + ".txt"); //nuskaityti studentus is sugeneruoto failo
     
-    // Vartotojo pasirinkimas dėl galutinio balo skaičiavimo
+
     char pasirinkimas;
     cout << "Koki metoda renkates gal. balui skaiciuoti?\n";
     cout << " [v] - vidurki\n [m] - mediana\n";
@@ -53,35 +60,36 @@ int main() {
         cin >> pasirinkimas;
     }
 
-    // Skaičiuojame galutinį balą pagal pasirinkimą
+    //galutinis balas pagal pasirinkima
     for (auto& stud : grupe) {
-        stud.Gal = pasirinktasGal(stud.nd, stud.egz, pasirinkimas);
+        stud.Gal=pasirinktasGal(stud.nd, stud.egz, pasirinkimas);
     }
 
-    // Rūšiuojame studentus pagal galutinį balą
-    rusiuotiStud(grupe, 'g');  // Studentus rūšiuos pagal galutinį balą (kietiakiai - pirmiausiai, vargšai - vėliau)
+    //rusiuoja pagal gal bal
+    rusiuotiStud(grupe, 'g');  //surusiuoti (kietiakai-pirmiausiai, vargsai-veliau)
     
-    // Skirstome studentus į dvi grupes
-    vector<studentas> vargsiai, kietiakiai;
+    //i dvi grupes
+    vector<studentas> vargsiai, kietiakai;
     
-    // Suskirstome studentus pagal galutinį balą
+    //pagal galutini bala
     for (auto& stud : grupe) {
-        if (stud.Gal < 5.0) {
-            vargsiai.push_back(stud); // Studentai, kurių galutinis balas mažesnis nei 5
+        if (stud.Gal<5.0) {
+            vargsiai.push_back(stud); 
         } else {
-            kietiakiai.push_back(stud); // Studentai, kurių galutinis balas 5 ar daugiau
+            kietiakai.push_back(stud); 
         }
     }
     
-    // Išvedame vargšus į failą
-    string vargsiuFailas = aplankas + "/vargsiai_" + to_string(skaicius) + ".txt";
-    spausdintiRez(vargsiai, true, pasirinkimas, 'g', vargsiuFailas);
+    //isveda vargsus
+    string vargsiuFailas=rezultataiAplankas + "/vargsiai_" + std::to_string(skaicius) + ".txt";
+    spausdintiRez(vargsiai, true, pasirinkimas, vargsiuFailas);
     
-    // Išvedame kietiakus į failą
-    string kietiakiuFailas = aplankas + "/kietiakiai_" + to_string(skaicius) + ".txt";
-    spausdintiRez(kietiakiai, true, pasirinkimas, 'g', kietiakiuFailas);
+
+    //isveda kietiakus
+    string kietiakuFailas=rezultataiAplankas + "/kietiakiai_" + std::to_string(skaicius) + ".txt";
+    spausdintiRez(kietiakai, true, pasirinkimas, kietiakuFailas);
     
-    cout << "Studentai išskaidyti į 2 failus: " << vargsiuFailas << " ir " << kietiakiuFailas << endl;
+    cout<<"Studentai iskaidyti i 2 failus: "<<vargsiuFailas<<" ir "<<kietiakuFailas<<endl;
 
     return 0;
 }

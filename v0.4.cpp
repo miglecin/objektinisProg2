@@ -6,7 +6,7 @@
 
 int main() {
     string aplankas="test_files"; //aplankas, kur saugomi sugeneruoti failai
-    string rezultataiAplankas = "rezultatai"; //Aplankas kur saugomi rezultatai
+    string rezultataiAplankas="rezultatai"; //aplankas kur saugomi rezultatai
 
       //sukuriame aplanka 'rezultatai', jei jis neegzistuoja
       if (!std::filesystem::exists(rezultataiAplankas)) 
@@ -47,7 +47,7 @@ int main() {
     }
 
 
-    // Laiko matavimas failo kūrimui
+    //Laiko matavimas failo kurimui
     LaikoMatavimas laikoMatavimasGeneravimas("Failo kūrimas");
     laikoMatavimasGeneravimas.pradeti();
     generuotiFaila(skaicius, aplankas); //Sugeneruoti faila su studentu duom
@@ -71,9 +71,12 @@ int main() {
         stud.Gal=pasirinktasGal(stud.nd, stud.egz, pasirinkimas);
     }
 
-    //rusiuoja pagal gal bal
+
     rusiuotiStud(grupe, 'g');  //surusiuoti (kietiakai-pirmiausiai, vargsai-veliau)
     
+
+    /*LaikoMatavimas laikoMatavimasRusiavimui("Studentų rūšiavimas");
+    laikoMatavimasRusiavimui.pradeti();*/
     //i dvi grupes
     vector<studentas> vargsiai, kietiakai;
     
@@ -85,7 +88,8 @@ int main() {
             kietiakai.push_back(stud); 
         }
     }
-    
+    //laikoMatavimasRusiavimui.baigti();
+
     //isveda vargsus
     string vargsiuFailas=rezultataiAplankas + "/vargsiai_" + std::to_string(skaicius) + ".txt";
     spausdintiRez(vargsiai, true, pasirinkimas, vargsiuFailas);

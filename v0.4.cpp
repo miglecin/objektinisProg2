@@ -46,15 +46,18 @@ int main() {
             return 1;
     }*/
 
-    // Naudokite jau sugeneruotus failus, kurie yra aplanke 'test_files'
-    skaicius = 1000; 
-
-
     //Laiko matavimas failo kurimui
    /* LaikoMatavimas laikoMatavimasGeneravimas("Failo kūrimas");
     laikoMatavimasGeneravimas.pradeti();
     generuotiFaila(skaicius, aplankas); //Sugeneruoti faila su studentu duom
     laikoMatavimasGeneravimas.baigti();*/
+
+    // Naudokite jau sugeneruotus failus, kurie yra aplanke 'test_files'
+    skaicius = 1000; 
+
+    // Laiko matavimas visai programai
+    LaikoMatavimas visoLaikoMatavimas("Visos programos laikas");
+    visoLaikoMatavimas.pradeti();
 
     vector<studentas> grupe;
     nuskaitymasFile(grupe, aplankas + "/studentai_" + std::to_string(skaicius) + ".txt"); //nuskaityti studentus is sugeneruoto failo
@@ -86,7 +89,7 @@ int main() {
     rusiuotiStud(grupe, 'g');  //surusiuoti (kietiakai-pirmiausiai, vargsai-veliau)
     
 
-    LaikoMatavimas laikoMatavimasRusiavimui("Studentų rūšiavimas");
+    LaikoMatavimas laikoMatavimasRusiavimui("Studentu rusiavimas");
     laikoMatavimasRusiavimui.pradeti();
     //i dvi grupes
     vector<studentas> vargsiai, kietiakai;
@@ -102,19 +105,24 @@ int main() {
     laikoMatavimasRusiavimui.baigti();
 
 
-    LaikoMatavimas laikoMatavimasIsvedimuiVargsai("Vargsu Rezultatų išvedimas");
+    LaikoMatavimas laikoMatavimasIsvedimuiVargsai("Vargsu rezultatu isvedimas");
     laikoMatavimasIsvedimuiVargsai.pradeti();
     //isveda vargsus
     string vargsiuFailas=rezultataiAplankas + "/vargsiai_" + std::to_string(skaicius) + ".txt";
     spausdintiRez(vargsiai, true, pasirinkimas, vargsiuFailas);
     laikoMatavimasIsvedimuiVargsai.baigti();
 
+    LaikoMatavimas laikoMatavimasIsvedimuiKietiakai("Kietiaku rezultatu isvedimas");
+    laikoMatavimasIsvedimuiKietiakai.pradeti();
     //isveda kietiakus
     string kietiakuFailas=rezultataiAplankas + "/kietiakiai_" + std::to_string(skaicius) + ".txt";
     spausdintiRez(kietiakai, true, pasirinkimas, kietiakuFailas);
-    
+    laikoMatavimasIsvedimuiKietiakai.baigti();
+
     cout<<"Studentai iskaidyti i 2 failus: "<<vargsiuFailas<<" ir "<<kietiakuFailas<<endl;
 
-    //laikoMatavimasIsvedimui.baigti();
+
+    visoLaikoMatavimas.baigti();
     return 0;
 }
+

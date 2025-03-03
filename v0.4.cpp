@@ -52,8 +52,8 @@ int main() {
     generuotiFaila(skaicius, aplankas); //Sugeneruoti faila su studentu duom
     laikoMatavimasGeneravimas.baigti();*/
 
-    // Naudokite jau sugeneruotus failus, kurie yra aplanke 'test_files'
-    skaicius = 1000; 
+    //is jau sugeneruotu failu
+    skaicius = 10000000; 
 
     // Laiko matavimas visai programai
     LaikoMatavimas visoLaikoMatavimas("Visos programos laikas");
@@ -125,4 +125,3 @@ int main() {
     visoLaikoMatavimas.baigti();
     return 0;
 }
-

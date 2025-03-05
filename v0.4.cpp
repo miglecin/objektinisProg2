@@ -3,10 +3,11 @@
 #include "sufailais.h"
 #include "LaikoMatavimas.h"
 #include "generuoti_failus.h"
+#include "tyrimas1.h"
 
 int main() {
     string aplankas="test_files"; //aplankas, kur saugomi sugeneruoti failai
-    string rezultataiAplankas="rezultatai"; //aplankas kur saugomi rezultatai
+    string rezultataiAplankas = "rezultatai"; //Aplankas kur saugomi rezultatai
 
       //sukuriame aplanka 'rezultatai', jei jis neegzistuoja
       if (!std::filesystem::exists(rezultataiAplankas)) 
@@ -16,7 +17,7 @@ int main() {
 
     int skaicius;
     int pasirinktasDydis;
-    /*cout << "Pasirinkite failo dydį:\n";
+    cout << "Pasirinkite failo dydį:\n";
     cout << "1 - 1000 studentų\n";
     cout << "2 - 10000 studentų\n";
     cout << "3 - 100000 studentų\n";
@@ -44,31 +45,15 @@ int main() {
         default:
            cout<< "Neteisingas pasirinkimas"<<endl;
             return 1;
-    }*/
+    }
 
-    //Laiko matavimas failo kurimui
-   /* LaikoMatavimas laikoMatavimasGeneravimas("Failo kūrimas");
-    laikoMatavimasGeneravimas.pradeti();
-    generuotiFaila(skaicius, aplankas); //Sugeneruoti faila su studentu duom
-    laikoMatavimasGeneravimas.baigti();*/
 
-    //is jau sugeneruotu failu
-    skaicius = 10000000; 
-
-    // Laiko matavimas visai programai
-    LaikoMatavimas visoLaikoMatavimas("Visos programos laikas");
-    visoLaikoMatavimas.pradeti();
+    // Laiko matavimas failo kūrimui
+    testuotiFailoGeneravima(skaicius, aplankas);
 
     vector<studentas> grupe;
     nuskaitymasFile(grupe, aplankas + "/studentai_" + std::to_string(skaicius) + ".txt"); //nuskaityti studentus is sugeneruoto failo
-   
-    // Laiko matavimas failo nuskaitymui
-    LaikoMatavimas laikoMatavimasNuskaitymui("Failo nuskaitymas");
-    laikoMatavimasNuskaitymui.pradeti();
-    nuskaitymasFile(grupe, aplankas + "/studentai_" + std::to_string(skaicius) + ".txt");  // Nuskaityti studentus iš jau sugeneruoto failo
-    laikoMatavimasNuskaitymui.baigti();
 
-    
 
     char pasirinkimas;
     cout << "Koki metoda renkates gal. balui skaiciuoti?\n";
@@ -79,21 +64,17 @@ int main() {
         cin >> pasirinkimas;
     }
 
-    
-    for (auto& stud : grupe)  //galutinis balas pagal pasirinkima
-    {
+    //galutinis balas pagal pasirinkima
+    for (auto& stud : grupe) {
         stud.Gal=pasirinktasGal(stud.nd, stud.egz, pasirinkimas);
     }
 
-
+    //rusiuoja pagal gal bal
     rusiuotiStud(grupe, 'g');  //surusiuoti (kietiakai-pirmiausiai, vargsai-veliau)
-    
 
-    LaikoMatavimas laikoMatavimasRusiavimui("Studentu rusiavimas");
-    laikoMatavimasRusiavimui.pradeti();
     //i dvi grupes
     vector<studentas> vargsiai, kietiakai;
-    
+
     //pagal galutini bala
     for (auto& stud : grupe) {
         if (stud.Gal<5.0) {
@@ -102,26 +83,17 @@ int main() {
             kietiakai.push_back(stud); 
         }
     }
-    laikoMatavimasRusiavimui.baigti();
 
-
-    LaikoMatavimas laikoMatavimasIsvedimuiVargsai("Vargsu rezultatu isvedimas");
-    laikoMatavimasIsvedimuiVargsai.pradeti();
     //isveda vargsus
     string vargsiuFailas=rezultataiAplankas + "/vargsiai_" + std::to_string(skaicius) + ".txt";
     spausdintiRez(vargsiai, true, pasirinkimas, vargsiuFailas);
-    laikoMatavimasIsvedimuiVargsai.baigti();
 
-    LaikoMatavimas laikoMatavimasIsvedimuiKietiakai("Kietiaku rezultatu isvedimas");
-    laikoMatavimasIsvedimuiKietiakai.pradeti();
+
     //isveda kietiakus
     string kietiakuFailas=rezultataiAplankas + "/kietiakiai_" + std::to_string(skaicius) + ".txt";
     spausdintiRez(kietiakai, true, pasirinkimas, kietiakuFailas);
-    laikoMatavimasIsvedimuiKietiakai.baigti();
 
     cout<<"Studentai iskaidyti i 2 failus: "<<vargsiuFailas<<" ir "<<kietiakuFailas<<endl;
 
-
-    visoLaikoMatavimas.baigti();
     return 0;
 }

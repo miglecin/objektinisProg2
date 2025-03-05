@@ -1,73 +1,40 @@
 # objektinisProg
-PIRMAS TYRIMAS: FAIILŲ KŪRIMO SPARTA
+APRAŠYMAS:
 
-Pasirinkimas: 1
-Sugeneruotas failas: test_files/studentai_1000.txt
----> Failo kūrimas uztruko: 8.42486 ms
+Ši programa generuoja studentų duomenų failus ir atlieka jų apdorojimą: studentų rūšiavimą į dvi grupes pagal jų galutinį balą. Testavimai buvo atlikti su skirtingo dydžio failais, siekiant įvertinti programos našumą.
 
-Pasirinkimas: 2
-Sugeneruotas failas: test_files/studentai_10000.txt
----> Failo kūrimas uztruko: 63.9927 ms
 
-Pasirinkimas: 3
-Sugeneruotas failas: test_files/studentai_100000.txt
----> Failo kūrimas uztruko: 563.719 ms
 
-Pasirinkimas: 4
-Sugeneruotas failas: test_files/studentai_1000000.txt
----> Failo kūrimas uztruko: 5461 ms
 
-Pasirinkimas: 5
-Sugeneruotas failas: test_files/studentai_10000000.txt
----> Failo kūrimas uztruko: 55465.6 ms
+PIRMAS TYRIMAS: 
+FAIILŲ KŪRIMO SPARTA
 
-ANTRAS TYRIMAS: DUOMENŲ APDOROJIMO SPARTA
+Buvo išmatuotas laikas, per kurį sugeneruojami studentų sąrašų failai su atitinkamais dydžiais.
 
-studentai1000.cpp
----> Failo nuskaitymas uztruko: 2.555 ms
+<img width="573" alt="Screenshot 2025-03-05 at 17 18 42" src="https://github.com/user-attachments/assets/fa7615cf-3011-495f-a5b5-dc759f8cafbd" />
 
----> Studentu rusiavimas uztruko: 0.347926 ms
----> Vargsu rezultatu isvedimas uztruko: 1.68997 ms
----> Kietiaku rezultatu isvedimas uztruko: 1.77084 ms
+VIDUTINIAI laikai visiems failų dydžiams:
 
----> Visos programos laikas uztruko: 1444.89 ms
+<img width="434" alt="Screenshot 2025-03-05 at 17 02 11" src="https://github.com/user-attachments/assets/bae8d498-fe87-4c77-8a45-d5a7eaf5505f" />
 
---------------------------------------------------------
-studentai10000.cpp
----> Failo nuskaitymas uztruko: 23.987 ms
 
----> Studentu rusiavimas uztruko: 2.53006 ms
----> Vargsu rezultatu isvedimas uztruko: 12.3959 ms
----> Kietiaku rezultatu isvedimas uztruko: 15.0931 ms
 
----> Visos programos laikas uztruko: 1999.61 ms
+ANTRAS TYRIMAS:
+DUOMENŲ APDOROJIMO SPARTA
 
---------------------------------------------------------
-studentai100000.cpp
----> Failo nuskaitymas uztruko: 180.101 ms
+Buvo išmatuotas duomenų nuskaitymo iš failo, studentų rūšiavimo bei rezultatų išvedimo į naujus failus laikas.
 
----> Studentu rusiavimas uztruko: 38.3712 ms
----> Vargsu rezultatu isvedimas uztruko: 85.6543 ms
----> Kietiaku rezultatu isvedimas uztruko: 110.35 ms
+<img width="935" alt="Screenshot 2025-03-05 at 17 25 05" src="https://github.com/user-attachments/assets/feca95ed-a9ca-4737-a67b-0a35ea69c44d" />
 
----> Visos programos laikas uztruko: 3018.51 ms
+<img width="935" alt="Screenshot 2025-03-05 at 17 25 38" src="https://github.com/user-attachments/assets/3274a0bf-edc3-4d02-a275-83c47a4682bc" />
 
---------------------------------------------------------
-studentai1000000.cpp
----> Failo nuskaitymas uztruko: 1783.03 ms
+VIDUTINIAI laikai:
 
----> Studentu rusiavimas uztruko: 441.13 ms
----> Vargsu rezultatu isvedimas uztruko: 792.516 ms
----> Kietiaku rezultatu isvedimas uztruko: 1327.55 ms
+<img width="482" alt="Screenshot 2025-03-05 at 17 30 27" src="https://github.com/user-attachments/assets/a9586448-74db-4789-80dc-0be06c6abb23" />
+<img width="482" alt="Screenshot 2025-03-05 at 17 30 38" src="https://github.com/user-attachments/assets/68357030-2534-4ba9-9340-26e1837b5aa5" />
+<img width="482" alt="Screenshot 2025-03-05 at 17 30 46" src="https://github.com/user-attachments/assets/1ce5bb2f-1ce5-471c-a228-067a195694ad" />
+<img width="482" alt="Screenshot 2025-03-05 at 17 30 53" src="https://github.com/user-attachments/assets/cc2a93fc-b07e-4ed4-8d04-82ee0f7f96b9" />
+<img width="482" alt="Screenshot 2025-03-05 at 17 31 07" src="https://github.com/user-attachments/assets/3d2230c7-aaf2-43a6-be22-1be2f55a4509" />
 
----> Visos programos laikas uztruko: 9032.59 ms
 
---------------------------------------------------------
-studentai10000000.cpp
----> Failo nuskaitymas uztruko: 18273.9 ms
 
----> Studentu rusiavimas uztruko: 4995.65 ms
----> Vargsu rezultatu isvedimas uztruko: 7314.45 ms
----> Kietiaku rezultatu isvedimas uztruko: 10885.3 ms
-
----> Visos programos laikas uztruko: 64965 ms

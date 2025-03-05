@@ -33,10 +33,10 @@ using std::stringstream;
 using std::numeric_limits;
 using std::streamsize;
 using namespace std::chrono;
-std::stringstream buffer;
 using std::ostringstream;
 using std::istringstream;
 using std::move;
+extern std::stringstream buffer;
 
 //using namespace std;
 

@@ -1,6 +1,7 @@
 #include "rikiavimas.h"
 #include "sufailais.h"
 
+
 void nuskaitymasFile(vector<studentas>&grupe, const string& filename)
 {
     ifstream failas(filename);
@@ -40,7 +41,7 @@ void nuskaitymasFile(vector<studentas>&grupe, const string& filename)
     failas.close();
 }
 
-void spausdintiRez( vector<studentas>& grupe, bool iFaila, char pasirinkimas, char rusiavimoPas)
+void spausdintiRez(vector<studentas>& grupe, bool iFaila, char pasirinkimas, const string& failoPavadinimas)
 {
     //pirma- apskaiciuoti galutinius balus
     for (auto& stud : grupe) 
@@ -49,7 +50,7 @@ void spausdintiRez( vector<studentas>& grupe, bool iFaila, char pasirinkimas, ch
     }
 
     //antra- sursiuoti studentus
-    rusiuotiStud(grupe, rusiavimoPas);
+    rusiuotiStud(grupe, 'g');
     
 if (iFaila) //jei i faila
 {
@@ -63,10 +64,9 @@ if (iFaila) //jei i faila
         eilutes.push_back(ss.str()); //irasom suformuota eil i vekt
     }
         
-    ofstream failas("rezultatai.txt" );
-     if(!failas)
-        {
-            cerr<<"nepavyko sukurti failo rezultatams";
+    ofstream failas(failoPavadinimas);
+        if (!failas) {
+            cerr << "Nepavyko sukurti failo: " << failoPavadinimas << endl;
             return;
         }
 
@@ -75,8 +75,8 @@ if (iFaila) //jei i faila
         failas.write(eil.c_str(), eil.size()); //Rašoma tiesiogiai iš `c_str()` į failą
     }
     failas.close();
-    cout<<"Rezultatai issaugoti faile `rezultatai.txt`.\n";
-}
+    cout<<"Rezultatai issaugoti faile" << failoPavadinimas << "`.\n";
+    }
 else //jei i ekrana
 {
     //optimizuotas isvedimas i ekrana

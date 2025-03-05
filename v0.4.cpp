@@ -4,6 +4,7 @@
 #include "LaikoMatavimas.h"
 #include "generuoti_failus.h"
 #include "tyrimas1.h"
+#include "tyrimas2.h"
 
 int main() {
     string aplankas="test_files"; //aplankas, kur saugomi sugeneruoti failai
@@ -15,7 +16,7 @@ int main() {
         std::filesystem::create_directory(rezultataiAplankas);
       }
 
-    int skaicius;
+    /*int skaicius;
     int pasirinktasDydis;
     cout << "Pasirinkite failo dydį:\n";
     cout << "1 - 1000 studentų\n";
@@ -45,55 +46,15 @@ int main() {
         default:
            cout<< "Neteisingas pasirinkimas"<<endl;
             return 1;
-    }
+    }*/
 
 
-    // Laiko matavimas failo kūrimui
-    testuotiFailoGeneravima(skaicius, aplankas);
+    //laiko matavimas failo kūrimui
+    //testuotiFailoGeneravima(skaicius, aplankas);
 
-    vector<studentas> grupe;
-    nuskaitymasFile(grupe, aplankas + "/studentai_" + std::to_string(skaicius) + ".txt"); //nuskaityti studentus is sugeneruoto failo
-
-
-    char pasirinkimas;
-    cout << "Koki metoda renkates gal. balui skaiciuoti?\n";
-    cout << " [v] - vidurki\n [m] - mediana\n";
-    cin >> pasirinkimas;
-    while (pasirinkimas != 'v' && pasirinkimas != 'm') {
-        cout << "Neteisingas pasirinkimas! Įveskite v arba m: ";
-        cin >> pasirinkimas;
-    }
-
-    //galutinis balas pagal pasirinkima
-    for (auto& stud : grupe) {
-        stud.Gal=pasirinktasGal(stud.nd, stud.egz, pasirinkimas);
-    }
-
-    //rusiuoja pagal gal bal
-    rusiuotiStud(grupe, 'g');  //surusiuoti (kietiakai-pirmiausiai, vargsai-veliau)
-
-    //i dvi grupes
-    vector<studentas> vargsiai, kietiakai;
-
-    //pagal galutini bala
-    for (auto& stud : grupe) {
-        if (stud.Gal<5.0) {
-            vargsiai.push_back(stud); 
-        } else {
-            kietiakai.push_back(stud); 
-        }
-    }
-
-    //isveda vargsus
-    string vargsiuFailas=rezultataiAplankas + "/vargsiai_" + std::to_string(skaicius) + ".txt";
-    spausdintiRez(vargsiai, true, pasirinkimas, vargsiuFailas);
-
-
-    //isveda kietiakus
-    string kietiakuFailas=rezultataiAplankas + "/kietiakiai_" + std::to_string(skaicius) + ".txt";
-    spausdintiRez(kietiakai, true, pasirinkimas, kietiakuFailas);
-
-    cout<<"Studentai iskaidyti i 2 failus: "<<vargsiuFailas<<" ir "<<kietiakuFailas<<endl;
+    int skaicius=10000000;
+    //laiko matavimas 2 tyrimui
+    testuotiDuomenuApdorojima(skaicius, aplankas, rezultataiAplankas);
 
     return 0;
 }

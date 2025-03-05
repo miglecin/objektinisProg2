@@ -1,4 +1,5 @@
-#include "1darboHeaderisVect.h"
+#include "studentas.h"
+//std::stringstream buffer;
 
 double generuotiGalvid( vector<float>&nd, int egz)
 {

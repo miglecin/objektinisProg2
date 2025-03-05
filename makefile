@@ -1,44 +1,26 @@
-# Makefile projektui
+# Kompiliatorius ir vėliavėlės
+CC = g++
+CFLAGS = -std=c++17 -Wall -Wextra -pedantic -O2 -Iinclude
+LDFLAGS = -std=c++17
 
-# Kompiliatorius ir flag'ai
-CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra -pedantic -O2 -Iinclude
+# Šaltinio failai
+SRC = v0.4.cpp generuoti_failus.cpp LaikoMatavimas.cpp rikiavimas.cpp sufailais.cpp studentas.cpp tyrimas1.cpp tyrimas2.cpp
+OBJ = $(SRC:.cpp=.o)
 
-# Katalogai
-SRC_DIR = .
-OBJ_DIR = obj
-BIN_DIR = bin
+# Vykdomasis failas
+BIN = bin/v0.4
 
-# Failai
-SRCS = $(SRC_DIR)/v0.3.cpp \
-       $(SRC_DIR)/studentas.cpp \
-       $(SRC_DIR)/rikiavimas.cpp \
-       $(SRC_DIR)/sufailais.cpp \
-       $(SRC_DIR)/LaikoMatavimas.cpp
+all: $(BIN)
 
-OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
+$(BIN): $(OBJ)
+	mkdir -p bin
+	$(CC) $(LDFLAGS) -o $(BIN) $(OBJ)
 
-TARGET = $(BIN_DIR)/programa
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
-# Numatytoji taisyklė
-all: $(TARGET)
+run: $(BIN)
+	./$(BIN)
 
-# Sukuria bin ir obj katalogus, jei jų nėra
-$(BIN_DIR) $(OBJ_DIR):
-	mkdir -p $@
-
-# Kompiliacija
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
-
-# Galutinės programos sujungimas
-$(TARGET): $(BIN_DIR) $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET)
-
-# Paleidimas
-run: $(TARGET)
-	./$(TARGET)
-
-# Išvalymas
 clean:
-	rm -rf $(OBJ_DIR) $(BIN_DIR)
+	rm -rf obj bin

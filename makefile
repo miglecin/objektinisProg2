@@ -1,26 +1,36 @@
-# Kompiliatorius ir vėliavėlės
-CC = g++
-CFLAGS = -std=c++17 -Wall -Wextra -pedantic -O2 -Iinclude
-LDFLAGS = -std=c++17
+# Kompiliatorius ir flagai
+CXX = g++
+CXXFLAGS = -std=c++17 -Wall -Wextra -pedantic -O2
 
-# Šaltinio failai
-SRC = v0.4.cpp generuoti_failus.cpp LaikoMatavimas.cpp rikiavimas.cpp sufailais.cpp studentas.cpp tyrimas1.cpp tyrimas2.cpp
-OBJ = $(SRC:.cpp=.o)
+# Aplankai
+OBJ_DIR = obj
+BIN_DIR = bin
 
-# Vykdomasis failas
-BIN = bin/v0.4
+# Pagrindiniai failai (BE `src/`)
+SOURCES = v1.cpp studentas.cpp sufailais.cpp rikiavimas.cpp tyrimas3.cpp LaikoMatavimas.cpp
+HEADERS = studentas.h sufailais.h rikiavimas.h tyrimas3.h
+OBJECTS = $(patsubst %.cpp, $(OBJ_DIR)/%.o, $(SOURCES))
 
-all: $(BIN)
+# Programos pavadinimas
+EXECUTABLE = $(BIN_DIR)/v1
 
-$(BIN): $(OBJ)
-	mkdir -p bin
-	$(CC) $(LDFLAGS) -o $(BIN) $(OBJ)
+# Tikrina, ar egzistuoja aplankai
+$(shell mkdir -p $(OBJ_DIR) $(BIN_DIR))
 
-%.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+# Kompiliavimas
+$(EXECUTABLE): $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
-run: $(BIN)
-	./$(BIN)
+# Atitinkamų `.o` failų generavimas
+$(OBJ_DIR)/%.o: %.cpp $(HEADERS)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+# Paleidimo komanda
+run: $(EXECUTABLE)
+	./$(EXECUTABLE)
+
+# Valymo komandos
 clean:
-	rm -rf obj bin
+	rm -rf $(OBJ_DIR)/*.o $(EXECUTABLE)
+
+rebuild: clean $(EXECUTABLE)

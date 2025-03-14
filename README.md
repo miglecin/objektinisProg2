@@ -37,4 +37,30 @@ VIDUTINIAI laikai:
 <img width="482" alt="Screenshot 2025-03-05 at 17 31 07" src="https://github.com/user-attachments/assets/3d2230c7-aaf2-43a6-be22-1be2f55a4509" />
 
 
+TYRIMAS 3:
+
+<img width="682" alt="Screenshot 2025-03-14 at 17 04 24" src="https://github.com/user-attachments/assets/37c7f9f4-1552-49c8-8f85-ff878345b34e" />
+
+Pastebėjimai:
+
+Failo nuskaitymas:
+Visi konteineriai panašiai skaito failą, tačiau DEQUE šiek tiek lėtesnis didesniems duomenų kiekiams.
+
+Studentų rūšiavimas:
+VECTOR yra žymiai greitesnis rūšiuojant studentus.
+LIST ir DEQUE rūšiuoja lėčiau, ypač didėjant duomenų kiekiui.
+
+Studentų skirstymas į grupes:
+VECTOR ir LIST yra žymiai efektyvesni skirstant studentus į grupes.
+DEQUE skirstymas į grupes yra labai lėtas, ypač didesniems duomenų kiekiams, ir yra mažiausiai efektyvus konteineris šiai operacijai.
+
+Išvados:
+
+VECTOR konteineris yra efektyviausias visose trijose operacijose, ypač rūšiavimo ir skirstymo į grupes atžvilgiu.
+
+LIST konteineris yra geras pasirinkimas, jei reikia dažnai įterpti arba ištrinti elementus, bet rūšiavimas ir skirstymas į grupes yra lėtesni nei su VECTOR.
+
+DEQUE konteineris yra mažiausiai efektyvus šiam konkrečiam atveju, ypač skirstymo į grupes operacijai.
+
+
 

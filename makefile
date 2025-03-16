@@ -3,12 +3,13 @@ CXX = g++
 CXXFLAGS = -std=c++17 -Wall -Wextra -pedantic -O2
 
 # Aplankai
+SRC_DIR = src
 OBJ_DIR = obj
 BIN_DIR = bin
 
-# Pagrindiniai failai (BE `src/`)
-SOURCES = v1.cpp studentas.cpp sufailais.cpp rikiavimas.cpp tyrimas3.cpp LaikoMatavimas.cpp
-HEADERS = studentas.h sufailais.h rikiavimas.h tyrimas3.h
+# Pagrindiniai failai
+SOURCES = v1.cpp studentas.cpp sufailais.cpp rikiavimas.cpp tyrimas3.cpp tyrimas4.cpp LaikoMatavimas.cpp
+HEADERS = studentas.h sufailais.h rikiavimas.h tyrimas3.h tyrimas4.h LaikoMatavimas.h
 OBJECTS = $(patsubst %.cpp, $(OBJ_DIR)/%.o, $(SOURCES))
 
 # Programos pavadinimas
@@ -34,3 +35,4 @@ clean:
 	rm -rf $(OBJ_DIR)/*.o $(EXECUTABLE)
 
 rebuild: clean $(EXECUTABLE)
+

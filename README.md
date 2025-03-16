@@ -2,9 +2,9 @@
 # Studentų duomenų apdorojimo greičio testai
 
 Šis projektas testuoja studentų duomenų apdorojimo spartą naudojant tris skirtingus konteinerius:  
-- `std::vector`
-- `std::list`
-- `std::deque`
+- `vector`
+- `list`
+- `deque`
 
 Testuojami trys pagrindiniai veiksmai:
 1. **Failo nuskaitymas** – kiek laiko užtrunka įkelti duomenis į konteinerį.

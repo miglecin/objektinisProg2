@@ -60,4 +60,48 @@ LIST konteineris yra geras pasirinkimas, jei reikia dažnai įterpti arba ištri
 DEQUE konteineris yra mažiausiai efektyvus šiam konkrečiam atveju, ypač skirstymo į grupes operacijai.
 
 
+## 1 STRATEGIJOS TYRIMAS
+
+## REZULTATAI:
+<img width="662" alt="Screenshot 2025-03-16 at 19 34 05" src="https://github.com/user-attachments/assets/0406f181-726e-44d7-bfe1-3a1d977784fc" />
+
+## Pastebėjimai
+
+### Failo nuskaitymas:
+- Visi konteineriai panašiai skaito failą, tačiau `DEQUE` yra pastebimai lėčiausias didėjant duomenų kiekiui.
+
+### Studentų rūšiavimas:
+- `VECTOR` yra greičiausias rūšiuojant studentus.  
+- `LIST` ir `DEQUE` rūšiuoja lėčiau, ypač didėjant duomenų kiekiui.
+
+### Studentų skirstymas į grupes:
+- `VECTOR` ir `LIST` yra daug efektyvesni skirstant studentus į grupes.  
+- `DEQUE` skirstymas į grupes yra labai lėtas, ypač didesniems duomenų kiekiams.
+
+---
+
+## Išvados
+
+- **`VECTOR`** yra efektyviausias konteineris visose trijose operacijose, ypač rūšiuojant ir skirstant į grupes.  
+- **`LIST`** yra geras pasirinkimas, jei reikia dažnai įterpti arba ištrinti elementus, bet rūšiavimas ir skirstymas į grupes yra lėtesni nei su `VECTOR`.  
+- **`DEQUE`** yra mažiausiai efektyvus pasirinkimas, ypač skirstant studentus į grupes, kur jo veikimo laikas yra ženkliai didesnis nei kitų dviejų konteinerių.
+
+---
+
+## Atminties naudojimo efektyvumas
+
+Kadangi pirmoje strategijoje studentai yra dviejuose konteineriuose (bendrame ir vienoje iš grupių), atminties naudojimas yra neefektyvus.  
+- Kiekvienas studentas egzistuoja du kartus, todėl naudojama dvigubai daugiau atminties nei būtų optimizuotame variante.  
+- Tai ypač pastebima didėjant studentų skaičiui – kuo daugiau įrašų, tuo daugiau nereikalingos atminties sunaudojama.
+
+### Atminties naudojimas realioje sistemoje
+
+Žemiau pateiktoje ekrano nuotraukoje iš „Activity Monitor“ matyti, kad programos `v1` veikimo metu sunaudojama net **63,23 GB RAM**, kai fizinės operatyviosios atminties (RAM) kiekis yra tik **16 GB**.  
+- Dėl šios priežasties sistema pradeda naudoti **swap atmintį** (4,84 GB), kas gali stipriai sumažinti našumą, nes keitimasis su SSD yra lėtesnis nei tiesioginis duomenų saugojimas RAM.
+- Dėl perteklinio atminties naudojimo programos gali sulėtėti, o esant labai dideliems duomenų kiekiams – net sustoti veikti.
+- Optimizuojant šį procesą būtų galima sumažinti atminties naudojimą bent **dvigubai**, pašalinant nereikalingas duomenų kopijas.
+
+
+
+
 

@@ -1,0 +1,484 @@
+-----------------------STUDENTAI_1000.cpp------------------------
+VECTOR
+1
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 3.2036 ms
+---> Studentų rūšiavimas uztruko: 0.008407 ms
+---> Studentų skaidymas į grupes uztruko: 0.152347 ms
+--------------------------------------------
+2
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 2.30604 ms
+---> Studentų rūšiavimas uztruko: 0.00331 ms
+---> Studentų skaidymas į grupes uztruko: 0.098323 ms
+--------------------------------------------
+3
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 3.10905 ms
+---> Studentų rūšiavimas uztruko: 0.003027 ms
+---> Studentų skaidymas į grupes uztruko: 0.104989 ms
+--------------------------------------------
+4
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 3.11326 ms
+---> Studentų rūšiavimas uztruko: 0.003618 ms
+---> Studentų skaidymas į grupes uztruko: 0.115513 ms
+--------------------------------------------
+5
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 2.70328 ms
+---> Studentų rūšiavimas uztruko: 0.002801 ms
+---> Studentų skaidymas į grupes uztruko: 0.101553 ms
+--------------------------------------------
+
+DEQUE
+1
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 4.54003 ms
+---> Studentų rūšiavimas uztruko: 0.01575 ms
+---> Studentų skaidymas į grupes uztruko: 2.28387 ms
+--------------------------------------------
+2
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 3.5965 ms
+---> Studentų rūšiavimas uztruko: 0.007022 ms
+---> Studentų skaidymas į grupes uztruko: 1.68399 ms
+--------------------------------------------
+3
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 2.51399 ms
+---> Studentų rūšiavimas uztruko: 0.007185 ms
+---> Studentų skaidymas į grupes uztruko: 1.14228 ms
+--------------------------------------------
+4
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 2.71451 ms
+---> Studentų rūšiavimas uztruko: 0.004894 ms
+---> Studentų skaidymas į grupes uztruko: 0.522833 ms
+--------------------------------------------
+5
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 4.11397 ms
+---> Studentų rūšiavimas uztruko: 0.009735 ms
+---> Studentų skaidymas į grupes uztruko: 0.976077 ms
+--------------------------------------------
+
+LIST
+1
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 3.3818 ms
+---> Studentų rūšiavimas uztruko: 0.033149 ms
+---> Studentų skaidymas į grupes uztruko: 0.545208 ms
+--------------------------------------------
+2
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 2.89715 ms
+---> Studentų rūšiavimas uztruko: 0.023858 ms
+---> Studentų skaidymas į grupes uztruko: 0.452859 ms
+--------------------------------------------
+3
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 3.34938 ms
+---> Studentų rūšiavimas uztruko: 0.046696 ms
+---> Studentų skaidymas į grupes uztruko: 0.502187 ms
+--------------------------------------------
+4
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 3.3499 ms
+---> Studentų rūšiavimas uztruko: 0.031159 ms
+---> Studentų skaidymas į grupes uztruko: 0.519551 ms
+--------------------------------------------
+5
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 3.24113 ms
+---> Studentų rūšiavimas uztruko: 0.046281 ms
+---> Studentų skaidymas į grupes uztruko: 0.498937 ms
+--------------------------------------------
+
+-----------------------STUDENTAI_10000.cpp------------------------
+VECTOR
+1
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 27.2006 ms
+---> Studentų rūšiavimas uztruko: 0.116715 ms
+---> Studentų skaidymas į grupes uztruko: 1.60073 ms
+--------------------------------------------
+2
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 25.0797 ms
+---> Studentų rūšiavimas uztruko: 0.052154 ms
+---> Studentų skaidymas į grupes uztruko: 1.08494 ms
+--------------------------------------------
+3
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 26.3646 ms
+---> Studentų rūšiavimas uztruko: 0.07066 ms
+---> Studentų skaidymas į grupes uztruko: 1.20863 ms
+--------------------------------------------
+4
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 26.1206 ms
+---> Studentų rūšiavimas uztruko: 0.043804 ms
+---> Studentų skaidymas į grupes uztruko: 1.20132 ms
+--------------------------------------------
+5
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 26.7007 ms
+---> Studentų rūšiavimas uztruko: 0.056822 ms
+---> Studentų skaidymas į grupes uztruko: 1.07457 ms
+--------------------------------------------
+
+DEQUE
+1
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 36.8949 ms
+---> Studentų rūšiavimas uztruko: 0.142551 ms
+---> Studentų skaidymas į grupes uztruko: 18.1998 ms
+--------------------------------------------
+2
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 33.7597 ms
+---> Studentų rūšiavimas uztruko: 0.139961 ms
+---> Studentų skaidymas į grupes uztruko: 18.2961 ms
+--------------------------------------------
+3
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 29.6521 ms
+---> Studentų rūšiavimas uztruko: 0.245881 ms
+---> Studentų skaidymas į grupes uztruko: 16.2296 ms
+--------------------------------------------
+4
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 29.7139 ms
+---> Studentų rūšiavimas uztruko: 0.137267 ms
+---> Studentų skaidymas į grupes uztruko: 15.2688 ms
+--------------------------------------------
+5
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 27.3318 ms
+---> Studentų rūšiavimas uztruko: 0.164236 ms
+---> Studentų skaidymas į grupes uztruko: 13.4216 ms
+--------------------------------------------
+
+LIST
+1
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 30.8247 ms
+---> Studentų rūšiavimas uztruko: 1.06628 ms
+---> Studentų skaidymas į grupes uztruko: 4.55458 ms
+--------------------------------------------
+2
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 29.7548 ms
+---> Studentų rūšiavimas uztruko: 0.842044 ms
+---> Studentų skaidymas į grupes uztruko: 4.44896 ms
+--------------------------------------------
+3
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 29.0856 ms
+---> Studentų rūšiavimas uztruko: 0.882071 ms
+---> Studentų skaidymas į grupes uztruko: 4.364 ms
+--------------------------------------------
+4
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 31.3414 ms
+---> Studentų rūšiavimas uztruko: 0.845977 ms
+---> Studentų skaidymas į grupes uztruko: 3.96025 ms
+--------------------------------------------
+5
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 29.3118 ms
+---> Studentų rūšiavimas uztruko: 0.824253 ms
+---> Studentų skaidymas į grupes uztruko: 4.07696 ms
+--------------------------------------------
+
+-----------------------STUDENTAI_100000.cpp------------------------
+VECTOR
+1
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 209.614 ms
+---> Studentų rūšiavimas uztruko: 0.84429 ms
+---> Studentų skaidymas į grupes uztruko: 12.8821 ms
+--------------------------------------------
+2
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 202.08 ms
+---> Studentų rūšiavimas uztruko: 0.802279 ms
+---> Studentų skaidymas į grupes uztruko: 9.58649 ms
+--------------------------------------------
+3
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 201.862 ms
+---> Studentų rūšiavimas uztruko: 0.848451 ms
+---> Studentų skaidymas į grupes uztruko: 9.29369 ms
+--------------------------------------------
+4
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 200.655 ms
+---> Studentų rūšiavimas uztruko: 0.754519 ms
+---> Studentų skaidymas į grupes uztruko: 9.39792 ms
+--------------------------------------------
+5
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 198.815 ms
+---> Studentų rūšiavimas uztruko: 0.762487 ms
+---> Studentų skaidymas į grupes uztruko: 9.59873 ms
+--------------------------------------------
+
+DEQUE
+1
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 310.58 ms
+---> Studentų rūšiavimas uztruko: 2.18523 ms
+---> Studentų skaidymas į grupes uztruko: 181.675 ms
+--------------------------------------------
+2
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 290.689 ms
+---> Studentų rūšiavimas uztruko: 1.58228 ms
+---> Studentų skaidymas į grupes uztruko: 167.506 ms
+--------------------------------------------
+3
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 288.337 ms
+---> Studentų rūšiavimas uztruko: 1.5396 ms
+---> Studentų skaidymas į grupes uztruko: 165.632 ms
+--------------------------------------------
+4
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 298.144 ms
+---> Studentų rūšiavimas uztruko: 1.58966 ms
+---> Studentų skaidymas į grupes uztruko: 171.804 ms
+--------------------------------------------
+5
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 297.495 ms
+---> Studentų rūšiavimas uztruko: 1.61055 ms
+---> Studentų skaidymas į grupes uztruko: 181.441 ms
+--------------------------------------------
+
+LIST
+1
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 247.031 ms
+---> Studentų rūšiavimas uztruko: 14.4623 ms
+---> Studentų skaidymas į grupes uztruko: 43.34 ms
+--------------------------------------------
+2
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 241.953 ms
+---> Studentų rūšiavimas uztruko: 16.9698 ms
+---> Studentų skaidymas į grupes uztruko: 45.6856 ms
+--------------------------------------------
+3
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 241.75 ms
+---> Studentų rūšiavimas uztruko: 15.8578 ms
+---> Studentų skaidymas į grupes uztruko: 43.0345 ms
+--------------------------------------------
+4
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 242.488 ms
+---> Studentų rūšiavimas uztruko: 12.7141 ms
+---> Studentų skaidymas į grupes uztruko: 42.8697 ms
+--------------------------------------------
+5
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 240.07 ms
+---> Studentų rūšiavimas uztruko: 16.4995 ms
+---> Studentų skaidymas į grupes uztruko: 44.6892 ms
+--------------------------------------------
+
+-----------------------STUDENTAI_1000000.cpp------------------------
+VECTOR
+1
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 1935.33 ms
+---> Studentų rūšiavimas uztruko: 10.2577 ms
+---> Studentų skaidymas į grupes uztruko: 141.139 ms
+--------------------------------------------
+2
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 1866.76 ms
+---> Studentų rūšiavimas uztruko: 7.65043 ms
+---> Studentų skaidymas į grupes uztruko: 135.318 ms
+--------------------------------------------
+3
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 1853.33 ms
+---> Studentų rūšiavimas uztruko: 8.08008 ms
+---> Studentų skaidymas į grupes uztruko: 119.714 ms
+--------------------------------------------
+4
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 1878.4 ms
+---> Studentų rūšiavimas uztruko: 8.18315 ms
+---> Studentų skaidymas į grupes uztruko: 114.941 ms
+--------------------------------------------
+5
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 1863.65 ms
+---> Studentų rūšiavimas uztruko: 7.78239 ms
+---> Studentų skaidymas į grupes uztruko: 116.411 ms
+--------------------------------------------
+
+DEQUE
+1
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 3247.54 ms
+---> Studentų rūšiavimas uztruko: 45.424 ms
+---> Studentų skaidymas į grupes uztruko: 4580.14 ms
+--------------------------------------------
+2
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 2917.37 ms
+---> Studentų rūšiavimas uztruko: 13.7537 ms
+---> Studentų skaidymas į grupes uztruko: 2633.66 ms
+--------------------------------------------
+3
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 2872.24 ms
+---> Studentų rūšiavimas uztruko: 16.1467 ms
+---> Studentų skaidymas į grupes uztruko: 1936.92 ms
+--------------------------------------------
+4
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 3159.3 ms
+---> Studentų rūšiavimas uztruko: 23.2457 ms
+---> Studentų skaidymas į grupes uztruko: 2159.73 ms
+--------------------------------------------
+5
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 2891.06 ms
+---> Studentų rūšiavimas uztruko: 16.8675 ms
+---> Studentų skaidymas į grupes uztruko: 1962.04 ms
+--------------------------------------------
+
+LIST
+1
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 2389.35 ms
+---> Studentų rūšiavimas uztruko: 312.465 ms
+---> Studentų skaidymas į grupes uztruko: 382.376 ms
+--------------------------------------------
+2
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 2337.4 ms
+---> Studentų rūšiavimas uztruko: 256.83 ms
+---> Studentų skaidymas į grupes uztruko: 374.176 ms
+--------------------------------------------
+3
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 2360.97 ms
+---> Studentų rūšiavimas uztruko: 251.446 ms
+---> Studentų skaidymas į grupes uztruko: 386.971 ms
+--------------------------------------------
+4
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 2265.24 ms
+---> Studentų rūšiavimas uztruko: 277.389 ms
+---> Studentų skaidymas į grupes uztruko: 367.137 ms
+--------------------------------------------
+5
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 2342.68 ms
+---> Studentų rūšiavimas uztruko: 277.026 ms
+---> Studentų skaidymas į grupes uztruko: 375.103 ms
+--------------------------------------------
+
+-----------------------STUDENTAI_10000000.cpp------------------------
+VECTOR
+1
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 19583 ms
+---> Studentų rūšiavimas uztruko: 136.319 ms
+---> Studentų skaidymas į grupes uztruko: 1998.65 ms
+--------------------------------------------
+2
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 19789.2 ms
+---> Studentų rūšiavimas uztruko: 114.873 ms
+---> Studentų skaidymas į grupes uztruko: 1861.7 ms
+--------------------------------------------
+3
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 18592.3 ms
+---> Studentų rūšiavimas uztruko: 113.605 ms
+---> Studentų skaidymas į grupes uztruko: 1729.82 ms
+--------------------------------------------
+4
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 18597.6 ms
+---> Studentų rūšiavimas uztruko: 114.018 ms
+---> Studentų skaidymas į grupes uztruko: 1751.34 ms
+--------------------------------------------
+5
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 20542 ms
+---> Studentų rūšiavimas uztruko: 111.799 ms
+---> Studentų skaidymas į grupes uztruko: 1859.65 ms
+--------------------------------------------
+
+LIST
+1
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 23483.4 ms
+---> Studentų rūšiavimas uztruko: 3986.03 ms
+---> Studentų skaidymas į grupes uztruko: 3768.33 ms
+--------------------------------------------
+2
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 24393 ms
+---> Studentų rūšiavimas uztruko: 4872.85 ms
+---> Studentų skaidymas į grupes uztruko: 4589.04 ms
+--------------------------------------------
+3
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 22138 ms
+---> Studentų rūšiavimas uztruko: 3707.6 ms
+---> Studentų skaidymas į grupes uztruko: 3480 ms
+--------------------------------------------
+4
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 22512.1 ms
+---> Studentų rūšiavimas uztruko: 3846.17 ms
+---> Studentų skaidymas į grupes uztruko: 3543.46 ms
+--------------------------------------------
+5
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 26520.4 ms
+---> Studentų rūšiavimas uztruko: 4555.24 ms
+---> Studentų skaidymas į grupes uztruko: 4533.76 ms
+--------------------------------------------
+
+DEQUE
+1
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 35987.1 ms
+---> Studentų rūšiavimas uztruko: 1801.78 ms
+---> Studentų skaidymas į grupes uztruko: 59142.8 ms
+--------------------------------------------
+2
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 44873.4 ms
+---> Studentų rūšiavimas uztruko: 2383.92 ms
+---> Studentų skaidymas į grupes uztruko: 61626.3 ms
+--------------------------------------------
+3
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 36171.9 ms
+---> Studentų rūšiavimas uztruko: 1684.62 ms
+---> Studentų skaidymas į grupes uztruko: 55782 ms
+--------------------------------------------
+4
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 36049.8 ms
+---> Studentų rūšiavimas uztruko: 1786.17 ms
+---> Studentų skaidymas į grupes uztruko: 55669.2 ms
+--------------------------------------------
+5
+--------------------------------------------
+---> Failo nuskaitymas uztruko: 44029.7 ms
+---> Studentų rūšiavimas uztruko: 1924.12 ms
+---> Studentų skaidymas į grupes uztruko: 61069.6 ms
+--------------------------------------------

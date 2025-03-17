@@ -1,4 +1,3 @@
-
 # Studentų duomenų apdorojimo greičio testai
 
 Šis projektas testuoja studentų duomenų apdorojimo spartą naudojant tris skirtingus konteinerius:  
@@ -100,6 +99,9 @@ Kadangi pirmoje strategijoje studentai yra dviejuose konteineriuose (bendrame ir
 - Dėl šios priežasties sistema pradeda naudoti **swap atmintį** (4,84 GB), kas gali stipriai sumažinti našumą, nes keitimasis su SSD yra lėtesnis nei tiesioginis duomenų saugojimas RAM.
 - Dėl perteklinio atminties naudojimo programos gali sulėtėti, o esant labai dideliems duomenų kiekiams – net sustoti veikti.
 - Optimizuojant šį procesą būtų galima sumažinti atminties naudojimą bent **dvigubai**, pašalinant nereikalingas duomenų kopijas.
+
+<img width="852" alt="Screenshot 2025-03-16 at 18 58 53" src="https://github.com/user-attachments/assets/7cf403ea-994a-44d3-ba24-db4ceba50323" />
+
 
 
 

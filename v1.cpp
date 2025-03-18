@@ -4,11 +4,13 @@
 #include "LaikoMatavimas.h"
 #include "tyrimas3.h"
 #include "tyrimas4.h"
+#include "tyrimas5.h"
 
 void meniu() {
     cout<<"      PASIRINKITE TYRIMA      \n";
     cout<<" [1] - Tyrimas 3\n";
     cout<<" [2] - Tyrimas 4\n";
+    cout<<" [3] - Tyrimas 5\n";
     cout<<" [0] - Baigti\n";
     cout<<" PASIRINKIMAS: ";
 }
@@ -45,7 +47,7 @@ int main() {
     do {
         meniu();
         cin>>pasirinkimas;
-        if(pasirinkimas==1 || pasirinkimas==2){
+        if(pasirinkimas==1 || pasirinkimas==2 || pasirinkimas==3){
             pasirinktiFaila(failas);
         }
 
@@ -62,6 +64,13 @@ int main() {
             testuotiSkaidymoStrategija<vector<studentas<vector<float>>>>(failas, rezultataiAplankas);
             testuotiSkaidymoStrategija<list<studentas<list<float>>>>(failas, rezultataiAplankas);
             testuotiSkaidymoStrategija<deque<studentas<deque<float>>>>(failas, rezultataiAplankas);
+            break;
+
+            case 3:
+            cout<<"Vykdomas Tyrimas 5...\n";
+            testuotiOptimizuotaSkaidyma<vector<studentas<vector<float>>>>(failas, rezultataiAplankas);
+            testuotiOptimizuotaSkaidyma<list<studentas<list<float>>>>(failas, rezultataiAplankas);
+            testuotiOptimizuotaSkaidyma<deque<studentas<deque<float>>>>(failas, rezultataiAplankas);
             break;
 
             case 0:

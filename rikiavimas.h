@@ -12,4 +12,7 @@ void isskirtiVargsusIrKietiakus(Container& grupe, Container& vargsiai, Container
 template <typename Container>
 void isskirtiVargsus(Container& grupe, Container& vargsiai);
 
+template <typename Container>
+void isskirtiVargsusIrKietiakusOpt(Container& grupe, Container& vargsiai, Container& kietiakai);
+
 #endif

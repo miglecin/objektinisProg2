@@ -1,16 +1,18 @@
-#include "studentas.h"
+##include "studentas.h"
 #include "rikiavimas.h"
 #include "sufailais.h"
 #include "LaikoMatavimas.h"
 #include "tyrimas3.h"
 #include "tyrimas4.h"
 #include "tyrimas5.h"
+#include "tyrimas6.h" 
 
 void meniu() {
     cout<<"      PASIRINKITE TYRIMA      \n";
     cout<<" [1] - Tyrimas 3\n";
     cout<<" [2] - Tyrimas 4\n";
     cout<<" [3] - Tyrimas 5\n";
+    cout<<" [4] - Tyrimas 6\n";
     cout<<" [0] - Baigti\n";
     cout<<" PASIRINKIMAS: ";
 }
@@ -47,7 +49,7 @@ int main() {
     do {
         meniu();
         cin>>pasirinkimas;
-        if(pasirinkimas==1 || pasirinkimas==2 || pasirinkimas==3){
+        if(pasirinkimas==1 || pasirinkimas==2 || pasirinkimas==3 || pasirinkimas==4){
             pasirinktiFaila(failas);
         }
 
@@ -73,6 +75,11 @@ int main() {
             testuotiOptimizuotaSkaidyma<deque<studentas<deque<float>>>>(failas, rezultataiAplankas);
             break;
 
+            case 4:
+            cout<<"Vykdomas Tyrimas 6...\n";
+            testuotiSkaidymoStrategija3<vector<studentas<vector<float>>>>(failas, rezultataiAplankas);
+            break;
+
             case 0:
             cout<<"PROGRAA BAIGTA.\n";
             break;
@@ -84,3 +91,4 @@ int main() {
 
     return 0;
 }
+

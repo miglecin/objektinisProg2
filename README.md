@@ -145,3 +145,28 @@ Naudojant **VECTOR** su dideliais duomenų kiekiais (pvz., su 1,000,000 student�
 
 4. **Atminties efektyvumas**: 2-oji strategija, naudojant papildomą konteinerį "vargšiukams", yra efektyvesnė atminties atžvilgiu, nes nebereikia dvigubai laikyti tų pačių duomenų. Tačiau nuolatiniai elementų trynimai ir perkėlimai gali tapti lėtesni, ypač su **VECTOR** konteineriu.
 
+
+## 3 STRATEGIJOS TYRIMAS: 
+### Greitas studentų skirstymas naudojant optimizuotus algoritmus su **VECTOR** konteineriu
+
+Trečioje strategijoje naudojame **VECTOR** konteinerį ir pasitelkiame optimizuotus algoritmus, kad paspartintume studentų skirstymo į grupes operaciją. Pagrindinis tikslas buvo pasiekti spartų studentų skirstymą, pritaikant tokius algoritmus kaip **std::partition**, **std::copy**, ir kitus, kurie leidžia greitai suskirstyti studentus į dvi grupes.
+
+### Implementacijos apžvalga:
+- **Failo nuskaitymas**: Studentai įkeliami į **VECTOR** konteinerį.
+- **Studentų rūšiavimas**: Studentai yra rūšiuojami pagal nustatytus parametrus.
+- **Studentų skirstymas į grupes**: Pritaikytas algoritmas **std::partition** su **std::copy**, siekiant efektyviai perkelti studentus į dvi grupes: vargšus ir kietiakus. Naudojama tik viena operacija, kuri atlieka greitą skirstymą.
+
+### Palyginimas su kitomis strategijomis:
+- **Našumo palyginimas**: Po optimizacijos operacija **skirstymas į grupes** su **VECTOR** konteineriu buvo žymiai greitesnė nei su kitais konteineriais, ypač dirbant su didesniais duomenų kiekiais.
+
+### REZULTATAI:
+<img width="649" alt="Screenshot 2025-03-18 at 20 33 25" src="https://github.com/user-attachments/assets/a1ce3201-585a-479e-ba31-f822a242c752" />
+
+### Pastebėjimai:
+- **Greitėjimas**: Panaudojus optimizuotus algoritmus, kaip **std::partition** ir **std::copy**, studentų skirstymo į grupes operacija tapo žymiai greitesnė.
+- **Didelis našumas su dideliais duomenimis**: Su didesniais duomenų kiekiais, pavyzdžiui, su 10 milijonų studentų, optimizuotas skirstymas išlieka efektyvus, nors vis tiek pastebimas laiko augimas, susijęs su dideliais duomenų kiekiais.
+  
+### Išvados:
+3-ioji strategija, naudojanti optimizuotus algoritmus su **VECTOR** konteineriu, yra labai efektyvi ir greita, ypač esant dideliems studentų kiekiams. Ši strategija suteikia žymiai greitesnį skirstymą į grupes palyginti su kitais konteineriais ir tradiciniais metodais.
+
+

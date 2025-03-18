@@ -103,7 +103,45 @@ Kadangi pirmoje strategijoje studentai yra dviejuose konteineriuose (bendrame ir
 <img width="852" alt="Screenshot 2025-03-16 at 18 58 53" src="https://github.com/user-attachments/assets/7cf403ea-994a-44d3-ba24-db4ceba50323" />
 
 
+## 2 STRATEGIJOS TYRIMAS
 
+## Apžvalga
+Ši tyrimo strategija nagrinėja studentų duomenų skirstymo į dvi grupes (vargšiukai ir kietiakai) efektyvumą naudojant bendrą studentų konteinerį (t.y., `vector`, `list`, arba `deque`). Kai studentas yra "vargšiukas" (t.y., jo galutiniai balai mažesni nei 5.0), jis perkeliamas į naująjį "vargšiukų" konteinerį ir ištryniamas iš bendro konteinerio. Po šio proceso bendrame konteineryje lieka tik kietiakai.
 
+## REZULTATAI:
+<img width="652" alt="Screenshot 2025-03-18 at 12 35 29" src="https://github.com/user-attachments/assets/712e2b87-af47-47ee-8583-341639d5dccb" />
 
+## Pastebėjimai
+
+- **Failo nuskaitymas**: Visų konteinerių failo nuskaitymo laikas yra panašus, tačiau DEQUE šiek tiek lėtesnis didesniems duomenų kiekiams.
+
+**Atminties naudojimas**:
+   - Naudojant šią strategiją, atminties naudojimas tampa efektyvesnis, nes studentai yra perkelti tik į vieną naują konteinerį (vargšiukai) ir ištrinami iš bendro studentų konteinerio. Tai sumažina bendrą atminties naudojimą.
+
+ **Efektyvumas**:
+   - Strategija efektyvesnė atminties atžvilgiu, tačiau dažni trynimai (ypač su tam tikrais konteineriais) gali turėti neigiamą poveikį veikimo greičiui.
+
+---
+
+### Pastebėjimai apie našumą su VECTOR
+
+Naudojant **VECTOR** su dideliais duomenų kiekiais (pvz., su 1,000,000 studentų), "skirstymo į grupes" operacija gali tapti labai lėta dėl šių priežasčių:
+
+- **Atminties perrašymai ir peralokacijos**: Nuolatiniai elementų įterpimai ir trinimai gali sukelti didelius atminties perrašymus, nes `VECTOR` turi perskirstyti visą atmintį, kai pasiekia ribas.
+  
+- **Elementų perkėlimas ir trynimas**: Kiekvienas elementų keitimas gali užtrukti ilgiau, nes `VECTOR` turi išlaikyti nuoseklumą visoje sekos struktūroje.
+
+- **Lėtumas su dideliais duomenimis**: Su milijonais elementų operacijos tampa lėtesnės dėl trynimo ir perkėlimo procesų.
+
+---
+
+## Išvados
+
+1. **VECTOR**: Efektyviausias konteineris rūšiavimui, tačiau su dideliais duomenų kiekiais (pvz., 1,000,000 studentų) gali tapti lėtas dėl atminties perrašymo ir perkėlimo operacijų. Nors jis greitas mažais duomenimis, didelių duomenų atveju gali pasireikšti atminties valdymo problemos.
+
+2. **LIST**: Panašiai kaip ir **VECTOR**, tačiau **LIST** konteineris geriau susidoroja su elementų įterpimu ir šalinimu. Tačiau rūšiavimas ir grupių skirstymas su **LIST** yra lėtesni nei su **VECTOR**.
+
+3. **DEQUE**: Nors **DEQUE** yra greitesnis už **LIST** su mažesniais duomenimis, su didesniais duomenimis jis taip pat susiduria su našumo problemomis, nes reikalauja daugiau atminties ir gali tapti lėtesnis dėl dažnų elementų perkėlimų.
+
+4. **Atminties efektyvumas**: 2-oji strategija, naudojant papildomą konteinerį "vargšiukams", yra efektyvesnė atminties atžvilgiu, nes nebereikia dvigubai laikyti tų pačių duomenų. Tačiau nuolatiniai elementų trynimai ir perkėlimai gali tapti lėtesni, ypač su **VECTOR** konteineriu.
 

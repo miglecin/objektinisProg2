@@ -8,8 +8,8 @@ OBJ_DIR = obj
 BIN_DIR = bin
 
 # Pagrindiniai failai
-SOURCES = v1.cpp studentas.cpp sufailais.cpp rikiavimas.cpp tyrimas3.cpp tyrimas4.cpp LaikoMatavimas.cpp
-HEADERS = studentas.h sufailais.h rikiavimas.h tyrimas3.h tyrimas4.h LaikoMatavimas.h
+SOURCES = v1.cpp studentas.cpp sufailais.cpp rikiavimas.cpp tyrimas3.cpp tyrimas4.cpp tyrimas5.cpp LaikoMatavimas.cpp
+HEADERS = studentas.h sufailais.h rikiavimas.h tyrimas3.h tyrimas4.h tyrimas5.h LaikoMatavimas.h
 OBJECTS = $(patsubst %.cpp, $(OBJ_DIR)/%.o, $(SOURCES))
 
 # Programos pavadinimas
@@ -35,4 +35,3 @@ clean:
 	rm -rf $(OBJ_DIR)/*.o $(EXECUTABLE)
 
 rebuild: clean $(EXECUTABLE)
-

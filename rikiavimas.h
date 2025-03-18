@@ -9,4 +9,7 @@ void rusiuotiStud(Container & grupe, char rusiavimoPas);
 template <typename Container>
 void isskirtiVargsusIrKietiakus(Container& grupe, Container& vargsiai, Container& kietiakai);
 
+template <typename Container>
+void isskirtiVargsus(Container& grupe, Container& vargsiai);
+
 #endif

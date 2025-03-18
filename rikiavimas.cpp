@@ -60,6 +60,28 @@ void isskirtiVargsus(Container& grupe, Container& vargsiai) {
     }
 }
 
+//3 strategija
+//SABLONINĖ FUNKCIJA STUDENTAMS GREITAI ISSKIRSTYTI NAUDOJANT OPT ALGORITMUS SU VEKT.
+template <typename Container>
+void isskirtiVargsusIrKietiakusOpt(Container& grupe, Container& vargsiai, Container& kietiakai) {
+    if constexpr (std::is_same_v<Container, vector<typename Container::value_type>>) {
+        //greitas stud skirstymas su partition tik vektoriams
+        auto it= std::partition(grupe.begin(), grupe.end(), [](const auto& stud) 
+        {
+            return stud.Gal >= 5.0;
+        });
+
+        //kietiakai lieka grupeje
+        std::copy(grupe.begin(), it, std::back_inserter(kietiakai));
+
+        //vargsai perkelti i atskira konteineri
+        std::copy(it, grupe.end(), std::back_inserter(vargsiai));
+
+        //pasalinami vargsiai is grupes konteinerio
+        grupe.erase(it, grupe.end());
+    }
+}
+
 
 //aiski instanciacija butina, kai sablonu apibrezimai yra .cpp faile, kad linkeris juos rastu
 template void rusiuotiStud<std::vector<studentas<std::vector<float>>>>(std::vector<studentas<std::vector<float>>>&, char);
@@ -92,4 +114,12 @@ template void isskirtiVargsus<std::list<studentas<std::list<float>>>>(
 template void isskirtiVargsus<std::deque<studentas<std::deque<float>>>>(
     std::deque<studentas<std::deque<float>>>&, 
     std::deque<studentas<std::deque<float>>>&);
+    
+
+template void isskirtiVargsusIrKietiakusOpt<std::vector<studentas<std::vector<float>>>>(
+    std::vector<studentas<std::vector<float>>>&, 
+    std::vector<studentas<std::vector<float>>>&, 
+    std::vector<studentas<std::vector<float>>>&);
+    
+
     

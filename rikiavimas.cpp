@@ -28,6 +28,7 @@ void rusiuotiStud(Container& grupe, char rusiavimoPas) {
     }
 }
 
+//1 strategija
 //SABLONINĖ FUNKCIJA STUDENTAMS ISSKAIDYTI I VARGSUS IR KIETIAKUS
 template <typename Container>
 void isskirtiVargsusIrKietiakus(Container& grupe, Container& vargsiai, Container& kietiakai) {
@@ -39,6 +40,27 @@ void isskirtiVargsusIrKietiakus(Container& grupe, Container& vargsiai, Container
         }
     }
 }
+
+//2 strategija
+//SABLONINĖ FUNKCIJA STUDENTAMS ISSKAIDYTI I VIENA KONTEINERI (ISTRINANT IS BENDRO)
+template <typename Container>
+void isskirtiVargsus(Container& grupe, Container& vargsiai) {
+    auto it=grupe.begin();
+    while (it!=grupe.end()) 
+    {
+        if (it->Gal< 5.0) 
+        {
+            vargsiai.push_back(*it); //perkeliam i vargsu konteineri
+            it=grupe.erase(it); //istrinam is bendro konteinerio
+        } 
+        else 
+        {
+            ++it;
+        }
+    }
+}
+
+
 //aiski instanciacija butina, kai sablonu apibrezimai yra .cpp faile, kad linkeris juos rastu
 template void rusiuotiStud<std::vector<studentas<std::vector<float>>>>(std::vector<studentas<std::vector<float>>>&, char);
 template void rusiuotiStud<std::list<studentas<std::list<float>>>>(std::list<studentas<std::list<float>>>&, char);
@@ -59,3 +81,15 @@ template void isskirtiVargsusIrKietiakus<std::deque<studentas<std::deque<float>>
     std::deque<studentas<std::deque<float>>>&, 
     std::deque<studentas<std::deque<float>>>&);
 
+template void isskirtiVargsus<std::vector<studentas<std::vector<float>>>>(
+    std::vector<studentas<std::vector<float>>>&, 
+    std::vector<studentas<std::vector<float>>>&);
+    
+template void isskirtiVargsus<std::list<studentas<std::list<float>>>>(
+    std::list<studentas<std::list<float>>>&, 
+    std::list<studentas<std::list<float>>>&);
+    
+template void isskirtiVargsus<std::deque<studentas<std::deque<float>>>>(
+    std::deque<studentas<std::deque<float>>>&, 
+    std::deque<studentas<std::deque<float>>>&);
+    

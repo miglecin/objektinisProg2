@@ -1,37 +1,43 @@
-# Kompiliatorius ir flagai
+# Kompiliatorius ir vėliavos
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra -pedantic -O2
+CXXFLAGS = -std=c++17 -Wall -Wextra -pedantic -O2 -g -Iinclude
 
-# Aplankai
+# Katalogai
 SRC_DIR = src
-OBJ_DIR = obj
+INC_DIR = include
+BUILD_DIR = build
 BIN_DIR = bin
+RESULTS_DIR = results
+TEST_FILES_DIR = test_files
+REZULTATAI_DIR = rezultatai
 
-# Pagrindiniai failai
-SOURCES = v1.cpp studentas.cpp sufailais.cpp rikiavimas.cpp tyrimas3.cpp tyrimas4.cpp tyrimas5.cpp tyrimas6.cpp LaikoMatavimas.cpp
-HEADERS = studentas.h sufailais.h rikiavimas.h tyrimas3.h tyrimas4.h tyrimas5.h tyrimas6.h LaikoMatavimas.h
-OBJECTS = $(patsubst %.cpp, $(OBJ_DIR)/%.o, $(SOURCES))
+# Failų sąrašas
+SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
+OBJECTS = $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(SOURCES))
 
-# Programos pavadinimas
-EXECUTABLE = $(BIN_DIR)/v1
+# Vykdomasis failas
+EXECUTABLE = $(BIN_DIR)/programa
 
-# Tikrina, ar egzistuoja aplankai
-$(shell mkdir -p $(OBJ_DIR) $(BIN_DIR))
+# Tikslas - pagrindinė programa
+all: sukurti_dirs $(EXECUTABLE)
 
-# Kompiliavimas
+# Sukurti katalogus
+sukurti_dirs:
+	@mkdir -p $(BUILD_DIR) $(BIN_DIR) $(RESULTS_DIR) $(TEST_FILES_DIR) $(REZULTATAI_DIR)
+
+# Kompiliuoti programą
 $(EXECUTABLE): $(OBJECTS)
-	$(CXX) $(CXXFLAGS) $^ -o $@
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
-# Atitinkamų `.o` failų generavimas
-$(OBJ_DIR)/%.o: %.cpp $(HEADERS)
+# Kompiliuoti atskirus .o failus
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Paleidimo komanda
-run: $(EXECUTABLE)
-	./$(EXECUTABLE)
-
-# Valymo komandos
+# Išvalyti sukurtus failus
 clean:
-	rm -rf $(OBJ_DIR)/*.o $(EXECUTABLE)
+	rm -rf $(BUILD_DIR) $(BIN_DIR) $(RESULTS_DIR) $(REZULTATAI_DIR)
 
-rebuild: clean $(EXECUTABLE)
+# Debug režimas
+debug: CXXFLAGS += -DDEBUG
+debug: clean all
+

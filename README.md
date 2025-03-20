@@ -1,3 +1,53 @@
+# Projektas
+
+Šis projektas skirtas objektinio programavimo principų taikymui, apimant įvairius tyrimus ir analizes su studentų duomenimis. Projektas apima failų generavimą, studentų duomenų rūšiavimą, skaidymą į grupes ir analizę.
+
+## Projekto struktūra
+
+- **src/** - Programos šaltinio kodas.
+- **include/** - Antraštės failai.
+- **test_files/** - Failai, naudojami testavimui.
+- **results/ or rezultatai/** - Sukuriami rezultatai po tyrimų ir analizės.
+
+## Reikalavimai
+
+- **C++17** (naudojama programavimo kalba).
+- **Makefile** (kompiliavimui).
+
+## Pagrindiniai žingsniai
+
+1. **Klonavimas ir paruošimas**
+
+    Norėdami pradėti dirbti su projektu, pirmiausia jį nukopijuokite iš GitHub:
+
+    ```bash
+    git git clone -b v1.0 https://github.com/miglecin/objektinisProg.git
+    cd objektinisProg
+    ```
+
+2. **Priklausomybės**
+
+    - Užtikrinkite, kad turite įdiegtą **C++17** suderinamą kompiliatorių.
+    - Projektas naudoja **Makefile** kompiliavimui.
+
+3. **Kompiliavimas naudojant Makefile**
+
+    ```bash
+    make
+    ```
+    
+4. **Naudojimosi instrukcija**
+
+    Po sėkmingo kompiliavimo galite paleisti programą:
+
+    ```bash
+    ./bin/programa
+    ```
+
+
+
+
+
 # Studentų duomenų apdorojimo greičio testai
 
 Šis projektas testuoja studentų duomenų apdorojimo spartą naudojant tris skirtingus konteinerius:  

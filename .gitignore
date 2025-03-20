@@ -1,1 +1,6 @@
+# Ignoruoti visą test_files katalogą
 test_files/
+
+# Ignoruoti visus failus rezultatuose
+results/
+rezultatai/

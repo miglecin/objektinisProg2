@@ -4,3 +4,6 @@ test_files/
 # Ignoruoti visus failus rezultatuose
 results/
 rezultatai/
+
+*.exe
+*.txt

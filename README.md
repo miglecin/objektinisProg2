@@ -219,4 +219,14 @@ Trečioje strategijoje naudojame **VECTOR** konteinerį ir pasitelkiame optimizu
 ### Išvados:
 3-ioji strategija, naudojanti optimizuotus algoritmus su **VECTOR** konteineriu, yra labai efektyvi ir greita, ypač esant dideliems studentų kiekiams. Ši strategija suteikia žymiai greitesnį skirstymą į grupes palyginti su kitais konteineriais ir tradiciniais metodais.
 
+-------------------------------
+
+## GERIAUSIO KONTEINERIO PASIRINKIMAS
+<img width="614" alt="Screenshot 2025-03-20 at 20 45 44" src="https://github.com/user-attachments/assets/3adb906a-603a-4bb3-8f9d-78157be241ff" />
+
+### Galutinė rekomendacija:
+
+- Naudokite **vector**, jei pagrindinis prioritetas yra rūšiavimas ir skirstymas į grupes.
+- Naudokite **list**, jei dažnai reikia įterpti arba šalinti elementus.
+- Venkite **deque**, nes jis nuosekliai yra lėčiausias rūšiavimui.
 

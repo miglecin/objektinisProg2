@@ -1,4 +1,7 @@
 #include "tyrimas3.h"
+#include "studentas.h"
+
+namespace fs = std::filesystem;
 
 void issaugotiRezultatus(const string& failoPavadinimas, const string& turinys) {
 try{
@@ -12,6 +15,76 @@ try{
 } catch (const std::exception& e) {
     cerr<<"Klaida: "<<e.what()<<endl;
 }
+}
+
+template <typename Container>
+void spausdintiKietiakusIrVargsius(Container& kietiakai, Container& vargsiai, const string& failoPavadinimasKietiakai, const string& failoPavadinimasVargsiai, bool iFaila, char pasirinkimas)
+{
+    if (!fs::exists("results")) {
+        fs::create_directory("results");
+    }
+    // Pirmiausia apskaičiuojame galutinius balus kietiakams ir vargšams
+    for (auto& stud : kietiakai) {
+        stud.Gal = pasirinktasGal(stud.nd, stud.egz, pasirinkimas);
+    }
+
+    for (auto& stud : vargsiai) {
+        stud.Gal = pasirinktasGal(stud.nd, stud.egz, pasirinkimas);
+    }
+
+    // Rūšiuojame kietiakus ir vargšus pagal galutinį balą
+    rusiuotiStud(kietiakai, 'g');
+    rusiuotiStud(vargsiai, 'g');
+
+    // Jei reikia išvesti į failą
+    if (iFaila) {
+        // Kietiakų rezultatai į failą
+        vector<string> eilutesKietiakai;
+        eilutesKietiakai.reserve(kietiakai.size());
+
+        for (const auto& stud : kietiakai) {
+            ostringstream ss;
+            ss << setw(15) << std::left << stud.Vard 
+               << setw(20) << stud.Pav 
+               << setw(17) << fixed << setprecision(2) << stud.Gal << endl;
+            eilutesKietiakai.push_back(ss.str());
+        }
+
+        ofstream failasKietiakai(failoPavadinimasKietiakai);
+        if (!failasKietiakai) {
+            cerr << "Nepavyko sukurti failo: " << failoPavadinimasKietiakai << endl;
+            return;
+        }
+        for (const auto& eil : eilutesKietiakai) {
+            failasKietiakai.write(eil.c_str(), eil.size());
+        }
+        failasKietiakai.close();
+
+        // Vargsų rezultatai į failą
+        vector<string> eilutesVargsiai;
+        eilutesVargsiai.reserve(vargsiai.size());
+
+        for (const auto& stud : vargsiai) {
+            ostringstream ss;
+            ss << setw(15) << std::left << stud.Vard 
+               << setw(20) << stud.Pav 
+               << setw(17) << fixed << setprecision(2) << stud.Gal << endl;
+            eilutesVargsiai.push_back(ss.str());
+        }
+
+        ofstream failasVargsiai(failoPavadinimasVargsiai);
+        if (!failasVargsiai) {
+            cerr << "Nepavyko sukurti failo: " << failoPavadinimasVargsiai << endl;
+            return;
+        }
+        for (const auto& eil : eilutesVargsiai) {
+            failasVargsiai.write(eil.c_str(), eil.size());
+        }
+        failasVargsiai.close();
+
+        cout << "Rezultatai issaugoti faile: " << failoPavadinimasKietiakai 
+             << " ir " << failoPavadinimasVargsiai << ".\n";
+    }
 }
 
 template <typename Container>
@@ -58,6 +131,8 @@ void testuotiKonteineri(const string& failoPavadinimas, const string& rezultatai
     isskirtiVargsusIrKietiakus(grupe, vargsiai, kietiakai);
     laikoMatavimasSkirstymui.baigti();
     rezultatai<< "---> Studentų skirstymas į grupes uztruko: "<<laikoMatavimasSkirstymui.gautiLaikoSkirtuma() << " ms\n";
+
+    spausdintiKietiakusIrVargsius(kietiakai, vargsiai, rezultataiAplankas + "/kietiakai.txt", rezultataiAplankas + "/vargsiai.txt", true, 'v');
 
     rezultatai<< "--------------------------------------------\n";
     rezultatai.close();

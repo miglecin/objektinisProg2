@@ -48,8 +48,12 @@ void Studentas<T>::nuskaitymasFile(std::vector<Studentas<T>>& grupe, const std::
     Studentas<T> laik;
     while (getline(failas, eilute)) {
         std::istringstream ss(eilute);
-        laik.readStudent(ss);  // Naudojame readStudent funkciją, kad užpildytume studentą
-        grupe.push_back(laik);  // Pridedame studentą į grupę
+        if (ss) {  // Tikriname, ar eilutė buvo sėkmingai nuskaityta
+            laik.readStudent(ss);  // Naudojame readStudent funkciją, kad užpildytume studentą
+            grupe.push_back(laik);  // Pridedame studentą į grupę
+        } else {
+            std::cerr << "Klaida nuskaityti eilutę: " << eilute << std::endl;
+        }
     }
 
     failas.close();

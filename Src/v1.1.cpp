@@ -198,7 +198,7 @@ int main() {
 
             case 'B':
                 cout<<"Vykdomas Tyrimas 6...\n";
-                testuotiSkaidymoStrategija3<std::vector<studentas<std::vector<float>>>>(failas, rezultataiAplankas);
+                testuotiSkaidymoStrategija3<std::vector<Studentas<std::vector<float>>>>(failas, rezultataiAplankas);
                 break;
 
              case '0':

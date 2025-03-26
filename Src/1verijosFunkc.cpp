@@ -1,13 +1,9 @@
-#include "versijos1Funkc.h"
+#include "1versijosFunkc.h"
 #include <fstream>
 #include <sstream>
 #include <iostream>
 #include <algorithm>
-#include <cstdlib>  // rand() funkcijai
-#include <string> 
 #include <numeric>
-
-namespace fs = std::filesystem;
 
 template <typename T>
 double generuotiGalvid(const T& nd, int egz) {
@@ -41,18 +37,6 @@ void randomPaz(T& nd, int& egz, int kiek_nd) {
         nd.push_back(rand() % 10 + 1);
     }
     egz = rand() % 10 + 1;
-}
-
-void generuotiVardPav(std::string& vardas, std::string& pavarde) 
-{
-    static const char* vardai[] = {"Jonas", "Petras", "Mantas", "Dovydas", "Rokas"};
-    static const char* pavardes[] = {"Kazlauskas", "Petraitis", "Jankauskas", "Masiulis", "Paulauskas"};
-
-    int varduKiekis = sizeof(vardai) / sizeof(vardai[0]);
-    int pavardziuKiekis = sizeof(pavardes) / sizeof(pavardes[0]);
-
-    vardas = vardai[rand() % varduKiekis];
-    pavarde = pavardes[rand() % pavardziuKiekis];
 }
 
 template <typename T>
@@ -110,58 +94,6 @@ void spausdintiRez(std::vector<studentas<T>>& grupe, bool iFaila, char pasirinki
     }
 }
 
-void spausdintiRez2(std::vector<studentas<std::vector<float>>>& grupe, bool iFaila, char pasirinkimas, char rusiavimoPas) {
-    // Pirma - apskaičiuoti galutinius balus
-    for (auto& stud : grupe) {
-        stud.Gal = pasirinktasGal(stud.nd, stud.egz, pasirinkimas);
-    }
-
-    // Antra - surūšiuoti studentus
-    rusiuotiStud(grupe, rusiavimoPas);
-    
-    if (iFaila) { // Jei į failą
-        std::vector<std::string> eilutes;
-        eilutes.reserve(grupe.size());
-
-        for (const auto& stud : grupe) {
-            std::ostringstream ss;
-            ss << std::setw(15) << std::left << stud.Vard << std::setw(20) << stud.Pav << std::setw(17) << std::fixed << std::setprecision(2) << stud.Gal << std::endl;
-            eilutes.push_back(ss.str());
-        }
-        
-        // Sukuriame katalogą "results", jei jo nėra
-        std::string results_dir = "results";
-        if (!fs::exists(results_dir)) {
-            fs::create_directory(results_dir);
-        }
-
-        // Sukuriame failą
-        std::string failoPavadinimas = results_dir + "/rezultatai.txt";
-        std::ofstream failas(failoPavadinimas);
-        if (!failas) {
-            std::cerr << "Nepavyko sukurti failo rezultatams." << std::endl;
-            return;
-        }
-
-        // Rašome į failą
-        for (const auto& eil : eilutes) {
-            failas.write(eil.c_str(), eil.size());
-        }
-        failas.close();
-        std::cout << "Rezultatai išsaugoti faile `rezultatai.txt`.\n";
-    } else { // Jei į ekraną
-        std::ostringstream buffer;
-        buffer << std::setw(15) << std::left << "Vardas" << std::setw(15) << "Pavarde" << std::setw(20) << ((pasirinkimas == 'v') ? "Galutinis (Vid.)" : "Galutinis (Med.)") << std::endl;
-        buffer << "--------------------------------------------------------------" << std::endl;
-
-        for (const auto& stud : grupe) {
-            buffer << std::setw(15) << std::left << stud.Vard << std::setw(15) << stud.Pav << std::setw(20) << std::fixed << std::setprecision(2) << stud.Gal << std::endl;
-        }
-
-        std::cout.write(buffer.str().c_str(), buffer.str().size());
-    }
-}
-
 template <typename T>
 void rusiuotiStud(std::vector<studentas<T>>& grupe, char rusiavimoPas) {
     if (rusiavimoPas == 'v') {
@@ -180,20 +112,10 @@ void rusiuotiStud(std::vector<studentas<T>>& grupe, char rusiavimoPas) {
 }
 
 // Explicit instantiation of templates to avoid linker issues
-template void nuskaitymasFile<std::vector<float>>(
-    std::vector<studentas<std::vector<float>>>&, 
-    const std::string&);
+template void nuskaitymasFile<std::vector<studentas<std::vector<float>>>>(std::vector<studentas<std::vector<float>>>&, const std::string&);
+template void nuskaitymasFile<std::list<studentas<std::list<float>>>>(std::list<studentas<std::list<float>>>&, const std::string&);
+template void nuskaitymasFile<std::deque<studentas<std::deque<float>>>>(std::deque<studentas<std::deque<float>>>&, const std::string&);
 
-template void spausdintiRez<std::vector<float>>(
-    std::vector<studentas<std::vector<float>>>&, 
-    bool, 
-    char, 
-    const std::string&);
-
-
-    template void spausdintiRez2<std::vector<float>>(
-        std::vector<studentas<std::vector<float>>>&, 
-        bool, 
-        char, 
-        char
-    );
+template void spausdintiRez<std::vector<studentas<std::vector<float>>>>(std::vector<studentas<std::vector<float>>>&, bool, char, const std::string&);
+template void spausdintiRez<std::list<studentas<std::list<float>>>>(std::list<studentas<std::list<float>>>&, bool, char, const std::string&);
+template void spausdintiRez<std::deque<studentas<std::deque<float>>>>(std::deque<studentas<std::deque<float>>>&, bool, char, const std::string&);

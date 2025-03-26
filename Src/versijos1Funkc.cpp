@@ -9,38 +9,71 @@
 
 namespace fs = std::filesystem;
 
-template <typename T>
-double generuotiGalvid(const T& nd, int egz) {
-    double suma = std::accumulate(nd.begin(), nd.end(), 0.0);
-    return 0.4 * (suma / nd.size()) + 0.6 * egz;
-}
-
-template <typename T>
-double generuotiGalmed(const T& nd, int egz) {
-    std::vector<double> sorted = nd;
-    std::sort(sorted.begin(), sorted.end());
-    size_t size = sorted.size();
-    double mediana = (size % 2 == 0) ? (sorted[size / 2 - 1] + sorted[size / 2]) / 2 : sorted[size / 2];
-    return 0.4 * mediana + 0.6 * egz;
-}
-
-template <typename T>
-double pasirinktasGal(const T& nd, int egz, char kaip) {
-    if (kaip == 'v') {
-        return generuotiGalvid(nd, egz);
-    } else if (kaip == 'm') {
-        return 0.4 * generuotiGalmed(nd, egz) + 0.6 * egz;
+template <typename Container>
+double generuotiGalvid(Container& nd, int egz) 
+{
+    double suma= 0;
+    for (const auto& paz : nd) 
+    {
+        suma += paz;
     }
-    return 0;
+    double vidurkis=suma/ nd.size();
+    return 0.4 * vidurkis + 0.6 * egz;
 }
 
-template <typename T>
-void randomPaz(T& nd, int& egz, int kiek_nd) {
-    nd.clear();
-    for (int i = 0; i < kiek_nd; i++) {
-        nd.push_back(rand() % 10 + 1);
+template <typename Container>
+double generuotiGalmed(Container nd) 
+{
+    if constexpr (std::is_same_v<Container, list<float>>) 
+    {
+        // Jei konteineris yra LISTAS, naudojame .sort()
+        nd.sort();
+    } 
+    else 
+    {
+        //jei konteineris yra VECTOR arba DEQUE, naudojame sort()
+        sort(nd.begin(), nd.end());
     }
-    egz = rand() % 10 + 1;
+    size_t kiek=nd.size();
+    auto it=nd.begin(); //pirmas elementas
+    std::advance(it, kiek / 2); //perstumia per nurodyta sk elementu. Jis butina listui, nes jis neduoda random access ir neveiktu it+n
+
+    if (kiek%2== 1) 
+    {
+        return *it;  // Jei nelyginis elementų kiekis, grazina ta sk
+    } 
+    else 
+    {
+        auto it2=it; //sukuria kopija it, kuris yra vidurinis elem
+        std::advance(it2, -1); //perkialia 1 zingsniu atgal
+        return (*it + *it2) / 2.0;  //Jei lyginis, grazina dvieju vid, * - kad gauti reiskmes o ne adresus
+    }
+}
+
+//Funkcija pasirinktam galutiniam balui 
+template <typename Container>
+double pasirinktasGal(Container& nd, int egz, char kaip) 
+{
+    double Gal=0;
+    if (kaip=='v') 
+    {
+        Gal=generuotiGalvid(nd, egz);
+    } else if (kaip=='m') 
+    {
+        Gal=0.4 * generuotiGalmed(nd) + 0.6 * egz;
+    }
+    return Gal;
+}
+
+template <typename Container>
+void randomPaz(Container& nd, int& egz, int kiek_nd)
+{
+    nd.clear(); //pasalina senus duomenis
+    for (int i= 0; i<kiek_nd; i++) 
+    {
+        nd.push_back(rand() % 10 + 1); //atsitiktiniai paz nuo 1 iki 10
+    }
+    egz=rand() % 10 + 1; //egz paz
 }
 
 void generuotiVardPav(std::string& vardas, std::string& pavarde) 
@@ -55,141 +88,205 @@ void generuotiVardPav(std::string& vardas, std::string& pavarde)
     pavarde = pavardes[rand() % pavardziuKiekis];
 }
 
-template <typename T>
-void nuskaitymasFile(std::vector<studentas<T>>& grupe, const std::string& filename) {
-    std::ifstream failas(filename);
-    if (!failas) {
+//SABLONINĖ RUSIAVIMO FUNKCIJA
+template <typename Container>
+void rusiuotiStud(Container& grupe, char rusiavimoPas) {
+    if constexpr (std::is_same_v<Container, list<typename Container::value_type>>) //kompiliavimo metu tikrina, ar konteineris yra listas
+    { 
+        //jei konteineris yra LIST, tada .sort() 
+        if (rusiavimoPas=='v') {
+            grupe.sort([](const auto& a, const auto& b) { return a.Vard < b.Vard; }); //[] – lambda capture list, tuščia, nes nereikia jokių kintamųjų iš išorės
+        } else if (rusiavimoPas=='p') {
+            grupe.sort([](const auto& a, const auto& b) { return a.Pav < b.Pav; });
+        } else if (rusiavimoPas=='g') {
+            grupe.sort([](const auto& a, const auto& b) { return a.Gal > b.Gal; });
+        }
+    } 
+    else 
+    {
+        //jei konteineris yra VECTOR arba DEQUE, tada sort
+        if (rusiavimoPas=='v') {
+            sort(grupe.begin(), grupe.end(), [](const auto& a, const auto& b) { return a.Vard < b.Vard; });
+        } else if (rusiavimoPas=='p') {
+            sort(grupe.begin(), grupe.end(), [](const auto& a, const auto& b) { return a.Pav < b.Pav; });
+        } else if (rusiavimoPas=='g') {
+            sort(grupe.begin(), grupe.end(), [](const auto& a, const auto& b) { return a.Gal > b.Gal; });
+        }
+    }
+}
+
+template <typename Container>
+void nuskaitymasFile(Container& grupe, const string& filename)
+{
+    ifstream failas(filename);
+     if (!failas) {
         throw std::runtime_error("Nepavyko atidaryti failo: " + filename);
     }
 
-    std::string eilute;
-    getline(failas, eilute); // praleidžiame pirmą eilutę (antraštę)
+    string eilute;
+    getline(failas, eilute); //praleidziam pirma eilute (antrastes eilute)
 
-    studentas<T> laik;
-    while (getline(failas, eilute)) {
-        std::istringstream ss(eilute);
-        ss >> laik.Vard >> laik.Pav;
-        double pazymys;
-        laik.nd.clear();
-        while (ss >> pazymys) {
-            laik.nd.push_back(pazymys);
+    using T = typename Container::value_type::nd_type; //automatinis konteinerio tipas (vector, list, deque)
+    studentas<T> laik; //automatinis prisitaikymas pagal tipa
+    
+    while(getline(failas, eilute)) //skaito kiekviena eil atskirai
+    
+    {
+        istringstream ss(eilute); //naudojame string stream duom skaitymui is eilutes
+        ss>>laik.Vard>>laik.Pav;
+
+        int paz;
+        laik.nd.clear(); //isvalom ankstesnius duom is vekt jei ju buvo
+
+        T laikiniPaz; //naudoja toki konteineri, kokia yra grupe, (value_type - studentas, nd_type - konteinerio tipas kur saugomi paz)
+         while (ss>>paz) //nuskaitom visus sk is eilutes ir dedam i laikiniPaz
+        {
+            laikiniPaz.push_back(paz);
         }
 
-        if (!laik.nd.empty()) {
-            laik.egz = laik.nd.back();
-            laik.nd.pop_back();
-        }
-
-        grupe.push_back(laik);
+        //Paskutinis nuskaitytas sk. yra egzamino pazymys
+        if (!laikiniPaz.empty()) {
+            laik.egz = laikiniPaz.back();
+            laikiniPaz.pop_back();  //Pasaliname egzamina is ND saraso
+        } 
+        laik.nd=move(laikiniPaz); //perkeliamia visus pazymius i stud struktura
+        grupe.push_back(laik); //pridedam studenta i studentu sarasa
     }
     failas.close();
 }
-
-template <typename T>
-void spausdintiRez(std::vector<studentas<T>>& grupe, bool iFaila, char pasirinkimas, const std::string& failoPavadinimas) {
-    for (auto& stud : grupe) {
+void spausdintiRez2( vector<studentas<vector<float>>> grupe, bool iFaila, char pasirinkimas, char rusiavimoPas)
+{
+    //pirma- apskaiciuoti galutinius balus
+    for (auto& stud : grupe) 
+    {
         stud.Gal = pasirinktasGal(stud.nd, stud.egz, pasirinkimas);
     }
 
-    rusiuotiStud(grupe, 'g');
-    if (iFaila) {
-        std::ofstream failas(failoPavadinimas);
-        if (!failas) {
-            std::cerr << "Nepavyko sukurti failo: " << failoPavadinimas << std::endl;
-            return;
-        }
-
-        for (const auto& stud : grupe) {
-            failas << stud.Vard << " " << stud.Pav << " " << stud.Gal << std::endl;
-        }
-        failas.close();
-    } else {
-        for (const auto& stud : grupe) {
-            std::cout << stud.Vard << " " << stud.Pav << " " << stud.Gal << std::endl;
-        }
-    }
-}
-
-void spausdintiRez2(std::vector<studentas<std::vector<float>>>& grupe, bool iFaila, char pasirinkimas, char rusiavimoPas) {
-    // Pirma - apskaičiuoti galutinius balus
-    for (auto& stud : grupe) {
-        stud.Gal = pasirinktasGal(stud.nd, stud.egz, pasirinkimas);
-    }
-
-    // Antra - surūšiuoti studentus
+    //antra- sursiuoti studentus
     rusiuotiStud(grupe, rusiavimoPas);
     
-    if (iFaila) { // Jei į failą
-        std::vector<std::string> eilutes;
-        eilutes.reserve(grupe.size());
+if (iFaila) //jei i faila
+{
+    vector<string> eilutes; //vektorius eilutems kaupti
+    eilutes.reserve(grupe.size()); //rezervuojam vieta is anksto visiems studentams
 
-        for (const auto& stud : grupe) {
-            std::ostringstream ss;
-            ss << std::setw(15) << std::left << stud.Vard << std::setw(20) << stud.Pav << std::setw(17) << std::fixed << std::setprecision(2) << stud.Gal << std::endl;
-            eilutes.push_back(ss.str());
-        }
+    for(const auto& stud : grupe) //sukaupiam visus rezultatus i vektoriu (kad veliau vienu metu atspausdint)
+    {
+        ostringstream ss; //naudjam ostringstream kad surinktumevisus stud duom i eil
+        ss<<setw(15)<<std::left<<stud.Vard<<setw(20)<<stud.Pav<<setw(17)<<fixed<<setprecision(2)<<stud.Gal<< endl;
+        eilutes.push_back(ss.str()); //irasom suformuota eil i vekt
+    }
         
-        // Sukuriame katalogą "results", jei jo nėra
-        std::string results_dir = "results";
-        if (!fs::exists(results_dir)) {
-            fs::create_directory(results_dir);
-        }
+     //Sukuriam kataloga results, jei jo nėra
+     string results_dir = "results";
+     if (!fs::exists(results_dir)) {
+         fs::create_directory(results_dir);
+     }
 
-        // Sukuriame failą
-        std::string failoPavadinimas = results_dir + "/rezultatai.txt";
-        std::ofstream failas(failoPavadinimas);
-        if (!failas) {
-            std::cerr << "Nepavyko sukurti failo rezultatams." << std::endl;
+     // Sukuriam faila
+     string failoPavadinimas = results_dir + "/rezultatai.txt";
+     ofstream failas(failoPavadinimas);
+     if(!failas)
+        {
+            cerr<<"nepavyko sukurti failo rezultatams";
             return;
         }
 
-        // Rašome į failą
-        for (const auto& eil : eilutes) {
-            failas.write(eil.c_str(), eil.size());
-        }
-        failas.close();
-        std::cout << "Rezultatai išsaugoti faile `rezultatai.txt`.\n";
-    } else { // Jei į ekraną
-        std::ostringstream buffer;
-        buffer << std::setw(15) << std::left << "Vardas" << std::setw(15) << "Pavarde" << std::setw(20) << ((pasirinkimas == 'v') ? "Galutinis (Vid.)" : "Galutinis (Med.)") << std::endl;
-        buffer << "--------------------------------------------------------------" << std::endl;
-
-        for (const auto& stud : grupe) {
-            buffer << std::setw(15) << std::left << stud.Vard << std::setw(15) << stud.Pav << std::setw(20) << std::fixed << std::setprecision(2) << stud.Gal << std::endl;
-        }
-
-        std::cout.write(buffer.str().c_str(), buffer.str().size());
+    for (const auto& eil : eilutes) //Rašome visas eilutes į failą vienu kartu (taip išvengiame lėto spausdinimo per `<<`)
+    {
+        failas.write(eil.c_str(), eil.size()); //Rašoma tiesiogiai iš `c_str()` į failą
     }
+    failas.close();
+    cout<<"Rezultatai issaugoti faile `rezultatai.txt`.\n";
+}
+else //jei i ekrana
+{
+    //optimizuotas isvedimas i ekrana
+    ostringstream buffer;
+
+    buffer<<setw(15)<<std::left<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<<((pasirinkimas =='v') ? "Galutinis (Vid.)" : "Galutinis (Med.)")<<endl;
+    buffer<<"--------------------------------------------------------------"<< endl;
+
+    for (const auto& stud : grupe) //visi duom i bufferi, kad isvengt leto cout
+    {
+        buffer<<setw(15)<<std::left<<stud.Vard<<setw(15)<<stud.Pav<<setw(20)<<fixed<<setprecision(2)<<stud.Gal<< endl;
+    }
+    std::cout.write(buffer.str().c_str(), buffer.str().size()); //Galutinis `cout.write()`, kuris leidžia išvesti viską iš karto ir pagreitina procesą
+}
 }
 
-template <typename T>
-void rusiuotiStud(std::vector<studentas<T>>& grupe, char rusiavimoPas) {
-    if (rusiavimoPas == 'v') {
-        std::sort(grupe.begin(), grupe.end(), [](const auto& a, const auto& b) {
-            return a.Vard < b.Vard;
-        });
-    } else if (rusiavimoPas == 'p') {
-        std::sort(grupe.begin(), grupe.end(), [](const auto& a, const auto& b) {
-            return a.Pav < b.Pav;
-        });
-    } else if (rusiavimoPas == 'g') {
-        std::sort(grupe.begin(), grupe.end(), [](const auto& a, const auto& b) {
-            return a.Gal > b.Gal;
-        });
+template <typename Container>
+void spausdintiRez(Container& grupe, bool iFaila, char pasirinkimas, const string& failoPavadinimas)
+{
+    //pirma- apskaiciuoti galutinius balus
+    for (auto& stud : grupe) 
+    {
+        stud.Gal = pasirinktasGal(stud.nd, stud.egz, pasirinkimas);
     }
+
+    //antra- sursiuoti studentus
+    rusiuotiStud(grupe, 'g');
+    
+if (iFaila) //jei i faila
+{
+    vector<string> eilutes; //vektorius eilutems kaupti
+    eilutes.reserve(grupe.size()); //rezervuojam vieta is anksto visiems studentams
+
+    for(const auto& stud : grupe) //sukaupiam visus rezultatus i vektoriu (kad veliau vienu metu atspausdint)
+    {
+        ostringstream ss; //naudjam ostringstream kad surinktumevisus stud duom i eil
+        ss<<setw(15)<<std::left<<stud.Vard<<setw(20)<<stud.Pav<<setw(17)<<fixed<<setprecision(2)<<stud.Gal<< endl;
+        eilutes.push_back(ss.str()); //irasom suformuota eil i vekt
+    }
+        
+    ofstream failas(failoPavadinimas);
+        if (!failas) {
+            cerr << "Nepavyko sukurti failo: " << failoPavadinimas << endl;
+            return;
+        }
+
+    for (const auto& eil : eilutes) //Rašome visas eilutes į failą vienu kartu (taip išvengiame lėto spausdinimo per `<<`)
+    {
+        failas.write(eil.c_str(), eil.size()); //Rašoma tiesiogiai iš `c_str()` į failą
+    }
+    failas.close();
+    cout<<"Rezultatai issaugoti faile" << failoPavadinimas << "`.\n";
+    }
+else //jei i ekrana
+{
+    //optimizuotas isvedimas i ekrana
+    ostringstream buffer;
+
+    buffer<<setw(15)<<std::left<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<<((pasirinkimas =='v') ? "Galutinis (Vid.)" : "Galutinis (Med.)")<<endl;
+    buffer<<"--------------------------------------------------------------"<< endl;
+
+    for (const auto& stud : grupe) //visi duom i bufferi, kad isvengt leto cout
+    {
+        buffer<<setw(15)<<std::left<<stud.Vard<<setw(15)<<stud.Pav<<setw(20)<<fixed<<setprecision(2)<<stud.Gal<< endl;
+    }
+    std::cout.write(buffer.str().c_str(), buffer.str().size()); //Galutinis `cout.write()`, kuris leidžia išvesti viską iš karto ir pagreitina procesą
+}
 }
 
 // Explicit instantiation of templates to avoid linker issues
-template void nuskaitymasFile<std::vector<float>>(
-    std::vector<studentas<std::vector<float>>>&, 
-    const std::string&);
+template double pasirinktasGal<std::vector<float>>(std::vector<float>&, int, char);
+template double pasirinktasGal<std::list<float>>(std::list<float>&, int, char);
+template double pasirinktasGal<std::deque<float>>(std::deque<float>&, int, char);
 
-template void spausdintiRez<std::vector<float>>(
-    std::vector<studentas<std::vector<float>>>&, 
-    bool, 
-    char, 
-    const std::string&);
+template void randomPaz<std::vector<float>>(std::vector<float>&, int&, int);
+template void randomPaz<std::list<float>>(std::list<float>&, int&, int);
+template void randomPaz<std::deque<float>>(std::deque<float>&, int&, int);
+
+template void rusiuotiStud<std::vector<studentas<std::vector<float>>>>(std::vector<studentas<std::vector<float>>>&, char);
+template void rusiuotiStud<std::list<studentas<std::list<float>>>>(std::list<studentas<std::list<float>>>&, char);
+template void rusiuotiStud<std::deque<studentas<std::deque<float>>>>(std::deque<studentas<std::deque<float>>>&, char);
 
 
-template void spausdintiRez2<std::vector<float>>(std::vector<studentas<std::vector<float>>>&, bool, char, char);
+// Aiškiai instancijuojame nuskaitymo funkciją
+template void nuskaitymasFile<std::vector<studentas<std::vector<float>>>>(std::vector<studentas<std::vector<float>>>&, const std::string&);
+template void nuskaitymasFile<std::list<studentas<std::list<float>>>>(std::list<studentas<std::list<float>>>&, const std::string&);
+template void nuskaitymasFile<std::deque<studentas<std::deque<float>>>>(std::deque<studentas<std::deque<float>>>&, const std::string&);
 
+template void spausdintiRez<std::vector<studentas<std::vector<float>>>>(std::vector<studentas<std::vector<float>>>&, bool, char, const std::string&);
+template void spausdintiRez<std::list<studentas<std::list<float>>>>(std::list<studentas<std::list<float>>>&, bool, char, const std::string&);
+template void spausdintiRez<std::deque<studentas<std::deque<float>>>>(std::deque<studentas<std::deque<float>>>&, bool, char, const std::string&);

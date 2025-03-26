@@ -1,80 +1,40 @@
 #include "studentas.h"
 
-// Default konstruktorius
-template <typename T>
-Studentas<T>::Studentas() : egzaminas_(0), galutinis_balas_(0) {}
-
-// Konstruktorius, kuris naudoja įvestį
+// Konstruktoriaus realizacija
 template <typename T>
 Studentas<T>::Studentas(std::istream& is) {
     readStudent(is);
 }
 
-// Galutinio balo skaičiavimas
+// Konstruktoriaus realizacija (default)
 template <typename T>
-double Studentas<T>::galBalas(double (*balasFunkcija)(const T&)) const {
-    return 0.4 * balasFunkcija(nd_) + 0.6 * egzaminas_;
+Studentas<T>::Studentas() : egzaminas_(0), galutinis_balas_(0) {}
+
+// Funkcija, skaičiuojanti galutinį balą
+template <typename T>
+double Studentas<T>::galBalas(double (*balasFunkcija)(const T&) /*= generuotiGalvid*/) const {
+    return balasFunkcija(nd_);
 }
 
-// Nuskaitymo metodas iš stream'o
+// Statinės funkcijos realizacija
 template <typename T>
-std::istream& Studentas<T>::readStudent(std::istream& is) {
-    is >> vardas_ >> pavarde_;
-    double pazymys;
-    nd_.clear();  // Išvalome senus duomenis
-    while (is >> pazymys) {
-        nd_.push_back(pazymys);
+void Studentas<T>::rusiuotiStud(std::vector<Studentas<T>>& grupe, char rusiavimoPas) {
+    if (rusiavimoPas == 'v') {
+        std::sort(grupe.begin(), grupe.end(), [](const Studentas<T>& a, const Studentas<T>& b) {
+            return a.vardas_ < b.vardas_;
+        });
+    } else if (rusiavimoPas == 'p') {
+        std::sort(grupe.begin(), grupe.end(), [](const Studentas<T>& a, const Studentas<T>& b) {
+            return a.pavarde_ < b.pavarde_;
+        });
+    } else if (rusiavimoPas == 'g') {
+        std::sort(grupe.begin(), grupe.end(), [](const Studentas<T>& a, const Studentas<T>& b) {
+            return a.galutinisBalsas() > b.galutinisBalsas();
+        });
     }
-    return is;
 }
 
-// Set'eriai
-template <typename T>
-void Studentas<T>::setVardas(const std::string& v) {
-    vardas_ = v;
-}
-
-template <typename T>
-void Studentas<T>::setPavarde(const std::string& p) {
-    pavarde_ = p;
-}
-
-template <typename T>
-void Studentas<T>::setEgzaminas(int egz) {
-    egzaminas_ = egz;
-}
-
-template <typename T>
-void Studentas<T>::setNamudarbiai(const T& nd) {
-    nd_ = nd;
-}
-
-// Funkcijos, susijusios su balų generavimu
-template <typename T>
-double generuotiGalvid(const T& nd, int egz) {
-    double suma = 0;
-    for (const auto& paz : nd) {
-        suma += paz;
-    }
-    return 0.4 * (suma / nd.size()) + 0.6 * egz;
-}
-
-template <typename T>
-double generuotiGalmed(const T& nd, int egz) {
-    T sorted_nd = nd;
-    std::sort(sorted_nd.begin(), sorted_nd.end());
-    size_t kiek = sorted_nd.size();
-    double mediana;
-
-    if (kiek % 2 == 1) {
-        mediana = sorted_nd[kiek / 2];
-    } else {
-        mediana = (sorted_nd[kiek / 2] + sorted_nd[kiek / 2 - 1]) / 2.0;
-    }
-    return 0.4 * mediana + 0.6 * egz;
-}
-
-// Nuskaitymo funkcija
+// Nuskaitymo funkcija, kuri nuskaito studentus iš failo
 template <typename T>
 void Studentas<T>::nuskaitymasFile(std::vector<Studentas<T>>& grupe, const std::string& filename) {
     std::ifstream failas(filename);
@@ -88,63 +48,41 @@ void Studentas<T>::nuskaitymasFile(std::vector<Studentas<T>>& grupe, const std::
     Studentas<T> laik;
     while (getline(failas, eilute)) {
         std::istringstream ss(eilute);
-        ss >> laik.vardas() >> laik.pavarde();
-
-        double pazymys;
-        laik.nd().clear();
-        while (ss >> pazymys) {
-            laik.nd().push_back(pazymys);
-        }
-
-        grupe.push_back(laik);
+        laik.readStudent(ss);  // Naudojame readStudent funkciją, kad užpildytume studentą
+        grupe.push_back(laik);  // Pridedame studentą į grupę
     }
+
+    failas.close();
 }
 
-// Rezultatų spausdinimas į ekraną
+// Funkcija, skaičiuojanti galutinį balą pagal vidurkį
 template <typename T>
-void Studentas<T>::spausdintiRez(std::vector<Studentas<T>>& grupe, bool iFaila, char pasirinkimas, const std::string& failoPavadinimas) {
-    for (auto& stud : grupe) {
-        stud.galBalas(generuotiGalvid);
-    }
-
-    if (iFaila) {
-        std::ofstream failas(failoPavadinimas);
-        if (!failas) {
-            std::cerr << "Nepavyko atidaryti failo rezultatams.\n";
-            return;
-        }
-
-        for (const auto& stud : grupe) {
-            failas << stud.vardas() << " " << stud.pavarde() << " " << stud.galutinisBalsas() << std::endl;
-        }
-
-        std::cout << "Rezultatai išsaugoti faile " << failoPavadinimas << std::endl;
-    } else {
-        for (const auto& stud : grupe) {
-            std::cout << stud.vardas() << " " << stud.pavarde() << " " << stud.galutinisBalsas() << std::endl;
-        }
-    }
+double generuotiGalvid(const T& nd, int egz) {
+    double suma = std::accumulate(nd.begin(), nd.end(), 0.0);
+    return 0.4 * (suma / nd.size()) + 0.6 * egz;
 }
 
-// Rūšiavimo funkcija
+// Funkcija, skaičiuojanti galutinį balą pagal medianą
 template <typename T>
-void Studentas<T>::rusiuotiStud(std::vector<Studentas<T>>& grupe, char rusiavimoPas) {
-    if (rusiavimoPas == 'v') {
-        std::sort(grupe.begin(), grupe.end(), [](const auto& a, const auto& b) { 
-            return a.vardas() < b.vardas(); 
-        });
-    } else if (rusiavimoPas == 'p') {
-        std::sort(grupe.begin(), grupe.end(), [](const auto& a, const auto& b) { 
-            return a.pavarde() < b.pavarde(); 
-        });
-    } else if (rusiavimoPas == 'g') {
-        std::sort(grupe.begin(), grupe.end(), [](const auto& a, const auto& b) { 
-            return a.galutinisBalsas() > b.galutinisBalsas(); 
-        });
-    }
+double generuotiGalmed(const T& nd, int egz) {
+    std::vector<double> sorted = nd;
+    std::sort(sorted.begin(), sorted.end());
+    size_t size = sorted.size();
+    double mediana = (size % 2 == 0) ? (sorted[size / 2 - 1] + sorted[size / 2]) / 2 : sorted[size / 2];
+    return 0.4 * mediana + 0.6 * egz;
 }
 
-// Explicit instanciacija dėl šablonų
+// Instancijacija, kad kompiliatorius žinotų, ką kompiliuoti
 template class Studentas<std::vector<double>>;
 template class Studentas<std::list<double>>;
 template class Studentas<std::deque<double>>;
+
+// Instancijavimas, kad kompiliatorius žinotų, ką sukompiliuoti
+template double generuotiGalvid<std::vector<double>>(const std::vector<double>&, int);
+template double generuotiGalmed<std::vector<double>>(const std::vector<double>&, int);
+
+template double generuotiGalvid<std::list<double>>(const std::list<double>&, int);
+template double generuotiGalmed<std::list<double>>(const std::list<double>&, int);
+
+template double generuotiGalvid<std::deque<double>>(const std::deque<double>&, int);
+template double generuotiGalmed<std::deque<double>>(const std::deque<double>&, int);

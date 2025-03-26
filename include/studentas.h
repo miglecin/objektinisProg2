@@ -10,6 +10,7 @@
 #include <fstream>
 #include <sstream>
 
+// Pagrindinė Studentas klasė su šablonais
 template <typename T = std::vector<double>>  // T gali būti bet koks konteineris (vector, list, deque)
 class Studentas {
 private:
@@ -28,14 +29,14 @@ public:
     inline std::string vardas() const { return vardas_; }
     inline std::string pavarde() const { return pavarde_; }
     inline int egzaminas() const { return egzaminas_; }
-    inline T nd() const { return nd_; }
+    inline const T& nd() const { return nd_; }
     inline double galutinisBalsas() const { return galutinis_balas_; }
 
     // Nustatymo metodai
     void setVardas(const std::string& v);
     void setPavarde(const std::string& p);
-    void setEgzaminas(int egz);
-    void setNamudarbiai(const T& nd);
+    void setEgzaminas(int e);
+    void setNamudarbai(const T& nd);
 
     // Galutinio balo metodas
     double galBalas(double (*balasFunkcija)(const T&) = generuotiGalvid) const;

@@ -1,16 +1,44 @@
-#include <algorithm>
-#include <iostream>
-#include <vector>
 #include <fstream>
 #include "studentas.h"
-#include "rikiavimas.h"
 #include "LaikoMatavimas.h"
-#include "sufailais.h"
+
+// Spausdinti kietiakus ir vargšus į atskirus failus
+template <typename Container>
+void spausdintiKietiakusIrVargsius(Container& vargsiai, Container& kietiakai, const std::string& vargsiuFailas, const std::string& kietiakuFailas) {
+    // Pagal galutinį balą
+    char rusiavimoPas = 'g';
+    rusiuotiStud(vargsiai, rusiavimoPas);
+    rusiuotiStud(kietiakai, rusiavimoPas);
+
+    // Spausdiname vargšus
+    std::ofstream vargsiaiFailasStream(vargsiuFailas);
+    if (!vargsiaiFailasStream) {
+        std::cerr << "Nepavyko sukurti failo: " << vargsiuFailas << std::endl;
+        return;
+    }
+    for (const auto& stud : vargsiai) {
+        vargsiaiFailasStream << stud.vardas() << " " << stud.pavarde() << " " << stud.galutinisBalsas() << std::endl;
+    }
+    vargsiaiFailasStream.close();
+    std::cout << "Vargšiai išsaugoti faile: " << vargsiuFailas << std::endl;
+
+    // Spausdiname kietiakus
+    std::ofstream kietiakaiFailasStream(kietiakuFailas);
+    if (!kietiakaiFailasStream) {
+        std::cerr << "Nepavyko sukurti failo: " << kietiakuFailas << std::endl;
+        return;
+    }
+    for (const auto& stud : kietiakai) {
+        kietiakaiFailasStream << stud.vardas() << " " << stud.pavarde() << " " << stud.galutinisBalsas() << std::endl;
+    }
+    kietiakaiFailasStream.close();
+    std::cout << "Kietiakai išsaugoti faile: " << kietiakuFailas << std::endl;
+}
 
 // 3 strategija - Optimizuotas studentų skirstymas į vargšus ir kietiakus
 template <typename Container>
 void isskirtiVargsusIrKietiakusOpt(Container& grupe, Container& vargsiai, Container& kietiakai) {
-    if constexpr (std::is_same_v<Container, std::vector<Studentas>>) {
+    if constexpr (std::is_same_v<Container, std::vector<Studentas<std::vector<float>>>>) {
         // Pirmiausia paskaičiuojame visus galutinius balus
         for (auto& stud : grupe) {
             stud.galBalas(generuotiGalvid);  // Skaičiuojame galutinį balą pagal vidurkį
@@ -31,12 +59,12 @@ void isskirtiVargsusIrKietiakusOpt(Container& grupe, Container& vargsiai, Contai
     }
 }
 
-// 2. Testavimo funkcija su laiko matavimais
+// Testavimo funkcija su laiko matavimais
 template <typename Container>
 void testuotiSkaidymoStrategija3(const std::string& failoPavadinimas, const std::string& rezultataiAplankas) {
     Container grupe, vargsiai, kietiakai;
 
-    if constexpr (std::is_same_v<Container, std::vector<Studentas>>) {
+    if constexpr (std::is_same_v<Container, std::vector<Studentas<std::vector<float>>>>) {
         std::string konteinerioTipas = "vector";
 
         std::string rezultatuFailas = rezultataiAplankas + "/optimizuotasSkaidymas3_" + konteinerioTipas + ".txt";
@@ -87,9 +115,13 @@ void testuotiSkaidymoStrategija3(const std::string& failoPavadinimas, const std:
 }
 
 // Instancijacija
-template void testuotiSkaidymoStrategija3<std::vector<Studentas>>(const std::string&, const std::string&);
-template void spausdintiKietiakusIrVargsius<std::vector<Studentas>>(
-    std::vector<Studentas>&, 
-    std::vector<Studentas>&, 
+template void testuotiSkaidymoStrategija3<std::vector<Studentas<std::vector<float>>>>(const std::string&, const std::string&);
+template void spausdintiKietiakusIrVargsius<std::vector<Studentas<std::vector<float>>>>(
+    std::vector<Studentas<std::vector<float>>>&, 
+    std::vector<Studentas<std::vector<float>>>&, 
     const std::string&, 
     const std::string&);
+template void isskirtiVargsusIrKietiakusOpt<std::vector<Studentas<std::vector<float>>>>(
+    std::vector<Studentas<std::vector<float>>>&, 
+    std::vector<Studentas<std::vector<float>>>&, 
+    std::vector<Studentas<std::vector<float>>>&);

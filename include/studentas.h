@@ -9,9 +9,8 @@
 #include <limits>
 #include <algorithm>
 #include <cstdlib>  // srand(), rand()
-#include <ctime> 
+#include <ctime>
 #include <sstream>
-#include <fstream>
 #include <filesystem>
 #include <chrono>
 #include <random>
@@ -42,22 +41,17 @@ using std::move;
 extern std::stringstream buffer;
 using std::list;
 using std::deque;
-using std::string;
 
-template <typename T>
-float generuotiGalvid(const T& nd, int egz);
+// Galutinio balo apskaičiavimo funkcijos
+float generuotiGalvid(const std::vector<float>& nd, int egz);
+float generuotiGalmed(const std::vector<float>& nd, int egz);
 
-template <typename T>
-float generuotiGalmed(const T& nd, int egz);
-
-// Pagrindinė Studentas klasė su šablonais
-template <typename T = std::vector<float>>  // T gali būti bet koks konteineris (vector, list, deque)
 class Studentas {
 private:
     std::string vardas_;
     std::string pavarde_;
     int egzaminas_;
-    T nd_;  // Namų darbų konteineris (T gali būti vector, list, deque)
+    std::vector<float> nd_;  // Namų darbų pažymiai
     float galutinis_balas_;
 
 public:
@@ -67,22 +61,20 @@ public:
     inline std::string vardas() const { return vardas_; }
     inline std::string pavarde() const { return pavarde_; }
     inline int egzaminas() const { return egzaminas_; }
-    inline const T& nd() const { return nd_; }
+    inline const std::vector<float>& nd() const { return nd_; }
     inline float galutinisBalsas() const { return galutinis_balas_; }
 
     void setVardas(const std::string& v);
     void setPavarde(const std::string& p);
     void setEgzaminas(int e);
-    void setNamudarbai(const T& nd);
+    void setNamudarbai(const std::vector<float>& nd);
 
-    float galBalas(float (*balasFunkcija)(const T&, int) = generuotiGalvid) const;
-
+    float galBalas(float (*balasFunkcija)(const std::vector<float>&, int));
     std::istream& readStudent(std::istream&);
-    
-    static void rusiuotiStud(std::vector<Studentas<T>>& grupe, char rusiavimoPas);
-    static void nuskaitymasFile(std::vector<Studentas<T>>& grupe, const std::string& filename);
-    static void spausdintiRez(std::vector<Studentas<T>>& grupe, bool iFaila, char pasirinkimas, const std::string& failoPavadinimas);
-};
 
+    static void rusiuotiStud(std::vector<Studentas>& grupe, char rusiavimoPas);
+    static void nuskaitymasFile(std::vector<Studentas>& grupe, const std::string& filename);
+    static void spausdintiRez(std::vector<Studentas>& grupe, bool iFaila, char pasirinkimas, const std::string& failoPavadinimas);
+};
 
 #endif  // STUDENTAS_H

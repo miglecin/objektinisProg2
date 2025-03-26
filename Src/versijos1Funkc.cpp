@@ -191,9 +191,5 @@ template void spausdintiRez<std::vector<float>>(
     const std::string&);
 
 
-    template void spausdintiRez2<std::vector<float>>(
-        std::vector<studentas<std::vector<float>>>&, 
-        bool, 
-        char, 
-        char
-    );
+template void spausdintiRez2<std::vector<float>>(std::vector<studentas<std::vector<float>>>&, bool, char, char);
+

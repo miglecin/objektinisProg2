@@ -10,10 +10,28 @@ Studentas<T>::Studentas(std::istream& is) {
 template <typename T>
 Studentas<T>::Studentas() : egzaminas_(0), galutinis_balas_(0) {}
 
+// Generuoja galutinį balą pagal vidurkį
+template <typename T>
+float generuotiGalvid(const T& nd, int egz) {
+    float suma = std::accumulate(nd.begin(), nd.end(), 0.0f);
+    float vidurkis = suma / nd.size();
+    return 0.4f * vidurkis + 0.6f * egz;
+}
+
+// Generuoja galutinį balą pagal medianą
+template <typename T>
+float generuotiGalmed(const T& nd, int egz) {
+    std::vector<float> sorted(nd.begin(), nd.end());
+    std::sort(sorted.begin(), sorted.end());
+    size_t size = sorted.size();
+    float mediana = (size % 2 == 0) ? (sorted[size / 2 - 1] + sorted[size / 2]) / 2 : sorted[size / 2];
+    return 0.4f * mediana + 0.6f * egz;
+}
+
 // Funkcija, skaičiuojanti galutinį balą
 template <typename T>
-double Studentas<T>::galBalas(double (*balasFunkcija)(const T&) /*= generuotiGalvid*/) const {
-    return balasFunkcija(nd_);
+float Studentas<T>::galBalas(float (*balasFunkcija)(const T&, int) /*= generuotiGalvid*/) const {
+    return balasFunkcija(nd_, egzaminas_);
 }
 
 // Statinės funkcijos realizacija
@@ -59,34 +77,17 @@ void Studentas<T>::nuskaitymasFile(std::vector<Studentas<T>>& grupe, const std::
     failas.close();
 }
 
-// Funkcija, skaičiuojanti galutinį balą pagal vidurkį
-template <typename T>
-double generuotiGalvid(const T& nd, int egz) {
-    double suma = std::accumulate(nd.begin(), nd.end(), 0.0);
-    return 0.4 * (suma / nd.size()) + 0.6 * egz;
-}
 
-// Funkcija, skaičiuojanti galutinį balą pagal medianą
-template <typename T>
-double generuotiGalmed(const T& nd, int egz) {
-    std::vector<double> sorted = nd;
-    std::sort(sorted.begin(), sorted.end());
-    size_t size = sorted.size();
-    double mediana = (size % 2 == 0) ? (sorted[size / 2 - 1] + sorted[size / 2]) / 2 : sorted[size / 2];
-    return 0.4 * mediana + 0.6 * egz;
-}
 
-// Instancijacija, kad kompiliatorius žinotų, ką kompiliuoti
-template class Studentas<std::vector<double>>;
-template class Studentas<std::list<double>>;
-template class Studentas<std::deque<double>>;
+// Instancijavimas generuotiGalvid funkcijos su įvairiais konteineriais
+template float generuotiGalvid<std::vector<float>>(const std::vector<float>&, int);
 
-// Instancijavimas, kad kompiliatorius žinotų, ką sukompiliuoti
-template double generuotiGalvid<std::vector<double>>(const std::vector<double>&, int);
-template double generuotiGalmed<std::vector<double>>(const std::vector<double>&, int);
+// Instancijavimas generuotiGalmed funkcijos su įvairiais konteineriais
+template float generuotiGalmed<std::vector<float>>(const std::vector<float>&, int);
 
-template double generuotiGalvid<std::list<double>>(const std::list<double>&, int);
-template double generuotiGalmed<std::list<double>>(const std::list<double>&, int);
+// Instancijavimas Studentas su įvairiais konteineriais
+template class Studentas<std::vector<float>>;
+template class Studentas<std::list<float>>;
+template class Studentas<std::deque<float>>;
 
-template double generuotiGalvid<std::deque<double>>(const std::deque<double>&, int);
-template double generuotiGalmed<std::deque<double>>(const std::deque<double>&, int);
+//template void Studentas<std::vector<float>>::rusiuotiStud(std::vector<Studentas<std::vector<float>>>&, char);

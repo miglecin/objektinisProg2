@@ -3,12 +3,12 @@
 #include "LaikoMatavimas.h"
 
 // Spausdinti kietiakus ir vargšus į atskirus failus
-template <typename Container>
-void spausdintiKietiakusIrVargsius(Container& vargsiai, Container& kietiakai, const std::string& vargsiuFailas, const std::string& kietiakuFailas) {
+template <typename T>
+void spausdintiKietiakusIrVargsius(std::vector<Studentas<T>>& vargsiai, std::vector<Studentas<T>>& kietiakai, const std::string& vargsiuFailas, const std::string& kietiakuFailas) {
     // Pagal galutinį balą
     char rusiavimoPas = 'g';
-    rusiuotiStud(vargsiai, rusiavimoPas);
-    rusiuotiStud(kietiakai, rusiavimoPas);
+    Studentas<T>::rusiuotiStud(vargsiai, rusiavimoPas);
+    Studentas<T>::rusiuotiStud(kietiakai, rusiavimoPas);
 
     // Spausdiname vargšus
     std::ofstream vargsiaiFailasStream(vargsiuFailas);
@@ -36,9 +36,9 @@ void spausdintiKietiakusIrVargsius(Container& vargsiai, Container& kietiakai, co
 }
 
 // 3 strategija - Optimizuotas studentų skirstymas į vargšus ir kietiakus
-template <typename Container>
-void isskirtiVargsusIrKietiakusOpt(Container& grupe, Container& vargsiai, Container& kietiakai) {
-    if constexpr (std::is_same_v<Container, std::vector<Studentas<std::vector<float>>>>) {
+template <typename T>
+void isskirtiVargsusIrKietiakusOpt(std::vector<Studentas<T>>& grupe, std::vector<Studentas<T>>& vargsiai, std::vector<Studentas<T>>& kietiakai)  {
+    if constexpr (std::is_same_v<T, std::vector<float>>) {
         // Pirmiausia paskaičiuojame visus galutinius balus
         for (auto& stud : grupe) {
             stud.galBalas(generuotiGalvid);  // Skaičiuojame galutinį balą pagal vidurkį
@@ -60,11 +60,10 @@ void isskirtiVargsusIrKietiakusOpt(Container& grupe, Container& vargsiai, Contai
 }
 
 // Testavimo funkcija su laiko matavimais
-template <typename Container>
+template <typename T>
 void testuotiSkaidymoStrategija3(const std::string& failoPavadinimas, const std::string& rezultataiAplankas) {
-    Container grupe, vargsiai, kietiakai;
+    vector<Studentas<T>> grupe, vargsiai, kietiakai;
 
-    if constexpr (std::is_same_v<Container, std::vector<Studentas<std::vector<float>>>>) {
         std::string konteinerioTipas = "vector";
 
         std::string rezultatuFailas = rezultataiAplankas + "/optimizuotasSkaidymas3_" + konteinerioTipas + ".txt";
@@ -82,14 +81,14 @@ void testuotiSkaidymoStrategija3(const std::string& failoPavadinimas, const std:
             // Failo nuskaitymas
             LaikoMatavimas laikoMatavimasNuskaitymui("Failo nuskaitymas");
             laikoMatavimasNuskaitymui.pradeti();
-            nuskaitymasFile(grupe, failoPavadinimas);
+            Studentas<T>::nuskaitymasFile(grupe, failoPavadinimas);
             laikoMatavimasNuskaitymui.baigti();
             rezultatai << "---> Failo nuskaitymas užtruko: " << laikoMatavimasNuskaitymui.gautiLaikoSkirtuma() << " ms\n";
 
             // Studentų rūšiavimas
             LaikoMatavimas laikoMatavimasRusiavimui("Studentų rūšiavimas");
             laikoMatavimasRusiavimui.pradeti();
-            rusiuotiStud(grupe, 'g');
+            Studentas<T>::rusiuotiStud(grupe, 'g');
             laikoMatavimasRusiavimui.baigti();
             rezultatai << "---> Studentų rūšiavimas užtruko: " << laikoMatavimasRusiavimui.gautiLaikoSkirtuma() << " ms\n";
 
@@ -100,8 +99,8 @@ void testuotiSkaidymoStrategija3(const std::string& failoPavadinimas, const std:
             laikoMatavimasSkaidymui.baigti();
             rezultatai << "---> Studentų skaidymas į grupes (optimizuotas) užtruko: " << laikoMatavimasSkaidymui.gautiLaikoSkirtuma() << " ms\n";
 
-            std::string vargsiuFailas = rezultataiAplankas + "/vargsiai_" + konteinerioTipas + ".txt";
-            std::string kietiakuFailas = rezultataiAplankas + "/kietiakai_" + konteinerioTipas + ".txt";
+            std::string vargsiuFailas = rezultataiAplankas + "/vargsiai_" + typeid(T).name() + ".txt";
+            std::string kietiakuFailas = rezultataiAplankas + "/kietiakai_" + typeid(T).name() + ".txt";
             spausdintiKietiakusIrVargsius(vargsiai, kietiakai, vargsiuFailas, kietiakuFailas);
 
             rezultatai << "--------------------------------------------\n";
@@ -112,16 +111,21 @@ void testuotiSkaidymoStrategija3(const std::string& failoPavadinimas, const std:
             std::cerr << "Klaida: " << e.what() << std::endl;
         }
     }
-}
+
 
 // Instancijacija
-template void testuotiSkaidymoStrategija3<std::vector<Studentas<std::vector<float>>>>(const std::string&, const std::string&);
-template void spausdintiKietiakusIrVargsius<std::vector<Studentas<std::vector<float>>>>(
+template void testuotiSkaidymoStrategija3<std::vector<float>>(const std::string&, const std::string&);
+template void testuotiSkaidymoStrategija3<std::list<float>>(const std::string&, const std::string&);
+template void testuotiSkaidymoStrategija3<std::deque<float>>(const std::string&, const std::string&);
+
+template void spausdintiKietiakusIrVargsius<std::vector<float>>(
     std::vector<Studentas<std::vector<float>>>&, 
     std::vector<Studentas<std::vector<float>>>&, 
     const std::string&, 
     const std::string&);
-template void isskirtiVargsusIrKietiakusOpt<std::vector<Studentas<std::vector<float>>>>(
+
+template void isskirtiVargsusIrKietiakusOpt<std::vector<float>>(
     std::vector<Studentas<std::vector<float>>>&, 
     std::vector<Studentas<std::vector<float>>>&, 
     std::vector<Studentas<std::vector<float>>>&);
+    

@@ -14,7 +14,7 @@ template <typename Container>
 void isskirtiVargsusIrKietiakusOpt(Container& grupe, Container& vargsiai, Container& kietiakai);
 
 // Testavimo funkcija su laiko matavimais
-template <typename Container>
+template <typename T>
 void testuotiSkaidymoStrategija3(const std::string& failoPavadinimas, const std::string& rezultataiAplankas);
 
 #endif // STRATEGIJA3_H

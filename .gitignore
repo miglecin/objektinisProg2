@@ -12,3 +12,6 @@ rezultatai/
 # Ignoruoti IDE/Editor konfigūracijų failus (priklauso nuo naudojamo redaktoriaus)
 .vscode/
 .idea/
+.DS_Store
+
+bin/

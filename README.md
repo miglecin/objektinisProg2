@@ -8,7 +8,7 @@
 
 * Konteineris: `std::vector`
 * Failų dydžiai: 100000 ir 1000000 studentų
-* Dalijimo strategija: Greičiausia (neoptimizuota)
+* Dalijimo strategija: Greičiausia (3 strategija)
 
 ## Rezultatai
 
@@ -49,6 +49,19 @@
 4.  Testai buvo pakartoti kelis kartus ir apskaičiuoti vidurkiai.
 
 ## Rezultatai
+
+### .exe failų dydžiai
+
+| Tipas      | Optimizavimo flagas | .exe failo dydis (KB) |
+| :--------- | :------------------ | :-------------------- |
+| Struktūra  | O1                  | 438                   |
+| Struktūra  | O2                  | 267                   |
+| Struktūra  | O3                  | 282                   |
+| Klasė      | O1                  | 327                   |
+| Klasė      | O2                  | 209                   |
+| Klasė      | O3                  | 224                   |
+
+* `.exe` failų dydžiai mažėja su didesniais optimizavimo flagais.
 
 | Tipas      | Optimizavimo flagas | Failo dydis    | Failo nuskaitymas (s) | Studentų rūšiavimas (s) | Skirstymas į grupes (s) |
 | :--------- | :------------------ | :------------- | :------------------- | :---------------------- | :----------------------- |

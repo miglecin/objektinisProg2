@@ -21,7 +21,7 @@ EXECUTABLE = $(BIN_DIR)/programa
 # Tikslas - pagrindinė programa
 all: sukurti_dirs $(EXECUTABLE)
 
-# Sukurti katalogus
+# Sukurti katalogus (tik jei jų nėra)
 sukurti_dirs:
 	@mkdir -p $(BUILD_DIR) $(BIN_DIR) $(RESULTS_DIR) $(TEST_FILES_DIR) $(REZULTATAI_DIR)
 
@@ -31,6 +31,7 @@ $(EXECUTABLE): $(OBJECTS)
 
 # Kompiliuoti atskirus .o failus
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
+	@mkdir -p $(BUILD_DIR)  # Užtikrina, kad build katalogas bus sukurtas
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Išvalyti sukurtus failus
@@ -40,3 +41,19 @@ clean:
 # Debug režimas
 debug: CXXFLAGS += -DDEBUG
 debug: clean all
+
+# Kompiliuoti su O0 optimizacija
+O0: CXXFLAGS = -O0 -std=c++17 -Iinclude
+O0: sukurti_dirs $(EXECUTABLE)
+
+# Kompiliuoti su O1 optimizacija
+O1: CXXFLAGS = -O1 -std=c++17 -Iinclude
+O1: sukurti_dirs $(EXECUTABLE)
+
+# Kompiliuoti su O2 optimizacija
+O2: CXXFLAGS = -O2 -std=c++17 -Iinclude
+O2: sukurti_dirs $(EXECUTABLE)
+
+# Kompiliuoti su O3 optimizacija
+O3: CXXFLAGS = -O3 -std=c++17 -Iinclude
+O3: sukurti_dirs $(EXECUTABLE)

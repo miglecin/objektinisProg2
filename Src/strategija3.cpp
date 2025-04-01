@@ -1,39 +1,38 @@
 #include "strategija3.h"
 
-// Spausdinti kietiakus ir vargšus į atskirus failus
-void spausdintiKietiakusIrVargsius(std::vector<Studentas>& vargsiai, std::vector<Studentas>& kietiakai, const std::string& vargsiuFailas, const std::string& kietiakuFailas) {
+void spausdintiKietiakusIrVargsius(vector<Studentas>& vargsiai, vector<Studentas>& kietiakai, const string& vargsiuFailas, const string& kietiakuFailas) {
     char rusiavimoPas = 'g';
     Studentas::rusiuotiStud(vargsiai, rusiavimoPas);
     Studentas::rusiuotiStud(kietiakai, rusiavimoPas);
 
-    std::ofstream vargsiaiFailasStream(vargsiuFailas);
+    ofstream vargsiaiFailasStream(vargsiuFailas);
     if (!vargsiaiFailasStream) {
-        std::cerr << "Nepavyko sukurti failo: " << vargsiuFailas << std::endl;
+        cerr << "Nepavyko sukurti failo: " << vargsiuFailas <<endl;
         return;
     }
     for (const auto& stud : vargsiai) {
-        vargsiaiFailasStream << stud.vardas() << " " << stud.pavarde() << " " << stud.galutinisBalsas() << std::endl;
+        vargsiaiFailasStream << stud.vardas() << " " << stud.pavarde() << " " << stud.galutinisBalsas() <<endl;
     }
     vargsiaiFailasStream.close();
 
-    std::ofstream kietiakaiFailasStream(kietiakuFailas);
+    ofstream kietiakaiFailasStream(kietiakuFailas);
     if (!kietiakaiFailasStream) {
-        std::cerr << "Nepavyko sukurti failo: " << kietiakuFailas << std::endl;
+        cerr << "Nepavyko sukurti failo: " << kietiakuFailas <<endl;
         return;
     }
     for (const auto& stud : kietiakai) {
-        kietiakaiFailasStream << stud.vardas() << " " << stud.pavarde() << " " << stud.galutinisBalsas() << std::endl;
+        kietiakaiFailasStream << stud.vardas() << " " << stud.pavarde() << " " << stud.galutinisBalsas() <<endl;
     }
     kietiakaiFailasStream.close();
 }
 
-// 3 strategija - Optimizuotas studentų skirstymas į vargšus ir kietiakus
-void isskirtiVargsusIrKietiakusOpt(std::vector<Studentas>& grupe, std::vector<Studentas>& vargsiai, std::vector<Studentas>& kietiakai) {
+//3 strategija - Optimizuotas studentų skirstymas i vargsus ir kietiakus
+void isskirtiVargsusIrKietiakusOpt(vector<Studentas>& grupe, vector<Studentas>& vargsiai, vector<Studentas>& kietiakai) {
     for (auto& stud : grupe) {
         float galutinis = stud.galBalas(generuotiGalvid);   // Skaičiuojame galutinį balą pagal vidurkį
     }
 
-    auto it = std::partition(grupe.begin(), grupe.end(), [](const auto& stud) {
+    auto it =std::partition(grupe.begin(), grupe.end(), [](const auto& stud) {
         return stud.galutinisBalsas() >= 5.0;
     });
 
@@ -43,15 +42,15 @@ void isskirtiVargsusIrKietiakusOpt(std::vector<Studentas>& grupe, std::vector<St
     grupe.erase(it, grupe.end());
 }
 
-// Testavimo funkcija su laiko matavimais
-void testuotiSkaidymoStrategija3(const std::string& failoPavadinimas, const std::string& rezultataiAplankas) {
-    std::vector<Studentas> grupe, vargsiai, kietiakai;
+//testavimo funkcija su laiko matavimais
+void testuotiSkaidymoStrategija3(const string& failoPavadinimas, const string& rezultataiAplankas) {
+    vector<Studentas> grupe, vargsiai, kietiakai;
 
-    std::string konteinerioTipas = "vector";
-    std::string rezultatuFailas = rezultataiAplankas + "/optimizuotasSkaidymas3_" + konteinerioTipas + ".txt";
+    string konteinerioTipas = "vector";
+    string rezultatuFailas = rezultataiAplankas + "/optimizuotasSkaidymas3_" + konteinerioTipas + ".txt";
 
     try {
-        std::ofstream rezultatai(rezultatuFailas, std::ios::app);
+        ofstream rezultatai(rezultatuFailas, std::ios::app);
         if (!rezultatai) {
             throw std::runtime_error("Klaida: Nepavyko sukurti rezultatų failo: " + rezultatuFailas);
         }
@@ -77,15 +76,15 @@ void testuotiSkaidymoStrategija3(const std::string& failoPavadinimas, const std:
         laikoMatavimasSkaidymui.baigti();
         rezultatai << "---> Studentų skaidymas į grupes (optimizuotas) užtruko: " << laikoMatavimasSkaidymui.gautiLaikoSkirtuma() << " ms\n";
 
-        std::string vargsiuFailas = rezultataiAplankas + "/vargsiai_" + typeid(Studentas).name() + ".txt";
-        std::string kietiakuFailas = rezultataiAplankas + "/kietiakai_" + typeid(Studentas).name() + ".txt";
+        string vargsiuFailas = rezultataiAplankas + "/vargsiai_" + typeid(Studentas).name() + ".txt";
+        string kietiakuFailas = rezultataiAplankas + "/kietiakai_" + typeid(Studentas).name() + ".txt";
         spausdintiKietiakusIrVargsius(vargsiai, kietiakai, vargsiuFailas, kietiakuFailas);
 
         rezultatai << "--------------------------------------------\n";
         rezultatai.close();
 
-        std::cout << "Rezultatai išsaugoti faile: " << rezultatuFailas << "\n";
+        cout << "Rezultatai išsaugoti faile: " << rezultatuFailas << "\n";
     } catch (const std::exception& e) {
-        std::cerr << "Klaida: " << e.what() << std::endl;
+        cerr << "Klaida: " << e.what() << endl;
     }
 }

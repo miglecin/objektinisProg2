@@ -43,38 +43,38 @@ using std::list;
 using std::deque;
 
 // Galutinio balo apskaičiavimo funkcijos
-float generuotiGalvid(const std::vector<float>& nd, int egz);
-float generuotiGalmed(const std::vector<float>& nd, int egz);
+float generuotiGalvid(const vector<float>& nd, int egz);
+float generuotiGalmed(const vector<float>& nd, int egz);
 
 class Studentas {
 private:
-    std::string vardas_;
-    std::string pavarde_;
+    string vardas_;
+    string pavarde_;
     int egzaminas_;
-    std::vector<float> nd_;  // Namų darbų pažymiai
+    vector<float> nd_;  // Namų darbų pažymiai
     float galutinis_balas_;
 
 public:
-    Studentas();  // Default constructor
-    Studentas(std::istream& is);  // Constructor with input stream
+    Studentas();  //default konstruktorius
+    Studentas(std::istream& is);  //konstruktorius su stream
 
-    inline std::string vardas() const { return vardas_; }
-    inline std::string pavarde() const { return pavarde_; }
+    inline string vardas() const { return vardas_; }
+    inline string pavarde() const { return pavarde_; }
     inline int egzaminas() const { return egzaminas_; }
-    inline const std::vector<float>& nd() const { return nd_; }
+    inline const vector<float>& nd() const { return nd_; }
     inline float galutinisBalsas() const { return galutinis_balas_; }
 
-    void setVardas(const std::string& v);
-    void setPavarde(const std::string& p);
+    void setVardas(const string& v);
+    void setPavarde(const string& p);
     void setEgzaminas(int e);
-    void setNamudarbai(const std::vector<float>& nd);
+    void setNamudarbai(const vector<float>& nd);
 
-    float galBalas(float (*balasFunkcija)(const std::vector<float>&, int));
+    float galBalas(float (*balasFunkcija)(const vector<float>&, int));
     std::istream& readStudent(std::istream&);
 
-    static void rusiuotiStud(std::vector<Studentas>& grupe, char rusiavimoPas);
-    static void nuskaitymasFile(std::vector<Studentas>& grupe, const std::string& filename);
-    static void spausdintiRez(std::vector<Studentas>& grupe, bool iFaila, char pasirinkimas, const std::string& failoPavadinimas);
+    static void rusiuotiStud(vector<Studentas>& grupe, char rusiavimoPas);
+    static void nuskaitymasFile(vector<Studentas>& grupe, const string& filename);
+    static void spausdintiRez(vector<Studentas>& grupe, bool iFaila, char pasirinkimas, const std::string& failoPavadinimas);
 };
 
 #endif  // STUDENTAS_H

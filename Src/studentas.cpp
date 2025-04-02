@@ -1,17 +1,18 @@
 #include "studentas.h"
 
-//konstruktoriaus realizacija
+//default konstruktoriaus realizacija
 Studentas::Studentas() : egzaminas_(0), galutinis_balas_(0) {}
 
 Studentas::Studentas(std::istream& is) {
     readStudent(is);
 }
 
+
 // Funkcija, kuri nuskaito studento duomenis iš srauto
 std::istream& Studentas::readStudent(std::istream& is) {
     is>>vardas_>>pavarde_; 
     float ndTemp;
-    nd_.clear();
+    nd_.clear(); //isvalomas senas nd vektorius
     for (int i = 0; i < 5; ++i) {
         is >> ndTemp;
         nd_.push_back(ndTemp);

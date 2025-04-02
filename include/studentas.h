@@ -58,12 +58,14 @@ public:
     Studentas();  //default konstruktorius
     Studentas(std::istream& is);  //konstruktorius su stream
 
+    //GETTERIAI, grazina atitinkamus duomenis
     inline string vardas() const { return vardas_; }
     inline string pavarde() const { return pavarde_; }
     inline int egzaminas() const { return egzaminas_; }
     inline const vector<float>& nd() const { return nd_; }
     inline float galutinisBalsas() const { return galutinis_balas_; }
 
+    //SETTERIAI, leidzia keist atitinkamus duomenis
     void setVardas(const string& v);
     void setPavarde(const string& p);
     void setEgzaminas(int e);
@@ -75,6 +77,8 @@ public:
     static void rusiuotiStud(vector<Studentas>& grupe, char rusiavimoPas);
     static void nuskaitymasFile(vector<Studentas>& grupe, const string& filename);
     static void spausdintiRez(vector<Studentas>& grupe, bool iFaila, char pasirinkimas, const std::string& failoPavadinimas);
+
+    ~Studentas() { nd_.clear(); }
 };
 
 #endif  // STUDENTAS_H

@@ -41,6 +41,8 @@ using std::move;
 extern std::stringstream buffer;
 using std::list;
 using std::deque;
+using std::istream;
+using std::ostream;
 
 // Galutinio balo apskaičiavimo funkcijos
 float generuotiGalvid(const vector<float>& nd, int egz);
@@ -51,12 +53,23 @@ private:
     string vardas_;
     string pavarde_;
     int egzaminas_;
-    vector<float> nd_;  // Namų darbų pažymiai
+    vector<float> nd_;  
     float galutinis_balas_;
 
 public:
     Studentas();  //default konstruktorius
-    Studentas(std::istream& is);  //konstruktorius su stream
+    Studentas(istream& is);  //konstruktorius su stream
+
+    // Rule of Five
+    Studentas(const Studentas& other);   // Copy konstruktorius
+    Studentas& operator=(const Studentas& other);   // Copy priskyrimo operatorius
+    Studentas(Studentas&& other) noexcept;   // Move konstruktorius
+    Studentas& operator=(Studentas&& other) noexcept;  // Move priskyrimo operatorius
+    ~Studentas();  // Destruktorius
+
+    // Stream operatoriai
+    friend ostream& operator<<(ostream& os, const Studentas& s);
+    friend istream& operator>>(istream& is, Studentas& s);
 
     //GETTERIAI, grazina atitinkamus duomenis
     inline string vardas() const { return vardas_; }
@@ -72,13 +85,14 @@ public:
     void setNamudarbai(const vector<float>& nd);
 
     float galBalas(float (*balasFunkcija)(const vector<float>&, int));
-    std::istream& readStudent(std::istream&);
+    istream& readStudent(istream&);
+    static int destruktoriuSk; 
 
     static void rusiuotiStud(vector<Studentas>& grupe, char rusiavimoPas);
     static void nuskaitymasFile(vector<Studentas>& grupe, const string& filename);
     static void spausdintiRez(vector<Studentas>& grupe, bool iFaila, char pasirinkimas, const std::string& failoPavadinimas);
 
-    ~Studentas() { nd_.clear(); }
+   
 };
 
 #endif  // STUDENTAS_H

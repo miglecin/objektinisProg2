@@ -2,6 +2,7 @@
 #include "LaikoMatavimas.h"
 #include "strategija3.h"
 #include "versijos1Funkc.h"
+#include "testRuleOf5.h"
 
 // Jūsų kitos įtrauktos reikalingos bibliotekos
 void vykdytiPrograma(){
@@ -151,6 +152,7 @@ void meniu() {
     cout<<"      PASIRINKITE VEIKSMA      \n";
     cout<<" [A] - Vykdyti programa\n";
     cout<<" [B] - Tyrimas 6 (3 strategija)\n";
+    cout<<" [T] - Testuoti Rule of Five ir IO operatorius\n";
     cout<<" [0] - Baigti\n";
     cout<<" PASIRINKIMAS: ";
 }
@@ -200,6 +202,11 @@ int main() {
                 cout<<"Vykdomas Tyrimas 6...\n";
                 failas = pasirinktiFaila();
                 testuotiSkaidymoStrategija3(failas, rezultataiAplankas);
+                break;
+
+            case 'T':
+                cout<<"Vykdomi Rule of Five testai...\n";
+                testuotiRuleOfFive();  
                 break;
 
              case '0':

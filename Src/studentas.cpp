@@ -1,4 +1,5 @@
 #include "studentas.h"
+#include "zmogus.h" 
 
 // Konstruktoriai
 Studentas::Studentas() : egzaminas_(0), galutinis_balas_(0.0f) {}
@@ -9,14 +10,15 @@ Studentas::Studentas(istream& is) {
 
 // Rule of Five
 Studentas::Studentas(const Studentas& other)
-    : vardas_(other.vardas_), pavarde_(other.pavarde_),
-      egzaminas_(other.egzaminas_), nd_(other.nd_),
+    : Zmogus(other.vardas(), other.pavarde()), // bazinės klasės konstruktorius
+      egzaminas_(other.egzaminas_),
+      nd_(other.nd_),
       galutinis_balas_(other.galutinis_balas_) {}
 
 Studentas& Studentas::operator=(const Studentas& other) {
     if (this != &other) {
-        vardas_ = other.vardas_;
-        pavarde_ = other.pavarde_;
+        setVardas(other.vardas());
+        setPavarde(other.pavarde());
         egzaminas_ = other.egzaminas_;
         nd_ = other.nd_;
         galutinis_balas_ = other.galutinis_balas_;
@@ -25,8 +27,9 @@ Studentas& Studentas::operator=(const Studentas& other) {
 }
 
 Studentas::Studentas(Studentas&& other) noexcept
-    : vardas_(std::move(other.vardas_)), pavarde_(std::move(other.pavarde_)),
-      egzaminas_(other.egzaminas_), nd_(std::move(other.nd_)),
+    : Zmogus(std::move(other.vardas()), std::move(other.pavarde())),
+      egzaminas_(other.egzaminas_),
+      nd_(std::move(other.nd_)),
       galutinis_balas_(other.galutinis_balas_) {
     other.egzaminas_ = 0;
     other.galutinis_balas_ = 0.0f;
@@ -34,8 +37,8 @@ Studentas::Studentas(Studentas&& other) noexcept
 
 Studentas& Studentas::operator=(Studentas&& other) noexcept {
     if (this != &other) {
-        vardas_ = std::move(other.vardas_);
-        pavarde_ = std::move(other.pavarde_);
+        setVardas(std::move(other.vardas()));
+        setPavarde(std::move(other.pavarde()));
         egzaminas_ = other.egzaminas_;
         nd_ = std::move(other.nd_);
         galutinis_balas_ = other.galutinis_balas_;
@@ -46,11 +49,10 @@ Studentas& Studentas::operator=(Studentas&& other) noexcept {
     return *this;
 }
 
+
 int Studentas::destruktoriuSk = 0;
 
 // Getteriai ir Setteriai
-void Studentas::setVardas(const string& v) { vardas_ = v; }
-void Studentas::setPavarde(const string& p) { pavarde_ = p; }
 void Studentas::setEgzaminas(int e) { egzaminas_ = e; }
 void Studentas::setNamudarbai(const vector<float>& nd) { nd_ = nd; }
 

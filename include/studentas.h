@@ -8,7 +8,7 @@
 #include <fstream>
 #include <limits>
 #include <algorithm>
-#include <cstdlib>  // srand(), rand()
+#include <cstdlib>
 #include <ctime>
 #include <sstream>
 #include <filesystem>
@@ -16,6 +16,8 @@
 #include <random>
 #include <list>
 #include <deque>
+
+#include "zmogus.h" // paveldėjimas
 
 using std::cout;
 using std::cin;
@@ -48,17 +50,15 @@ using std::ostream;
 float generuotiGalvid(const vector<float>& nd, int egz);
 float generuotiGalmed(const vector<float>& nd, int egz);
 
-class Studentas {
+class Studentas : public Zmogus {
 private:
-    string vardas_;
-    string pavarde_;
     int egzaminas_;
-    vector<float> nd_;  
+    vector<float> nd_;
     float galutinis_balas_;
 
 public:
-    Studentas();  //default konstruktorius
-    Studentas(istream& is);  //konstruktorius su stream
+    Studentas();  // default konstruktorius
+    Studentas(istream& is);  // konstruktorius su stream
 
     // Rule of Five
     Studentas(const Studentas& other);   // Copy konstruktorius
@@ -71,28 +71,26 @@ public:
     friend ostream& operator<<(ostream& os, const Studentas& s);
     friend istream& operator>>(istream& is, Studentas& s);
 
-    //GETTERIAI, grazina atitinkamus duomenis
-    inline string vardas() const { return vardas_; }
-    inline string pavarde() const { return pavarde_; }
+    // Getteriai (įgyvendina Zmogus)
+    inline string vardas() const override { return vardas_; }
+    inline string pavarde() const override { return pavarde_; }
     inline int egzaminas() const { return egzaminas_; }
     inline const vector<float>& nd() const { return nd_; }
     inline float galutinisBalsas() const { return galutinis_balas_; }
 
-    //SETTERIAI, leidzia keist atitinkamus duomenis
-    void setVardas(const string& v);
-    void setPavarde(const string& p);
+    // Setteriai (įgyvendina Zmogus)
+    void setVardas(const string& v) override { vardas_ = v; }
+    void setPavarde(const string& p) override { pavarde_ = p; }
     void setEgzaminas(int e);
     void setNamudarbai(const vector<float>& nd);
 
     float galBalas(float (*balasFunkcija)(const vector<float>&, int));
     istream& readStudent(istream&);
-    static int destruktoriuSk; 
+    static int destruktoriuSk;
 
     static void rusiuotiStud(vector<Studentas>& grupe, char rusiavimoPas);
     static void nuskaitymasFile(vector<Studentas>& grupe, const string& filename);
     static void spausdintiRez(vector<Studentas>& grupe, bool iFaila, char pasirinkimas, const std::string& failoPavadinimas);
-
-   
 };
 
 #endif  // STUDENTAS_H

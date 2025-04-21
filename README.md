@@ -196,3 +196,90 @@ Funkcija `testuotiRuleOfFive()` tikrina viską:
 
 - `studentai.txt`, `failinis.txt` – įvesties failai testams
 - `rezultataiT.txt` – išvedimo rezultatai
+
+
+
+# BAZINĖ IR IŠVESTINĖ klasės
+
+## 🔹 Versijos santrauka
+
+- Sukurta abstrakti bazinė klasė `Zmogus`
+- `Studentas` dabar paveldi iš `Zmogus`
+- Įvykdyta "Rule of Five" taisyklė ir visi metodai perkelti
+- Perdengti įvesties / išvesties operatoriai
+- Programa vis dar palaiko ankstesnę v1.2 logiką
+
+---
+
+##  Klasės struktūra
+
+### `Zmogus` (abstrakti klasė)
+| Atributai     | Tipas       |
+|---------------|-------------|
+| `vardas_`     | `string`    |
+| `pavarde_`    | `string`    |
+
+**Funkcijos (grynai virtualios):**
+- `string vardas() const = 0;`
+- `string pavarde() const = 0;`
+- `void setVardas(const string&) = 0;`
+- `void setPavarde(const string&) = 0;`
+
+**Testavimas:**
+```cpp
+// Zmogus z; //  Nesikompiliuoja, nes Zmogus yra abstrakti klasė
+```
+
+### `Studentas : public Zmogus`
+Paveldi `vardas_`, `pavarde_`, perrašo virtualias funkcijas ir turi:
+
+| Atributai         | Tipas           |
+|-------------------|-----------------|
+| `egzaminas_`      | `int`           |
+| `nd_`             | `vector<float>` |
+| `galutinis_balas_`| `float`         |
+
+**Implementuoti metodai:**
+- 5 Rule of Five: konstruktoriai, operatoriai, destruktorius
+- `istream& operator>>(istream&, Studentas&)`
+- `ostream& operator<<(ostream&, const Studentas&)`
+- `float galBalas(...)`, `readStudent(...)`, `nuskaitymasFile(...)` ir kt.
+
+---
+
+##  Testavimo santrauka
+
+| Testas                         | Veikia |
+|--------------------------------|--------|
+| Konstruktoriai (default, copy) | +      |
+| Priskyrimo operatoriai         | +      |
+| Perkelimo metodai              | +      |
+| Destruktorius                  | +      |
+| `operator<<`, `operator>>`     | +      |
+| Nuskaitymas iš failo           | +      |
+| Išvedimas į failą / ekraną     | +      |
+| Paveldėjimo loginis testas     | +      |
+
+---
+
+## 📄 Ekrano vaizdai
+
+### Programos paleidimas
+![Programos paleidimas](screenshots/image-2.png)
+
+### Rule of Five testavimas
+![Rule of Five testavimas](screenshots/image-3.png)
+
+### Įvesties / išvesties operatoriai
+![IO operatoriai](screenshots/image-4.png)
+
+### Išvedimas į ekraną ir failą
+![Isvedimas](screenshots/image-5.png)
+
+### Destruktoriaus kvietimai
+![Destruktoriai](screenshots/image-6.png)
+
+---
+
+
+

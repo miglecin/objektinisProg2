@@ -15,7 +15,7 @@ public:
 
     virtual ~Zmogus()= default;
 
-    virtual string vardas() const= 0;
+    virtual string vardas() const= 0; //0 - ABSTRAKTI FUNKC
     virtual string pavarde() const= 0;
 
     virtual void setVardas(const string&)= 0;

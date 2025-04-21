@@ -105,3 +105,94 @@
 
 # objektinisProg
 bfee5a45c0feec4d2f885eedda9dd39cab515343
+
+
+# RULE OF 5 IR IO operatoriai
+
+## Uždavinio paaiškinimas
+
+Šioje uzduotyje reikėjo:
+
+- Studentas klasėje pilnai realizuoti „Rule of Five“ metodus:
+  - Konstruktorius (default ir su parametrais)
+  - Kopijavimo konstruktorius
+  - Kopijavimo priskyrimo operatorius
+  - Perkėlimo konstruktorius (move)
+  - Perkėlimo priskyrimo operatorius
+  - Destruktorius
+- Perdengti `>>` ir `<<` operatorius:
+  - Kad palaikytų įvestį iš vartotojo (cin), iš stringo (testavimui), iš failo
+  - Kad palaikytų išvestį į ekraną ir į failą
+- Sukurti testą (`testuotiRuleOfFive()`), kuris patikrina visus metodus.
+
+---
+
+
+## Įvesties galimybės
+
+| Tipas         | Aprašymas                                                                 |
+|---------------|---------------------------------------------------------------------------|
+| Rankinė       | Vartotojas įveda vardą, pavardę, pažymius ir egzaminą naudodamas `cin`   |
+| Automatinė    | Įvestis testavimo metu per `istringstream`                               |
+| Iš failo      | Įvestis iš failo per `ifstream`, formatas: `Vardas Pavarde nd1 nd2 ... egz` |
+
+**Pavyzdys faile:**
+```
+Jonas Jonaitis 10 9 8 7 6 8
+```
+
+---
+
+## Išvesties galimybės
+
+| Tipas      | Aprašymas                                      |
+|------------|------------------------------------------------|
+| Į ekraną   | Naudojamas `cout << studentas`                 |
+| Į failą    | Studentai išvedami į `rezultataiT.txt` failą   |
+
+---
+
+## Testavimo informacija
+
+Funkcija `testuotiRuleOfFive()` tikrina viską:
+
+- Originalaus objekto kūrimą
+- Kopijavimą ir perkėlimą (visos 5 taisyklės)
+- Stream operatorius (`<<` ir `>>`) su:
+  - `cin`
+  - `istringstream`
+  - `ifstream`
+- Failo skaitymą su `nuskaitymasFile`
+- Failo išrašymą su `ofstream`
+- Destruktoriaus iškvietimus
+
+---
+
+## Ekrano vaizdai
+
+### Programos paleidimas
+
+![alt text](image-2.png)
+
+### Rule of Five testavimas
+
+![alt text](image-3.png)
+
+### Įvesties ir išvesties operatorių testavimas
+
+![alt text](image-4.png)
+
+### Išvedimas į ekraną ir failą
+
+![alt text](image-5.png)
+
+### Destruktoriaus kvietimai
+
+![alt text](image-6.png)
+
+---
+
+## Failai
+
+- `studentai.txt`, `failinis.txt` – įvesties failai testams
+- `rezultataiT.txt` – išvedimo rezultatai

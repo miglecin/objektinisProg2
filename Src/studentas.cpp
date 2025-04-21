@@ -7,7 +7,7 @@ Studentas::Studentas(istream& is) {
     readStudent(is);
 }
 
-//Rule of Five
+// Rule of Five
 Studentas::Studentas(const Studentas& other)
     : vardas_(other.vardas_), pavarde_(other.pavarde_),
       egzaminas_(other.egzaminas_), nd_(other.nd_),
@@ -45,6 +45,7 @@ Studentas& Studentas::operator=(Studentas&& other) noexcept {
     }
     return *this;
 }
+
 int Studentas::destruktoriuSk = 0;
 
 // Getteriai ir Setteriai
@@ -69,6 +70,7 @@ istream& Studentas::readStudent(istream& is) {
         nd_.push_back(ndTemp);
     }
     is >> egzaminas_;
+    galutinis_balas_ = generuotiGalvid(nd_, egzaminas_);
     return is;
 }
 
@@ -83,7 +85,64 @@ ostream& operator<<(ostream& os, const Studentas& s) {
 }
 
 istream& operator>>(istream& is, Studentas& s) {
-    return s.readStudent(is);
+    if (&is == &std::cin) {
+        // INTERAKTYVUS ĮVEDIMAS
+        std::string vardas, pavarde;
+        std::vector<float> nd;
+        float paz;
+        int egzaminas;
+
+        std::cout << "Studento vardas: ";
+        is >> vardas;
+
+        std::cout << "Studento pavardė: ";
+        is >> pavarde;
+
+        std::cout << "Namu darbu pazymiai (iveskite po viena, ENTER uzbaigia): ";
+        while (true) {
+            is >> paz;
+
+            if (is.fail()) {
+                std::cout << "✘ Netinkama įvestis. Įveskite pažymį nuo 1 iki 10: ";
+                is.clear();
+                is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                continue;
+            }
+
+            if (paz < 1 || paz > 10) {
+                std::cout << "✘ Pažymys turi būti nuo 1 iki 10: ";
+                is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                continue;
+            }
+
+            nd.push_back(paz);
+            if (is.peek() == '\n') break;
+        }
+
+        std::cout << "Egzamino pažymys: ";
+        while (true) {
+            is >> egzaminas;
+            if (is.fail() || egzaminas < 1 || egzaminas > 10) {
+                std::cout << "✘ Egzaminas turi būti nuo 1 iki 10: ";
+                is.clear();
+                is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                continue;
+            }
+            break;
+        }
+
+        s.setVardas(vardas);
+        s.setPavarde(pavarde);
+        s.setNamudarbai(nd);
+        s.setEgzaminas(egzaminas);
+        s.galBalas(generuotiGalvid);
+
+    } else {
+        // TYLUS AUTOMATINIS ĮVEDIMAS
+        return s.readStudent(is);  // Naudoja tavo esamą metodą
+    }
+
+    return is;
 }
 
 // Rūšiavimas
@@ -111,13 +170,22 @@ void Studentas::nuskaitymasFile(vector<Studentas>& grupe, const string& filename
     }
 
     string eilute;
-    std::getline(failas, eilute);  // praleidžiame antraštę
 
     Studentas laik;
     while (std::getline(failas, eilute)) {
         std::istringstream ss(eilute);
-        if (ss) {
-            laik.readStudent(ss);
+
+        // Tikriname, ar srautas sėkmingai nuskaito visus laukus
+        std::string vardas, pavarde;
+        int egzaminas;
+        std::vector<float> nd(5);
+
+        if (ss >> vardas >> pavarde >> nd[0] >> nd[1] >> nd[2] >> nd[3] >> nd[4] >> egzaminas) {
+            laik.setVardas(vardas);
+            laik.setPavarde(pavarde);
+            laik.setNamudarbai(nd);
+            laik.setEgzaminas(egzaminas);
+            laik.galBalas(generuotiGalvid); 
             grupe.push_back(laik);
         } else {
             std::cerr << "Klaida nuskaityti eilutę: " << eilute << std::endl;
@@ -126,6 +194,7 @@ void Studentas::nuskaitymasFile(vector<Studentas>& grupe, const string& filename
 
     failas.close();
 }
+
 
 // Galutinio balo funkcijos
 float generuotiGalvid(const vector<float>& nd, int egz) {
@@ -146,6 +215,6 @@ float generuotiGalmed(const vector<float>& nd, int egz) {
 
 Studentas::~Studentas() {
     ++destruktoriuSk;
-    nd_.clear();  // (gali ir nereikėti, bet jei nori palikt – ok)
+    nd_.clear();
     std::cout << "[DESTRUKTORIUS] Išsikvietė. Iš viso: " << destruktoriuSk << "\n";
 }

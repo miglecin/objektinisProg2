@@ -31,7 +31,7 @@ $(EXECUTABLE): $(OBJECTS)
 
 # Kompiliuoti atskirus .o failus
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
-	@mkdir -p $(BUILD_DIR)  # Užtikrina, kad build katalogas bus sukurtas
+	@mkdir -p $(BUILD_DIR)  
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Išvalyti sukurtus failus

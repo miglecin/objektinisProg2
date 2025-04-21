@@ -2,6 +2,15 @@
 #include "testRuleOf5.h"
 #include <cassert>
 
+
+// [TESTAS] Bandymas sukurti Zmogus objekta (turi nesikompiliuoti, jei atkomentuota)
+
+//Zmogus z; //nesikompiliuoja, nes Zmogus yra abstrakti klase
+
+// Šis testas rodo, kad Zmogus klase yra abstrakti – jos objektu sukurti negalima
+// Bandant sukurti Zmogus z; gauname kompiliavimo klaida:
+// “variable type 'Zmogus' is an abstract class”
+
 void testuotiRuleOfFive() {
     // === 1. Originalus objektas ===
     cout << "\n[TEST 1] Originalaus objekto sukurimas\n";

@@ -172,23 +172,23 @@ Funkcija `testuotiRuleOfFive()` tikrina viską:
 
 ### Programos paleidimas
 
-![alt text](image-2.png)
+![alt text](screenshots/image-2.png)
 
 ### Rule of Five testavimas
 
-![alt text](image-3.png)
+![alt text](screenshots/image-3.png)
 
 ### Įvesties ir išvesties operatorių testavimas
 
-![alt text](image-4.png)
+![alt text](screenshots/image-4.png)
 
 ### Išvedimas į ekraną ir failą
 
-![alt text](image-5.png)
+![alt text](screenshots/image-5.png)
 
 ### Destruktoriaus kvietimai
 
-![alt text](image-6.png)
+![alt text](screenshots/image-6.png)
 
 ---
 

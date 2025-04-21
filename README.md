@@ -201,7 +201,7 @@ Funkcija `testuotiRuleOfFive()` tikrina viską:
 
 # BAZINĖ IR IŠVESTINĖ klasės
 
-## 🔹 Versijos santrauka
+##  Versijos santrauka
 
 - Sukurta abstrakti bazinė klasė `Zmogus`
 - `Studentas` dabar paveldi iš `Zmogus`
@@ -262,7 +262,7 @@ Paveldi `vardas_`, `pavarde_`, perrašo virtualias funkcijas ir turi:
 
 ---
 
-## 📄 Ekrano vaizdai
+##  Ekrano vaizdai
 
 ### Programos paleidimas
 ![Programos paleidimas](screenshots/image-2.png)

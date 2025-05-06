@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['testai_0',['Studentų duomenų apdorojimo greičio testai',['..//Users/miglecincikaite/Desktop/objektinis/objektinisProg2/objektinisProg/README.md#autotoc_md5',1,'']]],
+  ['testavimas_1',['testavimas',['../md__r_e_a_d_m_e.html#autotoc_md67',1,'Įvesties ir išvesties operatorių testavimas'],['../md__r_e_a_d_m_e.html#autotoc_md66',1,'Rule of Five testavimas'],['../md__r_e_a_d_m_e.html#autotoc_md83',1,'Rule of Five testavimas']]],
+  ['testavimo_20eiga_2',['Testavimo eiga',['..//Users/miglecincikaite/Desktop/objektinis/objektinisProg2/objektinisProg/README.md#autotoc_md7',1,'']]],
+  ['testavimo_20informacija_3',['Testavimo informacija',['../md__r_e_a_d_m_e.html#autotoc_md62',1,'']]],
+  ['testavimo_20metodika_4',['Testavimo metodika',['../md__r_e_a_d_m_e.html#autotoc_md42',1,'Testavimo metodika'],['../md__r_e_a_d_m_e.html#autotoc_md49',1,'Testavimo metodika']]],
+  ['testavimo_20santrauka_5',['Testavimo santrauka',['../md__r_e_a_d_m_e.html#autotoc_md79',1,'']]],
+  ['testavimo_20sistemos_20parametrai_20strong_6',['&lt;strong&gt;Testavimo sistemos parametrai&lt;/strong&gt;',['..//Users/miglecincikaite/Desktop/objektinis/objektinisProg2/objektinisProg/README.md#autotoc_md6',1,'']]],
+  ['testruleof5_2ecpp_7',['testRuleOf5.cpp',['../test_rule_of5_8cpp.html',1,'']]],
+  ['testruleof5_2eh_8',['testRuleOf5.h',['../test_rule_of5_8h.html',1,'']]],
+  ['testuotiruleoffive_9',['testuotiRuleOfFive',['../test_rule_of5_8h.html#a12f86f81f653a23760de1e2facc26b1b',1,'testuotiRuleOfFive():&#160;testRuleOf5.cpp'],['../test_rule_of5_8cpp.html#a12f86f81f653a23760de1e2facc26b1b',1,'testuotiRuleOfFive():&#160;testRuleOf5.cpp']]],
+  ['testuotiskaidymostrategija3_10',['testuotiSkaidymoStrategija3',['../strategija3_8h.html#a57c60305c3055c9f12f8ff23df2b985d',1,'testuotiSkaidymoStrategija3(const string &amp;failoPavadinimas, const string &amp;rezultataiAplankas):&#160;strategija3.cpp'],['../strategija3_8cpp.html#a57c60305c3055c9f12f8ff23df2b985d',1,'testuotiSkaidymoStrategija3(const string &amp;failoPavadinimas, const string &amp;rezultataiAplankas):&#160;strategija3.cpp']]],
+  ['tt_11',['tt',['../md__r_e_a_d_m_e.html#autotoc_md77',1,'&lt;tt&gt;Studentas : public Zmogus&lt;/tt&gt;'],['../md__r_e_a_d_m_e.html#autotoc_md41',1,'Programų spartos palyginimas &lt;tt&gt;struct&lt;/tt&gt; vs. &lt;tt&gt;class&lt;/tt&gt;']]],
+  ['tt_20abstrakti_20klasė_12',['&lt;tt&gt;Zmogus&lt;/tt&gt; (abstrakti klasė)',['../md__r_e_a_d_m_e.html#autotoc_md76',1,'']]],
+  ['tt_20class_20tt_13',['Programų spartos palyginimas &lt;tt&gt;struct&lt;/tt&gt; vs. &lt;tt&gt;class&lt;/tt&gt;',['../md__r_e_a_d_m_e.html#autotoc_md41',1,'']]],
+  ['tt_20class_20tt_20rezultatai_14',['Klasės (&lt;tt&gt;class&lt;/tt&gt;) rezultatai',['../md__r_e_a_d_m_e.html#autotoc_md45',1,'']]],
+  ['tt_20rezultatai_15',['tt rezultatai',['../md__r_e_a_d_m_e.html#autotoc_md45',1,'Klasės (&lt;tt&gt;class&lt;/tt&gt;) rezultatai'],['../md__r_e_a_d_m_e.html#autotoc_md44',1,'Struktūros (&lt;tt&gt;struct&lt;/tt&gt;) rezultatai']]],
+  ['tt_20struct_20tt_20rezultatai_16',['Struktūros (&lt;tt&gt;struct&lt;/tt&gt;) rezultatai',['../md__r_e_a_d_m_e.html#autotoc_md44',1,'']]],
+  ['tt_20struct_20tt_20vs_20tt_20class_20tt_17',['Programų spartos palyginimas &lt;tt&gt;struct&lt;/tt&gt; vs. &lt;tt&gt;class&lt;/tt&gt;',['../md__r_e_a_d_m_e.html#autotoc_md41',1,'']]],
+  ['tt_20studentas_20_3a_20public_20zmogus_20tt_18',['&lt;tt&gt;Studentas : public Zmogus&lt;/tt&gt;',['../md__r_e_a_d_m_e.html#autotoc_md77',1,'']]],
+  ['tt_20vs_20tt_20class_20tt_19',['Programų spartos palyginimas &lt;tt&gt;struct&lt;/tt&gt; vs. &lt;tt&gt;class&lt;/tt&gt;',['../md__r_e_a_d_m_e.html#autotoc_md41',1,'']]],
+  ['tt_20zmogus_20tt_20abstrakti_20klasė_20',['&lt;tt&gt;Zmogus&lt;/tt&gt; (abstrakti klasė)',['../md__r_e_a_d_m_e.html#autotoc_md76',1,'']]],
+  ['tyrimas_21',['TYRIMAS',['..//Users/miglecincikaite/Desktop/objektinis/objektinisProg2/objektinisProg/README.md#autotoc_md11',1,'1 STRATEGIJOS TYRIMAS'],['..//Users/miglecincikaite/Desktop/objektinis/objektinisProg2/objektinisProg/README.md#autotoc_md22',1,'2 STRATEGIJOS TYRIMAS']]],
+  ['tyrimas_3a_22',['3 STRATEGIJOS TYRIMAS:',['..//Users/miglecincikaite/Desktop/objektinis/objektinisProg2/objektinisProg/README.md#autotoc_md30',1,'']]]
+];

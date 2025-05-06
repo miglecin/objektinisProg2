@@ -1,0 +1,215 @@
+\doxysection{Src/versijos1\+Funkc.cpp Failo Nuoroda}
+\hypertarget{versijos1_funkc_8cpp}{}\label{versijos1_funkc_8cpp}\index{Src/versijos1Funkc.cpp@{Src/versijos1Funkc.cpp}}
+{\ttfamily \#include "{}versijos1\+Funkc.\+h"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+\doxysubsubsection*{Funkcijos}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Container$>$ }\\double \mbox{\hyperlink{versijos1_funkc_8cpp_a052ceaaf2234b902eaed16d73aabd3d7}{generuoti\+Galvid}} (Container \&nd, int egz)
+\item 
+{\footnotesize template$<$typename Container$>$ }\\double \mbox{\hyperlink{versijos1_funkc_8cpp_a3c83a86a99e6811468b041ad86fbea57}{generuoti\+Galmed}} (Container nd)
+\item 
+{\footnotesize template$<$typename Container$>$ }\\double \mbox{\hyperlink{versijos1_funkc_8cpp_a70c58cbe8565858e9b6e632da590b8e8}{pasirinktas\+Gal}} (Container \&nd, int egz, char kaip)
+\item 
+{\footnotesize template$<$typename Container$>$ }\\void \mbox{\hyperlink{versijos1_funkc_8cpp_adf8fa35f74bb2038da414879be14f36d}{random\+Paz}} (Container \&nd, int \&egz, int kiek\+\_\+nd)
+\item 
+void \mbox{\hyperlink{versijos1_funkc_8cpp_a0db6b2586f8e6282704f697dd6d429d2}{generuoti\+Vard\+Pav}} (std\+::string \&vardas, std\+::string \&pavarde)
+\item 
+{\footnotesize template$<$typename Container$>$ }\\void \mbox{\hyperlink{versijos1_funkc_8cpp_a819724498bea4eecb4f58e986d17c10d}{rusiuoti\+Stud}} (Container \&grupe, char rusiavimo\+Pas)
+\item 
+{\footnotesize template$<$typename Container$>$ }\\void \mbox{\hyperlink{versijos1_funkc_8cpp_a525119138d9cbe05fb51b5446bef9569}{nuskaitymas\+File}} (Container \&grupe, const string \&filename)
+\item 
+void \mbox{\hyperlink{versijos1_funkc_8cpp_abbb1757be5f020a63c6e5b3bc4f29f83}{spausdinti\+Rez2}} (vector$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ vector$<$ float $>$ $>$ $>$ grupe, bool i\+Faila, char pasirinkimas, char rusiavimo\+Pas)
+\item 
+{\footnotesize template$<$typename Container$>$ }\\void \mbox{\hyperlink{versijos1_funkc_8cpp_a537e25a56dedfcd2b5c93c1109a357f0}{spausdinti\+Rez}} (Container \&grupe, bool i\+Faila, char pasirinkimas, const string \&failo\+Pavadinimas)
+\item 
+template double \mbox{\hyperlink{versijos1_funkc_8cpp_ab326215b019d7fb881ff4abd572e8cff}{pasirinktas\+Gal$<$ std\+::vector$<$ float $>$ $>$}} (std\+::vector$<$ float $>$ \&, int, char)
+\item 
+template double \mbox{\hyperlink{versijos1_funkc_8cpp_acb3415432a19ac254c90c98eb16035f2}{pasirinktas\+Gal$<$ std\+::list$<$ float $>$ $>$}} (std\+::list$<$ float $>$ \&, int, char)
+\item 
+template double \mbox{\hyperlink{versijos1_funkc_8cpp_a3d9c8ccf3f8aae27d96b3f29d50895e8}{pasirinktas\+Gal$<$ std\+::deque$<$ float $>$ $>$}} (std\+::deque$<$ float $>$ \&, int, char)
+\item 
+template void \mbox{\hyperlink{versijos1_funkc_8cpp_a91a466d03d9b8a7d73edee2c36eb8ee9}{random\+Paz$<$ std\+::vector$<$ float $>$ $>$}} (std\+::vector$<$ float $>$ \&, int \&, int)
+\item 
+template void \mbox{\hyperlink{versijos1_funkc_8cpp_ae84b16825aaa839b5fa6b27f12dcf5cf}{random\+Paz$<$ std\+::list$<$ float $>$ $>$}} (std\+::list$<$ float $>$ \&, int \&, int)
+\item 
+template void \mbox{\hyperlink{versijos1_funkc_8cpp_a4ab5ad72883c81234012cae73ac71a14}{random\+Paz$<$ std\+::deque$<$ float $>$ $>$}} (std\+::deque$<$ float $>$ \&, int \&, int)
+\item 
+template void \mbox{\hyperlink{versijos1_funkc_8cpp_a95045f12b6fd0ee5420993bd01719ac8}{rusiuoti\+Stud$<$ std\+::vector$<$ studentas$<$ std\+::vector$<$ float $>$ $>$ $>$ $>$}} (std\+::vector$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::vector$<$ float $>$ $>$ $>$ \&, char)
+\item 
+template void \mbox{\hyperlink{versijos1_funkc_8cpp_a5e2699e73749bf2ce660361402209942}{rusiuoti\+Stud$<$ std\+::list$<$ studentas$<$ std\+::list$<$ float $>$ $>$ $>$ $>$}} (std\+::list$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::list$<$ float $>$ $>$ $>$ \&, char)
+\item 
+template void \mbox{\hyperlink{versijos1_funkc_8cpp_a28ef53c1d3bda46caf14feb5dac63d30}{rusiuoti\+Stud$<$ std\+::deque$<$ studentas$<$ std\+::deque$<$ float $>$ $>$ $>$ $>$}} (std\+::deque$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::deque$<$ float $>$ $>$ $>$ \&, char)
+\item 
+template void \mbox{\hyperlink{versijos1_funkc_8cpp_a7428db6b8cbeab3830fc9742937f243d}{nuskaitymas\+File$<$ std\+::vector$<$ studentas$<$ std\+::vector$<$ float $>$ $>$ $>$ $>$}} (std\+::vector$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::vector$<$ float $>$ $>$ $>$ \&, const std\+::string \&)
+\item 
+template void \mbox{\hyperlink{versijos1_funkc_8cpp_a555e58b93029bc85a73598f5226f09e4}{nuskaitymas\+File$<$ std\+::list$<$ studentas$<$ std\+::list$<$ float $>$ $>$ $>$ $>$}} (std\+::list$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::list$<$ float $>$ $>$ $>$ \&, const std\+::string \&)
+\item 
+template void \mbox{\hyperlink{versijos1_funkc_8cpp_a863650c4bcbfb6683576b9a9305f8321}{nuskaitymas\+File$<$ std\+::deque$<$ studentas$<$ std\+::deque$<$ float $>$ $>$ $>$ $>$}} (std\+::deque$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::deque$<$ float $>$ $>$ $>$ \&, const std\+::string \&)
+\item 
+template void \mbox{\hyperlink{versijos1_funkc_8cpp_a5541ea18dd91e2b95c4ee8ba752c6e01}{spausdinti\+Rez$<$ std\+::vector$<$ studentas$<$ std\+::vector$<$ float $>$ $>$ $>$ $>$}} (std\+::vector$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::vector$<$ float $>$ $>$ $>$ \&, bool, char, const std\+::string \&)
+\item 
+template void \mbox{\hyperlink{versijos1_funkc_8cpp_a98c4d32d7877fadda357bfe2bd995133}{spausdinti\+Rez$<$ std\+::list$<$ studentas$<$ std\+::list$<$ float $>$ $>$ $>$ $>$}} (std\+::list$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::list$<$ float $>$ $>$ $>$ \&, bool, char, const std\+::string \&)
+\item 
+template void \mbox{\hyperlink{versijos1_funkc_8cpp_aaf596360422bdf0ad24c5a8ba8125b8c}{spausdinti\+Rez$<$ std\+::deque$<$ studentas$<$ std\+::deque$<$ float $>$ $>$ $>$ $>$}} (std\+::deque$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::deque$<$ float $>$ $>$ $>$ \&, bool, char, const std\+::string \&)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Funkcijos Dokumentacija}
+\Hypertarget{versijos1_funkc_8cpp_a3c83a86a99e6811468b041ad86fbea57}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!generuotiGalmed@{generuotiGalmed}}
+\index{generuotiGalmed@{generuotiGalmed}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{generuotiGalmed()}{generuotiGalmed()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_a3c83a86a99e6811468b041ad86fbea57} 
+template$<$typename Container$>$ \\
+double generuoti\+Galmed (\begin{DoxyParamCaption}\item[{Container}]{nd}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_a052ceaaf2234b902eaed16d73aabd3d7}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!generuotiGalvid@{generuotiGalvid}}
+\index{generuotiGalvid@{generuotiGalvid}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{generuotiGalvid()}{generuotiGalvid()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_a052ceaaf2234b902eaed16d73aabd3d7} 
+template$<$typename Container$>$ \\
+double generuoti\+Galvid (\begin{DoxyParamCaption}\item[{Container \&}]{nd}{, }\item[{int}]{egz}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_a0db6b2586f8e6282704f697dd6d429d2}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!generuotiVardPav@{generuotiVardPav}}
+\index{generuotiVardPav@{generuotiVardPav}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{generuotiVardPav()}{generuotiVardPav()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_a0db6b2586f8e6282704f697dd6d429d2} 
+void generuoti\+Vard\+Pav (\begin{DoxyParamCaption}\item[{std\+::string \&}]{vardas}{, }\item[{std\+::string \&}]{pavarde}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_a525119138d9cbe05fb51b5446bef9569}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!nuskaitymasFile@{nuskaitymasFile}}
+\index{nuskaitymasFile@{nuskaitymasFile}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{nuskaitymasFile()}{nuskaitymasFile()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_a525119138d9cbe05fb51b5446bef9569} 
+template$<$typename Container$>$ \\
+void nuskaitymas\+File (\begin{DoxyParamCaption}\item[{Container \&}]{grupe}{, }\item[{const string \&}]{filename}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_a863650c4bcbfb6683576b9a9305f8321}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!nuskaitymasFile$<$ std::deque$<$ studentas$<$ std::deque$<$ float $>$ $>$ $>$ $>$@{nuskaitymasFile$<$ std::deque$<$ studentas$<$ std::deque$<$ float $>$ $>$ $>$ $>$}}
+\index{nuskaitymasFile$<$ std::deque$<$ studentas$<$ std::deque$<$ float $>$ $>$ $>$ $>$@{nuskaitymasFile$<$ std::deque$<$ studentas$<$ std::deque$<$ float $>$ $>$ $>$ $>$}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{nuskaitymasFile$<$ std::deque$<$ studentas$<$ std::deque$<$ float $>$ $>$ $>$ $>$()}{nuskaitymasFile< std::deque< studentas< std::deque< float > > > >()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_a863650c4bcbfb6683576b9a9305f8321} 
+template void \mbox{\hyperlink{versijos1_funkc_8h_a525119138d9cbe05fb51b5446bef9569}{nuskaitymas\+File}}$<$ std\+::deque$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::deque$<$ float $>$ $>$ $>$ $>$ (\begin{DoxyParamCaption}\item[{std\+::deque$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::deque$<$ float $>$ $>$ $>$ \&}]{}{, }\item[{const std\+::string \&}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_a555e58b93029bc85a73598f5226f09e4}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!nuskaitymasFile$<$ std::list$<$ studentas$<$ std::list$<$ float $>$ $>$ $>$ $>$@{nuskaitymasFile$<$ std::list$<$ studentas$<$ std::list$<$ float $>$ $>$ $>$ $>$}}
+\index{nuskaitymasFile$<$ std::list$<$ studentas$<$ std::list$<$ float $>$ $>$ $>$ $>$@{nuskaitymasFile$<$ std::list$<$ studentas$<$ std::list$<$ float $>$ $>$ $>$ $>$}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{nuskaitymasFile$<$ std::list$<$ studentas$<$ std::list$<$ float $>$ $>$ $>$ $>$()}{nuskaitymasFile< std::list< studentas< std::list< float > > > >()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_a555e58b93029bc85a73598f5226f09e4} 
+template void \mbox{\hyperlink{versijos1_funkc_8h_a525119138d9cbe05fb51b5446bef9569}{nuskaitymas\+File}}$<$ std\+::list$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::list$<$ float $>$ $>$ $>$ $>$ (\begin{DoxyParamCaption}\item[{std\+::list$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::list$<$ float $>$ $>$ $>$ \&}]{}{, }\item[{const std\+::string \&}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_a7428db6b8cbeab3830fc9742937f243d}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!nuskaitymasFile$<$ std::vector$<$ studentas$<$ std::vector$<$ float $>$ $>$ $>$ $>$@{nuskaitymasFile$<$ std::vector$<$ studentas$<$ std::vector$<$ float $>$ $>$ $>$ $>$}}
+\index{nuskaitymasFile$<$ std::vector$<$ studentas$<$ std::vector$<$ float $>$ $>$ $>$ $>$@{nuskaitymasFile$<$ std::vector$<$ studentas$<$ std::vector$<$ float $>$ $>$ $>$ $>$}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{nuskaitymasFile$<$ std::vector$<$ studentas$<$ std::vector$<$ float $>$ $>$ $>$ $>$()}{nuskaitymasFile< std::vector< studentas< std::vector< float > > > >()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_a7428db6b8cbeab3830fc9742937f243d} 
+template void \mbox{\hyperlink{versijos1_funkc_8h_a525119138d9cbe05fb51b5446bef9569}{nuskaitymas\+File}}$<$ std\+::vector$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::vector$<$ float $>$ $>$ $>$ $>$ (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::vector$<$ float $>$ $>$ $>$ \&}]{}{, }\item[{const std\+::string \&}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_a70c58cbe8565858e9b6e632da590b8e8}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!pasirinktasGal@{pasirinktasGal}}
+\index{pasirinktasGal@{pasirinktasGal}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{pasirinktasGal()}{pasirinktasGal()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_a70c58cbe8565858e9b6e632da590b8e8} 
+template$<$typename Container$>$ \\
+double pasirinktas\+Gal (\begin{DoxyParamCaption}\item[{Container \&}]{nd}{, }\item[{int}]{egz}{, }\item[{char}]{kaip}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_a3d9c8ccf3f8aae27d96b3f29d50895e8}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!pasirinktasGal$<$ std::deque$<$ float $>$ $>$@{pasirinktasGal$<$ std::deque$<$ float $>$ $>$}}
+\index{pasirinktasGal$<$ std::deque$<$ float $>$ $>$@{pasirinktasGal$<$ std::deque$<$ float $>$ $>$}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{pasirinktasGal$<$ std::deque$<$ float $>$ $>$()}{pasirinktasGal< std::deque< float > >()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_a3d9c8ccf3f8aae27d96b3f29d50895e8} 
+template double \mbox{\hyperlink{versijos1_funkc_8h_a70c58cbe8565858e9b6e632da590b8e8}{pasirinktas\+Gal}}$<$ std\+::deque$<$ float $>$ $>$ (\begin{DoxyParamCaption}\item[{std\+::deque$<$ float $>$ \&}]{}{, }\item[{int}]{}{, }\item[{char}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_acb3415432a19ac254c90c98eb16035f2}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!pasirinktasGal$<$ std::list$<$ float $>$ $>$@{pasirinktasGal$<$ std::list$<$ float $>$ $>$}}
+\index{pasirinktasGal$<$ std::list$<$ float $>$ $>$@{pasirinktasGal$<$ std::list$<$ float $>$ $>$}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{pasirinktasGal$<$ std::list$<$ float $>$ $>$()}{pasirinktasGal< std::list< float > >()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_acb3415432a19ac254c90c98eb16035f2} 
+template double \mbox{\hyperlink{versijos1_funkc_8h_a70c58cbe8565858e9b6e632da590b8e8}{pasirinktas\+Gal}}$<$ std\+::list$<$ float $>$ $>$ (\begin{DoxyParamCaption}\item[{std\+::list$<$ float $>$ \&}]{}{, }\item[{int}]{}{, }\item[{char}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_ab326215b019d7fb881ff4abd572e8cff}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!pasirinktasGal$<$ std::vector$<$ float $>$ $>$@{pasirinktasGal$<$ std::vector$<$ float $>$ $>$}}
+\index{pasirinktasGal$<$ std::vector$<$ float $>$ $>$@{pasirinktasGal$<$ std::vector$<$ float $>$ $>$}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{pasirinktasGal$<$ std::vector$<$ float $>$ $>$()}{pasirinktasGal< std::vector< float > >()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_ab326215b019d7fb881ff4abd572e8cff} 
+template double \mbox{\hyperlink{versijos1_funkc_8h_a70c58cbe8565858e9b6e632da590b8e8}{pasirinktas\+Gal}}$<$ std\+::vector$<$ float $>$ $>$ (\begin{DoxyParamCaption}\item[{std\+::vector$<$ float $>$ \&}]{}{, }\item[{int}]{}{, }\item[{char}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_adf8fa35f74bb2038da414879be14f36d}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!randomPaz@{randomPaz}}
+\index{randomPaz@{randomPaz}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{randomPaz()}{randomPaz()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_adf8fa35f74bb2038da414879be14f36d} 
+template$<$typename Container$>$ \\
+void random\+Paz (\begin{DoxyParamCaption}\item[{Container \&}]{nd}{, }\item[{int \&}]{egz}{, }\item[{int}]{kiek\+\_\+nd}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_a4ab5ad72883c81234012cae73ac71a14}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!randomPaz$<$ std::deque$<$ float $>$ $>$@{randomPaz$<$ std::deque$<$ float $>$ $>$}}
+\index{randomPaz$<$ std::deque$<$ float $>$ $>$@{randomPaz$<$ std::deque$<$ float $>$ $>$}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{randomPaz$<$ std::deque$<$ float $>$ $>$()}{randomPaz< std::deque< float > >()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_a4ab5ad72883c81234012cae73ac71a14} 
+template void \mbox{\hyperlink{versijos1_funkc_8h_adf8fa35f74bb2038da414879be14f36d}{random\+Paz}}$<$ std\+::deque$<$ float $>$ $>$ (\begin{DoxyParamCaption}\item[{std\+::deque$<$ float $>$ \&}]{}{, }\item[{int \&}]{}{, }\item[{int}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_ae84b16825aaa839b5fa6b27f12dcf5cf}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!randomPaz$<$ std::list$<$ float $>$ $>$@{randomPaz$<$ std::list$<$ float $>$ $>$}}
+\index{randomPaz$<$ std::list$<$ float $>$ $>$@{randomPaz$<$ std::list$<$ float $>$ $>$}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{randomPaz$<$ std::list$<$ float $>$ $>$()}{randomPaz< std::list< float > >()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_ae84b16825aaa839b5fa6b27f12dcf5cf} 
+template void \mbox{\hyperlink{versijos1_funkc_8h_adf8fa35f74bb2038da414879be14f36d}{random\+Paz}}$<$ std\+::list$<$ float $>$ $>$ (\begin{DoxyParamCaption}\item[{std\+::list$<$ float $>$ \&}]{}{, }\item[{int \&}]{}{, }\item[{int}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_a91a466d03d9b8a7d73edee2c36eb8ee9}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!randomPaz$<$ std::vector$<$ float $>$ $>$@{randomPaz$<$ std::vector$<$ float $>$ $>$}}
+\index{randomPaz$<$ std::vector$<$ float $>$ $>$@{randomPaz$<$ std::vector$<$ float $>$ $>$}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{randomPaz$<$ std::vector$<$ float $>$ $>$()}{randomPaz< std::vector< float > >()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_a91a466d03d9b8a7d73edee2c36eb8ee9} 
+template void \mbox{\hyperlink{versijos1_funkc_8h_adf8fa35f74bb2038da414879be14f36d}{random\+Paz}}$<$ std\+::vector$<$ float $>$ $>$ (\begin{DoxyParamCaption}\item[{std\+::vector$<$ float $>$ \&}]{}{, }\item[{int \&}]{}{, }\item[{int}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_a819724498bea4eecb4f58e986d17c10d}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!rusiuotiStud@{rusiuotiStud}}
+\index{rusiuotiStud@{rusiuotiStud}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{rusiuotiStud()}{rusiuotiStud()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_a819724498bea4eecb4f58e986d17c10d} 
+template$<$typename Container$>$ \\
+void rusiuoti\+Stud (\begin{DoxyParamCaption}\item[{Container \&}]{grupe}{, }\item[{char}]{rusiavimo\+Pas}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_a28ef53c1d3bda46caf14feb5dac63d30}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!rusiuotiStud$<$ std::deque$<$ studentas$<$ std::deque$<$ float $>$ $>$ $>$ $>$@{rusiuotiStud$<$ std::deque$<$ studentas$<$ std::deque$<$ float $>$ $>$ $>$ $>$}}
+\index{rusiuotiStud$<$ std::deque$<$ studentas$<$ std::deque$<$ float $>$ $>$ $>$ $>$@{rusiuotiStud$<$ std::deque$<$ studentas$<$ std::deque$<$ float $>$ $>$ $>$ $>$}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{rusiuotiStud$<$ std::deque$<$ studentas$<$ std::deque$<$ float $>$ $>$ $>$ $>$()}{rusiuotiStud< std::deque< studentas< std::deque< float > > > >()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_a28ef53c1d3bda46caf14feb5dac63d30} 
+template void \mbox{\hyperlink{versijos1_funkc_8h_a819724498bea4eecb4f58e986d17c10d}{rusiuoti\+Stud}}$<$ std\+::deque$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::deque$<$ float $>$ $>$ $>$ $>$ (\begin{DoxyParamCaption}\item[{std\+::deque$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::deque$<$ float $>$ $>$ $>$ \&}]{}{, }\item[{char}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_a5e2699e73749bf2ce660361402209942}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!rusiuotiStud$<$ std::list$<$ studentas$<$ std::list$<$ float $>$ $>$ $>$ $>$@{rusiuotiStud$<$ std::list$<$ studentas$<$ std::list$<$ float $>$ $>$ $>$ $>$}}
+\index{rusiuotiStud$<$ std::list$<$ studentas$<$ std::list$<$ float $>$ $>$ $>$ $>$@{rusiuotiStud$<$ std::list$<$ studentas$<$ std::list$<$ float $>$ $>$ $>$ $>$}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{rusiuotiStud$<$ std::list$<$ studentas$<$ std::list$<$ float $>$ $>$ $>$ $>$()}{rusiuotiStud< std::list< studentas< std::list< float > > > >()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_a5e2699e73749bf2ce660361402209942} 
+template void \mbox{\hyperlink{versijos1_funkc_8h_a819724498bea4eecb4f58e986d17c10d}{rusiuoti\+Stud}}$<$ std\+::list$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::list$<$ float $>$ $>$ $>$ $>$ (\begin{DoxyParamCaption}\item[{std\+::list$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::list$<$ float $>$ $>$ $>$ \&}]{}{, }\item[{char}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_a95045f12b6fd0ee5420993bd01719ac8}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!rusiuotiStud$<$ std::vector$<$ studentas$<$ std::vector$<$ float $>$ $>$ $>$ $>$@{rusiuotiStud$<$ std::vector$<$ studentas$<$ std::vector$<$ float $>$ $>$ $>$ $>$}}
+\index{rusiuotiStud$<$ std::vector$<$ studentas$<$ std::vector$<$ float $>$ $>$ $>$ $>$@{rusiuotiStud$<$ std::vector$<$ studentas$<$ std::vector$<$ float $>$ $>$ $>$ $>$}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{rusiuotiStud$<$ std::vector$<$ studentas$<$ std::vector$<$ float $>$ $>$ $>$ $>$()}{rusiuotiStud< std::vector< studentas< std::vector< float > > > >()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_a95045f12b6fd0ee5420993bd01719ac8} 
+template void \mbox{\hyperlink{versijos1_funkc_8h_a819724498bea4eecb4f58e986d17c10d}{rusiuoti\+Stud}}$<$ std\+::vector$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::vector$<$ float $>$ $>$ $>$ $>$ (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::vector$<$ float $>$ $>$ $>$ \&}]{}{, }\item[{char}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_a537e25a56dedfcd2b5c93c1109a357f0}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!spausdintiRez@{spausdintiRez}}
+\index{spausdintiRez@{spausdintiRez}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{spausdintiRez()}{spausdintiRez()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_a537e25a56dedfcd2b5c93c1109a357f0} 
+template$<$typename Container$>$ \\
+void spausdinti\+Rez (\begin{DoxyParamCaption}\item[{Container \&}]{grupe}{, }\item[{bool}]{i\+Faila}{, }\item[{char}]{pasirinkimas}{, }\item[{const string \&}]{failo\+Pavadinimas}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_abbb1757be5f020a63c6e5b3bc4f29f83}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!spausdintiRez2@{spausdintiRez2}}
+\index{spausdintiRez2@{spausdintiRez2}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{spausdintiRez2()}{spausdintiRez2()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_abbb1757be5f020a63c6e5b3bc4f29f83} 
+void spausdinti\+Rez2 (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ vector$<$ float $>$ $>$ $>$}]{grupe}{, }\item[{bool}]{i\+Faila}{, }\item[{char}]{pasirinkimas}{, }\item[{char}]{rusiavimo\+Pas}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_aaf596360422bdf0ad24c5a8ba8125b8c}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!spausdintiRez$<$ std::deque$<$ studentas$<$ std::deque$<$ float $>$ $>$ $>$ $>$@{spausdintiRez$<$ std::deque$<$ studentas$<$ std::deque$<$ float $>$ $>$ $>$ $>$}}
+\index{spausdintiRez$<$ std::deque$<$ studentas$<$ std::deque$<$ float $>$ $>$ $>$ $>$@{spausdintiRez$<$ std::deque$<$ studentas$<$ std::deque$<$ float $>$ $>$ $>$ $>$}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{spausdintiRez$<$ std::deque$<$ studentas$<$ std::deque$<$ float $>$ $>$ $>$ $>$()}{spausdintiRez< std::deque< studentas< std::deque< float > > > >()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_aaf596360422bdf0ad24c5a8ba8125b8c} 
+template void \mbox{\hyperlink{versijos1_funkc_8h_a537e25a56dedfcd2b5c93c1109a357f0}{spausdinti\+Rez}}$<$ std\+::deque$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::deque$<$ float $>$ $>$ $>$ $>$ (\begin{DoxyParamCaption}\item[{std\+::deque$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::deque$<$ float $>$ $>$ $>$ \&}]{}{, }\item[{bool}]{}{, }\item[{char}]{}{, }\item[{const std\+::string \&}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_a98c4d32d7877fadda357bfe2bd995133}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!spausdintiRez$<$ std::list$<$ studentas$<$ std::list$<$ float $>$ $>$ $>$ $>$@{spausdintiRez$<$ std::list$<$ studentas$<$ std::list$<$ float $>$ $>$ $>$ $>$}}
+\index{spausdintiRez$<$ std::list$<$ studentas$<$ std::list$<$ float $>$ $>$ $>$ $>$@{spausdintiRez$<$ std::list$<$ studentas$<$ std::list$<$ float $>$ $>$ $>$ $>$}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{spausdintiRez$<$ std::list$<$ studentas$<$ std::list$<$ float $>$ $>$ $>$ $>$()}{spausdintiRez< std::list< studentas< std::list< float > > > >()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_a98c4d32d7877fadda357bfe2bd995133} 
+template void \mbox{\hyperlink{versijos1_funkc_8h_a537e25a56dedfcd2b5c93c1109a357f0}{spausdinti\+Rez}}$<$ std\+::list$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::list$<$ float $>$ $>$ $>$ $>$ (\begin{DoxyParamCaption}\item[{std\+::list$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::list$<$ float $>$ $>$ $>$ \&}]{}{, }\item[{bool}]{}{, }\item[{char}]{}{, }\item[{const std\+::string \&}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8cpp_a5541ea18dd91e2b95c4ee8ba752c6e01}\index{versijos1Funkc.cpp@{versijos1Funkc.cpp}!spausdintiRez$<$ std::vector$<$ studentas$<$ std::vector$<$ float $>$ $>$ $>$ $>$@{spausdintiRez$<$ std::vector$<$ studentas$<$ std::vector$<$ float $>$ $>$ $>$ $>$}}
+\index{spausdintiRez$<$ std::vector$<$ studentas$<$ std::vector$<$ float $>$ $>$ $>$ $>$@{spausdintiRez$<$ std::vector$<$ studentas$<$ std::vector$<$ float $>$ $>$ $>$ $>$}!versijos1Funkc.cpp@{versijos1Funkc.cpp}}
+\doxysubsubsection{\texorpdfstring{spausdintiRez$<$ std::vector$<$ studentas$<$ std::vector$<$ float $>$ $>$ $>$ $>$()}{spausdintiRez< std::vector< studentas< std::vector< float > > > >()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8cpp_a5541ea18dd91e2b95c4ee8ba752c6e01} 
+template void \mbox{\hyperlink{versijos1_funkc_8h_a537e25a56dedfcd2b5c93c1109a357f0}{spausdinti\+Rez}}$<$ std\+::vector$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::vector$<$ float $>$ $>$ $>$ $>$ (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ std\+::vector$<$ float $>$ $>$ $>$ \&}]{}{, }\item[{bool}]{}{, }\item[{char}]{}{, }\item[{const std\+::string \&}]{}{}\end{DoxyParamCaption})}
+

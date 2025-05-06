@@ -1,0 +1,792 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="lt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ObjektinisProg2: Src/versijos1Funkc.cpp Failo Nuoroda</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ObjektinisProg2
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Paieška" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Sugeneruota Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('versijos1_funkc_8cpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funkcijos</a>  </div>
+  <div class="headertitle"><div class="title">versijos1Funkc.cpp Failo Nuoroda</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="versijos1_funkc_8h_source.html">versijos1Funkc.h</a>&quot;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;cstdlib&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;numeric&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funkcijos</h2></td></tr>
+<tr class="memitem:a052ceaaf2234b902eaed16d73aabd3d7" id="r_a052ceaaf2234b902eaed16d73aabd3d7"><td class="memTemplParams" colspan="2">template&lt;typename Container&gt; </td></tr>
+<tr class="memitem:a052ceaaf2234b902eaed16d73aabd3d7"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a052ceaaf2234b902eaed16d73aabd3d7">generuotiGalvid</a> (Container &amp;nd, int egz)</td></tr>
+<tr class="separator:a052ceaaf2234b902eaed16d73aabd3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c83a86a99e6811468b041ad86fbea57" id="r_a3c83a86a99e6811468b041ad86fbea57"><td class="memTemplParams" colspan="2">template&lt;typename Container&gt; </td></tr>
+<tr class="memitem:a3c83a86a99e6811468b041ad86fbea57"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a3c83a86a99e6811468b041ad86fbea57">generuotiGalmed</a> (Container nd)</td></tr>
+<tr class="separator:a3c83a86a99e6811468b041ad86fbea57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70c58cbe8565858e9b6e632da590b8e8" id="r_a70c58cbe8565858e9b6e632da590b8e8"><td class="memTemplParams" colspan="2">template&lt;typename Container&gt; </td></tr>
+<tr class="memitem:a70c58cbe8565858e9b6e632da590b8e8"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a70c58cbe8565858e9b6e632da590b8e8">pasirinktasGal</a> (Container &amp;nd, int egz, char kaip)</td></tr>
+<tr class="separator:a70c58cbe8565858e9b6e632da590b8e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf8fa35f74bb2038da414879be14f36d" id="r_adf8fa35f74bb2038da414879be14f36d"><td class="memTemplParams" colspan="2">template&lt;typename Container&gt; </td></tr>
+<tr class="memitem:adf8fa35f74bb2038da414879be14f36d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#adf8fa35f74bb2038da414879be14f36d">randomPaz</a> (Container &amp;nd, int &amp;egz, int kiek_nd)</td></tr>
+<tr class="separator:adf8fa35f74bb2038da414879be14f36d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0db6b2586f8e6282704f697dd6d429d2" id="r_a0db6b2586f8e6282704f697dd6d429d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0db6b2586f8e6282704f697dd6d429d2">generuotiVardPav</a> (std::string &amp;vardas, std::string &amp;pavarde)</td></tr>
+<tr class="separator:a0db6b2586f8e6282704f697dd6d429d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a819724498bea4eecb4f58e986d17c10d" id="r_a819724498bea4eecb4f58e986d17c10d"><td class="memTemplParams" colspan="2">template&lt;typename Container&gt; </td></tr>
+<tr class="memitem:a819724498bea4eecb4f58e986d17c10d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a819724498bea4eecb4f58e986d17c10d">rusiuotiStud</a> (Container &amp;grupe, char rusiavimoPas)</td></tr>
+<tr class="separator:a819724498bea4eecb4f58e986d17c10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a525119138d9cbe05fb51b5446bef9569" id="r_a525119138d9cbe05fb51b5446bef9569"><td class="memTemplParams" colspan="2">template&lt;typename Container&gt; </td></tr>
+<tr class="memitem:a525119138d9cbe05fb51b5446bef9569"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a525119138d9cbe05fb51b5446bef9569">nuskaitymasFile</a> (Container &amp;grupe, const string &amp;filename)</td></tr>
+<tr class="separator:a525119138d9cbe05fb51b5446bef9569"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbb1757be5f020a63c6e5b3bc4f29f83" id="r_abbb1757be5f020a63c6e5b3bc4f29f83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbb1757be5f020a63c6e5b3bc4f29f83">spausdintiRez2</a> (vector&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; vector&lt; float &gt; &gt; &gt; grupe, bool iFaila, char pasirinkimas, char rusiavimoPas)</td></tr>
+<tr class="separator:abbb1757be5f020a63c6e5b3bc4f29f83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a537e25a56dedfcd2b5c93c1109a357f0" id="r_a537e25a56dedfcd2b5c93c1109a357f0"><td class="memTemplParams" colspan="2">template&lt;typename Container&gt; </td></tr>
+<tr class="memitem:a537e25a56dedfcd2b5c93c1109a357f0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a537e25a56dedfcd2b5c93c1109a357f0">spausdintiRez</a> (Container &amp;grupe, bool iFaila, char pasirinkimas, const string &amp;failoPavadinimas)</td></tr>
+<tr class="separator:a537e25a56dedfcd2b5c93c1109a357f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab326215b019d7fb881ff4abd572e8cff" id="r_ab326215b019d7fb881ff4abd572e8cff"><td class="memItemLeft" align="right" valign="top">template double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab326215b019d7fb881ff4abd572e8cff">pasirinktasGal&lt; std::vector&lt; float &gt; &gt;</a> (std::vector&lt; float &gt; &amp;, int, char)</td></tr>
+<tr class="separator:ab326215b019d7fb881ff4abd572e8cff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb3415432a19ac254c90c98eb16035f2" id="r_acb3415432a19ac254c90c98eb16035f2"><td class="memItemLeft" align="right" valign="top">template double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb3415432a19ac254c90c98eb16035f2">pasirinktasGal&lt; std::list&lt; float &gt; &gt;</a> (std::list&lt; float &gt; &amp;, int, char)</td></tr>
+<tr class="separator:acb3415432a19ac254c90c98eb16035f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d9c8ccf3f8aae27d96b3f29d50895e8" id="r_a3d9c8ccf3f8aae27d96b3f29d50895e8"><td class="memItemLeft" align="right" valign="top">template double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d9c8ccf3f8aae27d96b3f29d50895e8">pasirinktasGal&lt; std::deque&lt; float &gt; &gt;</a> (std::deque&lt; float &gt; &amp;, int, char)</td></tr>
+<tr class="separator:a3d9c8ccf3f8aae27d96b3f29d50895e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91a466d03d9b8a7d73edee2c36eb8ee9" id="r_a91a466d03d9b8a7d73edee2c36eb8ee9"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91a466d03d9b8a7d73edee2c36eb8ee9">randomPaz&lt; std::vector&lt; float &gt; &gt;</a> (std::vector&lt; float &gt; &amp;, int &amp;, int)</td></tr>
+<tr class="separator:a91a466d03d9b8a7d73edee2c36eb8ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae84b16825aaa839b5fa6b27f12dcf5cf" id="r_ae84b16825aaa839b5fa6b27f12dcf5cf"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae84b16825aaa839b5fa6b27f12dcf5cf">randomPaz&lt; std::list&lt; float &gt; &gt;</a> (std::list&lt; float &gt; &amp;, int &amp;, int)</td></tr>
+<tr class="separator:ae84b16825aaa839b5fa6b27f12dcf5cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ab5ad72883c81234012cae73ac71a14" id="r_a4ab5ad72883c81234012cae73ac71a14"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ab5ad72883c81234012cae73ac71a14">randomPaz&lt; std::deque&lt; float &gt; &gt;</a> (std::deque&lt; float &gt; &amp;, int &amp;, int)</td></tr>
+<tr class="separator:a4ab5ad72883c81234012cae73ac71a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95045f12b6fd0ee5420993bd01719ac8" id="r_a95045f12b6fd0ee5420993bd01719ac8"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95045f12b6fd0ee5420993bd01719ac8">rusiuotiStud&lt; std::vector&lt; studentas&lt; std::vector&lt; float &gt; &gt; &gt; &gt;</a> (std::vector&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::vector&lt; float &gt; &gt; &gt; &amp;, char)</td></tr>
+<tr class="separator:a95045f12b6fd0ee5420993bd01719ac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e2699e73749bf2ce660361402209942" id="r_a5e2699e73749bf2ce660361402209942"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e2699e73749bf2ce660361402209942">rusiuotiStud&lt; std::list&lt; studentas&lt; std::list&lt; float &gt; &gt; &gt; &gt;</a> (std::list&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::list&lt; float &gt; &gt; &gt; &amp;, char)</td></tr>
+<tr class="separator:a5e2699e73749bf2ce660361402209942"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28ef53c1d3bda46caf14feb5dac63d30" id="r_a28ef53c1d3bda46caf14feb5dac63d30"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28ef53c1d3bda46caf14feb5dac63d30">rusiuotiStud&lt; std::deque&lt; studentas&lt; std::deque&lt; float &gt; &gt; &gt; &gt;</a> (std::deque&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::deque&lt; float &gt; &gt; &gt; &amp;, char)</td></tr>
+<tr class="separator:a28ef53c1d3bda46caf14feb5dac63d30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7428db6b8cbeab3830fc9742937f243d" id="r_a7428db6b8cbeab3830fc9742937f243d"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7428db6b8cbeab3830fc9742937f243d">nuskaitymasFile&lt; std::vector&lt; studentas&lt; std::vector&lt; float &gt; &gt; &gt; &gt;</a> (std::vector&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::vector&lt; float &gt; &gt; &gt; &amp;, const std::string &amp;)</td></tr>
+<tr class="separator:a7428db6b8cbeab3830fc9742937f243d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a555e58b93029bc85a73598f5226f09e4" id="r_a555e58b93029bc85a73598f5226f09e4"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a555e58b93029bc85a73598f5226f09e4">nuskaitymasFile&lt; std::list&lt; studentas&lt; std::list&lt; float &gt; &gt; &gt; &gt;</a> (std::list&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::list&lt; float &gt; &gt; &gt; &amp;, const std::string &amp;)</td></tr>
+<tr class="separator:a555e58b93029bc85a73598f5226f09e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a863650c4bcbfb6683576b9a9305f8321" id="r_a863650c4bcbfb6683576b9a9305f8321"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a863650c4bcbfb6683576b9a9305f8321">nuskaitymasFile&lt; std::deque&lt; studentas&lt; std::deque&lt; float &gt; &gt; &gt; &gt;</a> (std::deque&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::deque&lt; float &gt; &gt; &gt; &amp;, const std::string &amp;)</td></tr>
+<tr class="separator:a863650c4bcbfb6683576b9a9305f8321"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5541ea18dd91e2b95c4ee8ba752c6e01" id="r_a5541ea18dd91e2b95c4ee8ba752c6e01"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5541ea18dd91e2b95c4ee8ba752c6e01">spausdintiRez&lt; std::vector&lt; studentas&lt; std::vector&lt; float &gt; &gt; &gt; &gt;</a> (std::vector&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::vector&lt; float &gt; &gt; &gt; &amp;, bool, char, const std::string &amp;)</td></tr>
+<tr class="separator:a5541ea18dd91e2b95c4ee8ba752c6e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98c4d32d7877fadda357bfe2bd995133" id="r_a98c4d32d7877fadda357bfe2bd995133"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98c4d32d7877fadda357bfe2bd995133">spausdintiRez&lt; std::list&lt; studentas&lt; std::list&lt; float &gt; &gt; &gt; &gt;</a> (std::list&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::list&lt; float &gt; &gt; &gt; &amp;, bool, char, const std::string &amp;)</td></tr>
+<tr class="separator:a98c4d32d7877fadda357bfe2bd995133"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf596360422bdf0ad24c5a8ba8125b8c" id="r_aaf596360422bdf0ad24c5a8ba8125b8c"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf596360422bdf0ad24c5a8ba8125b8c">spausdintiRez&lt; std::deque&lt; studentas&lt; std::deque&lt; float &gt; &gt; &gt; &gt;</a> (std::deque&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::deque&lt; float &gt; &gt; &gt; &amp;, bool, char, const std::string &amp;)</td></tr>
+<tr class="separator:aaf596360422bdf0ad24c5a8ba8125b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Funkcijos Dokumentacija</h2>
+<a id="a3c83a86a99e6811468b041ad86fbea57" name="a3c83a86a99e6811468b041ad86fbea57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c83a86a99e6811468b041ad86fbea57">&#9670;&#160;</a></span>generuotiGalmed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">double generuotiGalmed </td>
+          <td>(</td>
+          <td class="paramtype">Container</td>          <td class="paramname"><span class="paramname"><em>nd</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a052ceaaf2234b902eaed16d73aabd3d7" name="a052ceaaf2234b902eaed16d73aabd3d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a052ceaaf2234b902eaed16d73aabd3d7">&#9670;&#160;</a></span>generuotiGalvid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">double generuotiGalvid </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>nd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>egz</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0db6b2586f8e6282704f697dd6d429d2" name="a0db6b2586f8e6282704f697dd6d429d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0db6b2586f8e6282704f697dd6d429d2">&#9670;&#160;</a></span>generuotiVardPav()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void generuotiVardPav </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>vardas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>pavarde</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a525119138d9cbe05fb51b5446bef9569" name="a525119138d9cbe05fb51b5446bef9569"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a525119138d9cbe05fb51b5446bef9569">&#9670;&#160;</a></span>nuskaitymasFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void nuskaitymasFile </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>grupe</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a863650c4bcbfb6683576b9a9305f8321" name="a863650c4bcbfb6683576b9a9305f8321"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a863650c4bcbfb6683576b9a9305f8321">&#9670;&#160;</a></span>nuskaitymasFile&lt; std::deque&lt; studentas&lt; std::deque&lt; float &gt; &gt; &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template void <a class="el" href="versijos1_funkc_8h.html#a525119138d9cbe05fb51b5446bef9569">nuskaitymasFile</a>&lt; std::deque&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::deque&lt; float &gt; &gt; &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::deque&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::deque&lt; float &gt; &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a555e58b93029bc85a73598f5226f09e4" name="a555e58b93029bc85a73598f5226f09e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a555e58b93029bc85a73598f5226f09e4">&#9670;&#160;</a></span>nuskaitymasFile&lt; std::list&lt; studentas&lt; std::list&lt; float &gt; &gt; &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template void <a class="el" href="versijos1_funkc_8h.html#a525119138d9cbe05fb51b5446bef9569">nuskaitymasFile</a>&lt; std::list&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::list&lt; float &gt; &gt; &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::list&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::list&lt; float &gt; &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7428db6b8cbeab3830fc9742937f243d" name="a7428db6b8cbeab3830fc9742937f243d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7428db6b8cbeab3830fc9742937f243d">&#9670;&#160;</a></span>nuskaitymasFile&lt; std::vector&lt; studentas&lt; std::vector&lt; float &gt; &gt; &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template void <a class="el" href="versijos1_funkc_8h.html#a525119138d9cbe05fb51b5446bef9569">nuskaitymasFile</a>&lt; std::vector&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::vector&lt; float &gt; &gt; &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::vector&lt; float &gt; &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a70c58cbe8565858e9b6e632da590b8e8" name="a70c58cbe8565858e9b6e632da590b8e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70c58cbe8565858e9b6e632da590b8e8">&#9670;&#160;</a></span>pasirinktasGal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">double pasirinktasGal </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>nd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>egz</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>kaip</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d9c8ccf3f8aae27d96b3f29d50895e8" name="a3d9c8ccf3f8aae27d96b3f29d50895e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d9c8ccf3f8aae27d96b3f29d50895e8">&#9670;&#160;</a></span>pasirinktasGal&lt; std::deque&lt; float &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template double <a class="el" href="versijos1_funkc_8h.html#a70c58cbe8565858e9b6e632da590b8e8">pasirinktasGal</a>&lt; std::deque&lt; float &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::deque&lt; float &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acb3415432a19ac254c90c98eb16035f2" name="acb3415432a19ac254c90c98eb16035f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb3415432a19ac254c90c98eb16035f2">&#9670;&#160;</a></span>pasirinktasGal&lt; std::list&lt; float &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template double <a class="el" href="versijos1_funkc_8h.html#a70c58cbe8565858e9b6e632da590b8e8">pasirinktasGal</a>&lt; std::list&lt; float &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::list&lt; float &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab326215b019d7fb881ff4abd572e8cff" name="ab326215b019d7fb881ff4abd572e8cff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab326215b019d7fb881ff4abd572e8cff">&#9670;&#160;</a></span>pasirinktasGal&lt; std::vector&lt; float &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template double <a class="el" href="versijos1_funkc_8h.html#a70c58cbe8565858e9b6e632da590b8e8">pasirinktasGal</a>&lt; std::vector&lt; float &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; float &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adf8fa35f74bb2038da414879be14f36d" name="adf8fa35f74bb2038da414879be14f36d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf8fa35f74bb2038da414879be14f36d">&#9670;&#160;</a></span>randomPaz()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void randomPaz </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>nd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>egz</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>kiek_nd</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4ab5ad72883c81234012cae73ac71a14" name="a4ab5ad72883c81234012cae73ac71a14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ab5ad72883c81234012cae73ac71a14">&#9670;&#160;</a></span>randomPaz&lt; std::deque&lt; float &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template void <a class="el" href="versijos1_funkc_8h.html#adf8fa35f74bb2038da414879be14f36d">randomPaz</a>&lt; std::deque&lt; float &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::deque&lt; float &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae84b16825aaa839b5fa6b27f12dcf5cf" name="ae84b16825aaa839b5fa6b27f12dcf5cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae84b16825aaa839b5fa6b27f12dcf5cf">&#9670;&#160;</a></span>randomPaz&lt; std::list&lt; float &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template void <a class="el" href="versijos1_funkc_8h.html#adf8fa35f74bb2038da414879be14f36d">randomPaz</a>&lt; std::list&lt; float &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::list&lt; float &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a91a466d03d9b8a7d73edee2c36eb8ee9" name="a91a466d03d9b8a7d73edee2c36eb8ee9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91a466d03d9b8a7d73edee2c36eb8ee9">&#9670;&#160;</a></span>randomPaz&lt; std::vector&lt; float &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template void <a class="el" href="versijos1_funkc_8h.html#adf8fa35f74bb2038da414879be14f36d">randomPaz</a>&lt; std::vector&lt; float &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; float &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a819724498bea4eecb4f58e986d17c10d" name="a819724498bea4eecb4f58e986d17c10d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a819724498bea4eecb4f58e986d17c10d">&#9670;&#160;</a></span>rusiuotiStud()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void rusiuotiStud </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>grupe</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>rusiavimoPas</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a28ef53c1d3bda46caf14feb5dac63d30" name="a28ef53c1d3bda46caf14feb5dac63d30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28ef53c1d3bda46caf14feb5dac63d30">&#9670;&#160;</a></span>rusiuotiStud&lt; std::deque&lt; studentas&lt; std::deque&lt; float &gt; &gt; &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template void <a class="el" href="versijos1_funkc_8h.html#a819724498bea4eecb4f58e986d17c10d">rusiuotiStud</a>&lt; std::deque&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::deque&lt; float &gt; &gt; &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::deque&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::deque&lt; float &gt; &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5e2699e73749bf2ce660361402209942" name="a5e2699e73749bf2ce660361402209942"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e2699e73749bf2ce660361402209942">&#9670;&#160;</a></span>rusiuotiStud&lt; std::list&lt; studentas&lt; std::list&lt; float &gt; &gt; &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template void <a class="el" href="versijos1_funkc_8h.html#a819724498bea4eecb4f58e986d17c10d">rusiuotiStud</a>&lt; std::list&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::list&lt; float &gt; &gt; &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::list&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::list&lt; float &gt; &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a95045f12b6fd0ee5420993bd01719ac8" name="a95045f12b6fd0ee5420993bd01719ac8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95045f12b6fd0ee5420993bd01719ac8">&#9670;&#160;</a></span>rusiuotiStud&lt; std::vector&lt; studentas&lt; std::vector&lt; float &gt; &gt; &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template void <a class="el" href="versijos1_funkc_8h.html#a819724498bea4eecb4f58e986d17c10d">rusiuotiStud</a>&lt; std::vector&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::vector&lt; float &gt; &gt; &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::vector&lt; float &gt; &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a537e25a56dedfcd2b5c93c1109a357f0" name="a537e25a56dedfcd2b5c93c1109a357f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a537e25a56dedfcd2b5c93c1109a357f0">&#9670;&#160;</a></span>spausdintiRez()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void spausdintiRez </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>grupe</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>iFaila</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>pasirinkimas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>failoPavadinimas</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abbb1757be5f020a63c6e5b3bc4f29f83" name="abbb1757be5f020a63c6e5b3bc4f29f83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbb1757be5f020a63c6e5b3bc4f29f83">&#9670;&#160;</a></span>spausdintiRez2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spausdintiRez2 </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; vector&lt; float &gt; &gt; &gt;</td>          <td class="paramname"><span class="paramname"><em>grupe</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>iFaila</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>pasirinkimas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>rusiavimoPas</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaf596360422bdf0ad24c5a8ba8125b8c" name="aaf596360422bdf0ad24c5a8ba8125b8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf596360422bdf0ad24c5a8ba8125b8c">&#9670;&#160;</a></span>spausdintiRez&lt; std::deque&lt; studentas&lt; std::deque&lt; float &gt; &gt; &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template void <a class="el" href="versijos1_funkc_8h.html#a537e25a56dedfcd2b5c93c1109a357f0">spausdintiRez</a>&lt; std::deque&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::deque&lt; float &gt; &gt; &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::deque&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::deque&lt; float &gt; &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a98c4d32d7877fadda357bfe2bd995133" name="a98c4d32d7877fadda357bfe2bd995133"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98c4d32d7877fadda357bfe2bd995133">&#9670;&#160;</a></span>spausdintiRez&lt; std::list&lt; studentas&lt; std::list&lt; float &gt; &gt; &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template void <a class="el" href="versijos1_funkc_8h.html#a537e25a56dedfcd2b5c93c1109a357f0">spausdintiRez</a>&lt; std::list&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::list&lt; float &gt; &gt; &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::list&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::list&lt; float &gt; &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5541ea18dd91e2b95c4ee8ba752c6e01" name="a5541ea18dd91e2b95c4ee8ba752c6e01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5541ea18dd91e2b95c4ee8ba752c6e01">&#9670;&#160;</a></span>spausdintiRez&lt; std::vector&lt; studentas&lt; std::vector&lt; float &gt; &gt; &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template void <a class="el" href="versijos1_funkc_8h.html#a537e25a56dedfcd2b5c93c1109a357f0">spausdintiRez</a>&lt; std::vector&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::vector&lt; float &gt; &gt; &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structstudentas.html">studentas</a>&lt; std::vector&lt; float &gt; &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_413f4e031a85da0d68269c6fd2f76e1c.html">Src</a></li><li class="navelem"><a class="el" href="versijos1_funkc_8cpp.html">versijos1Funkc.cpp</a></li>
+    <li class="footer">Sugeneruota <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

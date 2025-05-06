@@ -1,0 +1,16 @@
+var searchData=
+[
+  ['gal_0',['Gal',['../structstudentas.html#a5beddee22ea9632dfcff9873af4f7708',1,'studentas']]],
+  ['galbalas_1',['galBalas',['../class_studentas.html#a9243d250b2f7de7c3ee59cedaaf6d3e1',1,'Studentas']]],
+  ['galimybės_2',['galimybės',['../md__r_e_a_d_m_e.html#autotoc_md58',1,'Įvesties galimybės'],['../md__r_e_a_d_m_e.html#autotoc_md60',1,'Išvesties galimybės']]],
+  ['galutinė_20rekomendacija_3a_3',['Galutinė rekomendacija:',['..//Users/miglecincikaite/Desktop/objektinis/objektinisProg2/objektinisProg/README.md#autotoc_md39',1,'']]],
+  ['galutinisbalsas_4',['galutinisBalsas',['../class_studentas.html#a5d00ecb8daa9a5f48dcf35ee8e47643a',1,'Studentas']]],
+  ['gautilaikoskirtuma_5',['gautiLaikoSkirtuma',['../class_laiko_matavimas.html#a9e39fd016e3e04ef75368c61c9f7f062',1,'LaikoMatavimas']]],
+  ['generuotigalmed_6',['generuotiGalmed',['../studentas_8h.html#a78adb034d9be236666f34ee6e4f21a55',1,'generuotiGalmed(const vector&lt; float &gt; &amp;nd, int egz):&#160;studentas.cpp'],['../versijos1_funkc_8h.html#a3c83a86a99e6811468b041ad86fbea57',1,'generuotiGalmed(Container nd):&#160;versijos1Funkc.cpp'],['../studentas_8cpp.html#a78adb034d9be236666f34ee6e4f21a55',1,'generuotiGalmed(const vector&lt; float &gt; &amp;nd, int egz):&#160;studentas.cpp'],['../versijos1_funkc_8cpp.html#a3c83a86a99e6811468b041ad86fbea57',1,'generuotiGalmed(Container nd):&#160;versijos1Funkc.cpp']]],
+  ['generuotigalvid_7',['generuotiGalvid',['../studentas_8h.html#a64a17c1946f9aa065dc374468a9d3396',1,'generuotiGalvid(const vector&lt; float &gt; &amp;nd, int egz):&#160;studentas.cpp'],['../versijos1_funkc_8h.html#a052ceaaf2234b902eaed16d73aabd3d7',1,'generuotiGalvid(Container &amp;nd, int egz):&#160;versijos1Funkc.cpp'],['../studentas_8cpp.html#a64a17c1946f9aa065dc374468a9d3396',1,'generuotiGalvid(const vector&lt; float &gt; &amp;nd, int egz):&#160;studentas.cpp'],['../versijos1_funkc_8cpp.html#a052ceaaf2234b902eaed16d73aabd3d7',1,'generuotiGalvid(Container &amp;nd, int egz):&#160;versijos1Funkc.cpp']]],
+  ['generuotivardpav_8',['generuotiVardPav',['../versijos1_funkc_8h.html#a0db6b2586f8e6282704f697dd6d429d2',1,'generuotiVardPav(std::string &amp;vardas, std::string &amp;pavarde):&#160;versijos1Funkc.cpp'],['../versijos1_funkc_8cpp.html#a0db6b2586f8e6282704f697dd6d429d2',1,'generuotiVardPav(std::string &amp;vardas, std::string &amp;pavarde):&#160;versijos1Funkc.cpp']]],
+  ['geriausio_20konteinerio_20pasirinkimas_9',['GERIAUSIO KONTEINERIO PASIRINKIMAS',['..//Users/miglecincikaite/Desktop/objektinis/objektinisProg2/objektinisProg/README.md#autotoc_md38',1,'']]],
+  ['greičio_20testai_10',['Studentų duomenų apdorojimo greičio testai',['..//Users/miglecincikaite/Desktop/objektinis/objektinisProg2/objektinisProg/README.md#autotoc_md5',1,'']]],
+  ['greitas_20studentų_20skirstymas_20naudojant_20optimizuotus_20algoritmus_20su_20strong_20vector_20strong_20konteineriu_11',['Greitas studentų skirstymas naudojant optimizuotus algoritmus su &lt;strong&gt;VECTOR&lt;/strong&gt; konteineriu',['..//Users/miglecincikaite/Desktop/objektinis/objektinisProg2/objektinisProg/README.md#autotoc_md31',1,'']]],
+  ['grupes_3a_12',['Studentų skirstymas į grupes:',['..//Users/miglecincikaite/Desktop/objektinis/objektinisProg2/objektinisProg/README.md#autotoc_md16',1,'']]]
+];

@@ -1,0 +1,220 @@
+\doxysection{objektinis\+Prog Directorijos aprašas}
+\hypertarget{dir_65259a1c7a39b354db84d4e72589caf3}{}\label{dir_65259a1c7a39b354db84d4e72589caf3}\index{objektinisProg Directorijos aprašas@{objektinisProg Directorijos aprašas}}
+
+
+\doxysubsection{Smulkus aprašymas}
+\hypertarget{README.md_autotoc_md1}{}\doxysubsection{\texorpdfstring{Projektas}{Projektas}}\label{README.md_autotoc_md1}
+Šis projektas skirtas objektinio programavimo principų taikymui, apimant įvairius tyrimus ir analizes su studentų duomenimis. Projektas apima failų generavimą, studentų duomenų rūšiavimą, skaidymą į grupes ir analizę.\hypertarget{README.md_autotoc_md2}{}\doxysubsubsection{\texorpdfstring{Projekto struktūra}{Projekto struktūra}}\label{README.md_autotoc_md2}
+
+\begin{DoxyItemize}
+\item {\bfseries{src/}} -\/ Programos šaltinio kodas.
+\item {\bfseries{include/}} -\/ Antraštės failai.
+\item {\bfseries{test\+\_\+files/}} -\/ Failai, naudojami testavimui.
+\item {\bfseries{results/ or rezultatai/}} -\/ Sukuriami rezultatai po tyrimų ir analizės.
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md3}{}\doxysubsubsection{\texorpdfstring{Reikalavimai}{Reikalavimai}}\label{README.md_autotoc_md3}
+
+\begin{DoxyItemize}
+\item {\bfseries{C++17}} (naudojama programavimo kalba).
+\item {\bfseries{Makefile}} (kompiliavimui).
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md4}{}\doxysubsubsection{\texorpdfstring{Pagrindiniai žingsniai}{Pagrindiniai žingsniai}}\label{README.md_autotoc_md4}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Klonavimas ir paruošimas}}
+
+Norėdami pradėti dirbti su projektu, pirmiausia jį nukopijuokite iš Git\+Hub\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ git\ clone\ -\/b\ v1.0\ https://github.com/miglecin/objektinisProg.git}
+\DoxyCodeLine{cd\ objektinisProg}
+
+\end{DoxyCode}
+
+\item {\bfseries{Priklausomybės}}
+\begin{DoxyItemize}
+\item Užtikrinkite, kad turite įdiegtą {\bfseries{C++17}} suderinamą kompiliatorių.
+\item Projektas naudoja {\bfseries{Makefile}} kompiliavimui.
+\end{DoxyItemize}
+\item {\bfseries{Kompiliavimas naudojant Makefile}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make}
+
+\end{DoxyCode}
+
+\item {\bfseries{Naudojimosi instrukcija}}
+
+Po sėkmingo kompiliavimo galite paleisti programą\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./bin/programa}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}\hypertarget{README.md_autotoc_md5}{}\doxysubsection{\texorpdfstring{Studentų duomenų apdorojimo greičio testai}{Studentų duomenų apdorojimo greičio testai}}\label{README.md_autotoc_md5}
+Šis projektas testuoja studentų duomenų apdorojimo spartą naudojant tris skirtingus konteinerius\+: ~\newline
+
+\begin{DoxyItemize}
+\item {\ttfamily vector}
+\item {\ttfamily list}
+\item {\ttfamily deque}
+\end{DoxyItemize}
+
+Testuojami trys pagrindiniai veiksmai\+:
+\begin{DoxyEnumerate}
+\item {\bfseries{Failo nuskaitymas}} – kiek laiko užtrunka įkelti duomenis į konteinerį.
+\item {\bfseries{Rūšiavimas}} – kiek laiko užtrunka surūšiuoti studentus.
+\item {\bfseries{Skirstymas į grupes}} – kiek laiko užtrunka atskirti studentus į dvi grupes.
+\end{DoxyEnumerate}\hypertarget{README.md_autotoc_md6}{}\doxysubsubsection{\texorpdfstring{{\bfseries{Testavimo sistemos parametrai}}}{{\bfseries{Testavimo sistemos parametrai}}}}\label{README.md_autotoc_md6}
+
+\begin{DoxyItemize}
+\item {\bfseries{Operacinė sistema}}\+: mac\+OS Monterey 12.\+0.\+1
+\item {\bfseries{Įrenginys}}\+: Mac\+Book Pro (16-\/inch, 2019)
+\item {\bfseries{Procesorius (CPU)}}\+: Intel Core i7, 6 branduoliai, 2.\+6 GHz
+\item {\bfseries{Operatyvioji atmintis (RAM)}}\+: 16 GB DDR4 2667 MHz
+\item {\bfseries{Kietasis diskas (HDD/\+SSD)}}\+: Macintosh HD (greičiausiai SSD)
+\item {\bfseries{Vaizdo plokštė (GPU)}}\+: Intel UHD Graphics 630 (1536 MB)
+\item {\bfseries{Kompiliatorius}}\+: {\ttfamily g++ (GCC) / clang++}
+\item {\bfseries{Kompiliavimo nustatymai}}\+: {\ttfamily -\/std=c++17 -\/O2}
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md7}{}\doxysubsubsection{\texorpdfstring{Testavimo eiga}{Testavimo eiga}}\label{README.md_autotoc_md7}
+Testai buvo atliekami su failais, kuriuose buvo skirtingas įrašų kiekis\+:
+\begin{DoxyItemize}
+\item 1 000 įrašų ({\ttfamily STUDENTAI\+\_\+1000.\+txt})
+\item 10 000 įrašų ({\ttfamily STUDENTAI\+\_\+10000.\+txt})
+\item 100 000 įrašų ({\ttfamily STUDENTAI\+\_\+100000.\+txt})
+\item 1 000 000 įrašų ({\ttfamily STUDENTAI\+\_\+1000000.\+txt})
+\item 10 000 000 įrašų ({\ttfamily STUDENTAI\+\_\+10000000.\+txt})
+\end{DoxyItemize}
+
+Su kiekvienu failu tyrimas buvo pakartotas 5 kartus, rezultatai surašyti į lentelę ir apskaičiuotas vidurkis.
+
+Testavimo metu matuota kiekvienos operacijos trukmė.\hypertarget{README.md_autotoc_md8}{}\doxysubsubsection{\texorpdfstring{REZULTATAI\+:}{REZULTATAI\+:}}\label{README.md_autotoc_md8}
+\hypertarget{README.md_autotoc_md9}{}\doxysubsubsection{\texorpdfstring{Pastebėjimai\+:}{Pastebėjimai\+:}}\label{README.md_autotoc_md9}
+Failo nuskaitymas\+: Visi konteineriai panašiai skaito failą, tačiau DEQUE šiek tiek lėtesnis didesniems duomenų kiekiams.
+
+Studentų rūšiavimas\+: VECTOR yra žymiai greitesnis rūšiuojant studentus. LIST ir DEQUE rūšiuoja lėčiau, ypač didėjant duomenų kiekiui.
+
+Studentų skirstymas į grupes\+: VECTOR ir LIST yra žymiai efektyvesni skirstant studentus į grupes. DEQUE skirstymas į grupes yra labai lėtas, ypač didesniems duomenų kiekiams, ir yra mažiausiai efektyvus konteineris šiai operacijai.\hypertarget{README.md_autotoc_md10}{}\doxysubsubsection{\texorpdfstring{Išvados\+:}{Išvados\+:}}\label{README.md_autotoc_md10}
+VECTOR konteineris yra efektyviausias visose trijose operacijose, ypač rūšiavimo ir skirstymo į grupes atžvilgiu.
+
+LIST konteineris yra geras pasirinkimas, jei reikia dažnai įterpti arba ištrinti elementus, bet rūšiavimas ir skirstymas į grupes yra lėtesni nei su VECTOR.
+
+DEQUE konteineris yra mažiausiai efektyvus šiam konkrečiam atveju, ypač skirstymo į grupes operacijai.\hypertarget{README.md_autotoc_md11}{}\doxysubsubsection{\texorpdfstring{1 STRATEGIJOS TYRIMAS}{1 STRATEGIJOS TYRIMAS}}\label{README.md_autotoc_md11}
+\hypertarget{README.md_autotoc_md12}{}\doxysubsubsection{\texorpdfstring{REZULTATAI\+:}{REZULTATAI\+:}}\label{README.md_autotoc_md12}
+\hypertarget{README.md_autotoc_md13}{}\doxysubsubsection{\texorpdfstring{Pastebėjimai}{Pastebėjimai}}\label{README.md_autotoc_md13}
+\hypertarget{README.md_autotoc_md14}{}\doxysubsubsubsection{\texorpdfstring{Failo nuskaitymas\+:}{Failo nuskaitymas\+:}}\label{README.md_autotoc_md14}
+
+\begin{DoxyItemize}
+\item Visi konteineriai panašiai skaito failą, tačiau {\ttfamily DEQUE} yra pastebimai lėčiausias didėjant duomenų kiekiui.
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md15}{}\doxysubsubsubsection{\texorpdfstring{Studentų rūšiavimas\+:}{Studentų rūšiavimas\+:}}\label{README.md_autotoc_md15}
+
+\begin{DoxyItemize}
+\item {\ttfamily VECTOR} yra greičiausias rūšiuojant studentus. ~\newline
+
+\item {\ttfamily LIST} ir {\ttfamily DEQUE} rūšiuoja lėčiau, ypač didėjant duomenų kiekiui.
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md16}{}\doxysubsubsubsection{\texorpdfstring{Studentų skirstymas į grupes\+:}{Studentų skirstymas į grupes\+:}}\label{README.md_autotoc_md16}
+
+\begin{DoxyItemize}
+\item {\ttfamily VECTOR} ir {\ttfamily LIST} yra daug efektyvesni skirstant studentus į grupes. ~\newline
+
+\item {\ttfamily DEQUE} skirstymas į grupes yra labai lėtas, ypač didesniems duomenų kiekiams.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md18}{}\doxysubsubsection{\texorpdfstring{Išvados}{Išvados}}\label{README.md_autotoc_md18}
+
+\begin{DoxyItemize}
+\item {\bfseries{{\ttfamily VECTOR}}} yra efektyviausias konteineris visose trijose operacijose, ypač rūšiuojant ir skirstant į grupes. ~\newline
+
+\item {\bfseries{{\ttfamily LIST}}} yra geras pasirinkimas, jei reikia dažnai įterpti arba ištrinti elementus, bet rūšiavimas ir skirstymas į grupes yra lėtesni nei su {\ttfamily VECTOR}. ~\newline
+
+\item {\bfseries{{\ttfamily DEQUE}}} yra mažiausiai efektyvus pasirinkimas, ypač skirstant studentus į grupes, kur jo veikimo laikas yra ženkliai didesnis nei kitų dviejų konteinerių.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md20}{}\doxysubsubsection{\texorpdfstring{Atminties naudojimo efektyvumas}{Atminties naudojimo efektyvumas}}\label{README.md_autotoc_md20}
+Kadangi pirmoje strategijoje studentai yra dviejuose konteineriuose (bendrame ir vienoje iš grupių), atminties naudojimas yra neefektyvus. ~\newline
+
+\begin{DoxyItemize}
+\item Kiekvienas studentas egzistuoja du kartus, todėl naudojama dvigubai daugiau atminties nei būtų optimizuotame variante. ~\newline
+
+\item Tai ypač pastebima didėjant studentų skaičiui – kuo daugiau įrašų, tuo daugiau nereikalingos atminties sunaudojama.
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md21}{}\doxysubsubsubsection{\texorpdfstring{Atminties naudojimas realioje sistemoje}{Atminties naudojimas realioje sistemoje}}\label{README.md_autotoc_md21}
+Žemiau pateiktoje ekrano nuotraukoje iš „\+Activity Monitor“ matyti, kad programos {\ttfamily v1} veikimo metu sunaudojama net {\bfseries{63,23 GB RAM}}, kai fizinės operatyviosios atminties (RAM) kiekis yra tik {\bfseries{16 GB}}. ~\newline
+
+\begin{DoxyItemize}
+\item Dėl šios priežasties sistema pradeda naudoti {\bfseries{swap atmintį}} (4,84 GB), kas gali stipriai sumažinti našumą, nes keitimasis su SSD yra lėtesnis nei tiesioginis duomenų saugojimas RAM.
+\item Dėl perteklinio atminties naudojimo programos gali sulėtėti, o esant labai dideliems duomenų kiekiams – net sustoti veikti.
+\item Optimizuojant šį procesą būtų galima sumažinti atminties naudojimą bent {\bfseries{dvigubai}}, pašalinant nereikalingas duomenų kopijas.
+\end{DoxyItemize}
+
+\hypertarget{README.md_autotoc_md22}{}\doxysubsubsection{\texorpdfstring{2 STRATEGIJOS TYRIMAS}{2 STRATEGIJOS TYRIMAS}}\label{README.md_autotoc_md22}
+\hypertarget{README.md_autotoc_md23}{}\doxysubsubsection{\texorpdfstring{Apžvalga}{Apžvalga}}\label{README.md_autotoc_md23}
+Ši tyrimo strategija nagrinėja studentų duomenų skirstymo į dvi grupes (vargšiukai ir kietiakai) efektyvumą naudojant bendrą studentų konteinerį (t.\+y., {\ttfamily vector}, {\ttfamily list}, arba {\ttfamily deque}). Kai studentas yra "{}vargšiukas"{} (t.\+y., jo galutiniai balai mažesni nei 5.\+0), jis perkeliamas į naująjį "{}vargšiukų"{} konteinerį ir ištryniamas iš bendro konteinerio. Po šio proceso bendrame konteineryje lieka tik kietiakai.\hypertarget{README.md_autotoc_md24}{}\doxysubsubsection{\texorpdfstring{REZULTATAI\+:}{REZULTATAI\+:}}\label{README.md_autotoc_md24}
+\hypertarget{README.md_autotoc_md25}{}\doxysubsubsection{\texorpdfstring{Pastebėjimai}{Pastebėjimai}}\label{README.md_autotoc_md25}
+
+\begin{DoxyItemize}
+\item {\bfseries{Failo nuskaitymas}}\+: Visų konteinerių failo nuskaitymo laikas yra panašus, tačiau DEQUE šiek tiek lėtesnis didesniems duomenų kiekiams.
+\end{DoxyItemize}
+
+{\bfseries{Atminties naudojimas}}\+:
+\begin{DoxyItemize}
+\item Naudojant šią strategiją, atminties naudojimas tampa efektyvesnis, nes studentai yra perkelti tik į vieną naują konteinerį (vargšiukai) ir ištrinami iš bendro studentų konteinerio. Tai sumažina bendrą atminties naudojimą.
+\end{DoxyItemize}
+
+{\bfseries{Efektyvumas}}\+:
+\begin{DoxyItemize}
+\item Strategija efektyvesnė atminties atžvilgiu, tačiau dažni trynimai (ypač su tam tikrais konteineriais) gali turėti neigiamą poveikį veikimo greičiui.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md27}{}\doxysubsubsubsection{\texorpdfstring{Pastebėjimai apie našumą su VECTOR}{Pastebėjimai apie našumą su VECTOR}}\label{README.md_autotoc_md27}
+Naudojant {\bfseries{VECTOR}} su dideliais duomenų kiekiais (pvz., su 1,000,000 studentų), "{}skirstymo į grupes"{} operacija gali tapti labai lėta dėl šių priežasčių\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Atminties perrašymai ir peralokacijos}}\+: Nuolatiniai elementų įterpimai ir trinimai gali sukelti didelius atminties perrašymus, nes {\ttfamily VECTOR} turi perskirstyti visą atmintį, kai pasiekia ribas.
+\item {\bfseries{Elementų perkėlimas ir trynimas}}\+: Kiekvienas elementų keitimas gali užtrukti ilgiau, nes {\ttfamily VECTOR} turi išlaikyti nuoseklumą visoje sekos struktūroje.
+\item {\bfseries{Lėtumas su dideliais duomenimis}}\+: Su milijonais elementų operacijos tampa lėtesnės dėl trynimo ir perkėlimo procesų.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md29}{}\doxysubsubsection{\texorpdfstring{Išvados}{Išvados}}\label{README.md_autotoc_md29}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{VECTOR}}\+: Efektyviausias konteineris rūšiavimui, tačiau su dideliais duomenų kiekiais (pvz., 1,000,000 studentų) gali tapti lėtas dėl atminties perrašymo ir perkėlimo operacijų. Nors jis greitas mažais duomenimis, didelių duomenų atveju gali pasireikšti atminties valdymo problemos.
+\item {\bfseries{LIST}}\+: Panašiai kaip ir {\bfseries{VECTOR}}, tačiau {\bfseries{LIST}} konteineris geriau susidoroja su elementų įterpimu ir šalinimu. Tačiau rūšiavimas ir grupių skirstymas su {\bfseries{LIST}} yra lėtesni nei su {\bfseries{VECTOR}}.
+\item {\bfseries{DEQUE}}\+: Nors {\bfseries{DEQUE}} yra greitesnis už {\bfseries{LIST}} su mažesniais duomenimis, su didesniais duomenimis jis taip pat susiduria su našumo problemomis, nes reikalauja daugiau atminties ir gali tapti lėtesnis dėl dažnų elementų perkėlimų.
+\item {\bfseries{Atminties efektyvumas}}\+: 2-\/oji strategija, naudojant papildomą konteinerį "{}vargšiukams"{}, yra efektyvesnė atminties atžvilgiu, nes nebereikia dvigubai laikyti tų pačių duomenų. Tačiau nuolatiniai elementų trynimai ir perkėlimai gali tapti lėtesni, ypač su {\bfseries{VECTOR}} konteineriu.
+\end{DoxyEnumerate}\hypertarget{README.md_autotoc_md30}{}\doxysubsubsection{\texorpdfstring{3 STRATEGIJOS TYRIMAS\+:}{3 STRATEGIJOS TYRIMAS\+:}}\label{README.md_autotoc_md30}
+\hypertarget{README.md_autotoc_md31}{}\doxysubsubsubsection{\texorpdfstring{Greitas studentų skirstymas naudojant optimizuotus algoritmus su {\bfseries{VECTOR}} konteineriu}{Greitas studentų skirstymas naudojant optimizuotus algoritmus su {\bfseries{VECTOR}} konteineriu}}\label{README.md_autotoc_md31}
+Trečioje strategijoje naudojame {\bfseries{VECTOR}} konteinerį ir pasitelkiame optimizuotus algoritmus, kad paspartintume studentų skirstymo į grupes operaciją. Pagrindinis tikslas buvo pasiekti spartų studentų skirstymą, pritaikant tokius algoritmus kaip {\bfseries{std\+::partition}}, {\bfseries{std\+::copy}}, ir kitus, kurie leidžia greitai suskirstyti studentus į dvi grupes.\hypertarget{README.md_autotoc_md32}{}\doxysubsubsubsection{\texorpdfstring{Implementacijos apžvalga\+:}{Implementacijos apžvalga\+:}}\label{README.md_autotoc_md32}
+
+\begin{DoxyItemize}
+\item {\bfseries{Failo nuskaitymas}}\+: Studentai įkeliami į {\bfseries{VECTOR}} konteinerį.
+\item {\bfseries{Studentų rūšiavimas}}\+: Studentai yra rūšiuojami pagal nustatytus parametrus.
+\item {\bfseries{Studentų skirstymas į grupes}}\+: Pritaikytas algoritmas {\bfseries{std\+::partition}} su {\bfseries{std\+::copy}}, siekiant efektyviai perkelti studentus į dvi grupes\+: vargšus ir kietiakus. Naudojama tik viena operacija, kuri atlieka greitą skirstymą.
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md33}{}\doxysubsubsubsection{\texorpdfstring{Palyginimas su kitomis strategijomis\+:}{Palyginimas su kitomis strategijomis\+:}}\label{README.md_autotoc_md33}
+
+\begin{DoxyItemize}
+\item {\bfseries{Našumo palyginimas}}\+: Po optimizacijos operacija {\bfseries{skirstymas į grupes}} su {\bfseries{VECTOR}} konteineriu buvo žymiai greitesnė nei su kitais konteineriais, ypač dirbant su didesniais duomenų kiekiais.
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md34}{}\doxysubsubsubsection{\texorpdfstring{REZULTATAI\+:}{REZULTATAI\+:}}\label{README.md_autotoc_md34}
+\hypertarget{README.md_autotoc_md35}{}\doxysubsubsubsection{\texorpdfstring{Pastebėjimai\+:}{Pastebėjimai\+:}}\label{README.md_autotoc_md35}
+
+\begin{DoxyItemize}
+\item {\bfseries{Greitėjimas}}\+: Panaudojus optimizuotus algoritmus, kaip {\bfseries{std\+::partition}} ir {\bfseries{std\+::copy}}, studentų skirstymo į grupes operacija tapo žymiai greitesnė.
+\item {\bfseries{Didelis našumas su dideliais duomenimis}}\+: Su didesniais duomenų kiekiais, pavyzdžiui, su 10 milijonų studentų, optimizuotas skirstymas išlieka efektyvus, nors vis tiek pastebimas laiko augimas, susijęs su dideliais duomenų kiekiais.
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md36}{}\doxysubsubsubsection{\texorpdfstring{Išvados\+:}{Išvados\+:}}\label{README.md_autotoc_md36}
+3-\/ioji strategija, naudojanti optimizuotus algoritmus su {\bfseries{VECTOR}} konteineriu, yra labai efektyvi ir greita, ypač esant dideliems studentų kiekiams. Ši strategija suteikia žymiai greitesnį skirstymą į grupes palyginti su kitais konteineriais ir tradiciniais metodais.
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md38}{}\doxysubsubsection{\texorpdfstring{GERIAUSIO KONTEINERIO PASIRINKIMAS}{GERIAUSIO KONTEINERIO PASIRINKIMAS}}\label{README.md_autotoc_md38}
+\hypertarget{README.md_autotoc_md39}{}\doxysubsubsubsection{\texorpdfstring{Galutinė rekomendacija\+:}{Galutinė rekomendacija\+:}}\label{README.md_autotoc_md39}
+
+\begin{DoxyItemize}
+\item Naudokite {\bfseries{vector}}, jei pagrindinis prioritetas yra rūšiavimas ir skirstymas į grupes.
+\item Naudokite {\bfseries{list}}, jei dažnai reikia įterpti arba šalinti elementus.
+\item Venkite {\bfseries{deque}}, nes jis nuosekliai yra lėčiausias rūšiavimui. 
+\end{DoxyItemize}

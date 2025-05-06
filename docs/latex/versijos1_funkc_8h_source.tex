@@ -1,0 +1,91 @@
+\doxysection{versijos1\+Funkc.\+h}
+\hypertarget{versijos1_funkc_8h_source}{}\label{versijos1_funkc_8h_source}\index{include/versijos1Funkc.h@{include/versijos1Funkc.h}}
+\mbox{\hyperlink{versijos1_funkc_8h}{Eiti į šio failo dokumentaciją.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VERSIJOSFUNKC\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VERSIJOSFUNKC\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <cstdlib>}\ \ \textcolor{comment}{//\ srand(),\ rand()}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <ctime>}\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <deque>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{using\ }std::cout;}
+\DoxyCodeLine{00022\ \textcolor{keyword}{using\ }std::cin;}
+\DoxyCodeLine{00023\ \textcolor{keyword}{using\ }std::vector;}
+\DoxyCodeLine{00024\ \textcolor{keyword}{using\ }std::setw;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{using\ }std::endl;}
+\DoxyCodeLine{00026\ \textcolor{keyword}{using\ }std::string;}
+\DoxyCodeLine{00027\ \textcolor{keyword}{using\ }std::fstream;}
+\DoxyCodeLine{00028\ \textcolor{keyword}{using\ }std::fixed;}
+\DoxyCodeLine{00029\ \textcolor{keyword}{using\ }std::setprecision;}
+\DoxyCodeLine{00030\ \textcolor{keyword}{using\ }std::cerr;}
+\DoxyCodeLine{00031\ \textcolor{keyword}{using\ }std::getline;}
+\DoxyCodeLine{00032\ \textcolor{keyword}{using\ }std::ifstream;}
+\DoxyCodeLine{00033\ \textcolor{keyword}{using\ }std::ofstream;}
+\DoxyCodeLine{00034\ \textcolor{keyword}{using\ }std::ostream;}
+\DoxyCodeLine{00035\ \textcolor{keyword}{using\ }std::stringstream;}
+\DoxyCodeLine{00036\ \textcolor{keyword}{using\ }std::numeric\_limits;}
+\DoxyCodeLine{00037\ \textcolor{keyword}{using\ }std::streamsize;}
+\DoxyCodeLine{00038\ \textcolor{keyword}{using\ namespace\ }std::chrono;}
+\DoxyCodeLine{00039\ \textcolor{keyword}{using\ }std::ostringstream;}
+\DoxyCodeLine{00040\ \textcolor{keyword}{using\ }std::istringstream;}
+\DoxyCodeLine{00041\ \textcolor{keyword}{using\ }std::move;}
+\DoxyCodeLine{00042\ \textcolor{keyword}{extern}\ std::stringstream\ \mbox{\hyperlink{studentas_8h_adbf6a7492c6521b38c1510aebe307770}{buffer}};}
+\DoxyCodeLine{00043\ \textcolor{keyword}{using\ }std::list;}
+\DoxyCodeLine{00044\ \textcolor{keyword}{using\ }std::deque;}
+\DoxyCodeLine{00045\ \textcolor{keyword}{using\ }std::string;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T=vector<\textcolor{keywordtype}{float}>>\ \ \textcolor{comment}{//jei\ T\ nepateikta,\ bus\ vector<float}}
+\DoxyCodeLine{00048\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structstudentas}{studentas}}\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structstudentas_ad785fdf8f31f4b742d340b1bc2cc5ce7}{nd\_type}}=T;\ \ \textcolor{comment}{//konteineris\ automatiskai\ priskiriamas\ is\ T}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{structstudentas_a3bb1c3d59b50b54f9acf0a11572a4ca5}{Vard}};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{structstudentas_acc64e61c6a9cb64485f80402dd75a650}{Pav}};}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{structstudentas_ad785fdf8f31f4b742d340b1bc2cc5ce7}{nd\_type}}\ \mbox{\hyperlink{structstudentas_a4ad9c253102b2fd63ebcaa5d4d974da8}{nd}};\ \ \textcolor{comment}{//cia\ gali\ buti\ vector<float>,\ list<float>\ arba\ deque<float>}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structstudentas_aa149b959ed49fc3f955f5a918c9a7d10}{egz}};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structstudentas_a5beddee22ea9632dfcff9873af4f7708}{Gal}};}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Container>}
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{versijos1_funkc_8h_a052ceaaf2234b902eaed16d73aabd3d7}{generuotiGalvid}}(Container\&\ nd,\ \textcolor{keywordtype}{int}\ egz)\ ;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Container>}
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{versijos1_funkc_8h_a3c83a86a99e6811468b041ad86fbea57}{generuotiGalmed}}(Container\ nd)\ ;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Container>}
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{versijos1_funkc_8h_a70c58cbe8565858e9b6e632da590b8e8}{pasirinktasGal}}(Container\&\ nd,\ \textcolor{keywordtype}{int}\ egz,\ \textcolor{keywordtype}{char}\ kaip);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Container>}
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{versijos1_funkc_8h_adf8fa35f74bb2038da414879be14f36d}{randomPaz}}(Container\&\ nd,\ \textcolor{keywordtype}{int}\&\ egz,\ \textcolor{keywordtype}{int}\ kiek\_nd)\ ;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{versijos1_funkc_8h_a0db6b2586f8e6282704f697dd6d429d2}{generuotiVardPav}}(std::string\&\ vardas,\ std::string\&\ pavarde);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Container>}
+\DoxyCodeLine{00074\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{versijos1_funkc_8h_a819724498bea4eecb4f58e986d17c10d}{rusiuotiStud}}(Container\ \&\ grupe,\ \textcolor{keywordtype}{char}\ rusiavimoPas);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Container>}
+\DoxyCodeLine{00077\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{versijos1_funkc_8h_a525119138d9cbe05fb51b5446bef9569}{nuskaitymasFile}}(Container\&\ grupe,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ filename);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{versijos1_funkc_8h_abbb1757be5f020a63c6e5b3bc4f29f83}{spausdintiRez2}}(\ vector<\mbox{\hyperlink{structstudentas}{studentas}}<vector<float>>>\ grupe,\ \textcolor{keywordtype}{bool}\ iFaila,\ \textcolor{keywordtype}{char}\ pasirinkimas,\ \textcolor{keywordtype}{char}\ rusiavimoPas);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Container>}
+\DoxyCodeLine{00082\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{versijos1_funkc_8h_a537e25a56dedfcd2b5c93c1109a357f0}{spausdintiRez}}(Container\&\ grupe,\ \textcolor{keywordtype}{bool}\ iFaila,\ \textcolor{keywordtype}{char}\ pasirinkimas,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ failoPavadinimas);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

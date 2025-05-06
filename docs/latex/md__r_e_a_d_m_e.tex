@@ -1,0 +1,349 @@
+\chapter{objektinis\+Prog2}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{objektinisProg2@{objektinisProg2}}
+\label{md__r_e_a_d_m_e_autotoc_md40}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md40}%
+\hypertarget{md__r_e_a_d_m_e_autotoc_md41}{}\doxysection{\texorpdfstring{Programų spartos palyginimas {\ttfamily struct} vs. {\ttfamily class}}{Programų spartos palyginimas {\ttfamily struct} vs. {\ttfamily class}}}\label{md__r_e_a_d_m_e_autotoc_md41}
+Šiame dokumente pateikiamas programų, naudojančių {\ttfamily struct} ir {\ttfamily class} tipo studentus, spartos palyginimas.\hypertarget{md__r_e_a_d_m_e_autotoc_md42}{}\doxysubsection{\texorpdfstring{Testavimo metodika}{Testavimo metodika}}\label{md__r_e_a_d_m_e_autotoc_md42}
+
+\begin{DoxyItemize}
+\item Konteineris\+: {\ttfamily std\+::vector}
+\item Failų dydžiai\+: 100000 ir 1000000 studentų
+\item Dalijimo strategija\+: Greičiausia (3 strategija)
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md43}{}\doxysubsection{\texorpdfstring{Rezultatai}{Rezultatai}}\label{md__r_e_a_d_m_e_autotoc_md43}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md44}{}\doxysubsubsection{\texorpdfstring{Struktūros ({\ttfamily struct}) rezultatai}{Struktūros ({\ttfamily struct}) rezultatai}}\label{md__r_e_a_d_m_e_autotoc_md44}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo nuskaitymas (s)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų rūšiavimas (s)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Skirstymas į grupes (s)    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo nuskaitymas (s)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų rūšiavimas (s)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Skirstymas į grupes (s)    }\\\cline{1-4}
+\endhead
+100000   &0.\+20392   &0.\+0007994   &0.\+01625    \\\cline{1-4}
+1000000   &1.\+86321   &0.\+00835099   &0.\+19125   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md45}{}\doxysubsubsection{\texorpdfstring{Klasės ({\ttfamily class}) rezultatai}{Klasės ({\ttfamily class}) rezultatai}}\label{md__r_e_a_d_m_e_autotoc_md45}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo nuskaitymas (s)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų rūšiavimas (s)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Skirstymas į grupes (s)    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo nuskaitymas (s)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų rūšiavimas (s)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Skirstymas į grupes (s)    }\\\cline{1-4}
+\endhead
+100000   &0.\+196728   &0.\+000793   &0.\+013829    \\\cline{1-4}
+1000000   &1.\+824976   &0.\+009382   &0.\+214729   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md46}{}\doxysubsection{\texorpdfstring{Išvados}{Išvados}}\label{md__r_e_a_d_m_e_autotoc_md46}
+
+\begin{DoxyItemize}
+\item Abiejų implementacijų veikimo laikas yra panašus.
+\item Nėra didelio skirtumo tarp {\ttfamily struct} ir {\ttfamily class} naudojimo spartos.
+\item Nedideli skirtumai gali atsirasti dėl įvairių faktorių.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md48}{}\doxysection{\texorpdfstring{Programos spartos analizė su O1, O2, O3 flag\textquotesingle{}ais}{Programos spartos analizė su O1, O2, O3 flag\textquotesingle{}ais}}\label{md__r_e_a_d_m_e_autotoc_md48}
+Šiame dokumente pateikiama programos spartos analizė, lyginant "{}\+Struktūros"{} ir "{}\+Klasės"{} variantus su skirtingais optimizavimo flagais.\hypertarget{md__r_e_a_d_m_e_autotoc_md49}{}\doxysubsection{\texorpdfstring{Testavimo metodika}{Testavimo metodika}}\label{md__r_e_a_d_m_e_autotoc_md49}
+
+\begin{DoxyEnumerate}
+\item Programa buvo paleista su skirtingais studentų skaičiais\+: 1000, 10000, 100000, 1000000 ir 10000000.
+\item Programa buvo kompiliuota su optimizavimo flagais\+: O1, O2, O3.
+\item Buvo matuojamos šios operacijos\+:
+\begin{DoxyItemize}
+\item Failo nuskaitymas
+\item Studentų rūšiavimas
+\item Studentų skaidymas į grupes
+\end{DoxyItemize}
+\item Testai buvo pakartoti kelis kartus ir apskaičiuoti vidurkiai.
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md50}{}\doxysubsection{\texorpdfstring{Rezultatai}{Rezultatai}}\label{md__r_e_a_d_m_e_autotoc_md50}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md51}{}\doxysubsubsection{\texorpdfstring{.exe failų dydžiai}{.exe failų dydžiai}}\label{md__r_e_a_d_m_e_autotoc_md51}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Tipas   }&\cellcolor{\tableheadbgcolor}\textbf{ Optimizavimo flagas   }&\cellcolor{\tableheadbgcolor}\textbf{ .exe failo dydis (KB)    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Tipas   }&\cellcolor{\tableheadbgcolor}\textbf{ Optimizavimo flagas   }&\cellcolor{\tableheadbgcolor}\textbf{ .exe failo dydis (KB)    }\\\cline{1-3}
+\endhead
+Struktūra   &O1   &438    \\\cline{1-3}
+Struktūra   &O2   &267    \\\cline{1-3}
+Struktūra   &O3   &282    \\\cline{1-3}
+Klasė   &O1   &327    \\\cline{1-3}
+Klasė   &O2   &209    \\\cline{1-3}
+Klasė   &O3   &224   \\\cline{1-3}
+\end{longtabu}
+
+
+
+\begin{DoxyItemize}
+\item {\ttfamily .exe} failų dydžiai mažėja su didesniais optimizavimo flagais.
+\end{DoxyItemize}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{6}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Tipas   }&\cellcolor{\tableheadbgcolor}\textbf{ Optimizavimo flagas   }&\cellcolor{\tableheadbgcolor}\textbf{ Failo dydis   }&\cellcolor{\tableheadbgcolor}\textbf{ Failo nuskaitymas (s)   }&\cellcolor{\tableheadbgcolor}\textbf{ Studentų rūšiavimas (s)   }&\cellcolor{\tableheadbgcolor}\textbf{ Skirstymas į grupes (s)    }\\\cline{1-6}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Tipas   }&\cellcolor{\tableheadbgcolor}\textbf{ Optimizavimo flagas   }&\cellcolor{\tableheadbgcolor}\textbf{ Failo dydis   }&\cellcolor{\tableheadbgcolor}\textbf{ Failo nuskaitymas (s)   }&\cellcolor{\tableheadbgcolor}\textbf{ Studentų rūšiavimas (s)   }&\cellcolor{\tableheadbgcolor}\textbf{ Skirstymas į grupes (s)    }\\\cline{1-6}
+\endhead
+Struktūra   &O1   &100000   &0.\+3506804   &1.\+022409   &0.\+0343105    \\\cline{1-6}
+Struktūra   &O1   &1000000   &3.\+199772   &10.\+15857   &0.\+3709248    \\\cline{1-6}
+Struktūra   &O2   &100000   &0.\+2065624   &0.\+8267488   &0.\+0143346    \\\cline{1-6}
+Struktūra   &O2   &1000000   &1.\+837956   &8.\+00394   &0.\+2062462    \\\cline{1-6}
+Struktūra   &O3   &100000   &0.\+2042266   &0.\+7903494   &0.\+0147426    \\\cline{1-6}
+Struktūra   &O3   &1000000   &1.\+81989   &8.\+5064   &0.\+2086486    \\\cline{1-6}
+Klasė   &O1   &100000   &0.\+337025   &1.\+518416   &0.\+0369319    \\\cline{1-6}
+Klasė   &O1   &1000000   &3.\+049766   &15.\+45106   &0.\+4165822    \\\cline{1-6}
+Klasė   &O2   &100000   &0.\+217939   &0.\+811108   &0.\+01640278    \\\cline{1-6}
+Klasė   &O2   &1000000   &2.\+086458   &9.\+742368   &0.\+2256188    \\\cline{1-6}
+Klasė   &O3   &100000   &0.\+198677   &1.\+077024   &0.\+01438404    \\\cline{1-6}
+Klasė   &O3   &1000000   &1.\+84187   &8.\+099636   &0.\+202793   \\\cline{1-6}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md52}{}\doxysubsection{\texorpdfstring{Analizė}{Analizė}}\label{md__r_e_a_d_m_e_autotoc_md52}
+
+\begin{DoxyItemize}
+\item {\bfseries{Optimizavimo flagų įtaka\+:}}
+\begin{DoxyItemize}
+\item Matome, kad optimizavimo flagai turi didelę įtaką programos veikimo laikui. Su didesniu optimizavimo flagu (O3) programos veikimo laikas sumažėja.
+\item Optimizavimo flagai ypač veikia failo nuskaitymo ir skaidymo į grupes operacijas.
+\end{DoxyItemize}
+\item {\bfseries{Failo nuskaitymas\+:}}
+\begin{DoxyItemize}
+\item Failo nuskaitymo laikas didėja tiesiškai didėjant studentų skaičiui.
+\item Optimizavimo flagai akivaizdžiai turi įtakos failo nuskaitymo laikui.
+\end{DoxyItemize}
+\item {\bfseries{Studentų rūšiavimas\+:}}
+\begin{DoxyItemize}
+\item Rūšiavimo laikas yra labai mažas abiem variantams.
+\item Optimizavimo flagai turi minimalią įtaką rūšiavimo laikui.
+\end{DoxyItemize}
+\item {\bfseries{Studentų skaidymas į grupes\+:}}
+\begin{DoxyItemize}
+\item Skaidymo laikas didėja didėjant studentų skaičiui.
+\item Optimizavimo flagai turi didelę įtaką skaidymo laikui.
+\end{DoxyItemize}
+\item {\bfseries{Struktūra vs. Klasė\+:}}
+\begin{DoxyItemize}
+\item Abiejų variantų veikimo laikas yra panašus, tačiau yra nedidelių skirtumų, priklausomai nuo optimizavimo flagų.
+\item Klasės variantas su O2 ir O3 optimizavimo flagais rodo šiek tiek didesnį nuskaitymo laiką didesniame faile.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md53}{}\doxysubsection{\texorpdfstring{Išvados}{Išvados}}\label{md__r_e_a_d_m_e_autotoc_md53}
+
+\begin{DoxyItemize}
+\item Optimizavimo flagai (O1, O2, O3) reikšmingai pagerina programos veikimo laiką, ypač didesniems duomenų rinkiniams.
+\item Failo nuskaitymo ir studentų skaidymo į grupes operacijos labiausiai pasinaudoja optimizavimo flagais.
+\item Studentų rūšiavimo operacija yra palyginti greita ir mažai priklauso nuo optimizavimo flagų.
+\item Rekomenduojama naudoti didesnius optimizavimo flagus (O2 ar O3) didesniems duomenų rinkiniams, kad programa veiktų greičiau.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md54}{}\doxysection{\texorpdfstring{objektinis\+Prog}{objektinis\+Prog}}\label{md__r_e_a_d_m_e_autotoc_md54}
+bfee5a45c0feec4d2f885eedda9dd39cab515343\hypertarget{md__r_e_a_d_m_e_autotoc_md55}{}\doxysection{\texorpdfstring{RULE OF 5 IR IO operatoriai}{RULE OF 5 IR IO operatoriai}}\label{md__r_e_a_d_m_e_autotoc_md55}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md56}{}\doxysubsection{\texorpdfstring{Uždavinio paaiškinimas}{Uždavinio paaiškinimas}}\label{md__r_e_a_d_m_e_autotoc_md56}
+Šioje uzduotyje reikėjo\+:
+
+
+\begin{DoxyItemize}
+\item \doxylink{class_studentas}{Studentas} klasėje pilnai realizuoti „\+Rule of Five“ metodus\+:
+\begin{DoxyItemize}
+\item Konstruktorius (default ir su parametrais)
+\item Kopijavimo konstruktorius
+\item Kopijavimo priskyrimo operatorius
+\item Perkėlimo konstruktorius (move)
+\item Perkėlimo priskyrimo operatorius
+\item Destruktorius
+\end{DoxyItemize}
+\item Perdengti {\ttfamily \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}} ir {\ttfamily \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}} operatorius\+:
+\begin{DoxyItemize}
+\item Kad palaikytų įvestį iš vartotojo (cin), iš stringo (testavimui), iš failo
+\item Kad palaikytų išvestį į ekraną ir į failą
+\end{DoxyItemize}
+\item Sukurti testą ({\ttfamily \doxylink{test_rule_of5_8h_a12f86f81f653a23760de1e2facc26b1b}{testuoti\+Rule\+Of\+Five()}}), kuris patikrina visus metodus.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md58}{}\doxysubsection{\texorpdfstring{Įvesties galimybės}{Įvesties galimybės}}\label{md__r_e_a_d_m_e_autotoc_md58}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tipas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Aprašymas    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tipas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Aprašymas    }\\\cline{1-2}
+\endhead
+Rankinė   &Vartotojas įveda vardą, pavardę, pažymius ir egzaminą naudodamas {\ttfamily cin}    \\\cline{1-2}
+Automatinė   &Įvestis testavimo metu per {\ttfamily istringstream}    \\\cline{1-2}
+Iš failo   &Įvestis iš failo per {\ttfamily ifstream}, formatas\+: {\ttfamily Vardas Pavarde nd1 nd2 ... egz}   \\\cline{1-2}
+\end{longtabu}
+
+
+{\bfseries{Pavyzdys faile\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Jonas\ Jonaitis\ 10\ 9\ 8\ 7\ 6\ 8}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md60}{}\doxysubsection{\texorpdfstring{Išvesties galimybės}{Išvesties galimybės}}\label{md__r_e_a_d_m_e_autotoc_md60}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tipas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Aprašymas    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tipas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Aprašymas    }\\\cline{1-2}
+\endhead
+Į ekraną   &Naudojamas {\ttfamily cout \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} studentas}    \\\cline{1-2}
+Į failą   &Studentai išvedami į {\ttfamily rezultatai\+T.\+txt} failą   \\\cline{1-2}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md62}{}\doxysubsection{\texorpdfstring{Testavimo informacija}{Testavimo informacija}}\label{md__r_e_a_d_m_e_autotoc_md62}
+Funkcija {\ttfamily \doxylink{test_rule_of5_8h_a12f86f81f653a23760de1e2facc26b1b}{testuoti\+Rule\+Of\+Five()}} tikrina viską\+:
+
+
+\begin{DoxyItemize}
+\item Originalaus objekto kūrimą
+\item Kopijavimą ir perkėlimą (visos 5 taisyklės)
+\item Stream operatorius ({\ttfamily \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}} ir {\ttfamily \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}}) su\+:
+\begin{DoxyItemize}
+\item {\ttfamily cin}
+\item {\ttfamily istringstream}
+\item {\ttfamily ifstream}
+\end{DoxyItemize}
+\item Failo skaitymą su {\ttfamily nuskaitymas\+File}
+\item Failo išrašymą su {\ttfamily ofstream}
+\item Destruktoriaus iškvietimus
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md64}{}\doxysubsection{\texorpdfstring{Ekrano vaizdai}{Ekrano vaizdai}}\label{md__r_e_a_d_m_e_autotoc_md64}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md65}{}\doxysubsubsection{\texorpdfstring{Programos paleidimas}{Programos paleidimas}}\label{md__r_e_a_d_m_e_autotoc_md65}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md66}{}\doxysubsubsection{\texorpdfstring{Rule of Five testavimas}{Rule of Five testavimas}}\label{md__r_e_a_d_m_e_autotoc_md66}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md67}{}\doxysubsubsection{\texorpdfstring{Įvesties ir išvesties operatorių testavimas}{Įvesties ir išvesties operatorių testavimas}}\label{md__r_e_a_d_m_e_autotoc_md67}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md68}{}\doxysubsubsection{\texorpdfstring{Išvedimas į ekraną ir failą}{Išvedimas į ekraną ir failą}}\label{md__r_e_a_d_m_e_autotoc_md68}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md69}{}\doxysubsubsection{\texorpdfstring{Destruktoriaus kvietimai}{Destruktoriaus kvietimai}}\label{md__r_e_a_d_m_e_autotoc_md69}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md71}{}\doxysubsection{\texorpdfstring{Failai}{Failai}}\label{md__r_e_a_d_m_e_autotoc_md71}
+
+\begin{DoxyItemize}
+\item {\ttfamily studentai.\+txt}, {\ttfamily failinis.\+txt} – įvesties failai testams
+\item {\ttfamily rezultatai\+T.\+txt} – išvedimo rezultatai
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md72}{}\doxysection{\texorpdfstring{BAZINĖ IR IŠ\+VESTINĖ klasės}{BAZINĖ IR IŠ\+VESTINĖ klasės}}\label{md__r_e_a_d_m_e_autotoc_md72}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md73}{}\doxysubsection{\texorpdfstring{Versijos santrauka}{Versijos santrauka}}\label{md__r_e_a_d_m_e_autotoc_md73}
+
+\begin{DoxyItemize}
+\item Sukurta abstrakti bazinė klasė {\ttfamily \doxylink{class_zmogus}{Zmogus}}
+\item {\ttfamily \doxylink{class_studentas}{Studentas}} dabar paveldi iš {\ttfamily \doxylink{class_zmogus}{Zmogus}}
+\item Įvykdyta "{}\+Rule of Five"{} taisyklė ir visi metodai perkelti
+\item Perdengti įvesties / išvesties operatoriai
+\item Programa vis dar palaiko ankstesnę v1.\+2 logiką
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md75}{}\doxysubsection{\texorpdfstring{Klasės struktūra}{Klasės struktūra}}\label{md__r_e_a_d_m_e_autotoc_md75}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md76}{}\doxysubsubsection{\texorpdfstring{{\ttfamily Zmogus} (abstrakti klasė)}{{\ttfamily Zmogus} (abstrakti klasė)}}\label{md__r_e_a_d_m_e_autotoc_md76}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Atributai   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tipas    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Atributai   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tipas    }\\\cline{1-2}
+\endhead
+{\ttfamily vardas\+\_\+}   &{\ttfamily string}    \\\cline{1-2}
+{\ttfamily pavarde\+\_\+}   &{\ttfamily string}   \\\cline{1-2}
+\end{longtabu}
+
+
+{\bfseries{Funkcijos (grynai virtualios)\+:}}
+\begin{DoxyItemize}
+\item {\ttfamily string vardas() const = 0;}
+\item {\ttfamily string pavarde() const = 0;}
+\item {\ttfamily void set\+Vardas(const string\&) = 0;}
+\item {\ttfamily void set\+Pavarde(const string\&) = 0;}
+\end{DoxyItemize}
+
+{\bfseries{Testavimas\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Zmogus\ z;\ //\ \ Nesikompiliuoja,\ nes\ Zmogus\ yra\ abstrakti\ klasė}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md77}{}\doxysubsubsection{\texorpdfstring{{\ttfamily Studentas \+: public Zmogus}}{{\ttfamily Studentas \+: public Zmogus}}}\label{md__r_e_a_d_m_e_autotoc_md77}
+Paveldi {\ttfamily vardas\+\_\+}, {\ttfamily pavarde\+\_\+}, perrašo virtualias funkcijas ir turi\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Atributai   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tipas    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Atributai   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tipas    }\\\cline{1-2}
+\endhead
+{\ttfamily egzaminas\+\_\+}   &{\ttfamily int}    \\\cline{1-2}
+{\ttfamily nd\+\_\+}   &{\ttfamily vector\texorpdfstring{$<$}{<}float\texorpdfstring{$>$}{>}}    \\\cline{1-2}
+{\ttfamily galutinis\+\_\+balas\+\_\+}   &{\ttfamily float}   \\\cline{1-2}
+\end{longtabu}
+
+
+{\bfseries{Implementuoti metodai\+:}}
+\begin{DoxyItemize}
+\item 5 Rule of Five\+: konstruktoriai, operatoriai, destruktorius
+\item {\ttfamily istream\& operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}(istream\&, \doxylink{class_studentas}{Studentas}\&)}
+\item {\ttfamily ostream\& operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}(ostream\&, const \doxylink{class_studentas}{Studentas}\&)}
+\item {\ttfamily float gal\+Balas(...)}, {\ttfamily read\+Student(...)}, {\ttfamily nuskaitymas\+File(...)} ir kt.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md79}{}\doxysubsection{\texorpdfstring{Testavimo santrauka}{Testavimo santrauka}}\label{md__r_e_a_d_m_e_autotoc_md79}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Testas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Veikia    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Testas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Veikia    }\\\cline{1-2}
+\endhead
+Konstruktoriai (default, copy)   &+    \\\cline{1-2}
+Priskyrimo operatoriai   &+    \\\cline{1-2}
+Perkelimo metodai   &+    \\\cline{1-2}
+Destruktorius   &+    \\\cline{1-2}
+{\ttfamily operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}}, {\ttfamily operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}}   &+    \\\cline{1-2}
+Nuskaitymas iš failo   &+    \\\cline{1-2}
+Išvedimas į failą / ekraną   &+    \\\cline{1-2}
+Paveldėjimo loginis testas   &+   \\\cline{1-2}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md81}{}\doxysubsection{\texorpdfstring{Ekrano vaizdai}{Ekrano vaizdai}}\label{md__r_e_a_d_m_e_autotoc_md81}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md82}{}\doxysubsubsection{\texorpdfstring{Programos paleidimas}{Programos paleidimas}}\label{md__r_e_a_d_m_e_autotoc_md82}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md83}{}\doxysubsubsection{\texorpdfstring{Rule of Five testavimas}{Rule of Five testavimas}}\label{md__r_e_a_d_m_e_autotoc_md83}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md84}{}\doxysubsubsection{\texorpdfstring{Įvesties / išvesties operatoriai}{Įvesties / išvesties operatoriai}}\label{md__r_e_a_d_m_e_autotoc_md84}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md85}{}\doxysubsubsection{\texorpdfstring{Išvedimas į ekraną ir failą}{Išvedimas į ekraną ir failą}}\label{md__r_e_a_d_m_e_autotoc_md85}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md86}{}\doxysubsubsection{\texorpdfstring{Destruktoriaus kvietimai}{Destruktoriaus kvietimai}}\label{md__r_e_a_d_m_e_autotoc_md86}
+
+
+\DoxyHorRuler{0}
+ 

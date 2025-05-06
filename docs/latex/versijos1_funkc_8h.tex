@@ -1,0 +1,121 @@
+\doxysection{include/versijos1\+Funkc.h Failo Nuoroda}
+\hypertarget{versijos1_funkc_8h}{}\label{versijos1_funkc_8h}\index{include/versijos1Funkc.h@{include/versijos1Funkc.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$deque$>$}\newline
+\doxysubsubsection*{Klasės}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structstudentas}{studentas$<$ T $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funkcijos}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Container$>$ }\\double \mbox{\hyperlink{versijos1_funkc_8h_a052ceaaf2234b902eaed16d73aabd3d7}{generuoti\+Galvid}} (Container \&nd, int egz)
+\item 
+{\footnotesize template$<$typename Container$>$ }\\double \mbox{\hyperlink{versijos1_funkc_8h_a3c83a86a99e6811468b041ad86fbea57}{generuoti\+Galmed}} (Container nd)
+\item 
+{\footnotesize template$<$typename Container$>$ }\\double \mbox{\hyperlink{versijos1_funkc_8h_a70c58cbe8565858e9b6e632da590b8e8}{pasirinktas\+Gal}} (Container \&nd, int egz, char kaip)
+\item 
+{\footnotesize template$<$typename Container$>$ }\\void \mbox{\hyperlink{versijos1_funkc_8h_adf8fa35f74bb2038da414879be14f36d}{random\+Paz}} (Container \&nd, int \&egz, int kiek\+\_\+nd)
+\item 
+void \mbox{\hyperlink{versijos1_funkc_8h_a0db6b2586f8e6282704f697dd6d429d2}{generuoti\+Vard\+Pav}} (std\+::string \&vardas, std\+::string \&pavarde)
+\item 
+{\footnotesize template$<$typename Container$>$ }\\void \mbox{\hyperlink{versijos1_funkc_8h_a819724498bea4eecb4f58e986d17c10d}{rusiuoti\+Stud}} (Container \&grupe, char rusiavimo\+Pas)
+\item 
+{\footnotesize template$<$typename Container$>$ }\\void \mbox{\hyperlink{versijos1_funkc_8h_a525119138d9cbe05fb51b5446bef9569}{nuskaitymas\+File}} (Container \&grupe, const string \&filename)
+\item 
+void \mbox{\hyperlink{versijos1_funkc_8h_abbb1757be5f020a63c6e5b3bc4f29f83}{spausdinti\+Rez2}} (vector$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ vector$<$ float $>$ $>$ $>$ grupe, bool i\+Faila, char pasirinkimas, char rusiavimo\+Pas)
+\item 
+{\footnotesize template$<$typename Container$>$ }\\void \mbox{\hyperlink{versijos1_funkc_8h_a537e25a56dedfcd2b5c93c1109a357f0}{spausdinti\+Rez}} (Container \&grupe, bool i\+Faila, char pasirinkimas, const string \&failo\+Pavadinimas)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Kintamieji}
+\begin{DoxyCompactItemize}
+\item 
+std\+::stringstream \mbox{\hyperlink{versijos1_funkc_8h_adbf6a7492c6521b38c1510aebe307770}{buffer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Funkcijos Dokumentacija}
+\Hypertarget{versijos1_funkc_8h_a3c83a86a99e6811468b041ad86fbea57}\index{versijos1Funkc.h@{versijos1Funkc.h}!generuotiGalmed@{generuotiGalmed}}
+\index{generuotiGalmed@{generuotiGalmed}!versijos1Funkc.h@{versijos1Funkc.h}}
+\doxysubsubsection{\texorpdfstring{generuotiGalmed()}{generuotiGalmed()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8h_a3c83a86a99e6811468b041ad86fbea57} 
+template$<$typename Container$>$ \\
+double generuoti\+Galmed (\begin{DoxyParamCaption}\item[{Container}]{nd}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8h_a052ceaaf2234b902eaed16d73aabd3d7}\index{versijos1Funkc.h@{versijos1Funkc.h}!generuotiGalvid@{generuotiGalvid}}
+\index{generuotiGalvid@{generuotiGalvid}!versijos1Funkc.h@{versijos1Funkc.h}}
+\doxysubsubsection{\texorpdfstring{generuotiGalvid()}{generuotiGalvid()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8h_a052ceaaf2234b902eaed16d73aabd3d7} 
+template$<$typename Container$>$ \\
+double generuoti\+Galvid (\begin{DoxyParamCaption}\item[{Container \&}]{nd}{, }\item[{int}]{egz}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8h_a0db6b2586f8e6282704f697dd6d429d2}\index{versijos1Funkc.h@{versijos1Funkc.h}!generuotiVardPav@{generuotiVardPav}}
+\index{generuotiVardPav@{generuotiVardPav}!versijos1Funkc.h@{versijos1Funkc.h}}
+\doxysubsubsection{\texorpdfstring{generuotiVardPav()}{generuotiVardPav()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8h_a0db6b2586f8e6282704f697dd6d429d2} 
+void generuoti\+Vard\+Pav (\begin{DoxyParamCaption}\item[{std\+::string \&}]{vardas}{, }\item[{std\+::string \&}]{pavarde}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8h_a525119138d9cbe05fb51b5446bef9569}\index{versijos1Funkc.h@{versijos1Funkc.h}!nuskaitymasFile@{nuskaitymasFile}}
+\index{nuskaitymasFile@{nuskaitymasFile}!versijos1Funkc.h@{versijos1Funkc.h}}
+\doxysubsubsection{\texorpdfstring{nuskaitymasFile()}{nuskaitymasFile()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8h_a525119138d9cbe05fb51b5446bef9569} 
+template$<$typename Container$>$ \\
+void nuskaitymas\+File (\begin{DoxyParamCaption}\item[{Container \&}]{grupe}{, }\item[{const string \&}]{filename}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8h_a70c58cbe8565858e9b6e632da590b8e8}\index{versijos1Funkc.h@{versijos1Funkc.h}!pasirinktasGal@{pasirinktasGal}}
+\index{pasirinktasGal@{pasirinktasGal}!versijos1Funkc.h@{versijos1Funkc.h}}
+\doxysubsubsection{\texorpdfstring{pasirinktasGal()}{pasirinktasGal()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8h_a70c58cbe8565858e9b6e632da590b8e8} 
+template$<$typename Container$>$ \\
+double pasirinktas\+Gal (\begin{DoxyParamCaption}\item[{Container \&}]{nd}{, }\item[{int}]{egz}{, }\item[{char}]{kaip}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8h_adf8fa35f74bb2038da414879be14f36d}\index{versijos1Funkc.h@{versijos1Funkc.h}!randomPaz@{randomPaz}}
+\index{randomPaz@{randomPaz}!versijos1Funkc.h@{versijos1Funkc.h}}
+\doxysubsubsection{\texorpdfstring{randomPaz()}{randomPaz()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8h_adf8fa35f74bb2038da414879be14f36d} 
+template$<$typename Container$>$ \\
+void random\+Paz (\begin{DoxyParamCaption}\item[{Container \&}]{nd}{, }\item[{int \&}]{egz}{, }\item[{int}]{kiek\+\_\+nd}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8h_a819724498bea4eecb4f58e986d17c10d}\index{versijos1Funkc.h@{versijos1Funkc.h}!rusiuotiStud@{rusiuotiStud}}
+\index{rusiuotiStud@{rusiuotiStud}!versijos1Funkc.h@{versijos1Funkc.h}}
+\doxysubsubsection{\texorpdfstring{rusiuotiStud()}{rusiuotiStud()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8h_a819724498bea4eecb4f58e986d17c10d} 
+template$<$typename Container$>$ \\
+void rusiuoti\+Stud (\begin{DoxyParamCaption}\item[{Container \&}]{grupe}{, }\item[{char}]{rusiavimo\+Pas}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8h_a537e25a56dedfcd2b5c93c1109a357f0}\index{versijos1Funkc.h@{versijos1Funkc.h}!spausdintiRez@{spausdintiRez}}
+\index{spausdintiRez@{spausdintiRez}!versijos1Funkc.h@{versijos1Funkc.h}}
+\doxysubsubsection{\texorpdfstring{spausdintiRez()}{spausdintiRez()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8h_a537e25a56dedfcd2b5c93c1109a357f0} 
+template$<$typename Container$>$ \\
+void spausdinti\+Rez (\begin{DoxyParamCaption}\item[{Container \&}]{grupe}{, }\item[{bool}]{i\+Faila}{, }\item[{char}]{pasirinkimas}{, }\item[{const string \&}]{failo\+Pavadinimas}{}\end{DoxyParamCaption})}
+
+\Hypertarget{versijos1_funkc_8h_abbb1757be5f020a63c6e5b3bc4f29f83}\index{versijos1Funkc.h@{versijos1Funkc.h}!spausdintiRez2@{spausdintiRez2}}
+\index{spausdintiRez2@{spausdintiRez2}!versijos1Funkc.h@{versijos1Funkc.h}}
+\doxysubsubsection{\texorpdfstring{spausdintiRez2()}{spausdintiRez2()}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8h_abbb1757be5f020a63c6e5b3bc4f29f83} 
+void spausdinti\+Rez2 (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structstudentas}{studentas}}$<$ vector$<$ float $>$ $>$ $>$}]{grupe}{, }\item[{bool}]{i\+Faila}{, }\item[{char}]{pasirinkimas}{, }\item[{char}]{rusiavimo\+Pas}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Kintamojo Dokumentacija}
+\Hypertarget{versijos1_funkc_8h_adbf6a7492c6521b38c1510aebe307770}\index{versijos1Funkc.h@{versijos1Funkc.h}!buffer@{buffer}}
+\index{buffer@{buffer}!versijos1Funkc.h@{versijos1Funkc.h}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily \label{versijos1_funkc_8h_adbf6a7492c6521b38c1510aebe307770} 
+std\+::stringstream buffer\hspace{0.3cm}{\ttfamily [extern]}}
+

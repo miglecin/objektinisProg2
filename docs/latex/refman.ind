@@ -1,0 +1,330 @@
+\begin{theindex}
+
+  \item {\texorpdfstring{$\sim$}{\string~}Studentas}
+    \subitem {Studentas}, \hyperpage{15}
+  \item {\texorpdfstring{$\sim$}{\string~}Zmogus}
+    \subitem {Zmogus}, \hyperpage{18}
+
+  \indexspace
+
+  \item {baigti}
+    \subitem {LaikoMatavimas}, \hyperpage{13}
+  \item {buffer}
+    \subitem {studentas.h}, \hyperpage{23}
+    \subitem {versijos1Funkc.h}, \hyperpage{27}
+
+  \indexspace
+
+  \item {destruktoriuSk}
+    \subitem {Studentas}, \hyperpage{17}
+
+  \indexspace
+
+  \item {egz}
+    \subitem {studentas$<$ T $>$}, \hyperpage{17}
+  \item {egzaminas}
+    \subitem {Studentas}, \hyperpage{15}
+
+  \indexspace
+
+  \item {Gal}
+    \subitem {studentas$<$ T $>$}, \hyperpage{17}
+  \item {galBalas}
+    \subitem {Studentas}, \hyperpage{15}
+  \item {galutinisBalsas}
+    \subitem {Studentas}, \hyperpage{15}
+  \item {gautiLaikoSkirtuma}
+    \subitem {LaikoMatavimas}, \hyperpage{13}
+  \item {generuotiGalmed}
+    \subitem {studentas.cpp}, \hyperpage{30}
+    \subitem {studentas.h}, \hyperpage{23}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{32}
+    \subitem {versijos1Funkc.h}, \hyperpage{26}
+  \item {generuotiGalvid}
+    \subitem {studentas.cpp}, \hyperpage{30}
+    \subitem {studentas.h}, \hyperpage{23}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{32}
+    \subitem {versijos1Funkc.h}, \hyperpage{26}
+  \item {generuotiVardPav}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{32}
+    \subitem {versijos1Funkc.h}, \hyperpage{26}
+
+  \indexspace
+
+  \item {include/LaikoMatavimas.h}, \hyperpage{21}
+  \item {include/strategija3.h}, \hyperpage{21, 22}
+  \item {include/studentas.h}, \hyperpage{22, 23}
+  \item {include/testRuleOf5.h}, \hyperpage{25}
+  \item {include/versijos1Funkc.h}, \hyperpage{25}, \hyperpage{27}
+  \item {include/zmogus.h}, \hyperpage{28}
+  \item {isskirtiVargsusIrKietiakusOpt}
+    \subitem {strategija3.cpp}, \hyperpage{29}
+    \subitem {strategija3.h}, \hyperpage{22}
+
+  \indexspace
+
+  \item {LaikoMatavimas}, \hyperpage{13}
+    \subitem {baigti}, \hyperpage{13}
+    \subitem {gautiLaikoSkirtuma}, \hyperpage{13}
+    \subitem {LaikoMatavimas}, \hyperpage{13}
+    \subitem {pradeti}, \hyperpage{13}
+
+  \indexspace
+
+  \item {main}
+    \subitem {v1.2.cpp}, \hyperpage{31}
+  \item {meniu}
+    \subitem {v1.2.cpp}, \hyperpage{31}
+
+  \indexspace
+
+  \item {nd}
+    \subitem {Studentas}, \hyperpage{15}
+    \subitem {studentas$<$ T $>$}, \hyperpage{17}
+  \item {nd\_type}
+    \subitem {studentas$<$ T $>$}, \hyperpage{17}
+  \item {nuskaitymasFile}
+    \subitem {Studentas}, \hyperpage{15}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{32}
+    \subitem {versijos1Funkc.h}, \hyperpage{26}
+  \item {nuskaitymasFile$<$ std::deque$<$ studentas$<$ std::deque$<$ float $>$ $>$ $>$ $>$}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{32}
+  \item {nuskaitymasFile$<$ std::list$<$ studentas$<$ std::list$<$ float $>$ $>$ $>$ $>$}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{32}
+  \item {nuskaitymasFile$<$ std::vector$<$ studentas$<$ std::vector$<$ float $>$ $>$ $>$ $>$}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{33}
+
+  \indexspace
+
+  \item {objektinisProg/README.md}, \hyperpage{29}
+  \item {objektinisProg2}, \hyperpage{1}
+  \item {operator$<$$<$}
+    \subitem {Studentas}, \hyperpage{16}
+    \subitem {studentas.cpp}, \hyperpage{30}
+  \item {operator$>$$>$}
+    \subitem {Studentas}, \hyperpage{16}
+    \subitem {studentas.cpp}, \hyperpage{30}
+  \item {operator=}
+    \subitem {Studentas}, \hyperpage{15}
+
+  \indexspace
+
+  \item {pasirinktasGal}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{33}
+    \subitem {versijos1Funkc.h}, \hyperpage{26}
+  \item {pasirinktasGal$<$ std::deque$<$ float $>$ $>$}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{33}
+  \item {pasirinktasGal$<$ std::list$<$ float $>$ $>$}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{33}
+  \item {pasirinktasGal$<$ std::vector$<$ float $>$ $>$}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{33}
+  \item {pasirinktiFaila}
+    \subitem {v1.2.cpp}, \hyperpage{31}
+  \item {Pav}
+    \subitem {studentas$<$ T $>$}, \hyperpage{17}
+  \item {pavarde}
+    \subitem {Studentas}, \hyperpage{15}
+    \subitem {Zmogus}, \hyperpage{18}
+  \item {pavarde\_}
+    \subitem {Zmogus}, \hyperpage{19}
+  \item {pradeti}
+    \subitem {LaikoMatavimas}, \hyperpage{13}
+
+  \indexspace
+
+  \item {randomPaz}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{33}
+    \subitem {versijos1Funkc.h}, \hyperpage{26}
+  \item {randomPaz$<$ std::deque$<$ float $>$ $>$}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{33}
+  \item {randomPaz$<$ std::list$<$ float $>$ $>$}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{33}
+  \item {randomPaz$<$ std::vector$<$ float $>$ $>$}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{34}
+  \item {README.md}, \hyperpage{29}
+  \item {readStudent}
+    \subitem {Studentas}, \hyperpage{16}
+  \item {rusiuotiStud}
+    \subitem {Studentas}, \hyperpage{16}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{34}
+    \subitem {versijos1Funkc.h}, \hyperpage{26}
+  \item {rusiuotiStud$<$ std::deque$<$ studentas$<$ std::deque$<$ float $>$ $>$ $>$ $>$}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{34}
+  \item {rusiuotiStud$<$ std::list$<$ studentas$<$ std::list$<$ float $>$ $>$ $>$ $>$}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{34}
+  \item {rusiuotiStud$<$ std::vector$<$ studentas$<$ std::vector$<$ float $>$ $>$ $>$ $>$}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{34}
+
+  \indexspace
+
+  \item {setEgzaminas}
+    \subitem {Studentas}, \hyperpage{16}
+  \item {setNamudarbai}
+    \subitem {Studentas}, \hyperpage{16}
+  \item {setPavarde}
+    \subitem {Studentas}, \hyperpage{16}
+    \subitem {Zmogus}, \hyperpage{18}
+  \item {setVardas}
+    \subitem {Studentas}, \hyperpage{16}
+    \subitem {Zmogus}, \hyperpage{19}
+  \item {spausdintiKietiakusIrVargsius}
+    \subitem {strategija3.cpp}, \hyperpage{29}
+    \subitem {strategija3.h}, \hyperpage{22}
+  \item {spausdintiRez}
+    \subitem {Studentas}, \hyperpage{16}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{34}
+    \subitem {versijos1Funkc.h}, \hyperpage{27}
+  \item {spausdintiRez$<$ std::deque$<$ studentas$<$ std::deque$<$ float $>$ $>$ $>$ $>$}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{34}
+  \item {spausdintiRez$<$ std::list$<$ studentas$<$ std::list$<$ float $>$ $>$ $>$ $>$}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{34}
+  \item {spausdintiRez$<$ std::vector$<$ studentas$<$ std::vector$<$ float $>$ $>$ $>$ $>$}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{35}
+  \item {spausdintiRez2}
+    \subitem {versijos1Funkc.cpp}, \hyperpage{34}
+    \subitem {versijos1Funkc.h}, \hyperpage{27}
+  \item {Src/LaikoMatavimas.cpp}, \hyperpage{29}
+  \item {Src/strategija3.cpp}, \hyperpage{29}
+  \item {Src/studentas.cpp}, \hyperpage{29}
+  \item {Src/testRuleOf5.cpp}, \hyperpage{30}
+  \item {Src/v1.2.cpp}, \hyperpage{30}
+  \item {Src/versijos1Funkc.cpp}, \hyperpage{31}
+  \item {strategija3.cpp}
+    \subitem {isskirtiVargsusIrKietiakusOpt}, \hyperpage{29}
+    \subitem {spausdintiKietiakusIrVargsius}, \hyperpage{29}
+    \subitem {testuotiSkaidymoStrategija3}, \hyperpage{29}
+  \item {strategija3.h}
+    \subitem {isskirtiVargsusIrKietiakusOpt}, \hyperpage{22}
+    \subitem {spausdintiKietiakusIrVargsius}, \hyperpage{22}
+    \subitem {testuotiSkaidymoStrategija3}, \hyperpage{22}
+  \item {Studentas}, \hyperpage{13}
+    \subitem {\texorpdfstring{$\sim$}{\string~}Studentas}, 
+		\hyperpage{15}
+    \subitem {destruktoriuSk}, \hyperpage{17}
+    \subitem {egzaminas}, \hyperpage{15}
+    \subitem {galBalas}, \hyperpage{15}
+    \subitem {galutinisBalsas}, \hyperpage{15}
+    \subitem {nd}, \hyperpage{15}
+    \subitem {nuskaitymasFile}, \hyperpage{15}
+    \subitem {operator$<$$<$}, \hyperpage{16}
+    \subitem {operator$>$$>$}, \hyperpage{16}
+    \subitem {operator=}, \hyperpage{15}
+    \subitem {pavarde}, \hyperpage{15}
+    \subitem {readStudent}, \hyperpage{16}
+    \subitem {rusiuotiStud}, \hyperpage{16}
+    \subitem {setEgzaminas}, \hyperpage{16}
+    \subitem {setNamudarbai}, \hyperpage{16}
+    \subitem {setPavarde}, \hyperpage{16}
+    \subitem {setVardas}, \hyperpage{16}
+    \subitem {spausdintiRez}, \hyperpage{16}
+    \subitem {Studentas}, \hyperpage{15}
+    \subitem {vardas}, \hyperpage{16}
+  \item {studentas$<$ T $>$}, \hyperpage{17}
+    \subitem {egz}, \hyperpage{17}
+    \subitem {Gal}, \hyperpage{17}
+    \subitem {nd}, \hyperpage{17}
+    \subitem {nd\_type}, \hyperpage{17}
+    \subitem {Pav}, \hyperpage{17}
+    \subitem {Vard}, \hyperpage{17}
+  \item {studentas.cpp}
+    \subitem {generuotiGalmed}, \hyperpage{30}
+    \subitem {generuotiGalvid}, \hyperpage{30}
+    \subitem {operator$<$$<$}, \hyperpage{30}
+    \subitem {operator$>$$>$}, \hyperpage{30}
+  \item {studentas.h}
+    \subitem {buffer}, \hyperpage{23}
+    \subitem {generuotiGalmed}, \hyperpage{23}
+    \subitem {generuotiGalvid}, \hyperpage{23}
+
+  \indexspace
+
+  \item {testRuleOf5.cpp}
+    \subitem {testuotiRuleOfFive}, \hyperpage{30}
+  \item {testRuleOf5.h}
+    \subitem {testuotiRuleOfFive}, \hyperpage{25}
+  \item {testuotiRuleOfFive}
+    \subitem {testRuleOf5.cpp}, \hyperpage{30}
+    \subitem {testRuleOf5.h}, \hyperpage{25}
+  \item {testuotiSkaidymoStrategija3}
+    \subitem {strategija3.cpp}, \hyperpage{29}
+    \subitem {strategija3.h}, \hyperpage{22}
+
+  \indexspace
+
+  \item {v1.2.cpp}
+    \subitem {main}, \hyperpage{31}
+    \subitem {meniu}, \hyperpage{31}
+    \subitem {pasirinktiFaila}, \hyperpage{31}
+    \subitem {vykdytiPrograma}, \hyperpage{31}
+  \item {Vard}
+    \subitem {studentas$<$ T $>$}, \hyperpage{17}
+  \item {vardas}
+    \subitem {Studentas}, \hyperpage{16}
+    \subitem {Zmogus}, \hyperpage{19}
+  \item {vardas\_}
+    \subitem {Zmogus}, \hyperpage{19}
+  \item {versijos1Funkc.cpp}
+    \subitem {generuotiGalmed}, \hyperpage{32}
+    \subitem {generuotiGalvid}, \hyperpage{32}
+    \subitem {generuotiVardPav}, \hyperpage{32}
+    \subitem {nuskaitymasFile}, \hyperpage{32}
+    \subitem {nuskaitymasFile$<$ std::deque$<$ studentas$<$ std::deque$<$ float $>$ $>$ $>$ $>$}, 
+		\hyperpage{32}
+    \subitem {nuskaitymasFile$<$ std::list$<$ studentas$<$ std::list$<$ float $>$ $>$ $>$ $>$}, 
+		\hyperpage{32}
+    \subitem {nuskaitymasFile$<$ std::vector$<$ studentas$<$ std::vector$<$ float $>$ $>$ $>$ $>$}, 
+		\hyperpage{33}
+    \subitem {pasirinktasGal}, \hyperpage{33}
+    \subitem {pasirinktasGal$<$ std::deque$<$ float $>$ $>$}, 
+		\hyperpage{33}
+    \subitem {pasirinktasGal$<$ std::list$<$ float $>$ $>$}, 
+		\hyperpage{33}
+    \subitem {pasirinktasGal$<$ std::vector$<$ float $>$ $>$}, 
+		\hyperpage{33}
+    \subitem {randomPaz}, \hyperpage{33}
+    \subitem {randomPaz$<$ std::deque$<$ float $>$ $>$}, \hyperpage{33}
+    \subitem {randomPaz$<$ std::list$<$ float $>$ $>$}, \hyperpage{33}
+    \subitem {randomPaz$<$ std::vector$<$ float $>$ $>$}, 
+		\hyperpage{34}
+    \subitem {rusiuotiStud}, \hyperpage{34}
+    \subitem {rusiuotiStud$<$ std::deque$<$ studentas$<$ std::deque$<$ float $>$ $>$ $>$ $>$}, 
+		\hyperpage{34}
+    \subitem {rusiuotiStud$<$ std::list$<$ studentas$<$ std::list$<$ float $>$ $>$ $>$ $>$}, 
+		\hyperpage{34}
+    \subitem {rusiuotiStud$<$ std::vector$<$ studentas$<$ std::vector$<$ float $>$ $>$ $>$ $>$}, 
+		\hyperpage{34}
+    \subitem {spausdintiRez}, \hyperpage{34}
+    \subitem {spausdintiRez$<$ std::deque$<$ studentas$<$ std::deque$<$ float $>$ $>$ $>$ $>$}, 
+		\hyperpage{34}
+    \subitem {spausdintiRez$<$ std::list$<$ studentas$<$ std::list$<$ float $>$ $>$ $>$ $>$}, 
+		\hyperpage{34}
+    \subitem {spausdintiRez$<$ std::vector$<$ studentas$<$ std::vector$<$ float $>$ $>$ $>$ $>$}, 
+		\hyperpage{35}
+    \subitem {spausdintiRez2}, \hyperpage{34}
+  \item {versijos1Funkc.h}
+    \subitem {buffer}, \hyperpage{27}
+    \subitem {generuotiGalmed}, \hyperpage{26}
+    \subitem {generuotiGalvid}, \hyperpage{26}
+    \subitem {generuotiVardPav}, \hyperpage{26}
+    \subitem {nuskaitymasFile}, \hyperpage{26}
+    \subitem {pasirinktasGal}, \hyperpage{26}
+    \subitem {randomPaz}, \hyperpage{26}
+    \subitem {rusiuotiStud}, \hyperpage{26}
+    \subitem {spausdintiRez}, \hyperpage{27}
+    \subitem {spausdintiRez2}, \hyperpage{27}
+  \item {vykdytiPrograma}
+    \subitem {v1.2.cpp}, \hyperpage{31}
+
+  \indexspace
+
+  \item {Zmogus}, \hyperpage{18}
+    \subitem {\texorpdfstring{$\sim$}{\string~}Zmogus}, \hyperpage{18}
+    \subitem {pavarde}, \hyperpage{18}
+    \subitem {pavarde\_}, \hyperpage{19}
+    \subitem {setPavarde}, \hyperpage{18}
+    \subitem {setVardas}, \hyperpage{19}
+    \subitem {vardas}, \hyperpage{19}
+    \subitem {vardas\_}, \hyperpage{19}
+    \subitem {Zmogus}, \hyperpage{18}
+
+\end{theindex}

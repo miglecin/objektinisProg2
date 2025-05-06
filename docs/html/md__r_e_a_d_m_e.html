@@ -1,0 +1,447 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="lt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ObjektinisProg2: objektinisProg2</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ObjektinisProg2
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Paieška" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Sugeneruota Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">objektinisProg2</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md40"></a></p>
+<h1><a class="anchor" id="autotoc_md41"></a>
+Programų spartos palyginimas <code>struct</code> vs. <code>class</code></h1>
+<p>Šiame dokumente pateikiamas programų, naudojančių <code>struct</code> ir <code>class</code> tipo studentus, spartos palyginimas.</p>
+<h2><a class="anchor" id="autotoc_md42"></a>
+Testavimo metodika</h2>
+<ul>
+<li>Konteineris: <code>std::vector</code></li>
+<li>Failų dydžiai: 100000 ir 1000000 studentų</li>
+<li>Dalijimo strategija: Greičiausia (3 strategija)</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md43"></a>
+Rezultatai</h2>
+<h3><a class="anchor" id="autotoc_md44"></a>
+Struktūros (<code>struct</code>) rezultatai</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Studentų skaičius   </th><th class="markdownTableHeadNone">Failo nuskaitymas (s)   </th><th class="markdownTableHeadNone">Studentų rūšiavimas (s)   </th><th class="markdownTableHeadNone">Skirstymas į grupes (s)    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">100000   </td><td class="markdownTableBodyNone">0.20392   </td><td class="markdownTableBodyNone">0.0007994   </td><td class="markdownTableBodyNone">0.01625    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">1000000   </td><td class="markdownTableBodyNone">1.86321   </td><td class="markdownTableBodyNone">0.00835099   </td><td class="markdownTableBodyNone">0.19125   </td></tr>
+</table>
+<h3><a class="anchor" id="autotoc_md45"></a>
+Klasės (<code>class</code>) rezultatai</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Studentų skaičius   </th><th class="markdownTableHeadNone">Failo nuskaitymas (s)   </th><th class="markdownTableHeadNone">Studentų rūšiavimas (s)   </th><th class="markdownTableHeadNone">Skirstymas į grupes (s)    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">100000   </td><td class="markdownTableBodyNone">0.196728   </td><td class="markdownTableBodyNone">0.000793   </td><td class="markdownTableBodyNone">0.013829    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">1000000   </td><td class="markdownTableBodyNone">1.824976   </td><td class="markdownTableBodyNone">0.009382   </td><td class="markdownTableBodyNone">0.214729   </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md46"></a>
+Išvados</h2>
+<ul>
+<li>Abiejų implementacijų veikimo laikas yra panašus.</li>
+<li>Nėra didelio skirtumo tarp <code>struct</code> ir <code>class</code> naudojimo spartos.</li>
+<li>Nedideli skirtumai gali atsirasti dėl įvairių faktorių.</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="autotoc_md48"></a>
+Programos spartos analizė su O1, O2, O3 flag'ais</h1>
+<p>Šiame dokumente pateikiama programos spartos analizė, lyginant "Struktūros" ir "Klasės" variantus su skirtingais optimizavimo flagais.</p>
+<h2><a class="anchor" id="autotoc_md49"></a>
+Testavimo metodika</h2>
+<ol type="1">
+<li>Programa buvo paleista su skirtingais studentų skaičiais: 1000, 10000, 100000, 1000000 ir 10000000.</li>
+<li>Programa buvo kompiliuota su optimizavimo flagais: O1, O2, O3.</li>
+<li>Buvo matuojamos šios operacijos:<ul>
+<li>Failo nuskaitymas</li>
+<li>Studentų rūšiavimas</li>
+<li>Studentų skaidymas į grupes</li>
+</ul>
+</li>
+<li>Testai buvo pakartoti kelis kartus ir apskaičiuoti vidurkiai.</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md50"></a>
+Rezultatai</h2>
+<h3><a class="anchor" id="autotoc_md51"></a>
+.exe failų dydžiai</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Tipas   </th><th class="markdownTableHeadLeft">Optimizavimo flagas   </th><th class="markdownTableHeadLeft">.exe failo dydis (KB)    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Struktūra   </td><td class="markdownTableBodyLeft">O1   </td><td class="markdownTableBodyLeft">438    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Struktūra   </td><td class="markdownTableBodyLeft">O2   </td><td class="markdownTableBodyLeft">267    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Struktūra   </td><td class="markdownTableBodyLeft">O3   </td><td class="markdownTableBodyLeft">282    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Klasė   </td><td class="markdownTableBodyLeft">O1   </td><td class="markdownTableBodyLeft">327    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Klasė   </td><td class="markdownTableBodyLeft">O2   </td><td class="markdownTableBodyLeft">209    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Klasė   </td><td class="markdownTableBodyLeft">O3   </td><td class="markdownTableBodyLeft">224   </td></tr>
+</table>
+<ul>
+<li><code>.exe</code> failų dydžiai mažėja su didesniais optimizavimo flagais.</li>
+</ul>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Tipas   </th><th class="markdownTableHeadLeft">Optimizavimo flagas   </th><th class="markdownTableHeadLeft">Failo dydis   </th><th class="markdownTableHeadLeft">Failo nuskaitymas (s)   </th><th class="markdownTableHeadLeft">Studentų rūšiavimas (s)   </th><th class="markdownTableHeadLeft">Skirstymas į grupes (s)    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Struktūra   </td><td class="markdownTableBodyLeft">O1   </td><td class="markdownTableBodyLeft">100000   </td><td class="markdownTableBodyLeft">0.3506804   </td><td class="markdownTableBodyLeft">1.022409   </td><td class="markdownTableBodyLeft">0.0343105    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Struktūra   </td><td class="markdownTableBodyLeft">O1   </td><td class="markdownTableBodyLeft">1000000   </td><td class="markdownTableBodyLeft">3.199772   </td><td class="markdownTableBodyLeft">10.15857   </td><td class="markdownTableBodyLeft">0.3709248    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Struktūra   </td><td class="markdownTableBodyLeft">O2   </td><td class="markdownTableBodyLeft">100000   </td><td class="markdownTableBodyLeft">0.2065624   </td><td class="markdownTableBodyLeft">0.8267488   </td><td class="markdownTableBodyLeft">0.0143346    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Struktūra   </td><td class="markdownTableBodyLeft">O2   </td><td class="markdownTableBodyLeft">1000000   </td><td class="markdownTableBodyLeft">1.837956   </td><td class="markdownTableBodyLeft">8.00394   </td><td class="markdownTableBodyLeft">0.2062462    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Struktūra   </td><td class="markdownTableBodyLeft">O3   </td><td class="markdownTableBodyLeft">100000   </td><td class="markdownTableBodyLeft">0.2042266   </td><td class="markdownTableBodyLeft">0.7903494   </td><td class="markdownTableBodyLeft">0.0147426    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Struktūra   </td><td class="markdownTableBodyLeft">O3   </td><td class="markdownTableBodyLeft">1000000   </td><td class="markdownTableBodyLeft">1.81989   </td><td class="markdownTableBodyLeft">8.5064   </td><td class="markdownTableBodyLeft">0.2086486    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Klasė   </td><td class="markdownTableBodyLeft">O1   </td><td class="markdownTableBodyLeft">100000   </td><td class="markdownTableBodyLeft">0.337025   </td><td class="markdownTableBodyLeft">1.518416   </td><td class="markdownTableBodyLeft">0.0369319    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Klasė   </td><td class="markdownTableBodyLeft">O1   </td><td class="markdownTableBodyLeft">1000000   </td><td class="markdownTableBodyLeft">3.049766   </td><td class="markdownTableBodyLeft">15.45106   </td><td class="markdownTableBodyLeft">0.4165822    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Klasė   </td><td class="markdownTableBodyLeft">O2   </td><td class="markdownTableBodyLeft">100000   </td><td class="markdownTableBodyLeft">0.217939   </td><td class="markdownTableBodyLeft">0.811108   </td><td class="markdownTableBodyLeft">0.01640278    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Klasė   </td><td class="markdownTableBodyLeft">O2   </td><td class="markdownTableBodyLeft">1000000   </td><td class="markdownTableBodyLeft">2.086458   </td><td class="markdownTableBodyLeft">9.742368   </td><td class="markdownTableBodyLeft">0.2256188    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Klasė   </td><td class="markdownTableBodyLeft">O3   </td><td class="markdownTableBodyLeft">100000   </td><td class="markdownTableBodyLeft">0.198677   </td><td class="markdownTableBodyLeft">1.077024   </td><td class="markdownTableBodyLeft">0.01438404    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Klasė   </td><td class="markdownTableBodyLeft">O3   </td><td class="markdownTableBodyLeft">1000000   </td><td class="markdownTableBodyLeft">1.84187   </td><td class="markdownTableBodyLeft">8.099636   </td><td class="markdownTableBodyLeft">0.202793   </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md52"></a>
+Analizė</h2>
+<ul>
+<li><b>Optimizavimo flagų įtaka:</b><ul>
+<li>Matome, kad optimizavimo flagai turi didelę įtaką programos veikimo laikui. Su didesniu optimizavimo flagu (O3) programos veikimo laikas sumažėja.</li>
+<li>Optimizavimo flagai ypač veikia failo nuskaitymo ir skaidymo į grupes operacijas.</li>
+</ul>
+</li>
+<li><b>Failo nuskaitymas:</b><ul>
+<li>Failo nuskaitymo laikas didėja tiesiškai didėjant studentų skaičiui.</li>
+<li>Optimizavimo flagai akivaizdžiai turi įtakos failo nuskaitymo laikui.</li>
+</ul>
+</li>
+<li><b>Studentų rūšiavimas:</b><ul>
+<li>Rūšiavimo laikas yra labai mažas abiem variantams.</li>
+<li>Optimizavimo flagai turi minimalią įtaką rūšiavimo laikui.</li>
+</ul>
+</li>
+<li><b>Studentų skaidymas į grupes:</b><ul>
+<li>Skaidymo laikas didėja didėjant studentų skaičiui.</li>
+<li>Optimizavimo flagai turi didelę įtaką skaidymo laikui.</li>
+</ul>
+</li>
+<li><b>Struktūra vs. Klasė:</b><ul>
+<li>Abiejų variantų veikimo laikas yra panašus, tačiau yra nedidelių skirtumų, priklausomai nuo optimizavimo flagų.</li>
+<li>Klasės variantas su O2 ir O3 optimizavimo flagais rodo šiek tiek didesnį nuskaitymo laiką didesniame faile.</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md53"></a>
+Išvados</h2>
+<ul>
+<li>Optimizavimo flagai (O1, O2, O3) reikšmingai pagerina programos veikimo laiką, ypač didesniems duomenų rinkiniams.</li>
+<li>Failo nuskaitymo ir studentų skaidymo į grupes operacijos labiausiai pasinaudoja optimizavimo flagais.</li>
+<li>Studentų rūšiavimo operacija yra palyginti greita ir mažai priklauso nuo optimizavimo flagų.</li>
+<li>Rekomenduojama naudoti didesnius optimizavimo flagus (O2 ar O3) didesniems duomenų rinkiniams, kad programa veiktų greičiau.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md54"></a>
+objektinisProg</h1>
+<p>bfee5a45c0feec4d2f885eedda9dd39cab515343</p>
+<h1><a class="anchor" id="autotoc_md55"></a>
+RULE OF 5 IR IO operatoriai</h1>
+<h2><a class="anchor" id="autotoc_md56"></a>
+Uždavinio paaiškinimas</h2>
+<p>Šioje uzduotyje reikėjo:</p>
+<ul>
+<li><a class="el" href="class_studentas.html">Studentas</a> klasėje pilnai realizuoti „Rule of Five“ metodus:<ul>
+<li>Konstruktorius (default ir su parametrais)</li>
+<li>Kopijavimo konstruktorius</li>
+<li>Kopijavimo priskyrimo operatorius</li>
+<li>Perkėlimo konstruktorius (move)</li>
+<li>Perkėlimo priskyrimo operatorius</li>
+<li>Destruktorius</li>
+</ul>
+</li>
+<li>Perdengti <code>&gt;&gt;</code> ir <code>&lt;&lt;</code> operatorius:<ul>
+<li>Kad palaikytų įvestį iš vartotojo (cin), iš stringo (testavimui), iš failo</li>
+<li>Kad palaikytų išvestį į ekraną ir į failą</li>
+</ul>
+</li>
+<li>Sukurti testą (<code><a class="el" href="test_rule_of5_8h.html#a12f86f81f653a23760de1e2facc26b1b">testuotiRuleOfFive()</a></code>), kuris patikrina visus metodus.</li>
+</ul>
+<hr  />
+<h2><a class="anchor" id="autotoc_md58"></a>
+Įvesties galimybės</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Tipas   </th><th class="markdownTableHeadNone">Aprašymas    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Rankinė   </td><td class="markdownTableBodyNone">Vartotojas įveda vardą, pavardę, pažymius ir egzaminą naudodamas <code>cin</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Automatinė   </td><td class="markdownTableBodyNone">Įvestis testavimo metu per <code>istringstream</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Iš failo   </td><td class="markdownTableBodyNone">Įvestis iš failo per <code>ifstream</code>, formatas: <code>Vardas Pavarde nd1 nd2 ... egz</code>   </td></tr>
+</table>
+<p><b>Pavyzdys faile:</b> </p><div class="fragment"><div class="line">Jonas Jonaitis 10 9 8 7 6 8</div>
+</div><!-- fragment --><hr  />
+<h2><a class="anchor" id="autotoc_md60"></a>
+Išvesties galimybės</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Tipas   </th><th class="markdownTableHeadNone">Aprašymas    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Į ekraną   </td><td class="markdownTableBodyNone">Naudojamas <code>cout &lt;&lt; studentas</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Į failą   </td><td class="markdownTableBodyNone">Studentai išvedami į <code>rezultataiT.txt</code> failą   </td></tr>
+</table>
+<hr  />
+<h2><a class="anchor" id="autotoc_md62"></a>
+Testavimo informacija</h2>
+<p>Funkcija <code><a class="el" href="test_rule_of5_8h.html#a12f86f81f653a23760de1e2facc26b1b">testuotiRuleOfFive()</a></code> tikrina viską:</p>
+<ul>
+<li>Originalaus objekto kūrimą</li>
+<li>Kopijavimą ir perkėlimą (visos 5 taisyklės)</li>
+<li>Stream operatorius (<code>&lt;&lt;</code> ir <code>&gt;&gt;</code>) su:<ul>
+<li><code>cin</code></li>
+<li><code>istringstream</code></li>
+<li><code>ifstream</code></li>
+</ul>
+</li>
+<li>Failo skaitymą su <code>nuskaitymasFile</code></li>
+<li>Failo išrašymą su <code>ofstream</code></li>
+<li>Destruktoriaus iškvietimus</li>
+</ul>
+<hr  />
+<h2><a class="anchor" id="autotoc_md64"></a>
+Ekrano vaizdai</h2>
+<h3><a class="anchor" id="autotoc_md65"></a>
+Programos paleidimas</h3>
+<p><img src="screenshots/image-2.png" alt="alt text" class="inline"/></p>
+<h3><a class="anchor" id="autotoc_md66"></a>
+Rule of Five testavimas</h3>
+<p><img src="screenshots/image-3.png" alt="alt text" class="inline"/></p>
+<h3><a class="anchor" id="autotoc_md67"></a>
+Įvesties ir išvesties operatorių testavimas</h3>
+<p><img src="screenshots/image-4.png" alt="alt text" class="inline"/></p>
+<h3><a class="anchor" id="autotoc_md68"></a>
+Išvedimas į ekraną ir failą</h3>
+<p><img src="screenshots/image-5.png" alt="alt text" class="inline"/></p>
+<h3><a class="anchor" id="autotoc_md69"></a>
+Destruktoriaus kvietimai</h3>
+<p><img src="screenshots/image-6.png" alt="alt text" class="inline"/></p>
+<hr  />
+<h2><a class="anchor" id="autotoc_md71"></a>
+Failai</h2>
+<ul>
+<li><code>studentai.txt</code>, <code>failinis.txt</code> – įvesties failai testams</li>
+<li><code>rezultataiT.txt</code> – išvedimo rezultatai</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md72"></a>
+BAZINĖ IR IŠVESTINĖ klasės</h1>
+<h2><a class="anchor" id="autotoc_md73"></a>
+Versijos santrauka</h2>
+<ul>
+<li>Sukurta abstrakti bazinė klasė <code><a class="el" href="class_zmogus.html">Zmogus</a></code></li>
+<li><code><a class="el" href="class_studentas.html">Studentas</a></code> dabar paveldi iš <code><a class="el" href="class_zmogus.html">Zmogus</a></code></li>
+<li>Įvykdyta "Rule of Five" taisyklė ir visi metodai perkelti</li>
+<li>Perdengti įvesties / išvesties operatoriai</li>
+<li>Programa vis dar palaiko ankstesnę v1.2 logiką</li>
+</ul>
+<hr  />
+<h2><a class="anchor" id="autotoc_md75"></a>
+Klasės struktūra</h2>
+<h3><a class="anchor" id="autotoc_md76"></a>
+<code>Zmogus</code> (abstrakti klasė)</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Atributai   </th><th class="markdownTableHeadNone">Tipas    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>vardas_</code>   </td><td class="markdownTableBodyNone"><code>string</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>pavarde_</code>   </td><td class="markdownTableBodyNone"><code>string</code>   </td></tr>
+</table>
+<p><b>Funkcijos (grynai virtualios):</b></p><ul>
+<li><code>string vardas() const = 0;</code></li>
+<li><code>string pavarde() const = 0;</code></li>
+<li><code>void setVardas(const string&amp;) = 0;</code></li>
+<li><code>void setPavarde(const string&amp;) = 0;</code></li>
+</ul>
+<p><b>Testavimas:</b> </p><div class="fragment"><div class="line"><span class="comment">// Zmogus z; //  Nesikompiliuoja, nes Zmogus yra abstrakti klasė</span></div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md77"></a>
+<code>Studentas : public Zmogus</code></h3>
+<p>Paveldi <code>vardas_</code>, <code>pavarde_</code>, perrašo virtualias funkcijas ir turi:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Atributai   </th><th class="markdownTableHeadNone">Tipas    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>egzaminas_</code>   </td><td class="markdownTableBodyNone"><code>int</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>nd_</code>   </td><td class="markdownTableBodyNone"><code>vector&lt;float&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>galutinis_balas_</code>   </td><td class="markdownTableBodyNone"><code>float</code>   </td></tr>
+</table>
+<p><b>Implementuoti metodai:</b></p><ul>
+<li>5 Rule of Five: konstruktoriai, operatoriai, destruktorius</li>
+<li><code>istream&amp; operator&gt;&gt;(istream&amp;, <a class="el" href="class_studentas.html">Studentas</a>&amp;)</code></li>
+<li><code>ostream&amp; operator&lt;&lt;(ostream&amp;, const <a class="el" href="class_studentas.html">Studentas</a>&amp;)</code></li>
+<li><code>float galBalas(...)</code>, <code>readStudent(...)</code>, <code>nuskaitymasFile(...)</code> ir kt.</li>
+</ul>
+<hr  />
+<h2><a class="anchor" id="autotoc_md79"></a>
+Testavimo santrauka</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Testas   </th><th class="markdownTableHeadNone">Veikia    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Konstruktoriai (default, copy)   </td><td class="markdownTableBodyNone">+    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Priskyrimo operatoriai   </td><td class="markdownTableBodyNone">+    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Perkelimo metodai   </td><td class="markdownTableBodyNone">+    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Destruktorius   </td><td class="markdownTableBodyNone">+    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>operator&lt;&lt;</code>, <code>operator&gt;&gt;</code>   </td><td class="markdownTableBodyNone">+    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Nuskaitymas iš failo   </td><td class="markdownTableBodyNone">+    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Išvedimas į failą / ekraną   </td><td class="markdownTableBodyNone">+    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Paveldėjimo loginis testas   </td><td class="markdownTableBodyNone">+   </td></tr>
+</table>
+<hr  />
+<h2><a class="anchor" id="autotoc_md81"></a>
+Ekrano vaizdai</h2>
+<h3><a class="anchor" id="autotoc_md82"></a>
+Programos paleidimas</h3>
+<p><img src="screenshots/image-2.png" alt="Programos paleidimas" class="inline"/></p>
+<h3><a class="anchor" id="autotoc_md83"></a>
+Rule of Five testavimas</h3>
+<p><img src="screenshots/image-3.png" alt="Rule of Five testavimas" class="inline"/></p>
+<h3><a class="anchor" id="autotoc_md84"></a>
+Įvesties / išvesties operatoriai</h3>
+<p><img src="screenshots/image-4.png" alt="IO operatoriai" class="inline"/></p>
+<h3><a class="anchor" id="autotoc_md85"></a>
+Išvedimas į ekraną ir failą</h3>
+<p><img src="screenshots/image-5.png" alt="Isvedimas" class="inline"/></p>
+<h3><a class="anchor" id="autotoc_md86"></a>
+Destruktoriaus kvietimai</h3>
+<p><img src="screenshots/image-6.png" alt="Destruktoriai" class="inline"/></p>
+<hr  />
+ </div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Sugeneruota <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

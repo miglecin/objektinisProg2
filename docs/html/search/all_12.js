@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['paaiškinimas_0',['Uždavinio paaiškinimas',['../md__r_e_a_d_m_e.html#autotoc_md56',1,'']]],
+  ['pagrindiniai_20žingsniai_1',['Pagrindiniai žingsniai',['..//Users/miglecincikaite/Desktop/objektinis/objektinisProg2/objektinisProg/README.md#autotoc_md4',1,'']]],
+  ['paleidimas_2',['paleidimas',['../md__r_e_a_d_m_e.html#autotoc_md65',1,'Programos paleidimas'],['../md__r_e_a_d_m_e.html#autotoc_md82',1,'Programos paleidimas']]],
+  ['palyginimas_20su_20kitomis_20strategijomis_3a_3',['Palyginimas su kitomis strategijomis:',['..//Users/miglecincikaite/Desktop/objektinis/objektinisProg2/objektinisProg/README.md#autotoc_md33',1,'']]],
+  ['palyginimas_20tt_20struct_20tt_20vs_20tt_20class_20tt_4',['Programų spartos palyginimas &lt;tt&gt;struct&lt;/tt&gt; vs. &lt;tt&gt;class&lt;/tt&gt;',['../md__r_e_a_d_m_e.html#autotoc_md41',1,'']]],
+  ['parametrai_20strong_5',['&lt;strong&gt;Testavimo sistemos parametrai&lt;/strong&gt;',['..//Users/miglecincikaite/Desktop/objektinis/objektinisProg2/objektinisProg/README.md#autotoc_md6',1,'']]],
+  ['pasirinkimas_6',['GERIAUSIO KONTEINERIO PASIRINKIMAS',['..//Users/miglecincikaite/Desktop/objektinis/objektinisProg2/objektinisProg/README.md#autotoc_md38',1,'']]],
+  ['pasirinktasgal_7',['pasirinktasGal',['../versijos1_funkc_8h.html#a70c58cbe8565858e9b6e632da590b8e8',1,'pasirinktasGal(Container &amp;nd, int egz, char kaip):&#160;versijos1Funkc.cpp'],['../versijos1_funkc_8cpp.html#a70c58cbe8565858e9b6e632da590b8e8',1,'pasirinktasGal(Container &amp;nd, int egz, char kaip):&#160;versijos1Funkc.cpp']]],
+  ['pasirinktasgal_3c_20std_3a_3adeque_3c_20float_20_3e_20_3e_8',['pasirinktasGal&lt; std::deque&lt; float &gt; &gt;',['../versijos1_funkc_8cpp.html#a3d9c8ccf3f8aae27d96b3f29d50895e8',1,'versijos1Funkc.cpp']]],
+  ['pasirinktasgal_3c_20std_3a_3alist_3c_20float_20_3e_20_3e_9',['pasirinktasGal&lt; std::list&lt; float &gt; &gt;',['../versijos1_funkc_8cpp.html#acb3415432a19ac254c90c98eb16035f2',1,'versijos1Funkc.cpp']]],
+  ['pasirinktasgal_3c_20std_3a_3avector_3c_20float_20_3e_20_3e_10',['pasirinktasGal&lt; std::vector&lt; float &gt; &gt;',['../versijos1_funkc_8cpp.html#ab326215b019d7fb881ff4abd572e8cff',1,'versijos1Funkc.cpp']]],
+  ['pasirinktifaila_11',['pasirinktiFaila',['../v1_82_8cpp.html#aca50407cf88fa4ca5982ea72461a4d47',1,'v1.2.cpp']]],
+  ['pastebėjimai_12',['Pastebėjimai',['..//Users/miglecincikaite/Desktop/objektinis/objektinisProg2/objektinisProg/README.md#autotoc_md13',1,'Pastebėjimai'],['..//Users/miglecincikaite/Desktop/objektinis/objektinisProg2/objektinisProg/README.md#autotoc_md25',1,'Pastebėjimai']]],
+  ['pastebėjimai_20apie_20našumą_20su_20vector_13',['Pastebėjimai apie našumą su VECTOR',['..//Users/miglecincikaite/Desktop/objektinis/objektinisProg2/objektinisProg/README.md#autotoc_md27',1,'']]],
+  ['pastebėjimai_3a_14',['Pastebėjimai:',['..//Users/miglecincikaite/Desktop/objektinis/objektinisProg2/objektinisProg/README.md#autotoc_md9',1,'Pastebėjimai:'],['..//Users/miglecincikaite/Desktop/objektinis/objektinisProg2/objektinisProg/README.md#autotoc_md35',1,'Pastebėjimai:']]],
+  ['pav_15',['Pav',['../structstudentas.html#acc64e61c6a9cb64485f80402dd75a650',1,'studentas']]],
+  ['pavarde_16',['pavarde',['../class_studentas.html#acda737e36bbf5f9a4c3b1fdb42203a55',1,'Studentas::pavarde()'],['../class_zmogus.html#a7b67904224a3a0fd6283e5724f34f779',1,'Zmogus::pavarde() const =0']]],
+  ['pavarde_5f_17',['pavarde_',['../class_zmogus.html#a95b83ef4d9bbe9b88d78c17563bafa5a',1,'Zmogus']]],
+  ['pradeti_18',['pradeti',['../class_laiko_matavimas.html#a559b6975bf45e3e23e743931fc313e30',1,'LaikoMatavimas']]],
+  ['programų_20spartos_20palyginimas_20tt_20struct_20tt_20vs_20tt_20class_20tt_19',['Programų spartos palyginimas &lt;tt&gt;struct&lt;/tt&gt; vs. &lt;tt&gt;class&lt;/tt&gt;',['../md__r_e_a_d_m_e.html#autotoc_md41',1,'']]],
+  ['programos_20paleidimas_20',['Programos paleidimas',['../md__r_e_a_d_m_e.html#autotoc_md65',1,'Programos paleidimas'],['../md__r_e_a_d_m_e.html#autotoc_md82',1,'Programos paleidimas']]],
+  ['programos_20spartos_20analizė_20su_20o1_20o2_20o3_20flag_20ais_21',['Programos spartos analizė su O1, O2, O3 flag&apos;ais',['../md__r_e_a_d_m_e.html#autotoc_md48',1,'']]],
+  ['projektas_22',['Projektas',['..//Users/miglecincikaite/Desktop/objektinis/objektinisProg2/objektinisProg/README.md#autotoc_md1',1,'']]],
+  ['projekto_20struktūra_23',['Projekto struktūra',['..//Users/miglecincikaite/Desktop/objektinis/objektinisProg2/objektinisProg/README.md#autotoc_md2',1,'']]],
+  ['public_20zmogus_20tt_24',['&lt;tt&gt;Studentas : public Zmogus&lt;/tt&gt;',['../md__r_e_a_d_m_e.html#autotoc_md77',1,'']]]
+];

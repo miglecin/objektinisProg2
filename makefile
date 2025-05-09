@@ -1,59 +1,50 @@
-# Kompiliatorius ir vėliavos
+# Compiler and flags
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra -pedantic -O2 -g -Iinclude
+CXXFLAGS += -std=c++17 -Iinclude
 
-# Katalogai
+# Directories
 SRC_DIR = Src
-INC_DIR = include
 BUILD_DIR = build
 BIN_DIR = bin
 RESULTS_DIR = results
-TEST_FILES_DIR = test_files
-REZULTATAI_DIR = rezultatai
 
-# Failų sąrašas
+# Files
 SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
 OBJECTS = $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(SOURCES))
 
-# Vykdomasis failas
-EXECUTABLE = $(BIN_DIR)/programa
+# Test files (excluding catch_amalgamated.cpp)
+TEST_SOURCES = $(wildcard $(SRC_DIR)/*_test.cpp)
+TEST_OBJECTS = $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(TEST_SOURCES))
 
-# Tikslas - pagrindinė programa
+# Executable file
+EXECUTABLE = $(BIN_DIR)/programa
+TEST_EXECUTABLE = $(BIN_DIR)/test_programa
+
+# Target - main program
 all: sukurti_dirs $(EXECUTABLE)
 
-# Sukurti katalogus (tik jei jų nėra)
 sukurti_dirs:
-	@mkdir -p $(BUILD_DIR) $(BIN_DIR) $(RESULTS_DIR) $(TEST_FILES_DIR) $(REZULTATAI_DIR)
+	@mkdir -p $(BUILD_DIR) $(BIN_DIR) $(RESULTS_DIR)
 
-# Kompiliuoti programą
 $(EXECUTABLE): $(OBJECTS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
-# Kompiliuoti atskirus .o failus
+# Compile tests (without catch_amalgamated.cpp)
+$(TEST_EXECUTABLE): $(TEST_OBJECTS) $(OBJECTS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+# Compile individual .o files
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
-	@mkdir -p $(BUILD_DIR)  
+	@mkdir -p $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Išvalyti sukurtus failus
+# Clean
 clean:
-	rm -rf $(BUILD_DIR) $(BIN_DIR) $(RESULTS_DIR) $(REZULTATAI_DIR)
+	rm -rf $(BUILD_DIR) $(BIN_DIR) $(RESULTS_DIR)
 
-# Debug režimas
-debug: CXXFLAGS += -DDEBUG
-debug: clean all
+# Run tests
+tests: $(TEST_EXECUTABLE)
+	$(TEST_EXECUTABLE)  # Run Catch2 tests
 
-# Kompiliuoti su O0 optimizacija
-O0: CXXFLAGS = -O0 -std=c++17 -Iinclude
-O0: sukurti_dirs $(EXECUTABLE)
-
-# Kompiliuoti su O1 optimizacija
-O1: CXXFLAGS = -O1 -std=c++17 -Iinclude
-O1: sukurti_dirs $(EXECUTABLE)
-
-# Kompiliuoti su O2 optimizacija
-O2: CXXFLAGS = -O2 -std=c++17 -Iinclude
-O2: sukurti_dirs $(EXECUTABLE)
-
-# Kompiliuoti su O3 optimizacija
-O3: CXXFLAGS = -O3 -std=c++17 -Iinclude
-O3: sukurti_dirs $(EXECUTABLE)
+test: tests
+	./$(TEST_EXECUTABLE)

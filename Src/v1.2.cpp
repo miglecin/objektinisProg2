@@ -3,6 +3,8 @@
 #include "strategija3.h"
 #include "versijos1Funkc.h"
 #include "testRuleOf5.h"
+#include "catch_amalgamated.hpp"
+
 
 // Jūsų kitos įtrauktos reikalingos bibliotekos
 void vykdytiPrograma(){
@@ -153,6 +155,7 @@ void meniu() {
     cout<<" [A] - Vykdyti programa\n";
     cout<<" [B] - Tyrimas 6 (3 strategija)\n";
     cout<<" [T] - Testuoti Rule of Five ir IO operatorius\n";
+    cout<<" [C] - Atlikti Catch2 testus\n";
     cout<<" [0] - Baigti\n";
     cout<<" PASIRINKIMAS: ";
 }
@@ -207,6 +210,11 @@ int main() {
             case 'T':
                 cout<<"Vykdomi Rule of Five testai...\n";
                 testuotiRuleOfFive();  
+                break;
+
+            case 'C':  
+                cout << "Vykdomi Catch2 testai...\n";
+                Catch::Session().run();  // Running the Catch2 tests
                 break;
 
              case '0':

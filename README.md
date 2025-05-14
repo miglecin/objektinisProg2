@@ -23,6 +23,8 @@ Tai yra programavimo projektas, skirtas studentų duomenų valdymui naudojant ob
    cmake ..
    make
    ./main_program
+  ```
+
 
 ## 2. Pagrindinis meniu
 
@@ -35,6 +37,7 @@ Paleidus programą, pamatysite pagrindinį meniu, kuriame galėsite pasirinkti, 
   [T] - Testuoti Rule of Five ir IO operatorius
   [0] - Baigti
   PASIRINKIMAS:
+  ```
 
 ## Failai
 
@@ -48,6 +51,7 @@ Jei norite paleisti testus, tiesiog įvykdykite šią komandą:
 ```bash
 make tests
 ./tests
+```
 
 Tai atliks testus, naudojant Catch2 testų biblioteką, kuri yra įtraukta į projektą.
 

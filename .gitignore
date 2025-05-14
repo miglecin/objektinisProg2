@@ -3,6 +3,7 @@ test_files/
 
 # Ignoruoti rezultatu failus
 rezultatai/
+results/
 
 # Ignoruoti temp ir kompiliavimo failus (priklauso nuo projekto)
 *.o
@@ -15,3 +16,6 @@ rezultatai/
 .DS_Store
 
 bin/
+
+# Ignoruoti build katalogą
+build/

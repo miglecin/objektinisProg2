@@ -1,5 +1,56 @@
 
 # objektinisProg2
+# Objektinis Programavimas – Programos aprašymas
+
+Tai yra programavimo projektas, skirtas studentų duomenų valdymui naudojant objektinį programavimą. Šioje programoje galima įvesti studentų duomenis, juos generuoti atsitiktinai, nuskaityti iš failo arba įrašyti į failą, taip pat atlikti įvairius analizės metodus, tokius kaip balų skaičiavimas pagal vidurkį ar medianą.
+
+## Pagrindinės funkcijos
+
+1. **Įvesti studentų duomenis rankiniu būdu** – įveskite studentų vardus, pavardes ir jų namų darbų bei egzamino balus.
+2. **Generuoti studentų duomenis atsitiktinai** – programa sugeneruoja atsitiktinius studentų vardus, pavardes ir balus.
+3. **Generuoti vardus, pavardes ir balus** – galite pasirinkti generuoti studentų vardus, pavardes ir balus, kuriuos galima vėliau naudoti.
+4. **Nuskaityti duomenis iš failo** – programa leidžia nuskaitinėti studentų duomenis iš failo.
+5. **Rezultatų išvedimas** – galite pasirinkti, kur norite išvesti rezultatus – ekrane arba į failą.
+
+## Kaip naudoti
+
+### 1. **Kompiliavimas ir paleidimas**:
+   
+   Jei naudojate CMake, galite sukompiliuoti projektą ir sukurti vykdomąjį failą, naudojant šias komandas:
+
+   ```bash
+   mkdir build && cd build
+   cmake ..
+   make
+   ./main_program
+
+## 2. Pagrindinis meniu
+
+Paleidus programą, pamatysite pagrindinį meniu, kuriame galėsite pasirinkti, kokią veiksmų seką atlikti:
+
+  ```bash
+  PASIRINKITE VEIKSMA
+  [A] - Vykdyti programa
+  [B] - Tyrimas 6 (3 strategija)
+  [T] - Testuoti Rule of Five ir IO operatorius
+  [0] - Baigti
+  PASIRINKIMAS:
+
+## Failai
+
+- **`test_files/`** – turinys su testiniais studentų duomenimis, kuriuos galima nuskaityti į programą.
+- **`rezultatai/`** – rezultatai, įrašomi į failus.
+
+## Testų paleidimas
+
+Jei norite paleisti testus, tiesiog įvykdykite šią komandą:
+
+```bash
+make tests
+./tests
+
+Tai atliks testus, naudojant Catch2 testų biblioteką, kuri yra įtraukta į projektą.
+
 # Programų spartos palyginimas `struct` vs. `class`
 
 Šiame dokumente pateikiamas programų, naudojančių `struct` ir `class` tipo studentus, spartos palyginimas.

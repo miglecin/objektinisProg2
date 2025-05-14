@@ -3,7 +3,7 @@
 #include "strategija3.h"
 #include "versijos1Funkc.h"
 #include "testRuleOf5.h"
-#include "catch_amalgamated.hpp"
+#include "catch_amalgamated.hpp" 
 
 
 // Jūsų kitos įtrauktos reikalingos bibliotekos
@@ -44,7 +44,7 @@ void vykdytiPrograma(){
             failoNuskaitymas.pradeti();
         try
         {
-            nuskaitymasFile(grupe, "test_files/studentai_1000.txt");
+            nuskaitymasFile(grupe, "../test_files/studentai_1000.txt");
         } 
         catch (const std::exception& e)
         {
@@ -155,7 +155,6 @@ void meniu() {
     cout<<" [A] - Vykdyti programa\n";
     cout<<" [B] - Tyrimas 6 (3 strategija)\n";
     cout<<" [T] - Testuoti Rule of Five ir IO operatorius\n";
-    cout<<" [C] - Atlikti Catch2 testus\n";
     cout<<" [0] - Baigti\n";
     cout<<" PASIRINKIMAS: ";
 }
@@ -174,19 +173,20 @@ string pasirinktiFaila(){
     cin>>pasirinkimas2;
 
     switch (pasirinkimas2) {
-        case 1: failas= "test_files/studentai_1000.txt"; break;
-        case 2: failas= "test_files/studentai_10000.txt"; break;
-        case 3: failas= "test_files/studentai_100000.txt"; break;
-        case 4: failas= "test_files/studentai_1000000.txt"; break;
-        case 5: failas= "test_files/studentai_10000000.txt"; break;
+        case 1: failas= "../test_files/studentai_1000.txt"; break;
+        case 2: failas= "../test_files/studentai_10000.txt"; break;
+        case 3: failas= "../test_files/studentai_100000.txt"; break;
+        case 4: failas= "../test_files/studentai_1000000.txt"; break;
+        case 5: failas= "../test_files/studentai_10000000.txt"; break;
         default:
             cout<<"NETEISINGAS pasirinkimas!! Naudojamas failas su 1000 studentu \n";
             failas= "test_files/studentai_1000.txt"; 
     }
     return failas;
+   
 }
 
-int main() {
+int main(){
     string failas;
     string rezultataiAplankas= "rezultatai";
 
@@ -210,11 +210,6 @@ int main() {
             case 'T':
                 cout<<"Vykdomi Rule of Five testai...\n";
                 testuotiRuleOfFive();  
-                break;
-
-            case 'C':  
-                cout << "Vykdomi Catch2 testai...\n";
-                Catch::Session().run();  // Running the Catch2 tests
                 break;
 
              case '0':

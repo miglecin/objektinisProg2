@@ -33,7 +33,10 @@ Studentas::Studentas(Studentas&& other) noexcept
       galutinis_balas_(other.galutinis_balas_) {
     other.egzaminas_ = 0;
     other.galutinis_balas_ = 0.0f;
+      other.vardas_ = "";  // Perkeltas vardas nustatomas į tuščią
+    other.pavarde_ = ""; // Perkeltos pavardės nustatymas į tuščią
 }
+
 
 Studentas& Studentas::operator=(Studentas&& other) noexcept {
     if (this != &other) {
@@ -45,6 +48,8 @@ Studentas& Studentas::operator=(Studentas&& other) noexcept {
 
         other.egzaminas_ = 0;
         other.galutinis_balas_ = 0.0f;
+        other.vardas_ = "";  // Perkeltas vardas nustatomas į tuščią
+        other.pavarde_ = ""; 
     }
     return *this;
 }
@@ -141,7 +146,7 @@ istream& operator>>(istream& is, Studentas& s) {
 
     } else {
         // TYLUS AUTOMATINIS ĮVEDIMAS
-        return s.readStudent(is);  // Naudoja tavo esamą metodą
+        return s.readStudent(is);  
     }
 
     return is;

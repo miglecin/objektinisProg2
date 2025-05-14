@@ -1,157 +1,188 @@
-#define CATCH_CONFIG_NOMAIN 
-#include "catch_amalgamated.hpp"
+#define CATCH_CONFIG_MAIN
+#include "catch_amalgamated.hpp" 
 #include "studentas.h"
 #include <sstream>
 #include <fstream>
+#include <cmath>
 
-// [TESTAS] Bandymas sukurti Zmogus objekta (turi nesikompiliuoti, jei atkomentuota)
+TEST_CASE("Studentas klasės testai") {
+    
 
-// Zmogus z; // nesikompiliuoja, nes Zmogus yra abstrakti klase
-// Šis testas rodo, kad Zmogus klase yra abstrakti – jos objektu sukurti negalima
-// Bandant sukurti Zmogus z; gauname kompiliavimo klaida:
-// “variable type 'Zmogus' is an abstract class”
+    SECTION("Konstruktoriai ir operatoriai") {
+        // 1st test: Default konstruktorius
+        SECTION("Default konstruktorius") {
+            Studentas s;
+            s.setVardas("Base");
+            s.setPavarde("Student");
+            s.setEgzaminas(8);
+            s.setNamudarbai({9, 8, 7});
 
-// === 1. Originalus objektas ===
-TEST_CASE("Default constructor test") {
-    Studentas s1;
-    s1.setVardas("Testas");
-    s1.setPavarde("Kopija");
-    s1.setEgzaminas(9);
-    s1.setNamudarbai({10, 9, 8, 7, 6});
-    s1.galBalas(generuotiGalvid);
-    std::cout << "Sukurtas studentas: " << s1.vardas() << " " << s1.pavarde() << "\n";
+            REQUIRE(s.vardas() =="Base");
+            REQUIRE(s.pavarde()=="Student");
+            REQUIRE(s.egzaminas() == 8);
+        }
 
-    REQUIRE(s1.vardas() == "Testas");
-    REQUIRE(s1.pavarde() == "Kopija");
-    REQUIRE(s1.egzaminas() == 9);
-}
+        // 2nd test: Kopijavimo konstruktorius
+        SECTION("Kopijavimo konstruktorius") {
+            Studentas s_original;
+            s_original.setVardas("Base");
+            s_original.setPavarde("Student");
+            Studentas copy(s_original);
 
-// === 2. Kopijavimo konstruktorius ===
-TEST_CASE("Copy constructor test") {
-    Studentas s1;
-    s1.setVardas("Testas");
-    s1.setPavarde("Kopija");
-    s1.setEgzaminas(9);
-    s1.setNamudarbai({10, 9, 8, 7, 6});
-    s1.galBalas(generuotiGalvid);
+            REQUIRE(copy.vardas() == "Base");
+            REQUIRE(copy.pavarde() == "Student");
+        }
 
-    Studentas s2(s1);
-    std::cout << "Kopijuotas s2: " << s2 << "\n";
+        // 3rd test: Kopijavimo operatorius
 
-    REQUIRE(s2.vardas() == s1.vardas());
-    REQUIRE(s2.pavarde() == s1.pavarde());
-}
+        // 4th test: Perkėlimo konstruktorius
+        SECTION("Perkelimo konstruktorius") {
+            Studentas s_source;
+            s_source.setVardas("Base");
+            s_source.setPavarde("Student");
+            Studentas s_move(std::move(s_source));
 
-// === 3. Kopijavimo operatorius ===
-TEST_CASE("Copy assignment operator test") {
-    Studentas s1;
-    s1.setVardas("Testas");
-    s1.setPavarde("Kopija");
-    s1.setEgzaminas(9);
-    s1.setNamudarbai({10, 9, 8, 7, 6});
-    s1.galBalas(generuotiGalvid);
-
-    Studentas s3;
-    s3 = s1;
-    std::cout << "Kopijuotas s3: " << s3 << "\n";
-
-    REQUIRE(s3.pavarde() == s1.pavarde());
-}
-
-// === 4. Perkelimo konstruktorius ===
-TEST_CASE("Move constructor test") {
-    Studentas s1;
-    s1.setVardas("Testas");
-    s1.setPavarde("Kopija");
-    s1.setEgzaminas(9);
-    s1.setNamudarbai({10, 9, 8, 7, 6});
-    s1.galBalas(generuotiGalvid);
-
-    Studentas s4(std::move(s1));
-    std::cout << "Perkeltas s4: " << s4 << "\n";
-
-    REQUIRE(s4.egzaminas() == 9);
-}
-
-// === 5. Perkelimo operatorius ===
-TEST_CASE("Move assignment operator test") {
-    Studentas s2;
-    s2.setVardas("Testas");
-    s2.setPavarde("Kopija");
-    s2.setEgzaminas(9);
-    s2.setNamudarbai({10, 9, 8, 7, 6});
-    s2.galBalas(generuotiGalvid);
-
-    Studentas s5;
-    s5 = std::move(s2);
-    std::cout << "Perkeltas s5: " << s5 << "\n";
-
-    REQUIRE_FALSE(s5.nd().empty());
-}
-
-// === 6. Isvesties operatorius ===
-TEST_CASE("Stream insertion operator test") {
-    Studentas s5;
-    s5.setVardas("Jonas");
-    s5.setPavarde("Petras");
-    s5.setEgzaminas(9);
-    s5.setNamudarbai({10, 9, 8, 7, 6});
-    s5.galBalas(generuotiGalvid);
-
-    std::ostringstream oss;
-    oss << s5;
-    std::cout << "Isvestas s5: " << oss.str() << "\n";
-
-    REQUIRE(oss.str().find("Petras") != std::string::npos);
-}
-
-// === 7. Ivesties operatorius (istringstream) ===
-TEST_CASE("Stream extraction operator test") {
-    std::istringstream iss("Vardenis Pavardenis 10 10 10 10 10 10");
-    Studentas s6;
-    iss >> s6;
-    std::cout << "Ivestas s6: " << s6 << "\n";
-
-    REQUIRE(s6.vardas() == "Vardenis");
-}
-
-// === 8. Failo nuskaitymas su Studentas::nuskaitymasFile ===
-TEST_CASE("File input test") {
-    std::ofstream testFailas("studentai.txt");
-    testFailas << "Jonas Jonaitis 10 9 8 7 6 8\n";
-    testFailas << "Petras Petrauskas 8 9 7 10 5 7\n";
-    testFailas.close();
-
-    std::vector<Studentas> grupe;
-    Studentas::nuskaitymasFile(grupe, "studentai.txt");
-    std::cout << "Gauta studentu: " << grupe.size() << "\n";
-
-    REQUIRE(grupe.size() == 2);
-    REQUIRE(grupe[0].vardas() == "Jonas");
-    REQUIRE(grupe[1].vardas() == "Petras");
-}
-
-// === 9. Isvedimas i ekrana ir i faila ===
-TEST_CASE("Output to file test") {
-    std::ofstream out("rezultataiT.txt");
-    Studentas s1;
-    s1.setVardas("Jonas");
-    s1.setPavarde("Jonaitis");
-    out << s1 << "\n";
-    out.close();
-
-    std::ifstream in("rezultataiT.txt");
-    Studentas s2;
-    in >> s2;
-    REQUIRE(s2.vardas() == "Jonas");
-    REQUIRE(s2.pavarde() == "Jonaitis");
-}
-
-// === 10. Destruktoriaus testas ===
-TEST_CASE("Destructor test") {
-    {
-        Studentas laikinas;
+            REQUIRE(s_move.vardas() == "Base");
+            REQUIRE(s_move.pavarde() == "Student");
+            REQUIRE(s_source.vardas().empty());
     }
-    // Patikrinkite, ar destruktorius buvo iškviestas (pagal skaitiklį arba kitą metodą)
-    REQUIRE(Studentas::destruktoriuSk == 1);
+    }
+
+    SECTION("Operatoriai") {
+         // 3rd test: Kopijavimo operatorius
+        SECTION("Kopijavimo operatorius") {
+        Studentas s_original;
+        s_original.setVardas("testas");
+        s_original.setPavarde("testukas");
+        Studentas s_copy;
+        s_copy = s_original;
+        
+        REQUIRE(s_copy.vardas() == "testas");
+        REQUIRE(s_copy.pavarde() == "testukas");
+    }
+
+     // 5th test: Perkėlimo operatorius
+        SECTION("Perkėlimo operatorius") {
+        Studentas s_source;
+        s_source.setVardas("testas");
+        s_source.setPavarde("testukas");
+        Studentas s_move;
+        s_move = std::move(s_source);
+
+        REQUIRE(s_move.vardas() == "testas");
+        REQUIRE(s_move.pavarde() == "testukas");
+        REQUIRE(s_source.vardas().empty());
+    }
+
+    SECTION("Stream operatoriai") {
+        SECTION("Išvesties operatorius") {
+            std::ostringstream oss;
+             Studentas s;
+             s.setVardas("Student");
+            s.setPavarde("testukas");
+            s.setNamudarbai({1, 2, 3, 4, 5});
+            s.setEgzaminas(10);
+            oss << s;
+            REQUIRE(oss.str().find("Student") != std::string::npos);
+        }
+
+        SECTION("Įvesties operatorius") {
+            std::istringstream iss("Naujas Studentas 10 9 9 8 8 7");
+            Studentas s;
+            iss >> s;
+            REQUIRE(s.vardas() == "Naujas");
+            REQUIRE(s.pavarde() == "Studentas");
+            REQUIRE(s.egzaminas() == 7);
+        }
+    }
+
+    SECTION("Failų operacijos") {
+        SECTION("Nuskaitymas iš failo") {
+    const std::string failoVardas = "test_studentai.txt";
+    {
+        std::ofstream out(failoVardas);
+        out << "Jonas Jonaitis 10 9 8 7 6 5\n"; 
+        out << "Petras Petraitis 7 6 5 4 3 2\n";
+    }
+
+            std::vector<Studentas> grupe;
+            Studentas::nuskaitymasFile(grupe, "test_studentai.txt");
+            REQUIRE(grupe.size() == 2);  
+            REQUIRE(grupe[0].vardas() == "Jonas");
+            REQUIRE(grupe[0].pavarde() == "Jonaitis");
+            REQUIRE(grupe[0].nd() == std::vector<float>({10, 9, 8, 7, 6}));
+            REQUIRE(grupe[0].egzaminas() == 5);
+        }
+
+        SECTION("Įrašymas į failą") {
+        Studentas s;
+        s.setVardas("Base");
+        s.setPavarde("testukas");
+        s.setNamudarbai({1, 2, 3, 4, 5});
+        s.setEgzaminas(10);
+            std::string filename = "test_irasymas.txt";
+            std::ofstream out(filename);
+            out << s;
+            out.close();
+
+            std::ifstream in(filename);
+
+            in >> s;
+            REQUIRE(s.vardas() == "Base");
+        }
+    }
+
+    SECTION("Destruktoriaus testas") {
+        int initialCount = Studentas::destruktoriuSk;
+        {
+            Studentas temp;
+        }
+        REQUIRE(Studentas::destruktoriuSk == initialCount + 1);
+    }
+}
+}
+
+TEST_CASE("Galutinio balo funkcijos") {
+    SECTION("Generuojamas galutinis balas pagal vidurkį") {
+        std::vector<float> nd = {9, 8, 7, 6, 10};  // Namu darbu pazymiai
+        int egz = 8;  // Egzamino pazymys
+        
+        float galutinis = generuotiGalvid(nd, egz);  // Skaičiuojame galutinį balą
+        
+        // Skaičiuojame vidurkį
+        float vidurkis = std::accumulate(nd.begin(), nd.end(), 0.0f) / nd.size();  
+        
+        // Tikėtinas rezultatas pagal formulę
+        float expected = 0.4f * vidurkis + 0.6f * egz;  
+        
+        // Patikriname, kad galutinis balas yra pakankamai artimas tikėtinam rezultatui
+        REQUIRE(std::abs(galutinis - expected) < 0.01f);  // Patikriname su paklaida
+    }
+
+    SECTION("Generuojamas galutinis balas pagal medianą") {
+        std::vector<float> nd = {9, 8, 7, 6, 10};  // Namu darbu pazymiai
+        int egz = 8;  // Egzamino pazymys
+        
+        float galutinis = generuotiGalmed(nd, egz);  // Skaičiuojame galutinį balą
+        
+        std::vector<float> sorted(nd);
+        std::sort(sorted.begin(), sorted.end());  // Rūšiuojame namų darbų pažymius
+        
+        // Apskaičiuojame medianą
+        float mediana = (sorted.size() % 2 == 0) ?
+            (sorted[sorted.size() / 2 - 1] + sorted[sorted.size() / 2]) / 2 :
+            sorted[sorted.size() / 2];  // Mediana
+        
+        float expected = 0.4f * mediana + 0.6f * egz;  
+        
+        REQUIRE(std::abs(galutinis - expected) < 0.01f); 
+    }
+
+    SECTION("Testuojame tuščius namų darbus") {
+    std::vector<float> nd = {};  // Namu darbu pazymiai (tuščias)
+    int egz = 10;  // Egzamino pazymys
+
+    float galutinis = generuotiGalvid(nd, egz);  
+    REQUIRE(std::isnan(galutinis)); 
+    }
 }
